@@ -1,0 +1,152 @@
+<Envio>
+	<ModeloDocumento>NFCe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<ide>
+		<cUF>43</cUF>
+		<natOp>Venda no supermercado</natOp>
+		<mod>65</mod>
+		<serie>260</serie>
+		<nNF>899</nNF>
+		<dhEmi>2019-03-21T16:09:00</dhEmi>
+		<fusoHorario>-03:00</fusoHorario>
+		<tpNf>1</tpNf>
+		<idDest>1</idDest>
+		<indFinal>1</indFinal>
+		<indPres>1</indPres>
+		<cMunFg>4321808</cMunFg>
+		<tpImp>4</tpImp>
+		<tpEmis>1</tpEmis>
+		<tpAmb>2</tpAmb>
+		<finNFe>1</finNFe>
+		<EmailArquivos>email@gmail.com</EmailArquivos>
+	</ide>
+	<emit>
+		<CNPJ_emit>99999999999999</CNPJ_emit>
+		<xNome>Migrate</xNome>
+		<IE>1234567891</IE>
+		<CRT>3</CRT>
+		<enderEmit>
+			<xLgr>Rua Padre Cacique</xLgr>
+			<nro>123</nro>
+			<xBairro>Centro</xBairro>
+			<cMun>4321808</cMun>
+			<xMun>Tres de Maio</xMun>
+			<UF>RS</UF>
+			<CEP>98910000</CEP>
+			<fone>5535358338</fone>
+		</enderEmit>
+	</emit>
+	<dest>
+		<CNPJ_dest>99999999999999</CNPJ_dest>
+		<xNome_dest>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_dest>
+		<indIEDest>9</indIEDest>
+		<enderDest>
+			<nro_dest>12</nro_dest>
+			<xCpl_dest>CENTRO</xCpl_dest>
+			<xBairro_dest>Primavera</xBairro_dest>
+			<xEmail_dest>email@gmail.com</xEmail_dest>
+			<xLgr_dest>Rua das Margaridas</xLgr_dest>
+			<xPais_dest>Brasil</xPais_dest>
+			<cMun_dest>4317103</cMun_dest>
+			<xMun_dest>CONTAGEM</xMun_dest>
+			<UF_dest>RS</UF_dest>
+			<CEP_dest>32145900</CEP_dest>
+			<cPais_dest>1058</cPais_dest>
+			<fone_dest>5543481105</fone_dest>
+		</enderDest>
+	</dest>
+	<det>
+		<detItem>
+			<prod>
+				<cProd>1</cProd>
+				<cEAN>SEM GTIN</cEAN>
+				<xProd>NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xProd>
+				<NCM>39231090</NCM>
+				<CFOP>5102</CFOP>
+				<uCOM>UN</uCOM>
+				<qCOM>1</qCOM>
+				<vUnCom>50.00</vUnCom>
+				<vProd>50.00</vProd>
+				<cEANTrib>SEM GTIN</cEANTrib>
+				<uTrib>UN</uTrib>
+				<qTrib>1</qTrib>
+				<vUnTrib>50.00</vUnTrib>
+				<vFrete>0.00</vFrete>
+				<vSeg>0.00</vSeg>
+				<vDesc>0.00</vDesc>
+				<vOutro_item>0.00</vOutro_item>
+				<indTot>1</indTot>
+				<nTipoItem>0</nTipoItem>
+				<CEST>1234567</CEST>
+			</prod>
+			<imposto>
+				<ICMS>
+					<orig>0</orig>
+					<CST>40</CST>
+				</ICMS>
+			</imposto>
+		</detItem>
+		<detItem>
+			<prod>
+				<cProd>2</cProd>
+				<cEAN>SEM GTIN</cEAN>
+				<xProd>Fone de ouvido</xProd>
+				<NCM>39231090</NCM>
+				<CFOP>5102</CFOP>
+				<uCOM>UN</uCOM>
+				<qCOM>1</qCOM>
+				<vUnCom>10.00</vUnCom>
+				<vProd>10.00</vProd>
+				<cEANTrib>SEM GTIN</cEANTrib>
+				<uTrib>UN</uTrib>
+				<qTrib>1</qTrib>
+				<vUnTrib>10.00</vUnTrib>
+				<vFrete>0.00</vFrete>
+				<vSeg>0.00</vSeg>
+				<vDesc>0.00</vDesc>
+				<vOutro_item>0.00</vOutro_item>
+				<indTot>1</indTot>
+				<nTipoItem>0</nTipoItem>
+				<CEST>1234567</CEST>
+			</prod>
+			<imposto>
+				<ICMS>
+					<orig>0</orig>
+					<CST>40</CST>
+				</ICMS>
+			</imposto>
+		</detItem>
+	</det>
+	<total>
+		<ICMStot>
+			<vBC_ttlnfe>0.00</vBC_ttlnfe>
+			<vICMS_ttlnfe>0.00</vICMS_ttlnfe>
+			<vICMSDeson_ttlnfe>0.00</vICMSDeson_ttlnfe>
+			<vBCST_ttlnfe>0.00</vBCST_ttlnfe>
+			<vST_ttlnfe>0.00</vST_ttlnfe>
+			<vProd_ttlnfe>60.00</vProd_ttlnfe>
+			<vFrete_ttlnfe>0.00</vFrete_ttlnfe>
+			<vSeg_ttlnfe>0.00</vSeg_ttlnfe>
+			<vDesc_ttlnfe>0.00</vDesc_ttlnfe>
+			<vII_ttlnfe>0.00</vII_ttlnfe>
+			<vIPI_ttlnfe>0</vIPI_ttlnfe>
+			<vPIS_ttlnfe>0</vPIS_ttlnfe>
+			<vCOFINS_ttlnfe>0</vCOFINS_ttlnfe>
+			<vOutro>0.00</vOutro>
+			<vNF>60.00</vNF>
+			<vTotTrib_ttlnfe>0</vTotTrib_ttlnfe>
+		</ICMStot>
+	</total>
+	<transp>
+		<modFrete>9</modFrete>
+	</transp>
+	<pag>
+		<pagItem>
+			<tPag>01</tPag>
+			<vPag>09.00</vPag>
+		</pagItem>
+	</pag>
+	<infAdic>
+		<infCpl>Informações complementares</infCpl>
+	</infAdic>
+</Envio>

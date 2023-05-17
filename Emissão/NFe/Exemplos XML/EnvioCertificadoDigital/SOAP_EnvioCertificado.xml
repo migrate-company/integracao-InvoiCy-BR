@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inv:recepcaoprevia.Execute>
+         <inv:Invoicyrecepcao>
+            <inv:Cabecalho>
+               <inv:EmpPK>XXxXxXxXxxXXxxxxX0x+Xx==</inv:EmpPK>
+               <inv:EmpCK>00aaa00a0a0aaaaaaaaa00000a0a0aa</inv:EmpCK>
+               <inv:EmpCO></inv:EmpCO>
+            </inv:Cabecalho>
+            <inv:Informacoes>
+               <inv:Texto></inv:Texto>
+            </inv:Informacoes>
+            <inv:Dados>
+               <inv:DadosItem>
+                  <inv:Documento>&lt;EmpresaCertificado&gt;&lt;Empresas&gt;&lt;CNPJ&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;/CNPJ&gt;&lt;/Empresas&gt;&lt;Apelido&gt;Certificado Digital&lt;/Apelido&gt;&lt;ArquivoPFX&gt;MIIOWwIBAzCCDicGCSqGSIb3DQEHAaCCDhgEgg4UMIIOEDCCCMcGC8g==&lt;/ArquivoPFX&gt;&lt;Senha&gt;senha&lt;/Senha&gt;&lt;MetodoCriptografiaSenha&gt;OUTROS&lt;/MetodoCriptografiaSenha&gt;&lt;Tipo&gt;A1&lt;/Tipo&gt;&lt;/EmpresaCertificado&gt;</inv:Documento>
+                  <inv:Parametros></inv:Parametros>
+               </inv:DadosItem>
+            </inv:Dados>
+         </inv:Invoicyrecepcao>
+      </inv:recepcaoprevia.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
