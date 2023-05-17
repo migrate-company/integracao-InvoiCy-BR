@@ -1,0 +1,13 @@
+[
+    {
+        "ModeloDocumento": "NFe",
+        "Versao": 4.00,
+        "CnpjEmissor": "06354976000149",
+        "tpAmb": 2,
+        "UfEmissor": 43,
+        "NumeroInicial": 27,
+        "NumeroFinal": 27,
+        "Serie": "245",
+        "Justificativa": "Pulos de numeração."
+    }
+]

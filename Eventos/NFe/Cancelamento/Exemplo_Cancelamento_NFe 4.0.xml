@@ -1,0 +1,21 @@
+<EnvioEvento>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<Evento>
+		<NtfCnpjEmissor>99999999999999</NtfCnpjEmissor>
+		<NtfNumero>100</NtfNumero>
+		<NtfSerie>1</NtfSerie>
+		<tpAmb>2</tpAmb>	
+		<EveInf>
+			<EveDh>2017-07-18T10:18:21</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>110111</EveTp>
+			<EvenSeq>1</EvenSeq>
+			<Evedet>
+				<EveDesc>Cancelamento</EveDesc>
+				<EvexJust>estou cancelando este documento para testes</EvexJust>
+				<EvenProt>0</EvenProt>
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>

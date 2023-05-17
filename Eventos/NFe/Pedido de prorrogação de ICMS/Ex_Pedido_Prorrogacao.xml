@@ -1,0 +1,25 @@
+<EnvioEvento>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<Evento>
+		<NtfCnpjEmissor>99999999999999</NtfCnpjEmissor>
+		<NtfNumero>1</NtfNumero>
+		<NtfSerie>123</NtfSerie>
+		<tpAmb>2</tpAmb>
+		<EveInf>
+			<EveDh>2018-08-03T09:17:40</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>111500</EveTp>
+			<EvenSeq>1</EvenSeq>
+			<Evedet>
+				<EveDesc>Pedido de Prorrogação</EveDesc>
+				<ProrrogICMS>
+					<ProrrogICMSItem>
+						<NumeroItem>1</NumeroItem>	
+						<QtdeItem>3</QtdeItem>
+					</ProrrogICMSItem>
+				</ProrrogICMS>	
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>

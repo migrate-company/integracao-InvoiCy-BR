@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Body>
+      <recepcao.ExecuteResponse xmlns="InvoiCy">
+         <Invoicyretorno>
+            <Mensagem>
+               <MensagemItem>
+                  <Codigo>100</Codigo>
+                  <Descricao>Sucesso na operação</Descricao>
+                  <Documentos>
+                     <DocumentosItem>
+                        <Documento><![CDATA[<SDTExportRecurrenceRestRetorno xmlns="InvoiCy"><SDTExportRecurrenceRestRetornoItem><Codigo>100</Codigo><Descricao>Sucesso na operação</Descricao><Quantidade>1</Quantidade><Observacao>Agendamento incluido com sucesso</Observacao><ExportacaoRecorrente><ExportacaoRecorrente><Acao>I</Acao><Identificador>cd00d010-d0f0-0c00-a00d-00a000d0c0be</Identificador><Responsavel><CNPJ>99999999999999</CNPJ></Responsavel><Empresas><Todas>N</Todas><CNPJ><CNPJ>99999999999999</CNPJ><CNPJ>99999999999999</CNPJ></CNPJ></Empresas><AgruparPorEmpresa>N</AgruparPorEmpresa><Tipo>1</Tipo><Status><Pendente>S</Pendente><Autorizado>S</Autorizado><Cancelado>S</Cancelado><Denegado>S</Denegado><Encerrado>S</Encerrado><Inutilizado>S</Inutilizado><Rejeitado>S</Rejeitado><PendenteAssinatura>S</PendenteAssinatura><EPEC>S</EPEC><AguardandoConsulta>S</AguardandoConsulta><AguardandoCancelamento>S</AguardandoCancelamento><ContigenciaOffline>N</ContigenciaOffline><PendenteConsulta_EmProcessamento>S</PendenteConsulta_EmProcessamento><EmConflito>S</EmConflito></Status><Modelo><NFe>S</NFe><NFCe>S</NFCe><NFSe>S</NFSe><CTe>S</CTe><CFeSAT_MFe>S</CFeSAT_MFe><MDFe>S</MDFe></Modelo><CNPJ /><DocumentosAlteradosTela>S</DocumentosAlteradosTela><Exportacao><XML>S</XML><MicrosoftExcel><Excel>S</Excel><Tipo>2</Tipo></MicrosoftExcel></Exportacao><Email>teste@migrate.info</Email><DiaExecucao>2</DiaExecucao><QtdeRepeticao>8</QtdeRepeticao></ExportacaoRecorrente></ExportacaoRecorrente></SDTExportRecurrenceRestRetornoItem></SDTExportRecurrenceRestRetorno>]]></Documento>
+                     </DocumentosItem>
+                  </Documentos>
+               </MensagemItem>
+            </Mensagem>
+         </Invoicyretorno>
+      </recepcao.ExecuteResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
