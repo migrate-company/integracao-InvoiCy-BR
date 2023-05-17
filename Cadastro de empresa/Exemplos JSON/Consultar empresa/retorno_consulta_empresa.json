@@ -1,0 +1,421 @@
+[
+    {
+        "Codigo": 100,
+        "Descricao": "Consulta realizada com sucesso",
+        "RetornoConsulta": [
+            {
+                "EmpCodigo": 0,
+                "EmpChaveParceiro": "",
+                "EmpNomFantasia": "MIGRATE",
+                "EmpApelido": "MIGRATE",
+                "EmpRazSocial": "MIGRATE",
+                "EmpCNPJ": "06354976000149",
+                "EmpCPF": "",
+                "EmpIE": "1470049241",
+                "EmpTelefone": "5535354830",
+                "EmpEndereco": "RUA PE CACIQUE",
+                "EmpNumero": "985",
+                "EmpBairro": "CENTRO",
+                "EmpCEP": "98910000",
+                "EmpComplemento": "2 ANDAR",
+                "EmpIM": "132236721",
+                "MunCodigo": 4321808,
+                "MunDescricao": "TRÊS DE MAIO",
+                "UFCodigo": 43,
+                "UFDescricao": "RIO GRANDE DO SUL",
+                "EmpCNAE": "",
+                "EmpCRT": 1,
+                "EmpIEST": "",
+                "EmpAK": "",
+                "EmpSfzUtilizada": 0,
+                "EmpMtrCodigo": 0,
+                "EmpMtrCNPJ": "",
+                "EmpMtrNomComercial": "",
+                "EmpStatus": "A",
+                "EmpMarca": "",
+                "EmpMarcaExtensao": "",
+                "EmpEmail": "",
+                "EmpObservacao": "",
+                "EmpTpoEndereco": "RUA",
+                "EmpTipoIntegracao": 0,
+                "EmpDtaCadastro": "2012-02-01T04:47:16",
+                "EmpModelo": "",
+                "GrupoEmpresa": "",
+                "EmpInsSuframa": "",
+                "x": 0,
+                "ProcessoSuperLogica": false,
+                "Certificado": {
+                    "ArquivoPFX": "",
+                    "Senha": "",
+                    "TipoCertificado": 0,
+                    "MetodoCriptografiaSenha": "",
+                    "UsarCertPreCadastrado": ""
+                },
+                "Usuarios": [],
+                "CaixaEnvioEmail": {
+                    "EmlValCertificado": "",
+                    "EmlTmpEspera": 0,
+                    "EmlAutenticacao": "",
+                    "EmlSSL": "",
+                    "EmlPorta": 0,
+                    "EmlHost": "",
+                    "EmlSenha": "",
+                    "EmlUsuario": "",
+                    "EmlNomeRemetente": "",
+                    "EmlEmailRemetente": "",
+                    "EmlStatus": ""
+                },
+                "CaixasLeituraEmail": [],
+                "Parametros": {
+                    "JustInut": "Inutilizado por pulo de numeração ou rejeição do documento.",
+                    "JustCanc": "Cancelado pois haviam erros no documento.",
+                    "JustCont": "Emitido em contingência devido a problemas técnicos na conexão com a SEFAZ.",
+                    "EmailAutorizado": "<div style='font-size:12.0pt;line-height:106%;font-family: \"Microsoft Sans Serif\",\"sans-serif\"' ><p align=center style='text-align:center'><b><span >@DocCompleto</span></b></p><p><span >&nbsp;</span></p><p><span >Prezado @NomeDestinatario,</span></p><p><span >Você está recebendo a @DocCompleto &nbsp;número @DocNumero, série @DocSerie de @NomeEmpresa.</span></p><p><span >&nbsp;</span></p><p><span >Preste atenção:</span></p><p><span >- Se junto a mercadoria, você recebeu também o @DocPDFCompleto impresso.</span></p><p><span >- Se, anexo a este e-mail, você está recebendo também o arquivo XML da @DocCompleto.</span></p><p><span >&nbsp;</span></p><p><b><span >O que fazer com o xml?</span></b></p><p><span >Armazenar eletronicamente pelo prazo de 05 (cinco) anos, conforme previsto na legislação tributária (Art. 173 do Código Tributário Nacional e § 4º da Lei 5.172 de 25/10/1966).</span></p><p><span >&nbsp;</span></p><p><b><span >O que fazer com o </span></b><b><span >@DocPDF?</span></b></p><p><span >O @DocPDF, em papel, pode ser arquivado para apresentação ao fisco quando solicitado. Todavia, é <b>estritamente necessário</b> arquivar/armazenar eletronicamente o XML de seus fornecedores. Isso é obrigatório e passível de fiscalização.</span></p><p><span >&nbsp;</span></p><p><b><span >Como certificar esta </span></b><b><span >@DocModelo?</span></b></p><p><span >Para verificar a validade do documento, queira por gentileza consultar sua autenticidade no site nacional do projeto @DocModelo, utilizando a chave de acesso @DocChaveAcesso.</span></p><p><span >&nbsp;</span></p><p><span >Atenciosamente,</span></p><p><span>@NomeEmpresa.</span></p></div>",
+                    "EmailCancelado": "<div style='font-size:12.0pt;line-height:106%;font-family: \"Microsoft Sans Serif\",\"sans-serif\"' ><p align=center style='text-align:center'><b><span >@DocCompleto</span></b></p><p><span >&nbsp;</span></p><p><span >Prezado @NomeDestinatario,</span></p><p><span >Você está recebendo a @DocCompleto &nbsp;número @DocNumero, série @DocSerie de @NomeEmpresa.</span></p><p><span >&nbsp;</span></p><p><span >Preste atenção:</span></p><p><span >- Se junto a mercadoria, você recebeu também o @DocPDFCompleto impresso.</span></p><p><span >- Se, anexo a este e-mail, você está recebendo também o arquivo XML da @DocCompleto.</span></p><p><span >&nbsp;</span></p><p><b><span >O que fazer com o xml?</span></b></p><p><span >Armazenar eletronicamente pelo prazo de 05 (cinco) anos, conforme previsto na legislação tributária (Art. 173 do Código Tributário Nacional e § 4º da Lei 5.172 de 25/10/1966).</span></p><p><span >&nbsp;</span></p><p><b><span >O que fazer com o </span></b><b><span >@DocPDF?</span></b></p><p><span >O @DocPDF, em papel, pode ser arquivado para apresentação ao fisco quando solicitado. Todavia, é <b>estritamente necessário</b> arquivar/armazenar eletronicamente o XML de seus fornecedores. Isso é obrigatório e passível de fiscalização.</span></p><p><span >&nbsp;</span></p><p><b><span >Como certificar esta </span></b><b><span >@DocModelo?</span></b></p><p><span >Para verificar a validade do documento, queira por gentileza consultar sua autenticidade no site nacional do projeto @DocModelo, utilizando a chave de acesso @DocChaveAcesso.</span></p><p><span >&nbsp;</span></p><p><span >Atenciosamente,</span></p><p><span>@NomeEmpresa.</span></p></div>",
+                    "EmailCCe": "<div style='font-size:12.0pt;line-height:106%;font-family: \"Microsoft Sans Serif\",\"sans-serif\"' ><p align=center style='text-align:center'><b><span >@DocCompleto</span></b></p><p><span >&nbsp;</span></p><p><span >Prezado @NomeDestinatario,</span></p><p><span >Você está recebendo a @DocCompleto &nbsp;número @DocNumero, série @DocSerie de @NomeEmpresa.</span></p><p><span >&nbsp;</span></p><p><span >Preste atenção:</span></p><p><span >- Se junto a mercadoria, você recebeu também o @DocPDFCompleto impresso.</span></p><p><span >- Se, anexo a este e-mail, você está recebendo também o arquivo XML da @DocCompleto.</span></p><p><span >&nbsp;</span></p><p><b><span >O que fazer com o xml?</span></b></p><p><span >Armazenar eletronicamente pelo prazo de 05 (cinco) anos, conforme previsto na legislação tributária (Art. 173 do Código Tributário Nacional e § 4º da Lei 5.172 de 25/10/1966).</span></p><p><span >&nbsp;</span></p><p><b><span >O que fazer com o </span></b><b><span >@DocPDF?</span></b></p><p><span >O @DocPDF, em papel, pode ser arquivado para apresentação ao fisco quando solicitado. Todavia, é <b>estritamente necessário</b> arquivar/armazenar eletronicamente o XML de seus fornecedores. Isso é obrigatório e passível de fiscalização.</span></p><p><span >&nbsp;</span></p><p><b><span >Como certificar esta </span></b><b><span >@DocModelo?</span></b></p><p><span >Para verificar a validade do documento, queira por gentileza consultar sua autenticidade no site nacional do projeto @DocModelo, utilizando a chave de acesso @DocChaveAcesso.</span></p><p><span >&nbsp;</span></p><p><span >Atenciosamente,</span></p><p><span>@NomeEmpresa.</span></p></div>",
+                    "EmailTitulo": "",
+                    "OrientDANFE": 1,
+                    "InfCplVerso": "N",
+                    "DhImpressao": "S",
+                    "ImpTributos": 3,
+                    "DescICMS": "N",
+                    "EnviarPDFEmail": "S",
+                    "EnviarXMLEmail": "S",
+                    "ReaprovDocsRejeitados": "N",
+                    "InutPulosNumeracao": "N",
+                    "CodigoFilial": "",
+                    "PermitirCorrecaoNFCe": "N",
+                    "CaminhoExportacaoXML": "S",
+                    "IdTokenNFCe": "",
+                    "CSCNFCe": "",
+                    "NFe": {
+                        "InutilizarAutomaticamenteDocumentosRejeitados": "S",
+                        "InutilizarPulosNumeracao": "",
+                        "FormaRetornoPDFIntegracao": 3,
+                        "FormaRetornoXMLIntegracao": 3,
+                        "UltimoNSU": "000000000029769",
+                        "JustInut": "",
+                        "JustCanc": "",
+                        "JustCont": "",
+                        "TextoEmailAutorizado": "",
+                        "TextoEmailCancelado": "",
+                        "TextoEmailCCe": "",
+                        "EmailTitulo": "",
+                        "EnviarPDFEmail": "",
+                        "EnviarXMLEmail": "",
+                        "OrdemContingencia": [
+                            {
+                                "OrdemContingenciaNFe": 4,
+                                "DescricaoContingenciaNFe": "FS-DA"
+                            },
+                            {
+                                "OrdemContingenciaNFe": 1,
+                                "DescricaoContingenciaNFe": "SVC"
+                            },
+                            {
+                                "OrdemContingenciaNFe": 2,
+                                "DescricaoContingenciaNFe": "EPEC"
+                            },
+                            {
+                                "OrdemContingenciaNFe": 0,
+                                "DescricaoContingenciaNFe": "Nenhuma"
+                            },
+                            {
+                                "OrdemContingenciaNFe": 3,
+                                "DescricaoContingenciaNFe": "Offline"
+                            }
+                        ]
+                    },
+                    "NFSe": {
+                        "CodCMC": "444",
+                        "AmbienteEmissao": 2,
+                        "MaxRPSLote": 1,
+                        "TipoProcessamento": "S",
+                        "UsuarioAutent": "usuario",
+                        "SenhaAutent": "senha",
+                        "ImprimeNFSeEfetivada": "S",
+                        "EnviarNFSeTomador": "N",
+                        "EmpRetImpPrefeitura": "N",
+                        "EmpConcatOutrasInfo": "S",
+                        "EmpImprimeCanhoto": 2,
+                        "EmpChavePrimaria": "",
+                        "FormaRetornoPDFIntegracao": 1,
+                        "FormaRetornoXmlIntegracao": 1,
+                        "EmpDiscriminacaoBetha": "N",
+                        "EmpAutorizacaoRegimeRPS": "1234",
+                        "EmpEspelhoNovo": "S",
+                        "EmpEnviaCPFPrestador": "N",
+                        "VerCodigo": 0,
+                        "UtilizaNovoFluxoNFSe": "S",
+                        "DataAdesaoSimplesNacional": "0000-00-00",
+                        "EmpEnviaEmailCompactado": "N",
+                        "EmpCodigo": 0,
+                        "ImprimeItensEspelho": "N",
+                        "ImprimeParcsEspelho": "",
+                        "EmpClientId": "",
+                        "EmpClientSecret": "",
+                        "EmpImgRodapeBase64": "",
+                        "FaixaRPSAutorizadoInicial": 0,
+                        "FaixaRPSAutorizadoFinal": 0,
+                        "ImprimirOutrasInformacoes": "",
+                        "ImprimirRetencoesFederais": "",
+                        "XMLRetornoRequisicao": "",
+                        "NomeCanhoto": "",
+                        "ReceberEmailEmpresaTrancada": "",
+                        "ReenvioAutomatico": "",
+                        "CompararEstruturaXML": "",
+                        "EmisDataRetroativaIPM": "",
+                        "Inscricoes": []
+                    },
+                    "MDFe": {
+                        "InutilizarAutomaticamenteDocumentosRejeitados": "N",
+                        "InutilizarPulosNumeracao": "",
+                        "FormaRetornoPDFIntegracao": 1,
+                        "FormaRetornoXMLIntegracao": 2,
+                        "UltimoNSU": "000000000000754",
+                        "JustCanc": "",
+                        "JustCont": ""
+                    },
+                    "NFCe": {
+                        "InutilizarAutomaticamenteDocumentosRejeitados": "S",
+                        "InutilizarPulosNumeracao": "",
+                        "FormaRetornoPDFIntegracao": 3,
+                        "FormaRetornoXMLIntegracao": 3,
+                        "UltimoNSU": "000000000000000",
+                        "IDTokenCscSEFAZ": "00001",
+                        "CscSEFAZ": "1A451E99-0FE0-4C13-B97E-67D698FFBC37",
+                        "PossuiLeituraX": "N",
+                        "PossuiGeracaoRelatorios": "",
+                        "JustInut": "",
+                        "JustCanc": "",
+                        "JustCont": "",
+                        "TextoEmailAutorizado": "",
+                        "TextoEmailCancelado": "",
+                        "EmailTitulo": "",
+                        "EnviarPDFEmail": "",
+                        "EnviarXMLEmail": "",
+                        "OrdemContingencia": [
+                            {
+                                "OrdemContingenciaNFCe": 3,
+                                "DescricaoContingenciaNFCe": "Offline"
+                            },
+                            {
+                                "OrdemContingenciaNFCe": 0,
+                                "DescricaoContingenciaNFCe": "Nenhuma"
+                            },
+                            {
+                                "OrdemContingenciaNFCe": 2,
+                                "DescricaoContingenciaNFCe": "EPEC"
+                            },
+                            {
+                                "OrdemContingenciaNFCe": 1,
+                                "DescricaoContingenciaNFCe": "SVC"
+                            },
+                            {
+                                "OrdemContingenciaNFCe": 4,
+                                "DescricaoContingenciaNFCe": "FS-DA"
+                            }
+                        ]
+                    },
+                    "CTe": {
+                        "InutilizarAutomaticamenteDocumentosRejeitados": "N",
+                        "InutilizarPulosNumeracao": "",
+                        "FormaRetornoPDFIntegracao": 3,
+                        "FormaRetornoXMLIntegracao": 3,
+                        "UltimoNSU": "000000000039547",
+                        "JustInut": "",
+                        "JustCanc": "",
+                        "JustCont": "",
+                        "TextoEmailAutorizado": "",
+                        "TextoEmailCancelado": "",
+                        "TextoEmailCCe": "",
+                        "EmailTitulo": "",
+                        "EnviarPDFEmail": "",
+                        "EnviarXMLEmail": "",
+                        "OrdemContingencia": [
+                            {
+                                "OrdemContingenciaCTe": 1,
+                                "DescricaoContingenciaCTe": "SVC"
+                            },
+                            {
+                                "OrdemContingenciaCTe": 2,
+                                "DescricaoContingenciaCTe": "EPEC"
+                            },
+                            {
+                                "OrdemContingenciaCTe": 0,
+                                "DescricaoContingenciaCTe": "Nenhuma"
+                            },
+                            {
+                                "OrdemContingenciaCTe": 3,
+                                "DescricaoContingenciaCTe": "Offline"
+                            },
+                            {
+                                "OrdemContingenciaCTe": 4,
+                                "DescricaoContingenciaCTe": "FS-DA"
+                            }
+                        ]
+                    }
+                },
+                "Licenciamento": [
+                    {
+                        "Modulo": "NF-e",
+                        "Modelo": "",
+                        "ArmazenaXML": "",
+                        "Autor": ""
+                    },
+                    {
+                        "Modulo": "NFC-e",
+                        "Modelo": "",
+                        "ArmazenaXML": "",
+                        "Autor": ""
+                    },
+                    {
+                        "Modulo": "MDF-e",
+                        "Modelo": "",
+                        "ArmazenaXML": "",
+                        "Autor": ""
+                    },
+                    {
+                        "Modulo": "NFS-e",
+                        "Modelo": "",
+                        "ArmazenaXML": "",
+                        "Autor": ""
+                    },
+                    {
+                        "Modulo": "CT-e",
+                        "Modelo": "",
+                        "ArmazenaXML": "",
+                        "Autor": ""
+                    },
+                    {
+                        "Modulo": "Digitacao NFe",
+                        "Modelo": "",
+                        "ArmazenaXML": "",
+                        "Autor": ""
+                    }
+                ],
+                "Falhas": [],
+                "Impressao": {
+                    "NFe": {
+                        "OrientacaoNFe": 1,
+                        "TamanhoFonte": "2",
+                        "NumeroCopias": 0,
+                        "ImprimirDataHoraImpressao": "S",
+                        "MarcarComoReimpresso": "N",
+                        "ImprimirTributos": "3",
+                        "InformacaoComplementarNoVerso": "N",
+                        "ExibirDescontoEIcmsNoItem": "N",
+                        "LocalImpressaoCanhoto": "C",
+                        "MolduraNaLogomarca": "S",
+                        "ModeloDANFE": 2,
+                        "ExibirEndEntregaInfoAdic": "N",
+                        "ImprimirDuplicatas": "S",
+                        "UtilizarImagemInfoEmitente": "N",
+                        "ImprimirVolumesItensDestacados": "N",
+                        "ImprimirTotalPISCOFINS": "N",
+                        "InfoComplementar": "",
+                        "TextoImpressaoTributos": "",
+                        "DestaqueProdutosPerigosos": "",
+                        "TamanhoFonteInfComplementares": 0,
+                        "ImprimeUNTribDiferenteComercial": "",
+                        "ImprimirEnderecoEntregaRetirada": 0,
+                        "ImprimirCamposDIFAL": "",
+                        "ImprimirICMSCST51": ""
+                    },
+                    "MDFe": {
+                        "OrientacaoMDFe": 1,
+                        "MolduraNaLogomarca": "N"
+                    },
+                    "CTe": {
+                        "OrientacaoCTe": 1,
+                        "MolduraNaLogomarca": "S",
+                        "LocalImpressaoCanhoto": "C",
+                        "TextoImpressaoTributos": ""
+                    },
+                    "NFCe": {
+                        "ModeloDANFE": "1",
+                        "ImpAcrescDescItens": "S",
+                        "FormatoDANFE": "D"
+                    }
+                },
+                "Extensao": [
+                    {
+                        "TipoExtensao": 4,
+                        "Modulos": [
+                            {
+                                "Modulo": "1"
+                            },
+                            {
+                                "Modulo": "5"
+                            },
+                            {
+                                "Modulo": "3"
+                            }
+                        ],
+                        "ParametrosExt": {
+                            "NumeroConsultasDiarias": 12,
+                            "ArmazenarEveTerceiros": "S",
+                            "BaixarDocsNaoArmazenados": "S",
+                            "CienciaAutomatica": 0,
+                            "Justificativa": "Operação não realizada.",
+                            "ValorMin": "0.00",
+                            "Email": "",
+                            "TipoNotificacao": 0,
+                            "BuscarDocsRetroativos": "",
+                            "MunicipiosAtivar": "",
+                            "MunicipiosDesativar": ""
+                        },
+                        "Ativar": ""
+                    },
+                    {
+                        "TipoExtensao": 3,
+                        "Modulos": [
+                            {
+                                "Modulo": "1"
+                            },
+                            {
+                                "Modulo": "5"
+                            },
+                            {
+                                "Modulo": "3"
+                            },
+                            {
+                                "Modulo": "2"
+                            },
+                            {
+                                "Modulo": "4"
+                            }
+                        ],
+                        "ParametrosExt": {
+                            "NumeroConsultasDiarias": 0,
+                            "ArmazenarEveTerceiros": "",
+                            "BaixarDocsNaoArmazenados": "",
+                            "CienciaAutomatica": 0,
+                            "Justificativa": "",
+                            "ValorMin": "0.00",
+                            "Email": "",
+                            "TipoNotificacao": 0,
+                            "BuscarDocsRetroativos": "",
+                            "MunicipiosAtivar": "",
+                            "MunicipiosDesativar": ""
+                        },
+                        "Ativar": ""
+                    }
+                ],
+                "Endereco": [],
+                "ResponsavelTecnico": {
+                    "CNPJ": "",
+                    "Contato": "",
+                    "Email": "",
+                    "Fone": 0,
+                    "IdCSRT": "",
+                    "CSRT": ""
+                },
+                "InformacoesAdicionais": {
+                    "URLQRCode": "https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx?",
+                    "URLConsChave": "www.sefaz.rs.gov.br/nfce/consulta"
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,329 @@
+[
+    {
+        "EmpNomFantasia": "Cadastro Empresa REST",
+        "EmpApelido": "Cadastro Empresa REST",
+        "EmpRazSocial": "Cadastro Empresa REST",
+        "EmpCNPJ": "36762131000153",
+        "EmpCPF": "",
+        "EmpIE": "9353071823",
+        "EmpTelefone": "5535354830",
+        "EmpEndereco": "RUA PE CACIQUE",
+        "EmpNumero": "985",
+        "EmpBairro": "CENTRO",
+        "EmpCEP": "98910000",
+        "EmpComplemento": "2 ANDAR",
+        "EmpIM": "136235781",
+        "MunCodigo": 4321808,
+        "EmpCNAE": "",
+        "EmpCRT": 1,
+        "EmpIEST": "",
+        "EmpMtrCNPJ": "",
+        "EmpMarca": "",
+        "EmpMarcaExtensao": "",
+		"EmpArqApelido":"",
+        "EmpEmail": "",
+        "EmpObservacao": "",
+        "EmpTpoEndereco": "RUA",
+        "Certificado": {
+            "ArquivoPFX": "",
+            "Senha": "",
+            "TipoCertificado": 0,
+            "MetodoCriptografiaSenha": "",
+            "UsarCertPreCadastrado": ""
+        },
+        "Usuarios": [],
+        "CaixaEnvioEmail": {
+            "EmlValCertificado": "",
+            "EmlTmpEspera": 0,
+            "EmlAutenticacao": "",
+            "EmlSSL": "",
+            "EmlPorta": 0,
+            "EmlHost": "",
+            "EmlSenha": "",
+            "EmlUsuario": "",
+            "EmlNomeRemetente": "",
+            "EmlEmailRemetente": "",
+            "EmlStatus": ""
+        },
+        "CaixasLeituraEmail": [],
+        "Parametros": {
+            "NFe": {
+                "FormaRetornoPDFIntegracao": 3,
+                "FormaRetornoXMLIntegracao": 3,
+                "UltimoNSU": "000000000029764",
+                "JustInut": "",
+                "JustCanc": "",
+                "JustCont": "",
+                "TextoEmailAutorizado": "",
+                "TextoEmailCancelado": "",
+                "TextoEmailCCe": "",
+                "EmailTitulo": "",
+                "EnviarPDFEmail": "",
+                "EnviarXMLEmail": "",
+                "OrdemContingencia": [
+                    {
+                        "OrdemContingenciaNFe": 4
+                    },
+                    {
+                        "OrdemContingenciaNFe": 1
+                    },
+                    {
+                        "OrdemContingenciaNFe": 2
+                    },
+                    {
+                        "OrdemContingenciaNFe": 0
+                    },
+                    {
+                        "OrdemContingenciaNFe": 3
+                    }
+                ]
+            },
+            "NFSe": {
+                "CodCMC": "444",
+                "AmbienteEmissao": 2,
+                "MaxRPSLote": 1,
+                "TipoProcessamento": "S",
+                "UsuarioAutent": "usuario",
+                "SenhaAutent": "senha",
+                "ImprimeNFSeEfetivada": "S",
+                "EnviarNFSeTomador": "N",
+                "EmpRetImpPrefeitura": "N",
+                "EmpConcatOutrasInfo": "S",
+                "EmpImprimeCanhoto": 2,
+                "EmpChavePrimaria": "",
+                "FormaRetornoPDFIntegracao": 1,
+                "FormaRetornoXmlIntegracao": 1,
+                "EmpDiscriminacaoBetha": "N",
+                "EmpAutorizacaoRegimeRPS": "1234",
+                "EmpEspelhoNovo": "S",
+                "EmpEnviaCPFPrestador": "N",
+                "VerCodigo": 0,
+                "DataAdesaoSimplesNacional": "0000-00-00",
+                "EmpEnviaEmailCompactado": "N",
+                "ImprimeItensEspelho": "N",
+                "EmpClientId": "",
+                "EmpClientSecret": "",
+                "EmpImgRodapeBase64": "",
+                "FaixaRPSAutorizadoInicial": 0,
+                "FaixaRPSAutorizadoFinal": 0,
+                "ImprimirOutrasInformacoes": "",
+                "ImprimirRetencoesFederais": "",
+                "XMLRetornoRequisicao": "",
+                "NomeCanhoto": "",
+                "ReceberEmailEmpresaTrancada": "",
+				"EmpRegEspTrib": "21"
+            },
+            "MDFe": {
+                "FormaRetornoPDFIntegracao": 1,
+                "FormaRetornoXMLIntegracao": 2,
+                "UltimoNSU": "000000000000754",
+                "JustCanc": "",
+                "JustCont": ""
+            },
+            "NFCe": {
+                "FormaRetornoPDFIntegracao": 3,
+                "FormaRetornoXMLIntegracao": 3,
+                "UltimoNSU": "000000000000000",
+                "IDTokenCscSEFAZ": "00001",
+                "CscSEFAZ": "1A451E99-0FE0-4C13-B97E-67D698FFBC37",
+                "PossuiLeituraX": "N",
+                "PossuiGeracaoRelatorios": "",
+                "JustInut": "",
+                "JustCanc": "",
+                "JustCont": "",
+                "TextoEmailAutorizado": "",
+                "TextoEmailCancelado": "",
+                "EmailTitulo": "",
+                "EnviarPDFEmail": "",
+                "EnviarXMLEmail": "",
+                "OrdemContingencia": [
+                    {
+                        "OrdemContingenciaNFCe": 3
+                    },
+                    {
+                        "OrdemContingenciaNFCe": 0
+                    },
+                    {
+                        "OrdemContingenciaNFCe": 2
+                    },
+                    {
+                        "OrdemContingenciaNFCe": 1
+                    },
+                    {
+                        "OrdemContingenciaNFCe": 4
+                    }
+                ]
+            },
+            "CTe": {
+                "FormaRetornoPDFIntegracao": 3,
+                "FormaRetornoXMLIntegracao": 3,
+                "UltimoNSU": "000000000039547",
+                "JustInut": "",
+                "JustCanc": "",
+                "JustCont": "",
+                "TextoEmailAutorizado": "",
+                "TextoEmailCancelado": "",
+                "TextoEmailCCe": "",
+                "EmailTitulo": "",
+                "EnviarPDFEmail": "",
+                "EnviarXMLEmail": "",
+                "OrdemContingencia": [
+                    {
+                        "OrdemContingenciaCTe": 1
+                    },
+                    {
+                        "OrdemContingenciaCTe": 2
+                    },
+                    {
+                        "OrdemContingenciaCTe": 0
+                    },
+                    {
+                        "OrdemContingenciaCTe": 3
+                    },
+                    {
+                        "OrdemContingenciaCTe": 4
+                    }
+                ]
+            }
+        },
+        "Licenciamento": [
+            {
+                "Modulo": "NF-e",
+                "Modelo": "1",
+                "Autor": "REST"
+            },
+            {
+                "Modulo": "NFC-e",
+                "Modelo": "1",
+                "Autor": "REST"
+            },
+            {
+                "Modulo": "MDF-e",
+                "Modelo": "1",
+                "Autor": "REST"
+            },
+            {
+                "Modulo": "NFS-e",
+                "Modelo": "1",
+                "Autor": "REST"
+            },
+            {
+                "Modulo": "CT-e",
+                "Modelo": "1",
+                "Autor": "REST"
+            },
+            {
+                "Modulo": "Digitacao NFe",
+                "Modelo": "1",
+                "Autor": "REST"
+            }
+        ],
+        "Impressao": {
+            "NFe": {
+                "OrientacaoNFe": 1,
+                "TamanhoFonte": "2",
+                "NumeroCopias": 0,
+                "ImprimirDataHoraImpressao": "S",
+                "MarcarComoReimpresso": "N",
+                "ImprimirTributos": "3",
+                "InformacaoComplementarNoVerso": "N",
+                "ExibirDescontoEIcmsNoItem": "N",
+                "LocalImpressaoCanhoto": "C",
+                "MolduraNaLogomarca": "S",
+                "ModeloDANFE": 2,
+                "ExibirEndEntregaInfoAdic": "N",
+                "ImprimirDuplicatas": "S",
+                "UtilizarImagemInfoEmitente": "N",
+                "ImprimirVolumesItensDestacados": "N",
+                "ImprimirTotalPISCOFINS": "N",
+                "InfoComplementar": "",
+                "TextoImpressaoTributos": "",
+                "DestaqueProdutosPerigosos": "",
+                "TamanhoFonteInfComplementares": 0,
+                "ImprimeUNTribDiferenteComercial": "",
+                "ImprimirEnderecoEntregaRetirada": 0,
+                "ImprimirCamposDIFAL": "",
+                "ImprimirICMSCST51": ""
+            },
+            "MDFe": {
+                "OrientacaoMDFe": 1,
+                "MolduraNaLogomarca": "N"
+            },
+            "CTe": {
+                "OrientacaoCTe": 1,
+                "MolduraNaLogomarca": "S",
+                "LocalImpressaoCanhoto": "C",
+                "TextoImpressaoTributos": ""
+            },
+            "NFCe": {
+                "ModeloDANFE": "1",
+                "ImpAcrescDescItens": "S",
+                "FormatoDANFE": "D"
+            }
+        },
+        "Extensao": [
+            {
+                "TipoExtensao": 4,
+                "Modulos": [
+                    {
+                        "Modulo": "NFe"
+                    },
+                    {
+                        "Modulo": "CTe"
+                    },
+                    {
+                        "Modulo": "MDFe"
+                    }
+                ],
+                "ParametrosExt": {
+                    "NumeroConsultasDiarias": 12,
+                    "ArmazenarEveTerceiros": "S",
+                    "BaixarDocsNaoArmazenados": "S",
+                    "CienciaAutomatica": 0,
+                    "Justificativa": "Operação não realizada.",
+                    "ValorMin": "0.00",
+                    "Email": "",
+                    "TipoNotificacao": 0,
+                    "BuscarDocsRetroativos": "",
+                    "MunicipiosAtivar": "",
+                    "MunicipiosDesativar": ""
+                },
+                "Ativar": "S"
+            },
+            {
+                "TipoExtensao": 3,
+                "Modulos": [
+                    {
+                        "Modulo": "NFe"
+                    },
+                    {
+                        "Modulo": "CTe"
+                    },
+                    {
+                        "Modulo": "MDFe"
+                    },
+                    {
+                        "Modulo": "NFCe"
+                    },
+                    {
+                        "Modulo": "NFSe"
+                    }
+                ],
+                "ParametrosExt": {
+                    "NumeroConsultasDiarias": 0,
+                    "ArmazenarEveTerceiros": "",
+                    "BaixarDocsNaoArmazenados": "",
+                    "CienciaAutomatica": 0,
+                    "Justificativa": "",
+                    "ValorMin": "0.00",
+                    "Email": "",
+                    "TipoNotificacao": 0,
+                    "BuscarDocsRetroativos": "",
+                    "MunicipiosAtivar": "",
+                    "MunicipiosDesativar": ""
+                },
+                "Ativar": "S"
+            }
+        ]
+    }
+]
