@@ -1,0 +1,14 @@
+<EmpresaCertificado>
+	<Empresas>
+		<CNPJ>
+			<CNPJ>99999999999999</CNPJ>
+			<CNPJ>99999999999999</CNPJ>
+			<CNPJ>99999999999999</CNPJ>
+		</CNPJ>
+	</Empresas>
+	<Apelido>Certificado Digital</Apelido>
+	<ArquivoPFX>MIIOWwIBAzCCDicGCSqGSIb3DQEHAaCCDhgEgg4UMIIOEDCCCMcGC8g==</ArquivoPFX>
+	<Senha>senha</Senha>
+	<MetodoCriptografiaSenha>OUTROS</MetodoCriptografiaSenha>
+	<Tipo>A1</Tipo>
+</EmpresaCertificado>
