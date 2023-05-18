@@ -1,0 +1,126 @@
+<Envio>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<ide>
+		<cUF>43</cUF>
+		<natOp>Nota fiscal</natOp>
+		<mod>55</mod>
+		<serie>309</serie>
+		<nNF>639</nNF>
+		<dhEmi>2018-08-18T14:35:00</dhEmi>
+		<fusoHorario>-03:00</fusoHorario>
+		<tpNf>1</tpNf>
+		<idDest>1</idDest>
+		<indFinal>0</indFinal>
+		<indPres>0</indPres>
+		<cMunFg>4321808</cMunFg>
+		<tpImp>1</tpImp>
+		<tpEmis>1</tpEmis>
+		<tpAmb>2</tpAmb>
+		<finNFe>1</finNFe>
+	</ide>
+	<emit>
+		<CNPJ_emit>99999999999999</CNPJ_emit>
+		<xNome>MIGRATE COMPANY SISTEMAS DE INFORMACAO</xNome>
+		<xFant>EMPRESA DE TESTE</xFant>
+		<IE>9999999999</IE>
+		<CRT>3</CRT>
+		<enderEmit>
+			<xLgr>RUA AGOSTINHO COSTI</xLgr>
+			<nro>1700</nro>
+			<xCpl>ANDAR 02</xCpl>
+			<xBairro>BARRA DO JACARE</xBairro>
+			<cMun>4321808</cMun>
+			<xMun>TRES DE MAIO</xMun>
+			<UF>RS</UF>
+			<CEP>95960000</CEP>
+			<cPais>1058</cPais>
+			<xPais>BRASIL</xPais>
+			<fone>5137513322</fone>
+		</enderEmit>
+	</emit>
+	<dest>
+		<CNPJ_dest>99999999999999</CNPJ_dest>
+		<xNome_dest>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_dest>
+		<IE_dest>9999999999</IE_dest>
+		<indIEDest>1</indIEDest>
+		<enderDest>
+			<nro_dest>67</nro_dest>
+			<xCpl_dest>CENTRO</xCpl_dest>
+			<xBairro_dest>KENNEDY</xBairro_dest>
+			<xLgr_dest>ROD BR 040 KM 688 AREA ESPECIAL 11</xLgr_dest>
+			<xPais_dest>Brasil</xPais_dest>
+			<cMun_dest>4321808</cMun_dest>
+			<xMun_dest>TRES DE MAIO</xMun_dest>
+			<UF_dest>RS</UF_dest>
+			<CEP_dest>32145900</CEP_dest>
+			<cPais_dest>1058</cPais_dest>
+			<fone_dest>5535481105</fone_dest>
+		</enderDest>		
+	</dest>
+	<det>
+		<detItem>
+			<prod>
+				<cProd>00009</cProd>
+				<cEAN>SEM GTIN</cEAN>
+				<xProd>01 GLP ACOND EM BOTIJAO DE 02KG</xProd>
+				<NCM>87113000</NCM>
+				<CFOP>5102</CFOP>
+				<uCOM>BOT</uCOM>
+				<qCOM>1.0000</qCOM>
+				<vUnCom>100.00</vUnCom>
+				<vProd>100.00</vProd>
+				<cEANTrib>SEM GTIN</cEANTrib>
+				<uTrib>BOT</uTrib>
+				<qTrib>1.00</qTrib>
+				<vUnTrib>100.00</vUnTrib>
+				<vSeg>0.00</vSeg>
+				<vDesc>0.00</vDesc>
+				<vOutro_item>0.00</vOutro_item>
+				<indTot>1</indTot>
+				<nTipoItem>0</nTipoItem>
+				<dProd>0</dProd>
+			</prod>
+			<imposto>
+				<ICMS>
+					<orig>0</orig>
+					<CST>50</CST>
+				</ICMS>
+				<PIS>
+					<CST_pis>07</CST_pis>
+				</PIS>
+				<COFINS>
+					<CST_cofins>07</CST_cofins>
+				</COFINS>
+			</imposto>
+		</detItem>
+	</det>
+	<total>
+		<ICMStot>
+			<vBC_ttlnfe>0.00</vBC_ttlnfe>
+			<vICMS_ttlnfe>0.00</vICMS_ttlnfe>
+			<vICMSDeson_ttlnfe>0.00</vICMSDeson_ttlnfe>
+			<vBCST_ttlnfe>0.00</vBCST_ttlnfe>
+			<vST_ttlnfe>0.00</vST_ttlnfe>
+			<vProd_ttlnfe>100.00</vProd_ttlnfe>
+			<vFrete_ttlnfe>0</vFrete_ttlnfe>
+			<vSeg_ttlnfe>0</vSeg_ttlnfe>
+			<vDesc_ttlnfe>0</vDesc_ttlnfe>
+			<vII_ttlnfe>0.00</vII_ttlnfe>
+			<vIPI_ttlnfe>0</vIPI_ttlnfe>
+			<vPIS_ttlnfe>0</vPIS_ttlnfe>
+			<vCOFINS_ttlnfe>0</vCOFINS_ttlnfe>
+			<vOutro>0</vOutro>
+			<vNF>100.00</vNF>
+		</ICMStot>
+	</total>
+	<transp>
+		<modFrete>1</modFrete>
+	</transp>
+	<pag>
+		<pagItem>
+			<tPag>01</tPag>
+			<vPag>100.00</vPag>
+		</pagItem>
+	</pag>
+</Envio>

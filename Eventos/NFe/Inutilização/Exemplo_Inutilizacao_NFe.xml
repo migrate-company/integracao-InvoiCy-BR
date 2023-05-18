@@ -1,0 +1,12 @@
+<Inutilizacao>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<ChaveParceiro>Chave_Parceiro</ChaveParceiro>
+	<ChaveAcesso>Chave_Acesso</ChaveAcesso>
+	<CnpjEmissor>99999999999999</CnpjEmissor>
+	<tpAmb>2</tpAmb>
+	<NumeroInicial>1</NumeroInicial>
+	<NumeroFinal>10</NumeroFinal>
+	<Serie>260</Serie>
+	<Justificativa>Inutilizacao por motivos de pulo de numeracao</Justificativa>
+</Inutilizacao>

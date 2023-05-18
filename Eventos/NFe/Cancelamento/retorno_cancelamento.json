@@ -1,0 +1,40 @@
+[
+    {
+        "Codigo": 100,
+        "Descricao": "Eventos processados",
+        "Documentos": [
+            {
+                "DocModelo": "NFe",
+                "DocNumero": 26,
+                "DocSerie": "245",
+                "DocChaAcesso": "43210206354976000149552450000000261000015128",
+                "DocProtocolo": "",
+                "DocEvenSeq": 1,
+                "DocEveTp": 110111,
+                "DocEveId": "110111432102063549760001495524500000002610000151281",
+                "DocPDFBase64": "",
+                "DocPDFDownload": "",
+                "DocDhAut": "",
+                "DocDigestValue": "",
+                "DocXMLBase64": "",
+                "DocXMLDownload": "",
+                "DocImpressora": "",
+                "Situacao": {
+                    "SitCodigo": 105,
+                    "SitDescricao": "Evento pendente"
+                },
+                "MensagemSefaz": {
+                    "CodMsg": 0,
+                    "DscMsg": ""
+                },
+                "NFSe": {
+                    "NFSeNumero": 0,
+                    "NFSeCodVerificacao": "",
+                    "NFSeDataEmissao": ""
+                },
+                "DocImpPrefeitura": "",
+                "DocCompleto": ""
+            }
+        ]
+    }
+]

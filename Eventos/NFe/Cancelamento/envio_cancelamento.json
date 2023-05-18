@@ -1,0 +1,22 @@
+[
+    {
+        "ModeloDocumento": "NFe",
+        "Versao": 4.00,
+        "Evento": {
+            "NtfCnpjEmissor": "06354976000149",
+            "NtfNumero": 26,
+            "NtfSerie": "245",
+            "tpAmb": 2,
+            "EveInf": {
+                "EveDh": "2021-02-23T14:30:00",
+                "EveFusoHorario": "-03:00",
+                "EveTp": 110111,
+                "EvenSeq": "1",
+                "Evedet": {
+                    "EveDesc": "Cancelamento",
+                    "EvexJust": "estou cancelando este documento para testes"
+                }
+            }
+        }
+    }
+]

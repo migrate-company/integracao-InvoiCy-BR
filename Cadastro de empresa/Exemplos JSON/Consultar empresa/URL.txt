@@ -1,0 +1,2 @@
+GET
+https://apibrhomolog.invoicy.com.br/companies?CNPJ=06354976000149

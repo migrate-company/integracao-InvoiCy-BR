@@ -1,0 +1,325 @@
+<CadastroEmpresa>
+	<EmpNomFantasia>Empresa Teste</EmpNomFantasia>
+	<EmpApelido>Empresa Teste</EmpApelido>
+	<EmpRazSocial>Empresa Teste</EmpRazSocial>
+	<EmpCNPJ>28230149000186</EmpCNPJ>
+	<EmpIE>ISENTO</EmpIE>
+	<EmpTelefone>5535351299</EmpTelefone>
+	<EmpEndereco>Avenida Brasil</EmpEndereco>
+	<EmpNumero>465</EmpNumero>
+	<EmpBairro>Centro</EmpBairro>
+	<EmpCEP>98910000</EmpCEP>
+	<EmpComplemento>2 andar</EmpComplemento>
+	<EmpIM>115</EmpIM>
+	<MunCodigo>4321808</MunCodigo>
+	<EmpCNAE>302</EmpCNAE>
+	<EmpCRT>1</EmpCRT>
+	<EmpIEST>996</EmpIEST>
+	<EmpMarca>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</EmpMarca>
+	<EmpMarcaExtensao>png</EmpMarcaExtensao>
+	<EmpArqApelido>Descrição da logomarca</EmpArqApelido>
+	<EmpEmail>email@gmail.com</EmpEmail>
+	<EmpObservacao>Observação</EmpObservacao>
+	<EmpTpoEndereco>Comercial</EmpTpoEndereco>
+	<Usuarios>
+		<UsuariosItem>
+			<UsrNome>Ana</UsrNome>
+			<UsrEmail>email@gmail.com</UsrEmail>
+			<UsrSenha>789</UsrSenha>
+			<GrupoUsuario>2</GrupoUsuario>
+			<Permissoes>
+				<PermissaoCTe>
+					<Visualizar>S</Visualizar>
+					<Baixar>N</Baixar>
+				</PermissaoCTe>
+				<PermissaoMDFe>
+					<Visualizar>N</Visualizar>
+					<Baixar>N</Baixar>
+				</PermissaoMDFe>
+				<PermissaoNFSe>
+					<Visualizar>N</Visualizar>
+					<Baixar>N</Baixar>
+					<EnviarConsultarDocs>N</EnviarConsultarDocs>
+				</PermissaoNFSe>
+				<PermissaoNFe>
+					<Visualizar>S</Visualizar>
+					<Baixar>S</Baixar>
+				</PermissaoNFe>
+				<PermissaoNFCe>
+					<Visualizar>N</Visualizar>
+					<Baixar>N</Baixar>
+				</PermissaoNFCe>
+				<PermissoesGerais>
+					<ImportarDocumentos>N</ImportarDocumentos>
+					<AlterarDadosDoUsuario>N</AlterarDadosDoUsuario>
+					<AlterarDadosDaEmpresa>N</AlterarDadosDaEmpresa>
+					<AlterarMarcasDaEmpresa>N</AlterarMarcasDaEmpresa>
+					<AlterarCertificadosDaEmpresa>N</AlterarCertificadosDaEmpresa>
+					<AlterarConfiguracoesParametros>N</AlterarConfiguracoesParametros>
+					<CadastrarEmpresas>N</CadastrarEmpresas>
+					<AlterarCaixasDeEmail>S</AlterarCaixasDeEmail>
+					<AlterarPermissoesDeUsuario>N</AlterarPermissoesDeUsuario>
+					<AdicionarNovosUsuarios>N</AdicionarNovosUsuarios>
+					<VisualizarChaveAcesso>S</VisualizarChaveAcesso>
+					<VisualizarAcoesDeUsuarios>N</VisualizarAcoesDeUsuarios>
+					<VisualizarQuantidadesEmitidas>S</VisualizarQuantidadesEmitidas>
+					<VisualizarLicencas>S</VisualizarLicencas>
+					<ConfiguracaoSenha>N</ConfiguracaoSenha>
+					<GerarRelatorios>S</GerarRelatorios>
+					<InutilizarDocumentos>S</InutilizarDocumentos>
+					<FerramentasIntegracao>S</FerramentasIntegracao>
+				</PermissoesGerais>
+			</Permissoes>
+		</UsuariosItem>
+	</Usuarios>
+	<CaixaEnvioEmail>
+		<EmlValCertificado>N</EmlValCertificado>
+		<EmlTmpEspera>100</EmlTmpEspera>
+		<EmlAutenticacao>S</EmlAutenticacao>
+		<EmlSSL>S</EmlSSL>
+		<EmlPorta>1010</EmlPorta>
+		<EmlHost>gmail</EmlHost>
+		<EmlSenha>123</EmlSenha>
+		<EmlUsuario>email@gmail.com</EmlUsuario>
+		<EmlNomeRemetente>Gerente</EmlNomeRemetente>
+		<EmlEmailRemetente>email@gmail.com</EmlEmailRemetente>
+	</CaixaEnvioEmail>
+	<Parametros>
+		<NFe>
+			<FormaRetornoPDFIntegracao>1</FormaRetornoPDFIntegracao>
+			<FormaRetornoXMLIntegracao>2</FormaRetornoXMLIntegracao>
+			<UltimoNSU>001</UltimoNSU>
+			<JustInut>Aqui vai a justificativa de inutilizacao da NF-e</JustInut>
+			<JustCanc>Aqui vai a justificativa de cancelamento da NF-e</JustCanc>
+			<TextoEmailAutorizado>Aqui vai o texto do e-mail autorizado da NF-e</TextoEmailAutorizado>
+			<TextoEmailCancelado>Aqui vai o texto do e-mail cancelado da NF-e</TextoEmailCancelado>
+			<TextoEmailCCe>Aqui vai o texto do e-mail da CC-e da NF-e</TextoEmailCCe>
+			<EmailTitulo>Aqui vai o titulo do e-mail da NF-e</EmailTitulo>
+			<EnviarPDFEmail>S</EnviarPDFEmail>
+			<EnviarXMLEmail>S</EnviarXMLEmail>
+			<JustCont>Aqui vai a justificativa de contingencia da NF-e</JustCont>
+			<WebHook>
+				<Status>A</Status>
+				<URL>URL do webhook</URL>
+				<TipoRetorno>1</TipoRetorno>
+				<TipoAutenticacao>1</TipoAutenticacao>
+				<TokenAutenticacao>Token</TokenAutenticacao>
+			</WebHook>
+		</NFe>
+		<CTe>
+			<FormaRetornoPDFIntegracao>1</FormaRetornoPDFIntegracao>
+			<FormaRetornoXMLIntegracao>2</FormaRetornoXMLIntegracao>
+			<UltimoNSU>50</UltimoNSU>
+			<JustInut>Aqui vai a justificativa de inutilizacao do CT-e</JustInut>
+			<JustCanc>Aqui vai a justificativa de cancelamento do CT-e</JustCanc>
+			<TextoEmailAutorizado>Aqui vai o texto do e-mail autorizado do CT-e</TextoEmailAutorizado>
+			<TextoEmailCancelado>Aqui vai o texto do e-mail cancelado do CT-e</TextoEmailCancelado>
+			<TextoEmailCCe>Aqui vai o texto do e-mail da CC-e do CT-e</TextoEmailCCe>
+			<EmailTitulo>Aqui vai o titulo do e-mail do CT-e</EmailTitulo>
+			<EnviarPDFEmail>A</EnviarPDFEmail>
+			<EnviarXMLEmail>A</EnviarXMLEmail>
+			<JustCont>Aqui vai a justificativa de contingencia do CT-e</JustCont>
+		</CTe>
+		<MDFe>
+			<FormaRetornoPDFIntegracao>1</FormaRetornoPDFIntegracao>
+			<FormaRetornoXMLIntegracao>2</FormaRetornoXMLIntegracao>
+			<UltimoNSU>754</UltimoNSU>
+			<JustCanc>Aqui vai a justificativa de cancelamento do MDF-e</JustCanc>
+			<JustCont>Aqui vai a justificativa de contingencia do MDF-e</JustCont>
+		</MDFe>
+		<NFCe>
+			<FormaRetornoPDFIntegracao>1</FormaRetornoPDFIntegracao>
+			<FormaRetornoXMLIntegracao>2</FormaRetornoXMLIntegracao>
+			<IDTokenCscSEFAZ>001</IDTokenCscSEFAZ>
+			<CscSEFAZ>1234567</CscSEFAZ>
+			<PossuiLeituraX>N</PossuiLeituraX>
+			<JustInut>Aqui vai a justificativa de inutilizacao da NFC-e</JustInut>
+			<JustCanc>Aqui vai a justificativa de cancelamento da NFC-e</JustCanc>
+			<TextoEmailAutorizado>Aqui vai o texto do e-mail autorizado da NFC-e</TextoEmailAutorizado>
+			<TextoEmailCancelado>Aqui vai o texto do e-mail cancelado da NFC-e</TextoEmailCancelado>
+			<EmailTitulo>Aqui vai o titulo do e-mail da NFC-e</EmailTitulo>
+			<EnviarPDFEmail>N</EnviarPDFEmail>
+			<EnviarXMLEmail>N</EnviarXMLEmail>
+			<JustCont>Aqui vai a justificativa de contingencia da NFC-e</JustCont>
+			<WebHook>
+				<Status>A</Status>
+				<URL>URL do webhook</URL>
+				<TipoRetorno>1</TipoRetorno>
+				<TipoAutenticacao>1</TipoAutenticacao>
+				<TokenAutenticacao>Token</TokenAutenticacao>
+			</WebHook>
+		</NFCe>
+		<NFSe>
+			<CodCMC>444</CodCMC>
+			<AmbienteEmissao>2</AmbienteEmissao>
+			<MaxRPSLote>1</MaxRPSLote>
+			<TipoProcessamento>S</TipoProcessamento>
+			<UsuarioAutent>usuario</UsuarioAutent>
+			<SenhaAutent>senha</SenhaAutent>
+			<ImprimeNFSeEfetivada>N</ImprimeNFSeEfetivada>
+			<EnviarNFSeTomador>N</EnviarNFSeTomador>
+			<EmpRetImpPrefeitura>N</EmpRetImpPrefeitura>
+			<EmpConcatOutrasInfo>S</EmpConcatOutrasInfo>
+			<EmpImprimeCanhoto>1</EmpImprimeCanhoto>
+			<FormaRetornoPDFIntegracao>1</FormaRetornoPDFIntegracao>
+			<FormaRetornoXmlIntegracao>1</FormaRetornoXmlIntegracao>
+			<EmpDiscriminacaoBetha>N</EmpDiscriminacaoBetha>
+			<EmpAutorizacaoRegimeRPS>1234</EmpAutorizacaoRegimeRPS>
+			<EmpEspelhoNovo>S</EmpEspelhoNovo>
+			<EmpEnviaCPFPrestador>N</EmpEnviaCPFPrestador>
+			<EmpEnviaEmailCompactado>S</EmpEnviaEmailCompactado>
+			<ImprimeItensEspelho>S</ImprimeItensEspelho>
+			<ImprimirOutrasInformacoes>1</ImprimirOutrasInformacoes>
+			<ImprimirRetencoesFederais>0</ImprimirRetencoesFederais>
+			<PreencherCNAEAusente>S</PreencherCNAEAusente>
+			<XMLRetornoRequisicao>S</XMLRetornoRequisicao>
+			<NomeCanhoto>S</NomeCanhoto>
+			<ReceberEmailEmpresaTrancada>S</ReceberEmailEmpresaTrancada>
+			<BuscarNatOpAlternativa>S</BuscarNatOpAlternativa>
+			<ReenvioAutomatico>S</ReenvioAutomatico>
+			<EmpRegEspTrib>11</EmpRegEspTrib>
+			<WebHook>
+				<Status>A</Status>
+				<URL>url</URL>
+				<TipoAutenticacao>2</TipoAutenticacao>
+				<TokenAutenticacao>tokenautenticacao</TokenAutenticacao>
+			</WebHook>
+		</NFSe>
+	</Parametros>
+	<Licenciamento>
+		<LicenciamentoItem>
+			<Modulo>NFe</Modulo>
+			<Modelo>1</Modelo>
+			<Autor>João</Autor>
+		</LicenciamentoItem>
+	</Licenciamento>
+	<Impressao>
+		<CTe>
+			<OrientacaoCTe>1</OrientacaoCTe>
+			<MolduraNaLogomarca>S</MolduraNaLogomarca>
+			<LocalImpressaoCanhoto>C</LocalImpressaoCanhoto>
+			<ImpNomeEmissor>S</ImpNomeEmissor>
+		</CTe>
+		<NFe>
+			<OrientacaoNFe>1</OrientacaoNFe>
+			<ImprimirDataHoraImpressao>N</ImprimirDataHoraImpressao>
+			<ImprimirTributos>4</ImprimirTributos>
+			<TextoImpressaoTributos>Aqui vai o texto</TextoImpressaoTributos>
+			<ExibirDescontoEIcmsNoItem>N</ExibirDescontoEIcmsNoItem>
+			<LocalImpressaoCanhoto>R</LocalImpressaoCanhoto>
+			<MolduraNaLogomarca>N</MolduraNaLogomarca>
+			<ModeloDANFE>4</ModeloDANFE>
+			<ExibirEndEntregaInfoAdic>N</ExibirEndEntregaInfoAdic>
+			<ImprimirDuplicatas>SB</ImprimirDuplicatas>
+			<UtilizarImagemInfoEmitente>N</UtilizarImagemInfoEmitente>
+			<ImprimirVolumesItensDestacados>N</ImprimirVolumesItensDestacados>
+			<ImprimirTotalPISCOFINS>N</ImprimirTotalPISCOFINS>
+			<InfoComplementar>Texto aqui</InfoComplementar>
+			<DestaqueProdutosPerigosos>N</DestaqueProdutosPerigosos>
+			<TamanhoFonteInfComplementares>3</TamanhoFonteInfComplementares>
+			<ImprimeUNTribDiferenteComercial>N</ImprimeUNTribDiferenteComercial>
+			<ImprimirEnderecoEntregaRetirada>3</ImprimirEnderecoEntregaRetirada>
+			<ImprimirCamposDIFAL>N</ImprimirCamposDIFAL>
+			<ImprimirICMSCST51>N</ImprimirICMSCST51>
+			<TamanhoFonteProdutos>3</TamanhoFonteProdutos>
+			<TamanhoFonteInfComplementaresProd>3</TamanhoFonteInfComplementaresProd>
+			<ImprimirICMSDesonerado>4</ImprimirICMSDesonerado>
+			<ImprimirEmitenteCentralizado>N</ImprimirEmitenteCentralizado>
+			<ImprimirFatura>S</ImprimirFatura>
+			<ImprimirVolumes>S</ImprimirVolumes>
+			<ImprimirVolumesNegrito>N</ImprimirVolumesNegrito>
+			<ImprimirVolumesEspacados>S</ImprimirVolumesEspacados>
+			<ImprimirItensEspacados>N</ImprimirItensEspacados>
+			<AgruparInfoAdicProdutos>N</AgruparInfoAdicProdutos>
+			<ImprimirTotalAFRMM>N</ImprimirTotalAFRMM>
+			<ImprimirICMSSTItem>N</ImprimirICMSSTItem>
+			<ImprimirTotalImpostoImportacao>N</ImprimirTotalImpostoImportacao>
+			<ImprimirFCP>N</ImprimirFCP>
+			<ImprimirTextosNegrito>N</ImprimirTextosNegrito>
+			<ImprimirFCI>N</ImprimirFCI>
+			<ImprimirConfirmEntregaCanhoto>N</ImprimirConfirmEntregaCanhoto>
+		</NFe>
+		<MDFe>
+			<OrientacaoMDFe>2</OrientacaoMDFe>
+			<MolduraNaLogomarca>N</MolduraNaLogomarca>
+		</MDFe>
+		<NFCe>
+			<ModeloDANFE>1</ModeloDANFE>
+			<ImpAcrescDescItens>S</ImpAcrescDescItens>
+			<FormatoDANFE>D</FormatoDANFE>
+		</NFCe>
+	</Impressao>
+	<Extensao>
+		<ExtensaoItem>
+			<TipoExtensao>3</TipoExtensao>
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFe</Modulo>
+				</ModuloItem>
+				<ModuloItem>
+					<Modulo>NFSe</Modulo>
+				</ModuloItem>
+			</Modulos>
+			<ParametrosExt>
+				<TipoNotificacao>0</TipoNotificacao>
+				<NumeroConsultasDiarias>1</NumeroConsultasDiarias>
+				<TipoConsultaNFSe>ER</TipoConsultaNFSe>
+				<Prestadores>
+					<Prestador>
+						<CNPJ>65790544000140</CNPJ>
+						<Nome>Prestador Serviço 1</Nome>
+						<IBGE>4321808</IBGE>
+						<IM>1474049241</IM>
+						<Status>A</Status>
+					</Prestador>
+					<Prestador>
+						<CNPJ>89280537000166</CNPJ>
+						<Nome>Prestador Serviço 2</Nome>
+						<IBGE>4321808</IBGE>
+						<IM>25689029</IM>
+						<Status>A</Status>
+					</Prestador>
+				</Prestadores>
+			</ParametrosExt>
+			<Ativar>S</Ativar>
+		</ExtensaoItem>
+		<ExtensaoItem>
+			<TipoExtensao>4</TipoExtensao>
+			<Ativar>S</Ativar>
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFe</Modulo>
+				</ModuloItem>
+			</Modulos>
+			<ParametrosExt>
+				<NumeroConsultasDiarias>4</NumeroConsultasDiarias>
+				<ArmazenarEveTerceiros>N</ArmazenarEveTerceiros>
+				<BaixarDocsNaoArmazenados>N</BaixarDocsNaoArmazenados>
+				<CienciaAutomatica>0</CienciaAutomatica>
+				<Justificativa>Justificativa para manifestação</Justificativa>
+			</ParametrosExt>
+		</ExtensaoItem>
+		<ExtensaoItem>
+			<TipoExtensao>10</TipoExtensao>
+			<Ativar>S</Ativar>
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFSe</Modulo>
+				</ModuloItem>
+			</Modulos>
+			<ParametrosExt>
+				<MunicipiosAtivar>9999999;1234567</MunicipiosAtivar>
+				<MunicipiosDesativar/>
+			</ParametrosExt>
+		</ExtensaoItem>
+		<ExtensaoItem>
+			<TipoExtensao>13</TipoExtensao>
+			<Ativar>S</Ativar>
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFSe</Modulo>
+				</ModuloItem>
+			</Modulos>
+		</ExtensaoItem>
+	</Extensao>
+</CadastroEmpresa>

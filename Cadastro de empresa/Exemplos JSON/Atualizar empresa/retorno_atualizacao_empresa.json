@@ -1,0 +1,38 @@
+[
+    {
+        "Codigo": 100,
+        "Descricao": "Solicitação de cadastro de empresa recebida.",
+        "RetornoCadastro": [
+            {
+                "Codigo": 100,
+                "Descricao": "A empresa foi atualizada com sucesso.",
+                "EmpAK": "+UQxf+w0IE7R0hmfOw/cKkz2jsr0qoLb",
+                "ChaveCriptografia": "fb744bc8816b47c8b7f1ff4bfd800134"
+            },
+            {
+                "Codigo": 102,
+                "Descricao": "Certificado não informado",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            },
+            {
+                "Codigo": 100,
+                "Descricao": "Extensão Manifestação ativada com sucesso!",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            },
+            {
+                "Codigo": 100,
+                "Descricao": "Extensão Importação de Documentos ativada com sucesso!",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            },
+            {
+                "Codigo": 107,
+                "Descricao": "Não é possível cadastrar uma caixa para envio de e-mails sem informar o usuário, senha, host e porta.",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            }
+        ]
+    }
+]

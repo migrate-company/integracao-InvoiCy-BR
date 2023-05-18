@@ -1,0 +1,20 @@
+<EnvioEvento>
+	<ModeloDocumento>MDFe</ModeloDocumento>
+	<Versao>3.00</Versao>
+	<Evento>
+		<MdfCNPJEmissor>99999999999999</MdfCNPJEmissor>
+		<MdfNumero>1</MdfNumero>
+		<MdfSerie>325</MdfSerie>
+		<tpAmb>2</tpAmb>
+		<EveInf>
+			<EveDh>2017-01-17T11:20:00</EveDh>
+			<EveFusoHorario>-02:00</EveFusoHorario>
+			<EveTp>110114</EveTp>
+			<EvenSeq>1</EvenSeq>
+			<Evedet>
+				<EveNomeCondutor>Pedro da Silva</EveNomeCondutor>
+				<EveCPFCondutor>99999999999</EveCPFCondutor>
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>

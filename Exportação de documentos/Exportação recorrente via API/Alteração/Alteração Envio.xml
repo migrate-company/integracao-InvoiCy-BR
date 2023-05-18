@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inv:recepcaoprevia.Execute>
+         <inv:Invoicyrecepcao>
+            <inv:Cabecalho>
+               <inv:EmpPK>XXxXxXxXxxXXxxxxX0x+Xx==</inv:EmpPK>
+               <inv:EmpCK>00aaa00a0a0aaaaaaaaa00000a0a0aa</inv:EmpCK>
+               <inv:EmpCO></inv:EmpCO>
+            </inv:Cabecalho>
+            <inv:Informacoes>
+               <inv:Texto></inv:Texto>
+            </inv:Informacoes>
+            <inv:Dados>
+               <inv:DadosItem>
+                  <inv:Documento>
+                  &lt;CadastroExportacaoRecorrente&gt;&lt;Acao&gt;A&lt;/Acao&gt;&lt;Identificador&gt;ee0000ca-0000-0000-00bd-f0a000e0df00&lt;/Identificador&gt;&lt;Responsavel&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;/Responsavel&gt;&lt;Empresas&gt;&lt;CNPJ&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;/CNPJ&gt;&lt;/Empresas&gt;&lt;AgruparPorEmpresa&gt;S&lt;/AgruparPorEmpresa&gt;&lt;Tipo&gt;1&lt;/Tipo&gt;&lt;Status&gt;&lt;Pendente&gt;S&lt;/Pendente&gt;&lt;Autorizado&gt;S&lt;/Autorizado&gt;&lt;Cancelado&gt;S&lt;/Cancelado&gt;&lt;Denegado&gt;S&lt;/Denegado&gt;&lt;Encerrado&gt;S&lt;/Encerrado&gt;&lt;Inutilizado&gt;S&lt;/Inutilizado&gt;&lt;Rejeitado&gt;S&lt;/Rejeitado&gt;&lt;PendenteAssinatura&gt;S&lt;/PendenteAssinatura&gt;&lt;EPEC&gt;S&lt;/EPEC&gt;&lt;AguardandoConsulta&gt;S&lt;/AguardandoConsulta&gt;&lt;AguardandoCancelamento&gt;S&lt;/AguardandoCancelamento&gt;&lt;ContigenciaOffline&gt;S&lt;/ContigenciaOffline&gt;&lt;PendenteConsulta_EmProcessamento&gt;S&lt;/PendenteConsulta_EmProcessamento&gt;&lt;EmConflito&gt;N&lt;/EmConflito&gt;&lt;/Status&gt;&lt;Modelo&gt;&lt;NFe&gt;S&lt;/NFe&gt;&lt;NFCe&gt;N&lt;/NFCe&gt;&lt;NFSe&gt;S&lt;/NFSe&gt;&lt;CTe&gt;N&lt;/CTe&gt;&lt;CFeSAT_MFe&gt;N&lt;/CFeSAT_MFe&gt;&lt;MDFe&gt;N&lt;/MDFe&gt;&lt;/Modelo&gt;&lt;CNPJ/&gt;&lt;DocumentosAlteradosTela&gt;N&lt;/DocumentosAlteradosTela&gt;&lt;Exportacao&gt;&lt;XML&gt;S&lt;/XML&gt;&lt;MicrosoftExcel&gt;&lt;Excel&gt;N&lt;/Excel&gt;&lt;Tipo&gt;1&lt;/Tipo&gt;&lt;/MicrosoftExcel&gt;&lt;/Exportacao&gt;&lt;Email&gt;teste@migrate.info&lt;/Email&gt;&lt;DiaExecucao&gt;10&lt;/DiaExecucao&gt;&lt;QtdeRepeticao&gt;99&lt;/QtdeRepeticao&gt;&lt;/CadastroExportacaoRecorrente&gt;
+                  </inv:Documento>
+                  <inv:Parametros></inv:Parametros>
+               </inv:DadosItem>
+            </inv:Dados>
+         </inv:Invoicyrecepcao>
+      </inv:recepcaoprevia.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>

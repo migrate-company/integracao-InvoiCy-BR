@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Body>
+      <recepcao.ExecuteResponse xmlns="InvoiCy">
+         <Invoicyretorno>
+            <Mensagem>
+               <MensagemItem>
+                  <Codigo>100</Codigo>
+                  <Descricao>Sucesso na operação</Descricao>
+                  <Documentos>
+                     <DocumentosItem>
+                        <Documento><![CDATA[<SDTExportRecurrenceRestRetorno xmlns="InvoiCy"><SDTExportRecurrenceRestRetornoItem><Codigo>100</Codigo><Descricao>Sucesso na operação</Descricao><Quantidade>2</Quantidade><ExportacaoRecorrente><ExportacaoRecorrente><Identificador>ee0000ca-0000-0000-00bd-f0a000e0df00</Identificador><Responsavel><CNPJ>99999999999999</CNPJ></Responsavel><Empresas><CNPJ><CNPJ>99999999999999</CNPJ><CNPJ>99999999999999</CNPJ></CNPJ></Empresas><AgruparPorEmpresa>N</AgruparPorEmpresa><Tipo>2</Tipo><Status><Pendente>N</Pendente><Autorizado>S</Autorizado><Cancelado>N</Cancelado><Denegado>N</Denegado><Encerrado>N</Encerrado><Inutilizado>N</Inutilizado><Rejeitado>N</Rejeitado><PendenteAssinatura>N</PendenteAssinatura><EPEC>N</EPEC><AguardandoConsulta>N</AguardandoConsulta><AguardandoCancelamento>N</AguardandoCancelamento><ContigenciaOffline>N</ContigenciaOffline><PendenteConsulta_EmProcessamento>N</PendenteConsulta_EmProcessamento><EmConflito>N</EmConflito></Status><Modelo><NFe>S</NFe><NFCe>N</NFCe><NFSe>N</NFSe><CTe>N</CTe><CFeSAT_MFe>N</CFeSAT_MFe><MDFe>N</MDFe></Modelo><CNPJ /><DocumentosAlteradosTela>N</DocumentosAlteradosTela><Exportacao><XML>S</XML><MicrosoftExcel><Excel>S</Excel><Tipo>2</Tipo></MicrosoftExcel></Exportacao><Email>teste@migrate.info</Email><DiaExecucao>8</DiaExecucao><QtdeRepeticao>8</QtdeRepeticao></ExportacaoRecorrente><ExportacaoRecorrente><Identificador>cd22d018-d2f2-0c00-a00d-90a832d0c5be</Identificador><Responsavel><CNPJ>99999999999999</CNPJ></Responsavel><Empresas><CNPJ><CNPJ>99999999999999</CNPJ><CNPJ>99999999999999</CNPJ></CNPJ></Empresas><AgruparPorEmpresa>S</AgruparPorEmpresa><Tipo>2</Tipo><Status><Pendente>S</Pendente><Autorizado>S</Autorizado><Cancelado>S</Cancelado><Denegado>S</Denegado><Encerrado>S</Encerrado><Inutilizado>S</Inutilizado><Rejeitado>S</Rejeitado><PendenteAssinatura>S</PendenteAssinatura><EPEC>N</EPEC><AguardandoConsulta>S</AguardandoConsulta><AguardandoCancelamento>N</AguardandoCancelamento><ContigenciaOffline>N</ContigenciaOffline><PendenteConsulta_EmProcessamento>S</PendenteConsulta_EmProcessamento><EmConflito>N</EmConflito></Status><Modelo><NFe>S</NFe><NFCe>N</NFCe><NFSe>S</NFSe><CTe>N</CTe><CFeSAT_MFe>N</CFeSAT_MFe><MDFe>N</MDFe></Modelo><CNPJ>99999999999999</CNPJ><DocumentosAlteradosTela>N</DocumentosAlteradosTela><Exportacao><XML>S</XML><MicrosoftExcel><Excel>S</Excel><Tipo>1</Tipo></MicrosoftExcel></Exportacao><Email>teste@migrate.info</Email><DiaExecucao>15</DiaExecucao><QtdeRepeticao>2</QtdeRepeticao></ExportacaoRecorrente></ExportacaoRecorrente></SDTExportRecurrenceRestRetornoItem></SDTExportRecurrenceRestRetorno>]]></Documento>
+                     </DocumentosItem>
+                  </Documentos>
+               </MensagemItem>
+            </Mensagem>
+         </Invoicyretorno>
+      </recepcao.ExecuteResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

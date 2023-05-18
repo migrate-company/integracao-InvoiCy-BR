@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inv:recepcao.Execute>
+         <inv:Invoicyrecepcao>
+            <inv:Cabecalho>
+               <inv:EmpPK>PYcEsFuKroDBojfiFEl+Ms==</inv:EmpPK>
+               <inv:EmpCK>6c02d91fb081d4383ddcdb250f813aed</inv:EmpCK>
+               <inv:EmpCO></inv:EmpCO>
+            </inv:Cabecalho>
+            <inv:Informacoes>
+               <inv:Texto></inv:Texto>
+            </inv:Informacoes>
+            <inv:Dados>
+               <inv:DadosItem>
+                  <inv:Documento>&lt;Inutilizacao&gt;&lt;ModeloDocumento&gt;CTe&lt;/ModeloDocumento&gt;&lt;Versao&gt;3.00&lt;/Versao&gt;&lt;CnpjEmissor&gt;99999999999999&lt;/CnpjEmissor&gt;&lt;tpAmb&gt;2&lt;/tpAmb&gt;&lt;NumeroInicial&gt;208&lt;/NumeroInicial&gt;&lt;NumeroFinal&gt;208&lt;/NumeroFinal&gt;&lt;Serie&gt;326&lt;/Serie&gt;&lt;Justificativa&gt;Inutilizacao por motivos de pulo de numeracao&lt;/Justificativa&gt;&lt;/Inutilizacao&gt;</inv:Documento>
+                  <inv:Parametros></inv:Parametros>
+               </inv:DadosItem>
+            </inv:Dados>
+         </inv:Invoicyrecepcao>
+      </inv:recepcao.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>

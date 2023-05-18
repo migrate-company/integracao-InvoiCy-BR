@@ -1,0 +1,22 @@
+<EnvioEvento>
+	<ModeloDocumento>CTe</ModeloDocumento>
+	<Versao>3.00</Versao>
+	<Evento>
+		<CteCnpjEmissor>99999999999999</CteCnpjEmissor>
+		<CteNumero>9999999</CteNumero>
+		<CteSerie>9</CteSerie>
+		<tpAmb>2</tpAmb>
+		<ChaAcesso>99999999999999999999999999999999999999999999</ChaAcesso>
+		<EveInf>
+			<EveDh>2017-05-29T10:22:00</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>110111</EveTp>
+			<EvenSeq>01</EvenSeq>
+			<Evedet>
+				<EveDesc>Cancelamento</EveDesc>
+				<EvexJust>Justificativa para cancelamento</EvexJust>
+				<EvenProt>999999999999999</EvenProt>
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>

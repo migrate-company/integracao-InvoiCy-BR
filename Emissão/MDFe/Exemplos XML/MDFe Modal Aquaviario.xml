@@ -1,0 +1,133 @@
+<Envio>
+	<ModeloDocumento>MDFe</ModeloDocumento>
+	<Versao>3.00</Versao>
+	<ide>
+		<cUF>43</cUF>
+		<tpAmb>2</tpAmb>
+		<tpEmit>1</tpEmit>
+		<tpTransp>1</tpTransp>
+		<serie>1</serie>
+		<nMDF>2</nMDF>
+		<modal>3</modal>
+		<dhEmi>2017-01-17T14:10:00</dhEmi>
+		<fusoHorario>-02:00</fusoHorario>
+		<tpEmis>1</tpEmis>
+		<UFIni>RS</UFIni>
+		<UFFim>SC</UFFim>
+		<dhIniViagem>2020-05-13T14:49:00</dhIniViagem>
+		<MunicipiosCarreg>
+			<MunicipiosCarregItem>
+				<cMunCarreg>4321808</cMunCarreg>
+				<xMunCarreg>TRES DE MAIO</xMunCarreg>
+			</MunicipiosCarregItem>
+		</MunicipiosCarreg>
+	</ide>
+	<emit>
+		<CNPJ_emit>12012312045602</CNPJ_emit>
+		<xNome>Empresa emissora</xNome>
+		<IE>1470049241</IE>
+		<enderEmit>
+			<xLgr>Rua das Pedras</xLgr>
+			<nro>900</nro>
+			<xBairro>Centro</xBairro>
+			<cMun>4321808</cMun>
+			<xMun>TRES DE MAIO</xMun>
+			<CEP>98910000</CEP>
+			<UF>RS</UF>
+		</enderEmit>
+	</emit>
+	<InfModal>
+		<versaoModal>3.00</versaoModal>
+		<Aquaviario>
+			<irin>1234567891</irin>
+			<tipoEmbarcacao>89</tipoEmbarcacao>
+			<codEmbarcacao>ABA1234567</codEmbarcacao>
+			<nomeEmbarcacao>Primeira embarcação</nomeEmbarcacao>
+			<numViagem>183</numViagem>
+			<codPortoEmb>BRSRZ</codPortoEmb>
+			<codPortoDes>BRRKG</codPortoDes>
+			<portoTrans>Porto de Santos</portoTrans>
+			<tipoNav>1</tipoNav>
+			<TerminaisCarreg>
+				<TerminaisCarregItem>
+					<codTermCarreg>12945</codTermCarreg>
+					<nomTermCarreg>terminal 1</nomTermCarreg>
+				</TerminaisCarregItem>
+			</TerminaisCarreg>
+			<TerminaisDescarreg>
+				<TerminaisDescarregItem>
+					<codTermDescarreg>3294</codTermDescarreg>
+					<nomTermDescarreg>terminal 2</nomTermDescarreg>
+				</TerminaisDescarregItem>
+			</TerminaisDescarreg>
+			<EmbarcacoesComboio>
+				<EmbarcacoesComboioItem>
+					<codEmbComboio>12345</codEmbComboio>
+					<xBalsa>Balsa 1</xBalsa>
+				</EmbarcacoesComboioItem>
+			</EmbarcacoesComboio>
+			<UnidTranspVazia>
+				<UnidTranspVaziaItem>
+					<idUnidTranspVazia>12345</idUnidTranspVazia>
+					<tpUnidTranspVazia>1</tpUnidTranspVazia>
+				</UnidTranspVaziaItem>
+			</UnidTranspVazia>
+		</Aquaviario>
+	</InfModal>
+	<Documentos>
+		<MunicipiosDescarreg>
+			<MunicipiosDescarregItem>
+				<cMunDescarreg>4205407</cMunDescarreg>
+				<xMunDescarreg>FLORIANOPOLIS</xMunDescarreg>
+				<InfDoc>
+					<InfDocItem>
+						<tipoDocumento>1</tipoDocumento>
+						<chaveAcesso>43130406354976000149572870000000211123452741</chaveAcesso>
+						<indReentrega>1</indReentrega>
+					</InfDocItem>
+				</InfDoc>
+			</MunicipiosDescarregItem>
+		</MunicipiosDescarreg>
+	</Documentos>
+	<Seguro>
+		<SeguroItem>
+			<nApol>4321</nApol>
+			<Averbacoes>
+				<AverbacoesItem>
+					<nAver>1</nAver>
+				</AverbacoesItem>
+				<AverbacoesItem>
+					<nAver>2</nAver>
+				</AverbacoesItem>
+			</Averbacoes>
+			<infResp>
+				<respSeg>1</respSeg>
+				<CNPJ_respSeg>12459685451230</CNPJ_respSeg>
+			</infResp>
+			<infSeg>
+				<XSeg>Seguro de Moto</XSeg>
+				<CNPJ_seg>46851203201240</CNPJ_seg>
+			</infSeg>
+		</SeguroItem>
+	</Seguro>
+	<Totais>
+		<qtdCTe>1</qtdCTe>
+		<valorCarga>5666.66</valorCarga>
+		<codUnidMedida>01</codUnidMedida>
+		<qtdCarga>666</qtdCarga>
+	</Totais>
+	<Lacres>
+		<LacresItem>
+			<nLacre>ABC1234</nLacre>
+		</LacresItem>
+	</Lacres>
+	<AutXML>
+		<AutXMLItem>
+			<CNPJ_aut>45128078968540</CNPJ_aut>
+		</AutXMLItem>
+	</AutXML>
+	<InfAdicionais>
+		<infAdFisco>Todos os direitos reservados</infAdFisco>
+		<infCpl>Todos os direitos reservados</infCpl>
+	</InfAdicionais>
+</Envio>

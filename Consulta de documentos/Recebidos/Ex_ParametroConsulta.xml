@@ -1,0 +1,10 @@
+<ParametrosConsulta>
+	<Situacao>S</Situacao>
+	<XMLCompleto>S</XMLCompleto>
+	<XMLLink>S</XMLLink>
+	<PDFBase64>S</PDFBase64>
+	<PDFLink>S</PDFLink>
+	<Eventos>S</Eventos>
+	<TipoImpressao>S</TipoImpressao>
+	<AutorizadoDownload>S</AutorizadoDownload>
+</ParametrosConsulta>

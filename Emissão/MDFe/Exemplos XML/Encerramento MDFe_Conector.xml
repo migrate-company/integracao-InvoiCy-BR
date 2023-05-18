@@ -1,0 +1,27 @@
+<EnvioEvento>
+	<ModeloDocumento>MDFe</ModeloDocumento>
+	<Versao>3.00</Versao>
+	<ChaveParceiro>Chave_parceiro</ChaveParceiro>
+	<ChaveAcesso>Chave_acesso</ChaveAcesso>
+	<Evento>
+		<MdfCNPJEmissor>99999999999999</MdfCNPJEmissor>
+		<MdfNumero>148</MdfNumero>
+		<MdfSerie>261</MdfSerie>
+		<tpAmb>2</tpAmb>
+		<ChaAcesso>43210206354976000149582610000001481000093241</ChaAcesso>
+		<EveInf>
+			<EveDh>2021-02-16T16:41:00</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>110112</EveTp>
+			<EvenSeq>1</EvenSeq>
+			<Evedet>
+				<EveDesc>Encerramento</EveDesc>
+				<EvexJust>O MDF-e ja chegou ao seu destino final</EvexJust>
+				<EvenProt>943210000005262</EvenProt>
+				<EveDhEncerr>2021-02-16</EveDhEncerr>
+				<EvecUFEncerr>43</EvecUFEncerr>
+				<EvecMunEncerr>4321808</EvecMunEncerr>
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>

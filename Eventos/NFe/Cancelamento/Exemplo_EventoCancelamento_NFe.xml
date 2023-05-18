@@ -1,0 +1,24 @@
+<EnvioEvento>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<ChaveParceiro>Chave_Parceiro</ChaveParceiro>
+	<ChaveAcesso>Chave_Acesso</ChaveAcesso>
+	<Evento>
+		<NtfCnpjEmissor>99999999999999</NtfCnpjEmissor>
+		<NtfNumero>101</NtfNumero>
+		<NtfSerie>4</NtfSerie>
+		<tpAmb>2</tpAmb>
+		<ChaAcesso>12346578945612302315002545610045451254501545</ChaAcesso>
+		<EveInf>
+			<EveDh>2021-03-05T15:49:00</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>110111</EveTp>
+			<EvenSeq>1</EvenSeq>
+			<Evedet>
+				<EveDesc>Cancelamento</EveDesc>
+				<EvexJust>JUSTIFICATIVA DO CANCELAMENTO</EvexJust>
+				<EvenProt>143200001126876</EvenProt>
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>

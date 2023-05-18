@@ -1,0 +1,38 @@
+[
+    {
+        "Codigo": 100,
+        "Descricao": "Solicitação de cadastro de empresa recebida.",
+        "RetornoCadastro": [
+            {
+                "Codigo": 100,
+                "Descricao": "A empresa foi cadastrada no InvoiCy.",
+                "EmpAK": "+UQxf+w0IE7R0hmFOw/cKkz2jsr0qoLb",
+                "ChaveCriptografia": "fb744bc8816b47c8b7f1ff4bfd800134"
+            },
+            {
+                "Codigo": 102,
+                "Descricao": "Certificado não informado",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            },
+            {
+                "Codigo": 100,
+                "Descricao": "Extensão Manifestação ativada com sucesso!",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            },
+            {
+                "Codigo": 114,
+                "Descricao": "Não é possível cadastrar a extensão Importação de Documentos! Parâmetro Número de Consultas diárias na PREFEITURA <b>(NFS-e)</b> é obrigatório.",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            },
+            {
+                "Codigo": 107,
+                "Descricao": "Não é possível cadastrar uma caixa para envio de e-mails sem informar o usuário, senha, host e porta.",
+                "EmpAK": "",
+                "ChaveCriptografia": ""
+            }
+        ]
+    }
+]

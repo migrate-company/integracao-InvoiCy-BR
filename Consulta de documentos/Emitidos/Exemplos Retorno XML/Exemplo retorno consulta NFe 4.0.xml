@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Body>
+      <recepcao.ExecuteResponse xmlns="InvoiCy">
+         <Invoicyretorno>
+            <Mensagem>
+               <MensagemItem>
+                  <Codigo>100</Codigo>
+                  <Descricao>Documentos processados</Descricao>
+                  <Documentos>
+                     <DocumentosItem>
+                        <Documento><![CDATA[<Documento><DocModelo>NFe</DocModelo><DocNumero>559</DocNumero><DocSerie>309</DocSerie><DocChaAcesso>43180806354976000149553090000005591000001286</DocChaAcesso><DocProtocolo>143180006454208</DocProtocolo><DocSitCodigo>100</DocSitCodigo><DocSitDescricao>Autorizado o uso da NF-e</DocSitDescricao><DocXML /><DocXMLLink>https://mcp-web-ihml.invoicy.com.br/hnuc002.aspx?k6rMlBDjfK%2fjBRL3Y7yJxR0knYSvX%2bO9Sh8ahwQXvdw%3d,0,0,0</DocXMLLink><DocPDF /><DocPDFLink>https://mcp-web-ihml.invoicy.com.br:443//downloadpdf.aspx?k6rMlBDjfK%2fjBRL3Y7yJxR0knYSvX%2bO9Sh8ahwQXvdw%3d</DocPDFLink><dhRecbto /><NTEmVigor /><VersaoQRCode /><ImprimirUmaViaContingencia /><DocImpPrefeitura /><DocStatus>2</DocStatus><CertHoraVencimento /><Resumo><DocDataEmissao>2018-08-03T09:47:00</DocDataEmissao><DocFusoHorario>-03:00</DocFusoHorario><DocDigestValue>0jzzKJsm2lwc5xbMOURqjYHmJ9k=</DocDigestValue><DocDhAut>2018-08-03T09:50:21</DocDhAut><DocNomeEmitente>Nome do emitente da nota fiscal eletronica é Migrate company</DocNomeEmitente><DocCNPJDestinatario>12345678912345</DocCNPJDestinatario><DocNomeDestinatario>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</DocNomeDestinatario><DocVlrTotal>400</DocVlrTotal></Resumo><Eventos /><NFSe><NFSeNumero>0</NFSeNumero><NFSeCodVerificacao /></NFSe></Documento>]]></Documento>
+                     </DocumentosItem>
+                  </Documentos>
+               </MensagemItem>
+            </Mensagem>
+         </Invoicyretorno>
+      </recepcao.ExecuteResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

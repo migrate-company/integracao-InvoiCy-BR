@@ -1,0 +1,9 @@
+<DescartarDocumento>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<ChaveParceiro>Chave_parceiro</ChaveParceiro>
+	<ChaveAcesso>Chave_acesso</ChaveAcesso>
+	<tpAmb>2</tpAmb>
+	<CNPJ_emit>99999999999999</CNPJ_emit>
+	<Numero>288</Numero>
+	<Serie>306</Serie>
+</DescartarDocumento>
