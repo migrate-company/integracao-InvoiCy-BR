@@ -12,38 +12,23 @@ Mais informações podem ser encontradas a seguir:
 Criar o JWT Token conforme [Autenticação API REST](https://desenvolvedores.migrate.info/2021/06/autenticacao-api-rest/):
 
 ```csharp 
-string jwtToken = JwtTokenCreator.GeraTokenJWT(requestParams);
-```
-
-onde requestParams (RequestParams.cs) é um objeto contendo as informações cadastrais da empresa e o tempo de expiração do AccessToken (padrão = 120 segundos).
-
-```csharp 
 RequestParams requestParams = new RequestParams(
     string CNPJ, 
     string Chave-de-acesso,
     string Chave-de-parceiro, 
     int TempoExpiracao);
+    
+string jwtToken = JwtTokenCreator.GeraTokenJWT(requestParams);
 ```
 
+Onde requestParams (RequestParams.cs) é um objeto contendo as informações cadastrais da empresa e o tempo de expiração do AccessToken (padrão = 120 segundos).
+
 ### AccessToken e RefreshToken
-Tendo criado o primeiro token JWT, deverá ser enviado para a API de autenticação para obter o refreshToken e accessToken. 
+Tendo criado o primeiro token JWT, deverá ser enviado para a API de autenticação para obter o refreshToken e accessToken. Foi implementado o código das integrações na classe ExemploRest.cs.
 
 ```csharp
-var token = await GerarToken(jwtToken);
+var token = await ExemploRest.GerarToken(jwtToken);
 userToken = JsonSerializer.Deserialize<UserToken>(token);
-
-async Task<string> GerarToken(string jwtToken)
-{
-    var requestContent = "{\n\t \"token\": \"" + jwtToken + "\"\n}";
-    var content = new StringContent(requestContent, null, "application/json");
-    var uri = "https://apibrhomolog.invoicy.com.br/oauth2/invoicy/auth";
-
-    var httpClient = new HttpClient();
-    var httpRequest = new HttpRequestMessage(HttpMethod.Post, uri);
-    httpRequest.Content = content.content;
-    var response = await httpClient.SendAsync(httpRequest);
-    return await httpResponse.Content.ReadAsStringAsync();
-}
 ```
 
 A string "token" será um JSON contendo o Token de Acesso e o Refresh Token. Essas informações podem ser armazenadas em um objeto userToken (UserToken.cs). 
@@ -55,13 +40,9 @@ A string "token" será um JSON contendo o Token de Acesso e o Refresh Token. Ess
 ### Integrações API Rest:
 No [Exemplo POSTMAN](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest) pode ser encontrado os comandos para diferentes tipos de requisições. A seguir será apresentado alguns códigos de exemplo. Em breve será disponibilizado um aplicativo desktop com as implementações.
 
-- Validar token:
-bla
-- Atualizar token:
-bla
-- Consultar empresa:
-bla
-- Cadastrar série:
-bla
-- Enviar arquivo:
-bla
+- Validar token: ExemploRest.GerarToken(UserToken _user)
+- Renovar token: ExemploRest.RenovarToken(UserToken _user)
+- Ver token: ExemploRest.VerToken(UserToken _user)
+- Consultar empresa: ExemploRest.Consultar(UserToken _user)
+- Cadastrar série: ExemploRest.CadastrarSerie(UserToken _user)
+- Enviar arquivo: ExemploRest.EnviarDocumento(UserToken _user)
