@@ -1,0 +1,9 @@
+<ConsultaServicosMunicipio>
+	<ModeloDocumento>NFSe</ModeloDocumento>
+	<CNPJEmissor>99999999999999</CNPJEmissor>
+	<Versao>1.00</Versao>
+	<tpAmb>2</tpAmb>
+	<CodMunicipio>9999999</CodMunicipio>
+	<RetornaListaServico>S</RetornaListaServico>
+	<RetornaNaturezaOp>S</RetornaNaturezaOp>
+</ConsultaServicosMunicipio>
