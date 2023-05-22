@@ -6,6 +6,7 @@ Mais informações podem ser encontradas a seguir:
 - [Autenticação API Rest](https://desenvolvedores.migrate.info/2021/06/autenticacao-api-rest/)
 - [accessToken e refreshToken](https://desenvolvedores.migrate.info/2020/06/integracao-via-api-rest-para-emissao-de-documentos/#:~:text=accessToken%20e%20refreshToken)
 - [downloads](https://desenvolvedores.migrate.info/downloads/)
+- [Exemplo POSTMAN](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest)
 
 ### Criação do Token JWT (JwtTokenCreator.cs)
 Criar o JWT Token conforme [Autenticação API REST](https://desenvolvedores.migrate.info/2021/06/autenticacao-api-rest/):
@@ -29,6 +30,7 @@ Tendo criado o primeiro token JWT, deverá ser enviado para a API de autenticaç
 
 ```csharp
 var token = await GerarToken(jwtToken);
+userToken = JsonSerializer.Deserialize<UserToken>(token);
 
 async Task<string> GerarToken(string jwtToken)
 {
@@ -44,14 +46,22 @@ async Task<string> GerarToken(string jwtToken)
 }
 ```
 
-A string "token" será um JSON contendo o Token de Acesso e o Refresh Token e essas informações podem ser armazenadas em um objeto userToken (UserToken.cs). 
-
-```
-userToken = JsonSerializer.Deserialize<UserToken>(token);
-```
+A string "token" será um JSON contendo o Token de Acesso e o Refresh Token. Essas informações podem ser armazenadas em um objeto userToken (UserToken.cs). 
 
 - O accessToken deverá ser enviado no header “Authorization” em todas as requisições de documentos ou empresa.
 - O refreshToken será utilizado para criar um novo accessToken válido quando o mesmo expirar, a cada ~1 hora~. 
 - Quando expirar o refreshToken após ~24 horas~, será necessário realizar o mesmo processo descrito acima para obter um novo token válido.
 
 ### Integrações API Rest:
+No [Exemplo POSTMAN](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest) pode ser encontrado os comandos para diferentes tipos de requisições. A seguir será apresentado alguns códigos de exemplo. Em breve será disponibilizado um aplicativo desktop com as implementações.
+
+- Validar token:
+bla
+- Atualizar token:
+bla
+- Consultar empresa:
+bla
+- Cadastrar série:
+bla
+- Enviar arquivo:
+bla
