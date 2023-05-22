@@ -7,11 +7,13 @@ Mais informações podem ser encontradas a seguir:
 - [accessToken e refreshToken](https://desenvolvedores.migrate.info/2020/06/integracao-via-api-rest-para-emissao-de-documentos/#:~:text=accessToken%20e%20refreshToken)
 - [downloads](https://desenvolvedores.migrate.info/downloads/)
 
-## Criação do Token JWT (JwtTokenCreator.cs)
+### Criação do Token JWT (JwtTokenCreator.cs)
+Criar o JWT Token conforme [Autenticação API REST](https://desenvolvedores.migrate.info/2021/06/autenticacao-api-rest/):
 
 ```csharp 
-string token = JwtTokenCreator.GeraTokenJWT(requestParams);
+string jwtToken = JwtTokenCreator.GeraTokenJWT(requestParams);
 ```
+
 onde requestParams (RequestParams.cs) é um objeto contendo as informações cadastrais da empresa e o tempo de expiração do AccessToken (padrão = 120 segundos).
 
 ```csharp 
@@ -21,3 +23,35 @@ RequestParams requestParams = new RequestParams(
     string Chave-de-parceiro, 
     int TempoExpiracao);
 ```
+
+### AccessToken e RefreshToken
+Tendo criado o primeiro token JWT, deverá ser enviado para a API de autenticação para obter o refreshToken e accessToken. 
+
+```csharp
+var token = await GerarToken(jwtToken);
+
+async Task<string> GerarToken(string jwtToken)
+{
+    var requestContent = "{\n\t \"token\": \"" + jwtToken + "\"\n}";
+    var content = new StringContent(requestContent, null, "application/json");
+    var uri = "https://apibrhomolog.invoicy.com.br/oauth2/invoicy/auth";
+
+    var httpClient = new HttpClient();
+    var httpRequest = new HttpRequestMessage(HttpMethod.Post, uri);
+    httpRequest.Content = content.content;
+    var response = await httpClient.SendAsync(httpRequest);
+    return await httpResponse.Content.ReadAsStringAsync();
+}
+```
+
+A string "token" será um JSON contendo o Token de Acesso e o Refresh Token e essas informações podem ser armazenadas em um objeto userToken (UserToken.cs). 
+
+```
+userToken = JsonSerializer.Deserialize<UserToken>(token);
+```
+
+- O accessToken deverá ser enviado no header “Authorization” em todas as requisições de documentos ou empresa.
+- O refreshToken será utilizado para criar um novo accessToken válido quando o mesmo expirar, a cada ~1 hora~. 
+- Quando expirar o refreshToken após ~24 horas~, será necessário realizar o mesmo processo descrito acima para obter um novo token válido.
+
+### Integrações API Rest:
