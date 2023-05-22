@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inv:Importacao.Execute>
+         <inv:Importacaorecepcao>
+            <inv:Cabecalho>
+               <inv:EmpPK>aaaaaaaaaaaaaa==</inv:EmpPK>
+               <inv:EmpCK>4444444444444444</inv:EmpCK>
+               <inv:EmpCNPJ>06354976000149</inv:EmpCNPJ>
+            </inv:Cabecalho>
+            <inv:Informacoes>
+               <inv:Texto></inv:Texto>
+            </inv:Informacoes>
+            <inv:Dados>
+               <inv:DadosItem>
+                  <inv:Documento>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;&lt;nfse&gt;&lt;nf&gt;&lt;codigo_autenticidade&gt;01811354927&lt;/codigo_autenticidade&gt;&lt;numero_nfse&gt;413&lt;/numero_nfse&gt;&lt;serie_nfse&gt;1&lt;/serie_nfse&gt;&lt;data_fato_gerador&gt;06/03/2023&lt;/data_fato_gerador&gt;&lt;data_nfse&gt;06/03/2023&lt;/data_nfse&gt;&lt;hora_nfse&gt;17:06:25&lt;/hora_nfse&gt;&lt;valor_total&gt;16824,62&lt;/valor_total&gt;&lt;valor_desconto&gt;0,00&lt;/valor_desconto&gt;&lt;valor_ir&gt;0,00&lt;/valor_ir&gt;&lt;valor_inss&gt;0,00&lt;/valor_inss&gt;&lt;valor_contribuicao_social&gt;0,00&lt;/valor_contribuicao_social&gt;&lt;valor_rps/&gt;&lt;valor_pis&gt;0,00&lt;/valor_pis&gt;&lt;valor_cofins&gt;0,00&lt;/valor_cofins&gt;&lt;observacao/&gt;&lt;/nf&gt;&lt;prestador&gt;&lt;cpfcnpj&gt;06354976000149&lt;/cpfcnpj&gt;&lt;cidade&gt;8115&lt;/cidade&gt;&lt;/prestador&gt;&lt;tomador&gt;&lt;tipo&gt;J&lt;/tipo&gt;&lt;cpfcnpj&gt;06354976000149&lt;/cpfcnpj&gt;&lt;ie/&gt;&lt;nome_razao_social&gt;razao social do tomador&lt;/nome_razao_social&gt;&lt;sobrenome_nome_fantasia/&gt;&lt;logradouro&gt;RUA Padre Cacique&lt;/logradouro&gt;&lt;email&gt;email@email.com.br&lt;/email&gt;&lt;complemento/&gt;&lt;ponto_referencia/&gt;&lt;bairro&gt;Centro&lt;/bairro&gt;&lt;cidade&gt;TR�S DE MAIO&lt;/cidade&gt;&lt;cep&gt;98910000&lt;/cep&gt;&lt;ddd_fone_comercial/&gt;&lt;fone_comercial/&gt;&lt;ddd_fone_residencial&gt;49&lt;/ddd_fone_residencial&gt;&lt;fone_residencial&gt;35354800&lt;/fone_residencial&gt;&lt;ddd_fax/&gt;&lt;fone_fax/&gt;&lt;/tomador&gt;&lt;itens&gt;&lt;lista&gt;&lt;codigo_local_prestacao_servico&gt;8057&lt;/codigo_local_prestacao_servico&gt;&lt;codigo_item_lista_servico&gt;719&lt;/codigo_item_lista_servico&gt;&lt;descritivo&gt;Prestação de serviços de consultoria na gestão ambiental da empresa.&lt;/descritivo&gt;&lt;aliquota_item_lista_servico&gt;2,2146&lt;/aliquota_item_lista_servico&gt;&lt;situacao_tributaria&gt;0&lt;/situacao_tributaria&gt;&lt;valor_tributavel&gt;16824,62&lt;/valor_tributavel&gt;&lt;valor_deducao&gt;0,00&lt;/valor_deducao&gt;&lt;valor_issrf&gt;0,00&lt;/valor_issrf&gt;&lt;tributa_municipio_prestador&gt;S&lt;/tributa_municipio_prestador&gt;&lt;unidade_codigo/&gt;&lt;unidade_quantidade/&gt;&lt;unidade_valor_unitario/&gt;&lt;/lista&gt;&lt;/itens&gt;&lt;/nfse&gt;</inv:Documento>
+                  <inv:Parametros></inv:Parametros>
+               </inv:DadosItem>
+            </inv:Dados>
+         </inv:Importacaorecepcao>
+      </inv:Importacao.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>

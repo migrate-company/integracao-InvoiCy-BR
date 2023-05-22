@@ -1,0 +1,11 @@
+<Consulta>
+	<ModeloDocumento>NFSe</ModeloDocumento>
+	<Versao>1.0</Versao>
+	<tpAmb>2</tpAmb>
+	<CnpjEmpresa>06354976000149</CnpjEmpresa>
+	<ConpjEmissor></ConpjEmissor><!-- se quiser especificar quem emitiu a nota (ou existem 2 documentos com mesmo número e série)-->
+	<NumeroInicial>1</NumeroInicial>
+	<NumeroFinal>10</NumeroFinal>
+	<Serie>1</Serie>
+	<EmitidoRecebido>R</EmitidoRecebido>
+</Consulta>

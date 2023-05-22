@@ -1,0 +1,9 @@
+<ConsultaMunicipiosRetorno> 
+          <listaMunicipios /> 
+          <erros> 
+            <erro> 
+              <errCodigo>112</errCodigo> 
+              <errDesc>[ModuloNFS-e] - Aviso: Esta prefeitura ainda não esta preparada para emitir NFS-e! Entre em Contato com o Suporte!</errDesc> 
+            </erro> 
+          </erros> 
+ </ConsultaMunicipiosRetorno>

@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Body>
+      <recepcao.ExecuteResponse xmlns="InvoiCy">
+         <Invoicyretorno>
+            <Mensagem>
+               <MensagemItem>
+                  <Codigo>100</Codigo>
+                  <Descricao>Sucesso na operação</Descricao>
+                  <Documentos>
+                     <DocumentosItem>
+                        <Documento><![CDATA[<EmpresaCertificadoRetorno xmlns="InvoiCy"><Codigo>100</Codigo><Descricao>sucesso na operação!</Descricao></EmpresaCertificadoRetorno>]]></Documento>
+                     </DocumentosItem>
+                  </Documentos>
+               </MensagemItem>
+            </Mensagem>
+         </Invoicyretorno>
+      </recepcao.ExecuteResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,285 @@
+[
+	{
+		"ModeloDocumento": "CTe",
+		"AcaoDigitacao": "INS",
+		"EmpCodigoDigitacao": 1,
+		"Versao": 3,
+		"Parametros": "",
+		"ide": {
+		  "cCT": 3969,
+		  "cUF": 43,
+		  "natOp": "Transporte",
+		  "CFOP": 5352,
+		  "forPag": 0,
+		  "mod": 57,
+		  "serie": 15,
+		  "nCT": 63,
+		  "dhEmi": "2023-05-22T16:43:22",
+		  "fusoHorario": "-03:00",
+		  "tpImp": 1,
+		  "tpEmis": 1,
+		  "cDV": 8,
+		  "tpAmb": 2,
+		  "tpCTe": 0,
+		  "procEmi": 0,
+		  "verProc": "MigrateInvoiCy",
+		  "indGlobalizado": 0,
+		  "cMunEnv": 4321808,
+		  "xMunEnv": "TRÊS DE MAIO",
+		  "UFEnv": "RS",
+		  "modal": 1,
+		  "tpServ": 0,
+		  "cMunIni": 4321808,
+		  "xMunIni": "TRÊS DE MAIO",
+		  "UFIni": "RS",
+		  "cMunFim": 4300554,
+		  "xMunFim": "ALTO ALEGRE",
+		  "UFFim": "RS",
+		  "retira": 1,
+		  "dhEmiDigitacao": "16/05/2023 16:53",
+		  "indIEToma": 9,
+		  "DocImpNSU": 0,
+		  "tomador": {
+			"PesCodigo": 741,
+			"toma": 0,
+			"enderTomador": {
+			  "cMun_toma": 0,
+			  "UFCodigoTomaDigitacao": 0,
+			  "cPais_toma": 0
+			}
+		  }
+		},
+		"compl": {
+		  "origCalc": "TRÊS DE MAIO",
+		  "destCalc": "ALTO ALEGRE",
+		  "fluxo": "",
+		  "Entrega": {
+			"tpPer": 0,
+			"tpHor": 0
+		  }
+		},
+		"emit": {
+		  "CNPJ_emit": 6354976000149,
+		  "IE": 18001360,
+		  "xNome": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+		  "xFant": "MIGRATE",
+		  "CRT": 1,
+		  "enderEmit": {
+			"xLgr": "RUA PE CACIQUE",
+			"nro": 985,
+			"xCpl": "2 ANDAR",
+			"xBairro": "CENTRO",
+			"cMun": 4321808,
+			"xMun": "TRÊS DE MAIO",
+			"CEP": 98910000,
+			"UFCodigoDigitacao": 43,
+			"UF": "RS",
+			"fone": 5535354830,
+			"cPais": 0,
+			"Email": "seu@email.com"
+		  }
+		},
+		"rem": {
+		  "PesCodigo": 741,
+		  "DescricaoDigitacao": "18719948000167-CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+		  "CNPJ_rem": 18719948000167,
+		  "CPF_rem": 0,
+		  "xNome_rem": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+		  "fone_rem": 5535351111,
+		  "enderRem": {
+			"xLgr_rem": "teste",
+			"nro_rem": 761,
+			"xBairro_rem": "centro",
+			"cMun_rem": 4321808,
+			"xMun_rem": "TRÊS DE MAIO",
+			"CEP_rem": 98910000,
+			"UF_rem": "RS",
+			"UFCodigoRemDigitacao": 43,
+			"cPais_rem": 1058,
+			"xPais_rem": "BRASIL"
+		  },
+		  "locColeta": {
+			"cMun_col": 0
+		  }
+		},
+		"exped": {
+		  "PesCodigo": 0,
+		  "enderExped": {
+			"cMun_exp": 0,
+			"UFCodigoExpedDigitacao": 0,
+			"cPais_exp": 0
+		  }
+		},
+		"receb": {
+		  "PesCodigo": 0,
+		  "enderReceb": {
+			"cMun_rec": 0,
+			"UFCodigoRecebDigitacao": 0,
+			"cPais_rec": 0
+		  }
+		},
+		"dest": {
+		  "PesCodigo": 741,
+		  "DescricaoDigitacao": "18719948000167-CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+		  "CNPJ_dest": 18719948000167,
+		  "xNome_dest": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+		  "fone_dest": 5535351111,
+		  "DestinatarioDigitacao": "18719948000167 - CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+		  "InicializouDestDigitacao": true,
+		  "enderDest": {
+			"xLgr_dest": "teste",
+			"nro_dest": 761,
+			"xBairro_dest": "centro",
+			"cMun_dest": 4321808,
+			"xMun_dest": "TRÊS DE MAIO",
+			"CEP_dest": 98910000,
+			"UF_dest": "RS",
+			"UFCodigoDestDigitacao": 43,
+			"fone_dest": 5535351111,
+			"cPais_dest": 1058,
+			"xPais_dest": "BRASIL"
+		  },
+		  "locEnt": {
+			"PesCodigo": 0,
+			"cMun_locEnt": 0
+		  }
+		},
+		"vPrest": {
+		  "vTPrest": 10,
+		  "vRec": 10
+		},
+		"imp": {
+		  "vTotImp": 0,
+		  "vTotTrib": 0,
+		  "ICMS": {
+			"CST": 0,
+			"vBC": 0,
+			"pICMS": 0,
+			"vICMS": 0,
+			"pRedBC": 0,
+			"vBCSTRet": 0,
+			"vICMSSTRet": 0,
+			"pICMSSTRet": 0,
+			"vCred": 0,
+			"pRedBCOutraUF": 0,
+			"vBCOutraUF": 0,
+			"pICMSOutraUF": 0,
+			"vICMSOutraUF": 0,
+			"indSN": 0
+		  },
+		  "ICMSUFFim": {
+			"vBCUFFim": 0,
+			"pFCPUFFim": 0,
+			"pICMSUFFim": 0,
+			"pICMSInter": 0,
+			"pICMSInterPart": 0,
+			"vFCPUFFim": 0,
+			"vICMSUFIni": 0,
+			"vICMSUFFim": 0
+		  }
+		},
+		"infCTeNorm": {
+		  "infCarga": {
+			"vMerc": 10,
+			"proPred": "Parafuso",
+			"vCargaAverb": 10,
+			"infQ": {
+			  "infQItem": {
+				"Id": 942633998128,
+				"cUnid": 1,
+				"tpMed": "KILOGRAMAS",
+				"qCarga": 20
+			  }
+			}
+		  },
+		  "infDoc": {
+			"infDocItem": {
+			  "Id": 668370187053,
+			  "tipoDocumento": 2,
+			  "vBC_nf": 0,
+			  "vICMS_nf": 0,
+			  "vBCST_nf": 0,
+			  "vST_nf": 0,
+			  "vProd_nf": 0,
+			  "vNF_nf": 0,
+			  "CFOP_nf": 0,
+			  "peso_nf": 0,
+			  "chave_nfe": 4.3230506354976e+43,
+			  "vDocFisc_outros": 0,
+			  "locRet": ""
+			}
+		  },
+		  "infModal": {
+			"versaoModal": 3,
+			"rodo": {
+			  "RNTRC": 12345678,
+			  "lota": 0,
+			  "CTRB": {
+				"nCTRB": 0
+			  }
+			},
+			"aereo": {
+			  "nMinu": 0,
+			  "nOCA": 0,
+			  "tarifa": {
+				"vTar": 0
+			  },
+			  "NatCarga": ""
+			},
+			"aquav": {
+			  "vPrestAFRMM": 0,
+			  "vAFRMM": 0
+			},
+			"ferrov": {
+			  "tpTraf": 0,
+			  "vFrete": 0,
+			  "trafMut": {
+				"respFat_fer": 0,
+				"ferrEmi_fer": 0,
+				"vFrete_fer": 0
+			  },
+			  "ferroSub": {
+				"cMun_fer": 0,
+				"CEP_fer": 0
+			  }
+			},
+			"duto": {
+			  "vTar_duto": 0
+			},
+			"multimodal": {
+			  "indNegociavel": 0,
+			  "segMulti": ""
+			}
+		  },
+		  "cobr": {
+			"fat": {
+			  "vOrig": 0,
+			  "vDesc": 0,
+			  "vLiq": 0
+			}
+		  },
+		  "infCteSub": {
+			"refAnulacao": 0,
+			"tomaICMS": {
+			  "refNF_CT": {
+				"nro_sub": 0,
+				"valor_sub": 0
+			  }
+			},
+			"tomaNaoICMS": ""
+		  },
+		  "infGlobalizado": ""
+		},
+		"infCteComp": "",
+		"infCteAnu": "",
+		"infRespTec": {
+		  "CNPJ_respTec": 6354976000149,
+		  "xContato": "Adilson Weddigen",
+		  "email_respTec": "adilsonweddigen@migrate.info",
+		  "fone_respTec": 5535354800
+		},
+		"Informacoes": "",
+		"DocReferenciado": 0,
+		"infCTeSupl": ""
+	}
+]

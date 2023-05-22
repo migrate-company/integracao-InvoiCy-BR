@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inv:Importacao.Execute>
+         <inv:Importacaorecepcao>
+            <inv:Cabecalho>
+               <inv:EmpPK>AAAAAAAAA+Wg==</inv:EmpPK>
+               <inv:EmpCK>ad02cf498405decc0db0bbc4c7bf6e41</inv:EmpCK>
+               <inv:EmpCNPJ>06394976000149</inv:EmpCNPJ>
+            </inv:Cabecalho>
+            <inv:Informacoes>
+               <inv:Texto></inv:Texto>
+            </inv:Informacoes>
+            <inv:Dados>
+            <inv:DadosItem>
+                  <inv:Documento>&lt;ImportacaoOCR&gt;&lt;ModeloDocumento&gt;NFSE&lt;/ModeloDocumento&gt;&lt;Base64Arquivo&gt;JVBERi0xLjYNJeLjz9MNCjEwIDAgb2JqDTw8&lt;/Base64Arquivo&gt;&lt;MimeTypeArquivo&gt;application/pdf&lt;/MimeTypeArquivo&gt;&lt;/ImportacaoOCR&gt;</inv:Documento>
+                  <inv:Parametros></inv:Parametros>
+               </inv:DadosItem>
+            </inv:Dados>
+         </inv:Importacaorecepcao>
+      </inv:Importacao.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>

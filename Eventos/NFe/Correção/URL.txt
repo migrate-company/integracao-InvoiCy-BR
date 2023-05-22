@@ -1,2 +1,0 @@
-POST
-https://apibrhomolog.invoicy.com.br/senddocuments/nfe?type=Evento

@@ -1,0 +1,307 @@
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "NFCe",
+            "Versao": 4,
+            "ide": {
+                "cUF": 43,
+                "natOp": "Venda no supermercado",
+                "mod": "65",
+                "serie": "260",
+                "nNF": 2019,
+                "dhEmi": "2021-02-23T09:20:55",
+                "fusoHorario": "-03:00",
+                "dhSaiEnt": "0000-00-00T00:00:00",
+                "tpNf": 1,
+                "idDest": 1,
+                "indFinal": 1,
+                "indPres": 4,
+                "cMunFg": 4321808,
+                "tpImp": 4,
+                "tpEmis": 1,
+                "tpAmb": 2,
+                "xJust": "",
+                "dhCont": "0000-00-00T00:00:00",
+                "finNFe": 1,
+                "EmailArquivos": "brunateste@migrate.com.br",
+                "indIntermed": 1,
+                "NFRef": []
+            },
+            "infIntermed": {
+                "CNPJ_int": "99325560000183",
+                "idCadIntTran": "Fredi"
+            },
+            "emit": {
+                "CNPJ_emit": "06354976000149",
+                "CPF_emit": "",
+                "xNome": "EMPRESA TESTE NFe e NFCe",
+                "xFant": "",
+                "IM": "",
+                "CNAE": "",
+                "IE": "1470049241",
+                "IEST": "",
+                "CRT": 3,
+                "enderEmit": {
+                    "xLgr": "Rua Sen. Salgado filho",
+                    "nro": "668",
+                    "xCpl": "",
+                    "xBairro": "centro",
+                    "cMun": 4321808,
+                    "xMun": "tres de maio",
+                    "UF": "RS",
+                    "CEP": 98910000,
+                    "cPais": 0,
+                    "xPais": "",
+                    "fone": 0,
+                    "fax": 0,
+                    "Email": ""
+                }
+            },
+            "dest": {
+                "CNPJ_dest": "",
+                "CPF_dest": "64356976045",
+                "idEstrangeiro": "",
+                "xNome_dest": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "IE_dest": "",
+                "ISUF": "",
+                "indIEDest": 9,
+                "IM_dest": "",
+                "enderDest": {
+                    "nro_dest": "12",
+                    "xCpl_dest": "CENTRO",
+                    "xBairro_dest": "Primavera",
+                    "xEmail_dest": "brunateste@migrate.com.br",
+                    "xLgr_dest": "Rua das Margaridas",
+                    "xPais_dest": "Brasil",
+                    "cMun_dest": 4317103,
+                    "xMun_dest": "CONTAGEM",
+                    "UF_dest": "RS",
+                    "CEP_dest": 32145900,
+                    "cPais_dest": 1058,
+                    "fone_dest": 5543481105
+                }
+            },
+            "retirada": {
+                "CNPJ_ret": "",
+                "CPF_ret": "",
+                "xNome_ret": "",
+                "xLgr_ret": "",
+                "nro_ret": "",
+                "xCpl_ret": "",
+                "xBairro_ret": "",
+                "xMun_ret": "",
+                "cMun_ret": 0,
+                "UF_ret": "",
+                "CEP_ret": 0,
+                "cPais_ret": 0,
+                "xPais_ret": "",
+                "fone_ret": 0,
+                "email_ret": "",
+                "IE_ret": ""
+            },
+            "entrega": {
+                "CNPJ_entr": "",
+                "CPF_entr": "",
+                "xLgr_entr": "",
+                "nro_entr": "",
+                "xCpl_entr": "",
+                "xBairro_entr": "",
+                "cMun_entr": 0,
+                "xMun_entr": "",
+                "UF_entr": "",
+                "xNome_entr": "",
+                "CEP_entr": 0,
+                "cPais_entr": 0,
+                "xPais_entr": "",
+                "fone_entr": 0,
+                "email_entr": "",
+                "IE_entr": ""
+            },
+            "autXML": [
+                {
+                    "CNPJ_aut": "",
+                    "CPF_aut": "16928779098"
+                }
+            ],
+            "det": [
+                {
+                    "infADProd": "Informações Adicionais",
+                    "prod": {
+                        "cProd": "1",
+                        "cEAN": "SEM GTIN",
+                        "xProd": "NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                        "NCM": "39231090",
+                        "EXTIPI": "",
+                        "CFOP": 5102,
+                        "uCOM": "UN",
+                        "qCOM": "1.0000",
+                        "vUnCom": "10.0000000000",
+                        "vProd": "10.00",
+                        "cEANTrib": "SEM GTIN",
+                        "uTrib": "UN",
+                        "qTrib": "1.0000",
+                        "vUnTrib": "10.0000000000",
+                        "vFrete": "0.00",
+                        "vSeg": "0.00",
+                        "vDesc": "0.00",
+                        "vOutro_item": "0.00",
+                        "indTot": 1,
+                        "nTipoItem": 0,
+                        "dProd": 0,
+                        "xPed_item": "",
+                        "nItemPed": "",
+                        "nFCI": "",
+                        "nRECOPI": "",
+                        "CEST": "1234567",
+                        "cBenef": "RS051011"
+                    },
+                    "imposto": {
+                        "vTotTrib": "",
+                        "ICMS": {
+                            "orig": 0,
+                            "CST": "40",
+                            "modBC": "",
+                            "vBC": "0.00",
+                            "pICMS": 0,
+                            "vICMS_icms": "0.00",
+                            "modBCST": 0,
+                            "pMVAST": 0,
+                            "pRedBCST": 0,
+                            "vBCST": "0.00",
+                            "vBCSTRet": "0.00",
+                            "pICMSST": 0,
+                            "vICMSST_icms": "0.00",
+                            "vICMSSTRet": "0.00",
+                            "pRedBC": 0,
+                            "motDesICMS": 0,
+                            "vICMSDeson": "0.00",
+                            "vICMSOp": "0.00",
+                            "pDif": 0,
+                            "vICMSDif": "0.00",
+                            "pBCOp": 0,
+                            "UFST": "",
+                            "vBCSTDest": "0.00",
+                            "vICMSSTDest_icms": "0.00",
+                            "pCredSN": 0,
+                            "vCredICMSSN": "0.00",
+                            "pFCP": 0,
+                            "vFCP": "0.00",
+                            "vBCFCP": "0.00",
+                            "vBCFCPST": "0.00",
+                            "pFCPST": 0,
+                            "vFCPST": "0.00",
+                            "pST": 0,
+                            "vICMSSubstituto": "0.00",
+                            "vBCFCPSTRet": "0.00",
+                            "pFCPSTRet": 0,
+                            "vFCPSTRet": "0.00",
+                            "GerarICMSST": "",
+                            "pRedBCEfet": 0,
+                            "vBCEfet": "0.00",
+                            "pICMSEfet": 0,
+                            "vICMSEfet": "0.00"
+                        },
+                        "IPI": {
+                            "CNPJProd": "",
+                            "cSelo": "",
+                            "qSelo": 0,
+                            "cEnq": "",
+                            "CSTIPI": {
+                                "CST_IPI": "",
+                                "vBC_IPI": "0.00",
+                                "qUnid_IPI": "0.0000",
+                                "vUnid_IPI": "0.0000",
+                                "pIPI": 0,
+                                "vIPI": "0.00"
+                            }
+                        }
+                    }
+                }
+            ],
+            "total": {
+                "ICMStot": {
+                    "vBC_ttlnfe": "0.00",
+                    "vICMS_ttlnfe": "0.00",
+                    "vICMSDeson_ttlnfe": "0.00",
+                    "vBCST_ttlnfe": "0.00",
+                    "vST_ttlnfe": "0.00",
+                    "vProd_ttlnfe": "10.00",
+                    "vFrete_ttlnfe": "0.00",
+                    "vSeg_ttlnfe": "0.00",
+                    "vDesc_ttlnfe": "0.00",
+                    "vII_ttlnfe": "0.00",
+                    "vIPI_ttlnfe": "0.00",
+                    "vPIS_ttlnfe": "0.00",
+                    "vCOFINS_ttlnfe": "0.00",
+                    "vOutro": "0.00",
+                    "vNF": "10.00",
+                    "vTotTrib_ttlnfe": "0"
+                }
+            },
+            "transp": {
+                "modFrete": 2,
+                "balsa": "",
+                "vagao": "",
+                "transporta": {
+                    "CNPJ_transp": "",
+                    "CPF_transp": "67492234007",
+                    "xNome_transp": "Transportador",
+                    "IE_transp": "",
+                    "xEnder": "",
+                    "xMun_transp": "",
+                    "UF_transp": "RS"
+                },
+                "retTransp": {
+                    "vServ_transp": "0.00",
+                    "vBCRet": "0.00",
+                    "pICMSRet": 0,
+                    "vICMSRet": "0.00",
+                    "CFOP_transp": 0,
+                    "cMunFG_transp": 0
+                },
+                "veicTransp": {
+                    "placa": "",
+                    "UF_veictransp": "",
+                    "RNTC": ""
+                },
+                "reboque": [],
+                "vol": []
+            },
+            "cobr": {
+                "fat": {
+                    "nFat": "",
+                    "vOrig": "0.00",
+                    "vDesc_cob": "0.00",
+                    "vLiq": "0.00"
+                },
+                "dup": []
+            },
+            "pag": [
+                {
+                    "indPag_pag": "",
+                    "tPag": "16",
+                    "vPag": "10.00",
+                    "card": {
+                        "tipoIntegracao": 0,
+                        "CNPJ_card": "",
+                        "tBand": "",
+                        "cAut": ""
+                    }
+                }
+            ],
+            "vTroco": "0.00",
+            "infSuplem": {
+                "qrCode": "",
+                "urlChave": ""
+            },
+            "RespTecnico": {
+                "CNPJ": "87610802000100",
+                "xContato": "Joao Carlos da Cunha Pereira",
+                "email": "testemigrate1@gmail.com",
+                "fone": 35351285,
+                "idCSRT": "12",
+                "hashCSRT": "v61uDiGY1KWigdgMfHGYi6qilQo="
+            }
+        }
+    }
+]

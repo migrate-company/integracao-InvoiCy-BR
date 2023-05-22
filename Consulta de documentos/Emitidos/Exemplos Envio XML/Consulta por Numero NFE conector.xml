@@ -1,0 +1,22 @@
+<Consultar>
+	<ChaveParceiro>AAAA</ChaveParceiro>
+	<ChaveAcesso>AAAAA</ChaveAcesso>
+	<Consulta>
+		<ModeloDocumento>NFe</ModeloDocumento>
+		<Versao>4.00</Versao>
+		<tpAmb>2</tpAmb>
+		<CnpjEmpresa>99999999999999</CnpjEmpresa>
+		<CnpjEmissor>99999999999999</CnpjEmissor>
+		<NumeroInicial>10</NumeroInicial>
+		<NumeroFinal>10</NumeroFinal>
+		<Serie>1</Serie>
+	</Consulta>
+	<ParametrosConsulta>
+		<Situacao>S</Situacao>
+		<XMLCompleto>S</XMLCompleto>
+		<XMLLink>S</XMLLink>
+		<PDFBase64>S</PDFBase64>
+		<PDFLink>S</PDFLink>
+		<Eventos>S</Eventos>
+	</ParametrosConsulta>
+</Consultar>

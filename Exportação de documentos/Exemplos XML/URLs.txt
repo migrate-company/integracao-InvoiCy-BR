@@ -1,0 +1,2 @@
+homologação: https://homolog.invoicy.com.br/aexportardocumentos.aspx?wsdl
+produção: https://consulta.invoicy.com.br/aexportardocumentos.aspx?wsdl

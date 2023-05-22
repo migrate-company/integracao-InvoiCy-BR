@@ -1,0 +1,245 @@
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "MDFe",
+            "Versao": 3,
+            "ide": {
+                "cMDF": 9576,
+                "cUF": 43,
+                "tpAmb": 2,
+                "tpEmit": 1,
+                "tpTransp": 1,
+                "serie": "261",
+                "nMDF": 153,
+                "modal": 1,
+                "dhEmi": "2021-02-22T16:29:00",
+                "fusoHorario": "-03:00",
+                "tpEmis": 2,
+                "UFIni": "RS",
+                "UFFim": "SC",
+                "dhIniViagem": "2021-02-22T16:29:00",
+                "indCanalVerde": 0,
+                "indCarregaPosterior": 0,
+                "MunicipiosCarreg": [
+                    {
+                        "cMunCarreg": 4321808,
+                        "xMunCarreg": "TRES DE MAIO"
+                    },
+                    {
+                        "cMunCarreg": 4310207,
+                        "xMunCarreg": "IJUI"
+                    }
+                ]
+            },
+            "emit": {
+                "CNPJ_emit": "06354976000149",
+                "CPF_emit": "",
+                "xNome": "Migrate",
+                "xFant": "",
+                "IE": "1470049241",
+                "enderEmit": {
+                    "xLgr": "Rua Padre Cacique",
+                    "nro": "900",
+                    "xCpl": "",
+                    "xBairro": "Centro",
+                    "cMun": 4321808,
+                    "xMun": "TRES DE MAIO",
+                    "CEP": "98910000",
+                    "UF": "RS",
+                    "fone": "",
+                    "email": ""
+                }
+            },
+            "InfModal": {
+                "versaoModal": 3,
+                "Rodoviario": {
+                    "RNTRC": "12345678",
+                    "CIOT": "",
+                    "codAgPorto": "UIASDHI332",
+                    "infCIOT": [
+                        {
+                            "CIOT": "123456789412",
+                            "CPF_CIOT": "03935034024",
+                            "CNPJ_CIOT": ""
+                        }
+                    ],
+                    "Contratante": [
+                        {
+                            "CPF_Contr": "65675003010",
+                            "CNPJ_Contr": "",
+                            "IdEstrangeiro_Contr": "",
+                            "Nome_Contr": ""
+                        }
+                    ],
+                    "VeicTracao": {
+                        "codigo_veiculo": "001",
+                        "placa": "KLB0152",
+                        "tara": 13000,
+                        "capacidadeKG": 666,
+                        "capacidadeM3": 333,
+                        "tipoRodado": "01",
+                        "tipoCarroceria": "02",
+                        "UF_veiculo": "RS",
+                        "RENAVAM": "",
+                        "Proprietario": {
+                            "CPF_prop": "65675003010",
+                            "CNPJ_prop": "",
+                            "RNTRC_prop": "12345679",
+                            "nome_prop": "Gaius Claudius Glaber",
+                            "IE_prop": "123456",
+                            "UF_prop": "RS",
+                            "tipo_prop": 0
+                        },
+                        "Condutores": [
+                            {
+                                "nome_cond": "Lentulus Batiatus",
+                                "CPF_cond": "58691676043"
+                            },
+                            {
+                                "nome_cond": "Edinaldo",
+                                "CPF_cond": "77657488239"
+                            },
+                            {
+                                "nome_cond": "Boras",
+                                "CPF_cond": "93244749011"
+                            }
+                        ]
+                    },
+                    "VeicReboque": [
+                        {
+                            "codigo_reb": "0027",
+                            "placa_reb": "IKS5686",
+                            "tara_reb": 254,
+                            "capacidadeKG_reb": 652,
+                            "capacidadeM3_reb": 255,
+                            "tipoCarroceria_reb": "01",
+                            "UF_reb": "RS",
+                            "RENAVAM": "",
+                            "Proprietario_reb": {
+                                "CPF_prop_reb": "",
+                                "CNPJ_prop_reb": "03702076000157",
+                                "RNTRC_reb": "12345678",
+                                "nome_prop_reb": "Ilithyia",
+                                "IE_prop_reb": "12245645",
+                                "UF_prop_reb": "RS",
+                                "tipo_prop_reb": 1
+                            }
+                        }
+                    ],
+                    "ValePedagio": [
+                        {
+                            "CNPJForn": "03702076000157",
+                            "CNPJPagamento": "14812749000148",
+                            "numeroCompra": "5544",
+                            "vValePed": "66.80"
+                        }
+                    ],
+                    "LacresRodo": [
+                        {
+                            "nLacreRodo": "1234567"
+                        },
+                        {
+                            "nLacreRodo": "343445"
+                        }
+                    ]
+                }
+            },
+            "Documentos": {
+                "MunicipiosDescarreg": [
+                    {
+                        "cMunDescarreg": 4205407,
+                        "xMunDescarreg": "FLORIANOPOLIS",
+                        "InfDoc": [
+                            {
+                                "tipoDocumento": 1,
+                                "chaveAcesso": "43130406354976000149572890000000211123456788",
+                                "segCodBarras": "",
+                                "numero_ct": "",
+                                "serie_ct": "",
+                                "subserie_ct": 0,
+                                "dEmi_ct": "0000-00-00",
+                                "valorCarga_ct": "0.00",
+                                "CNPJ_nf": "",
+                                "UF_nf": "",
+                                "numero_nf": "",
+                                "serie_nf": "",
+                                "dEmi_nf": "0000-00-00",
+                                "valor_nf": "0.00",
+                                "PINSuframa_nf": "",
+                                "indReentrega": 1
+                            },
+                            {
+                                "tipoDocumento": 1,
+                                "chaveAcesso": "43190806354976000149522600000012021000001001",
+                                "segCodBarras": "",
+                                "numero_ct": "",
+                                "serie_ct": "",
+                                "subserie_ct": 0,
+                                "dEmi_ct": "0000-00-00",
+                                "valorCarga_ct": "0.00",
+                                "CNPJ_nf": "",
+                                "UF_nf": "",
+                                "numero_nf": "",
+                                "serie_nf": "",
+                                "dEmi_nf": "0000-00-00",
+                                "valor_nf": "0.00",
+                                "PINSuframa_nf": "",
+                                "indReentrega": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Seguro": [
+                {
+                    "nApol": "4321",
+                    "Averbacoes": [
+                        {
+                            "nAver": "1"
+                        },
+                        {
+                            "nAver": "2"
+                        }
+                    ],
+                    "infResp": {
+                        "respSeg": 1,
+                        "CNPJ_respSeg": "12345678901344",
+                        "CPF_respSeg": "14743208645"
+                    },
+                    "infSeg": {
+                        "XSeg": "Seguro de Moto",
+                        "CNPJ_seg": "12345678901344"
+                    }
+                }
+            ],
+            "ProdPredominante": {
+                "tpCarga": "05",
+                "xProd": "Latas de atum",
+                "cEAN": "SEM GTIN",
+                "NCM": "98765432",
+                "Lotacao": {
+                    "LocalCarrega": {
+                        "CEP_LocalCarrega": "98910000",
+                        "Latitude_LocalCarrega": "",
+                        "Longitude_LocalCarrega": ""
+                    },
+                    "LocalDescarrega": {
+                        "CEP_LocalDescarrega": "98915000",
+                        "Latitude_LocalDescarrega": "",
+                        "Longitude_LocalDescarrega": ""
+                    }
+                }
+            },
+            "Totais": {
+                "qtdCTe": 2,
+                "qtdCT": 0,
+                "qtdNFe": 0,
+                "qtdNF": 0,
+                "qtdMDFe": 0,
+                "valorCarga": "5666.66",
+                "codUnidMedida": "01",
+                "qtdCarga": "666.0000"
+            }
+        }
+    }
+]

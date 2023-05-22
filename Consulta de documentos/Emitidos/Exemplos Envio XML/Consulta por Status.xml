@@ -1,0 +1,13 @@
+<Consulta>
+	<ModeloDocumento>NFSe</ModeloDocumento>
+	<Versao>1.0</Versao>
+	<tpAmb>1</tpAmb>
+	<CnpjEmissor>06354976000149</CnpjEmissor>
+	<NumeroInicial>1</NumeroInicial>
+	<NumeroFinal>10</NumeroFinal>
+	<Serie>1</Serie>
+	<StatusDocumento>2</StatusDocumento><!-- 1 - Pendente; 2 - Autorizado; 3 - Rejeitado;
+4 - Necessita interação; 5 - Cancelado; 6 - Inutilizado; 7 - Aguardando Consulta;
+8 - Encerrado; 9 - Em Conflito; 10 - EPEC; 11 - Contingência off-line;
+12 - Denegado; 13 - Contingência FS-DA -->
+</Consulta>

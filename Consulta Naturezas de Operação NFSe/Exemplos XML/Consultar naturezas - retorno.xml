@@ -1,0 +1,40 @@
+<ConsultaNaturezaRetorno>
+	<ColecaoNaturezas>
+		<NaturezaItem>
+			<CodigoInvoiCy>3</CodigoInvoiCy>
+			<CodigoNaPrefeitura>3</CodigoNaPrefeitura>
+			<DescricaoNatureza>Isenção</DescricaoNatureza>
+		</NaturezaItem>
+		<NaturezaItem>
+			<CodigoInvoiCy>4</CodigoInvoiCy>
+			<CodigoNaPrefeitura>5</CodigoNaPrefeitura>
+			<DescricaoNatureza>Imunidade</DescricaoNatureza>
+		</NaturezaItem>
+		<NaturezaItem>
+			<CodigoInvoiCy>5</CodigoInvoiCy>
+			<CodigoNaPrefeitura>6</CodigoNaPrefeitura>
+			<DescricaoNatureza>Exigibilidade suspensa por decisão judicial</DescricaoNatureza>
+		</NaturezaItem>
+		<NaturezaItem>
+			<CodigoInvoiCy>6</CodigoInvoiCy>
+			<CodigoNaPrefeitura>7</CodigoNaPrefeitura>
+			<DescricaoNatureza>Exigibilidade suspensa por procedimento administrativo</DescricaoNatureza>
+		</NaturezaItem>
+		<NaturezaItem>
+			<CodigoInvoiCy>7</CodigoInvoiCy>
+			<CodigoNaPrefeitura>1</CodigoNaPrefeitura>
+			<DescricaoNatureza>Exigível</DescricaoNatureza>
+		</NaturezaItem>
+		<NaturezaItem>
+			<CodigoInvoiCy>8</CodigoInvoiCy>
+			<CodigoNaPrefeitura>2</CodigoNaPrefeitura>
+			<DescricaoNatureza>Não incidência</DescricaoNatureza>
+		</NaturezaItem>
+		<NaturezaItem>
+			<CodigoInvoiCy>9</CodigoInvoiCy>
+			<CodigoNaPrefeitura>4</CodigoNaPrefeitura>
+			<DescricaoNatureza>Exportação</DescricaoNatureza>
+		</NaturezaItem>
+	</ColecaoNaturezas>
+	<Mensagem/>
+</ConsultaNaturezaRetorno>

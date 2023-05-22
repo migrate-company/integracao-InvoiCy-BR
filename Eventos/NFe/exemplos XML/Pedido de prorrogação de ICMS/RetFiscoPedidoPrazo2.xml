@@ -1,0 +1,73 @@
+<procEventoNFe versao="1.00">
+               <evento versao="1.00">
+                  <infEvento Id="ID4115013516041815597900010955123000000045100000452801">
+                     <cOrgao>35</cOrgao>
+                     <tpAmb>2</tpAmb>
+                     <CNPJ>99999999999999</CNPJ>
+                     <chNFe>35160418115979000109551260000000451000004559</chNFe>
+                     <dhEvento>2016-04-14T10:14:58-03:00</dhEvento>
+                     <tpEvento>411501</tpEvento>
+                     <nSeqEvento>1</nSeqEvento>
+                     <verEvento>1.00</verEvento>
+                     <detEvento versao="1.00">
+                        <descEvento>Fisco - Prorrogação ICMS remessa para industrialização</descEvento>
+                        <idPedido>ID1115013516021611597900010955123000000045100000452901</idPedido>
+                        <respPedido>
+                           <statPrazo>1</statPrazo>
+                           <itemPedido numItem="1">
+                              <statPedido>1</statPedido>
+                              <justStatus>1</justStatus>
+                           </itemPedido>
+                           <itemPedido numItem="2">
+                              <statPedido>1</statPedido>
+                              <justStatus>1</justStatus>
+                           </itemPedido>
+                           <itemPedido numItem="3">
+                              <statPedido>1</statPedido>
+                              <justStatus>1</justStatus>
+                           </itemPedido>
+                           <itemPedido numItem="4">
+                              <statPedido>1</statPedido>
+                              <justStatus>1</justStatus>
+                           </itemPedido>
+                        </respPedido>
+                     </detEvento>
+                  </infEvento>
+                  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                     <SignedInfo>
+                        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                        <Reference URI="#ID4115013516041815597900010955123000000045100000452801">
+                           <Transforms>
+                              <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                              <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                           </Transforms>
+                           <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                           <DigestValue>pjAEmA7EvixzC63Cm3mW5e7QOPU=</DigestValue>
+                        </Reference>
+                     </SignedInfo>
+                     <SignatureValue>IF2V6Dpwej2Ba7FaOTtRbQtFyU+v4qH1u+NcKKO5mHaXNDXEHk4+uf+S0Wckwc895+Wzr4cETl6wkkvOvHf5/AJT2rJg9JaDt9qZv02BgalzaCJpvPx02Ze9xZ53Vht4yOZ2IZWUlZXDX8nf45giEEaPMO4tptZG0qI4/8nMi19DzlcXxlzRAnRmwtIc7uKHLTBxxLgTZH5WKK3wJiCU7KP8CxS5dLJK/fdoJI+Pwj0RalGH3/wGJ0dLo2CftRn5dEL5LgxPHQGkqFKKuCFCwQXo24PPb+T8dMREhOxA4PrGmelHGVTf0TEPmWHiQ6Usprd/jqFOBGq5ToaqFeJhRQ==</SignatureValue>
+                     <KeyInfo>
+                        <X509Data>
+                           <X509Certificate>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</X509Certificate>
+                        </X509Data>
+                     </KeyInfo>
+                  </Signature>
+               </evento>
+               <retEvento versao="1.00">
+                  <infEvento>
+                     <tpAmb>2</tpAmb>
+                     <verAplic>SP_EVENTOS_PL_100</verAplic>
+                     <cOrgao>35</cOrgao>
+                     <cStat>135</cStat>
+                     <xMotivo>Evento registrado e vinculado a NF-e</xMotivo>
+                     <chNFe>35160418115979000109551260000000451000004559</chNFe>
+                     <tpEvento>411501</tpEvento>
+                     <xEvento>Evento do Fisco registrado</xEvento>
+                     <nSeqEvento>1</nSeqEvento>
+                     <CNPJDest>99999999999999</CNPJDest>
+                     <dhRegEvento>2016-04-14T10:16:10-03:00</dhRegEvento>
+                     <nProt>135160001503754</nProt>
+                  </infEvento>
+               </retEvento>
+            </procEventoNFe>

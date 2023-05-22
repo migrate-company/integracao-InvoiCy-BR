@@ -1,0 +1,22 @@
+<ConsultaMunicipiosRetorno>
+	<listaMunicipios>
+		<municipio>
+			<codMunicipio>3550308</codMunicipio>
+			<nomeMunicipio>SÃO PAULO</nomeMunicipio>
+			<UF>SP</UF>
+			<padNome>NF Paulistana</padNome>
+			<tipoIntegracao>Web Service</tipoIntegracao>
+			<possuiHomolog>S</possuiHomolog>
+			<UrlDesenvolvedores>https://desenvolvedores.migrate.info/2014/04/29/padrao-nf-paulistana/</UrlDesenvolvedores>
+			<CancelamentoWebService>S</CancelamentoWebService>
+			<UsaCertificado>S</UsaCertificado>
+			<Substituicao>N</Substituicao>
+			<possuiRecepcao>S</possuiRecepcao>
+			<importaNotasEmitidas>Web Service</importaNotasEmitidas>
+			<importaNotasRecebidas>Web Service</importaNotasRecebidas>
+			<ModeloOperacional>S</ModeloOperacional>
+			<ImportacaoOCR>S</ImportacaoOCR>
+		</municipio>
+	</listaMunicipios>
+	<erros/>
+</ConsultaMunicipiosRetorno>

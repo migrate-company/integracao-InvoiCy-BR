@@ -1,0 +1,14 @@
+<EnvioLote>
+	<ModeloDocumento>nfse</ModeloDocumento>
+	<Versao>1</Versao>
+	<tpAmb>1</tpAmb>
+	<CnpjEmpresa>06354976000149</CnpjEmpresa>
+	<StatutsDocumento>0</StatutsDocumento>
+	<NumeroInicial>0</NumeroInicial>
+	<NumeroFinal>0</NumeroFinal>
+	<Serie/>
+	<DataEmissaoInicial>2019-04-01T00:00:00</DataEmissaoInicial>
+	<DataEmissaoFinal>2019-04-05T00:00:00</DataEmissaoFinal>
+	<EmitidoRecebido>R</EmitidoRecebido>
+	<ResumoDocumento>N</ResumoDocumento>
+</EnvioLote>
