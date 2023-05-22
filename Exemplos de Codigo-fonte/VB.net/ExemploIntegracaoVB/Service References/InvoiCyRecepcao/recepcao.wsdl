@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="InvoiCy" xmlns:wsdlns="InvoiCy" name="recepcao" targetNamespace="InvoiCy" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="InvoiCy">
+      <xsd:complexType name="InvoiCy">
+        <xsd:sequence>
+          <xsd:element name="Cabecalho" type="wsdlns:InvoiCyRecepcao.Cabecalho" />
+          <xsd:element name="Informacoes" type="wsdlns:InvoiCyRecepcao.Informacoes" />
+          <xsd:element name="Dados">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="DadosItem" type="wsdlns:InvoiCyRecepcao.DadosItem" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiCyRecepcao.Cabecalho">
+        <xsd:sequence>
+          <xsd:element name="EmpPK" type="xsd:string" />
+          <xsd:element name="EmpCK" type="xsd:string" />
+          <xsd:element name="EmpCO" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiCyRecepcao.Informacoes">
+        <xsd:sequence>
+          <xsd:element name="Texto" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfInvoiCyRecepcao.DadosItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiCyRecepcao.DadosItem" type="wsdlns:InvoiCyRecepcao.DadosItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiCyRecepcao.DadosItem">
+        <xsd:sequence>
+          <xsd:element name="Documento" type="xsd:string" />
+          <xsd:element name="Parametros" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Invoicyretorno">
+        <xsd:sequence>
+          <xsd:element name="Mensagem">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="MensagemItem" type="wsdlns:InvoiCyRetorno.MensagemItem" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfInvoiCyRetorno.MensagemItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiCyRetorno.MensagemItem" type="wsdlns:InvoiCyRetorno.MensagemItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiCyRetorno.MensagemItem">
+        <xsd:sequence>
+          <xsd:element name="Codigo" type="xsd:int" />
+          <xsd:element name="Descricao" type="xsd:string" />
+          <xsd:element name="Documentos">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="DocumentosItem" type="wsdlns:InvoiCyRetorno.MensagemItem.DocumentosItem" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfInvoiCyRetorno.MensagemItem.DocumentosItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="InvoiCyRetorno.MensagemItem.DocumentosItem" type="wsdlns:InvoiCyRetorno.MensagemItem.DocumentosItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InvoiCyRetorno.MensagemItem.DocumentosItem">
+        <xsd:sequence>
+          <xsd:element name="Documento" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="recepcao.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Invoicyrecepcao" type="wsdlns:InvoiCy" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="recepcao.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Invoicyretorno" type="wsdlns:Invoicyretorno" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="recepcao.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:recepcao.Execute" />
+  </message>
+  <message name="recepcao.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:recepcao.ExecuteResponse" />
+  </message>
+  <portType name="recepcaoSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:recepcao.ExecuteSoapIn" />
+      <output message="wsdlns:recepcao.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="recepcaoSoapBinding" type="wsdlns:recepcaoSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="InvoiCyaction/ARECEPCAO.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="recepcao">
+    <port name="recepcaoSoapPort" binding="wsdlns:recepcaoSoapBinding">
+      <soap:address location="https://homolog.invoicy.com.br/arecepcao.aspx" />
+    </port>
+  </service>
+</definitions>
