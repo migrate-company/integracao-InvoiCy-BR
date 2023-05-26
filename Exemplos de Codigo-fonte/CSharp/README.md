@@ -1,7 +1,7 @@
 # 🚀 Integração InvoiCy via API Rest em CSharp 🚀
 
 ## Descrição do Projeto
-Aplicativo Console no Padrão MVC. O código fonte deste aplicativo pode ser utilizado como base para o desenvolvimento da integração da integração com o InvoiCy via API Rest em C#.
+Aplicativo Console no Padrão MVC. O código fonte deste aplicativo pode ser utilizado como base para o desenvolvimento da integração com o InvoiCy via API Rest em C#.
 
 🔗 Mais informações podem ser encontradas a seguir:
 - [Integração API REST](https://desenvolvedores.migrate.info/2020/06/integracao-via-api-rest-para-emissao-de-documentos/ "Integração API REST")
