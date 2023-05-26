@@ -52,7 +52,7 @@ A string "token" será um JSON contendo o AccessToken e RefreshToken. Essas info
 - Quando expirar o refreshToken após ~24 horas~, será necessário realizar o mesmo processo descrito acima para obter um novo token válido.
 
 ## Integrações API Rest:
-No [Exemplo POSTMAN](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest) pode ser encontrado os comandos para diferentes tipos de requisições. 
+No Exemplo POSTMAN  [<img src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1629869194/team/2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8" height="20px" />](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest) pode ser encontrado os comandos para diferentes tipos de requisições. 
 
 Várias dessas requisições foram implementadas neste aplicativo. Caso queira utilizar arquivos pessoais, por favor edite os arquivos na fonte de dados (Source.cs).
 
