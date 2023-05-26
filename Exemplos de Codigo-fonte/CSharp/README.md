@@ -52,11 +52,12 @@ No [Exemplo POSTMAN](https://documenter.getpostman.com/view/9193875/SztEanQL?ver
 
 ### Validar token: 
 ```csharp
-uri = $"https://apibrhomolog.invoicy.com.br/oauth2/invoicy";
+uri = $"https://apibrhomolog.invoicy.com.br/oauth2/invoicy/validate";
 var accessToken = user.Token.accessToken;
 dados = "{\n\t \"token\": \"" + accessToken + "\"\n}";
 var response = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
 ```
+
 ### Renovar token:  
 ```csharp
 uri = "https://apibrhomolog.invoicy.com.br/oauth2/invoicy/auth";
@@ -64,14 +65,8 @@ var refreshToken = user.Token.refreshToken;
 dados = "{\n\t \"refreshToken\": \"" + refreshToken + "\"\n}";
 var tokenRenovado = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
 ```
+
 ### Cadastrar série: 
-```csharp
-uri = "https://apibrhomolog.invoicy.com.br/oauth2/invoicy/auth";
-var refreshToken = user.Token.refreshToken;
-dados = "{\n\t \"refreshToken\": \"" + refreshToken + "\"\n}";
-var tokenRenovado = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
-```
-### Enviar arquivo (nfe):
 ```csharp
 uri = "https://apibrhomolog.invoicy.com.br/companies/series";
 Series serie = new Series()
@@ -85,6 +80,14 @@ Series serie = new Series()
 var serieJson = JsonSerializer.Serialize(serie, new JsonSerializerOptions() { WriteIndented = true });
 var response = await Rest.GetAsync(HttpMethod.Post, user, serieJson, uri, true);
 ```
+
+### Enviar arquivo (nfe):
+```csharp
+uri = "https://apibrhomolog.invoicy.com.br/senddocuments/nfe?type=Emissao";
+dados = Dados.NFe["Emissao"]; //Arquivo NFe a ser enviado em formato Json
+var response = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, true);
+```
+
 ### Descartar arquivo (nfe):
 ```csharp
 uri = "https://apibrhomolog.invoicy.com.br/senddocuments/nfe?type=Descarte";
