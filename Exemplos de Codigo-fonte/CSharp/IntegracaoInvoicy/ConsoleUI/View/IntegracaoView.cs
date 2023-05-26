@@ -18,7 +18,7 @@ namespace ConsoleUI.View
             Console.WriteLine("1 - Autenticação");
             Console.WriteLine("2 - Empresa");
             Console.WriteLine("3 - Série");
-            Console.WriteLine("4 - Documentos");
+            Console.WriteLine("4 - Documentos\n");
             int.TryParse(Console.ReadLine().Trim(), out int valor);
             return valor;
         }
@@ -29,7 +29,7 @@ namespace ConsoleUI.View
             Console.WriteLine("1 - Visualizar Token");
             Console.WriteLine("2 - Gerar Token");       //POST
             Console.WriteLine("3 - Validar Token");     //POST
-            Console.WriteLine("4 - RenovarToken Token");//POST
+            Console.WriteLine("4 - RenovarToken Token\n");//POST
             int.TryParse(Console.ReadLine().Trim(), out int valor);
             return valor;
         }
@@ -40,7 +40,10 @@ namespace ConsoleUI.View
             Console.WriteLine("1 - Consultar Empresa"); //GET
             Console.WriteLine("2 - Cadastrar Empresa"); //POST
             Console.WriteLine("3 - Atualizar Empresa"); //PUT
-            //Console.WriteLine("4 - Licenciamento Empresa"); //POST
+            Console.WriteLine("4 - Licenciamento Empresa"); //POST
+            Console.WriteLine("5 - Bilhetagem"); //POST
+            Console.WriteLine("6 - Consulta CNPJ Sefaz"); //POST
+            Console.WriteLine("7 - Consulta de MDF-e não encerrados"); //POST
             int.TryParse(Console.ReadLine().Trim(), out int valor);
             return valor;
         }
@@ -80,6 +83,14 @@ namespace ConsoleUI.View
             Console.WriteLine("4 - NFSe");
             Console.WriteLine("5 - CTe");
             Console.WriteLine("6 - Sefaz");
+            int.TryParse(Console.ReadLine().Trim(), out int valor);
+            return valor;
+        }
+
+        public int MenuEventos()
+        {
+            Console.WriteLine("Tipo de evento:");
+            Console.WriteLine("1 - Cancelamento");
             int.TryParse(Console.ReadLine().Trim(), out int valor);
             return valor;
         }

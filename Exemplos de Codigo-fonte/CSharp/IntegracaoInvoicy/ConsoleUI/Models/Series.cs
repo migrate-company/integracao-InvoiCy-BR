@@ -7,6 +7,5 @@
         public string Serie { get; set; }
         public int UltimoNumero { get; set; }
         public string SerieProduto { get; set; }
-
     }
 }
