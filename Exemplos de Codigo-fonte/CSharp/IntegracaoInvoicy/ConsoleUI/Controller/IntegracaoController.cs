@@ -5,6 +5,7 @@ using System.Net.Http;
 using ConsoleUI.View;
 using ConsoleUI.Models;
 using ConsoleUI.Services;
+using System.Windows.Threading;
 
 namespace ConsoleUI.Controller
 {
@@ -12,23 +13,53 @@ namespace ConsoleUI.Controller
     {
         IntegracaoView View { get; set; }
         Source Dados { get; set; }
-        User user {get; set; }
+        User Usuario {get; set; }
+
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
+
+        bool isAccessOk, isRefreshOk;
 
         public IntegracaoController()
         {
             this.View = new IntegracaoView();
             this.Dados = new Source();
-            this.user = new User()
+            this.Usuario = new User()
             {
                 Params = new RequestParams()
                 {
                     cnpj = "06354976000149",
                     chaveDeAcesso = "eKdz2fcZg9ZMt3DrfF/KSIVoH59Ca6nN",
                     chaveDeParceiro = "YPxRwGxIbpWZtwhuC0m+Wg==",
-                    segundosExp = 900
+                    segundosExp = 10
                 },
                 Token = new UserToken()
             };
+
+            dispatcherTimer.Interval = new TimeSpan(0,0,1);
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
+        }
+
+        private void DispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            if (!isAccessOk && !isRefreshOk)
+            {
+                dispatcherTimer.Stop();
+                return;
+            }
+
+            var TempoAccessToken = Usuario.Token.accessTokenExpireAt - DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            var TempoRefreshToken = Usuario.Token.refreshTokenExpireAt - DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            
+            if (TempoAccessToken <= 0 && isAccessOk)
+            {
+                View.TempoExpirado("AccessToken");
+                isAccessOk = false;
+            }
+            if (TempoRefreshToken <= 0 && isRefreshOk)
+            {
+                View.TempoExpirado("RefreshToken");
+                isRefreshOk = false;
+            }
         }
 
         public async Task RunAsync()
@@ -63,7 +94,7 @@ namespace ConsoleUI.Controller
                         break;
 
                     default:
-                        View.Erro();
+                        View.Erro("Opção inválida.");
                         break;
                 }
             }
@@ -75,39 +106,51 @@ namespace ConsoleUI.Controller
                 switch (opcao)
                 {
                     case 1:
-                        var actualToken = JsonSerializer.Serialize(user.Token, new JsonSerializerOptions() { WriteIndented = true }); ;
+                        var actualToken = JsonSerializer.Serialize(Usuario.Token, new JsonSerializerOptions() { WriteIndented = true }); ;
                         Console.WriteLine($"Token atual: {actualToken}");
                         break;
 
                     case 2:
                         uri = $"{uri}/auth";
-                        var tokenJWT = JwtTokenCreator.GeraTokenJWT(user.Params); //obtém um token JWT
+                        var tokenJWT = JwtTokenCreator.GeraTokenJWT(Usuario.Params); //obtém um token JWT
                         dados = "{\n\t \"token\": \"" + tokenJWT + "\"\n}";
 
-                        var tokenGerado = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
-                        user.Token = JsonSerializer.Deserialize<UserToken>(tokenGerado);
+                        var tokenGerado = await Rest.GetAsync(HttpMethod.Post, Usuario, dados, uri, false);
 
-                        Console.WriteLine($"JWT Token: {tokenJWT}\n");
-                        Console.WriteLine($"Token gerado: {tokenGerado}");
+                        try
+                        {
+                            Usuario.Token = JsonSerializer.Deserialize<UserToken>(tokenGerado);
+                            Console.WriteLine($"JWT Token: {tokenJWT}\n");
+                            Console.WriteLine($"Token gerado: {tokenGerado}");
+                            isAccessOk = true; isRefreshOk = true;
+                            dispatcherTimer.Start();
+                        }
+                        catch
+                        {
+                            View.Erro(tokenGerado);
+                        }
                         break;
 
                     case 3:
                         uri = $"{uri}/validate";
-                        var accessToken = user.Token.accessToken;
+                        var accessToken = Usuario.Token.accessToken;
                         dados = "{\n\t \"token\": \"" + accessToken + "\"\n}";
 
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados, uri, false));
                         break;
 
                     case 4:
                         uri = $"{uri}/auth";
-                        var refreshToken = user.Token.refreshToken;
+                        var refreshToken = Usuario.Token.refreshToken;
                         dados = "{\n\t \"refreshToken\": \"" + refreshToken + "\"\n}";
 
-                        var tokenRenovado = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
-                        user.Token = JsonSerializer.Deserialize<UserToken>(tokenRenovado);
+                        var tokenRenovado = await Rest.GetAsync(HttpMethod.Post, Usuario, dados, uri, false);
+                        Usuario.Token = JsonSerializer.Deserialize<UserToken>(tokenRenovado);
 
                         Console.WriteLine($"Token renovado: {tokenRenovado}");
+
+                        isAccessOk = true; isRefreshOk = true;
+                        dispatcherTimer.Start();
                         break;
 
                     default:
@@ -122,36 +165,36 @@ namespace ConsoleUI.Controller
                 switch (opcao)
                 {
                     case 1:
-                        uri = $"{uri}?CNPJ={user.Params.cnpj}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, user, null, uri, true));
+                        uri = $"{uri}?CNPJ={Usuario.Params.cnpj}";
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, Usuario, null, uri, true));
                         break;
 
                     case 2:
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, Dados.Empresa["Cadastro"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, Dados.Empresa["Cadastro"], uri, true));
                         break;
 
                     case 3:
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Put, user, Dados.Empresa["Editar"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Put, Usuario, Dados.Empresa["Editar"], uri, true));
                         break;
 
                     case 4:
                         uri = $"{uri}?type=licenciamento";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, Dados.Empresa["Licenciamento"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, Dados.Empresa["Licenciamento"], uri, true));
                         break;
 
                     case 5:
                         uri = $"{uri}?ModeloDocumento=nfe&type=consultabilhetagem&tpAmb=2&TipoConsulta=2&Acumulado=&DataInclusaoInicial=2021-02-01&DataInclusaoFinal=2021-02-11&Emissores=06354976000149,09346994000177";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, user, null, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, Usuario, null, uri, true));
                         break;
 
                     case 6:
                         uri = $"{uri}?tpAmb=2&type=consultasefaz&Versao=2&CNPJ_emit=06354976000149&CPF_emit&cUF=43";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, user, null, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, Usuario, null, uri, true));
                         break;
 
                     case 7:
                         uri = $"{uri}?tpAmb=2&type=docnaoencerrado&Versao=3.00&CNPJEmissor=06354976000149&ModeloDocumento=MDFe";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, user, null, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, Usuario, null, uri, true));
                         break;
                 }
             }
@@ -162,10 +205,10 @@ namespace ConsoleUI.Controller
                 switch (opcao)
                 {
                     case 1:
-                        uri = $"{uri}?CNPJEmissor={user.Params.cnpj}&ModeloDocumento={"NFS-e"}"; //  StatusCode: 400, ReasonPhrase: 'Bad Request'
+                        uri = $"{uri}?CNPJEmissor={Usuario.Params.cnpj}&ModeloDocumento={"NFS-e"}"; //  StatusCode: 400, ReasonPhrase: 'Bad Request'
                         uri = "https://apibrhomolog.invoicy.com.br/companies/series?CNPJEmissor=06354976000149&ModeloDocumento=NFS-e"; //  StatusCode: 400, ReasonPhrase: 'Bad Request'
                         uri = "https://apibrhomolog.invoicy.com.br/companies/series";/*{ "Codigo": 606, "Descricao": "Não foi possível processar a operação, verifique os dados enviados e tente novamente." }*/
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, user, null, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, Usuario, null, uri, true));
                         break;
 
                     case 2:
@@ -179,7 +222,7 @@ namespace ConsoleUI.Controller
                         };
                         var serieJson = JsonSerializer.Serialize(serie, new JsonSerializerOptions() { WriteIndented = true });
 
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, serieJson, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, serieJson, uri, true));
                         break;
 
                     case 3:
@@ -194,7 +237,7 @@ namespace ConsoleUI.Controller
 
                         var serieAtualizadaJson = JsonSerializer.Serialize(serieAtualizada, new JsonSerializerOptions() { WriteIndented = true });
 
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Put, user, serieAtualizadaJson, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Put, Usuario, serieAtualizadaJson, uri, true));
                         break;
 
                     case 4:
@@ -209,22 +252,23 @@ namespace ConsoleUI.Controller
                         var delete = "{\n    \"CNPJEmissor\": \"06354976000149\",\n    \"ModeloDocumento\": \"NFS-e\",\n    \"Serie\": \"A1\"\n}";
                         var serieDeleteJson = JsonSerializer.Serialize(serieDelete, new JsonSerializerOptions() { WriteIndented = true });
 
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Delete, user, delete, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Delete, Usuario, delete, uri, true));
                         break;
                 }
             }
 
             async Task DocumentosAsync(int opcao, int opcaoTipo)
             {
-                var tipoDocumento = opcaoTipo == 1 ? "NFe" :
+                var tipoDocumento = 
+                    opcaoTipo == 1 ? "NFe" :
                     opcaoTipo == 2 ? "NFCe" :
                     opcaoTipo == 3 ? "MDFe" :
                     opcaoTipo == 4 ? "NFSe" :
                     opcaoTipo == 5 ? "CTe" :
                     opcaoTipo == 6 ? "Sefaz" : "Error"; //{"type":"about:blank","title":""Not found"","status":404,"detail":""}
 
-                var dados = opcaoTipo == 1 ?
-                    Dados.NFe : opcaoTipo == 2 ?
+                var dados = opcaoTipo == 1 ? Dados.NFe : 
+                    opcaoTipo == 2 ?
                     Dados.NFCe : opcaoTipo == 3 ?
                     Dados.MDFe : opcaoTipo == 4 ?
                     Dados.NFSe : opcaoTipo == 5 ?
@@ -238,17 +282,17 @@ namespace ConsoleUI.Controller
                     case 1:
                         tipoAcao = "Emissao";
                         uri = $"{uri}/{tipoDocumento.ToLower()}?type={tipoAcao}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados["Emissao"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados["Emissao"], uri, true));
                         break;
 
                     case 2: // ok mas a resposta é vazia ""
                         tipoAcao = "Consulta";
-                        var CnpjEmissor = user.Params.cnpj;
+                        var CnpjEmissor = Usuario.Params.cnpj;
                         var NumeroInicial = 25;
                         var NumeroFinal = 26;
                         var Serie = 245;
                         var Versao = 4.00;
-                        var CnpjEmpresa = user.Params.cnpj;
+                        var CnpjEmpresa = Usuario.Params.cnpj;
                         var tpAmb = 2;
                         var dhUF = "";
                         var ChaveAcesso = "";
@@ -295,36 +339,36 @@ namespace ConsoleUI.Controller
 
                         uri = "https://apibrhomolog.invoicy.com.br/senddocuments/nfce?type=Consulta&CnpjEmissor=06354976000149&NumeroInicial=25&NumeroFinal=26&Serie=245&Versao=4.00&CnpjEmpresa=06354976000149&tpAmb=2&ParmPDFBase64=N&ParmPDFLink=S&ParmEventos=N&ParmSituacao=S";
 
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, user, null, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Get, Usuario, null, uri, true));
                         break;
 
                     case 3:
                         tipoAcao = "Inutilizacao";
                         uri = $"{uri}/{tipoDocumento.ToLower()}?type={tipoAcao}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados["Inutilizacao"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados["Inutilizacao"], uri, true));
                         break;
 
                     case 4:
                         tipoAcao = "Descarte";
                         uri = $"{uri}/{tipoDocumento.ToLower()}?type={tipoAcao}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados["Descarte"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados["Descarte"], uri, true));
                         break;
 
                     case 5:tipoAcao = "Evento";
                         uri = $"{uri}/{tipoDocumento.ToLower()}?type={tipoAcao}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados["Cancelamento"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados["Cancelamento"], uri, true));
                         break;
 
                     case 6:
                         tipoAcao = "exportdocuments";
                         uri = $"{uri}/{tipoDocumento.ToLower()}?type={tipoAcao}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados["exportdocuments"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados["exportdocuments"], uri, true));
                         break;
 
                     case 7:
                         tipoAcao = "Importacao";
                         uri = $"{uri}/{tipoDocumento.ToLower()}?type={tipoAcao}";
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, user, dados["Importacao"], uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, dados["Importacao"], uri, true));
                         break;
                 }
             }

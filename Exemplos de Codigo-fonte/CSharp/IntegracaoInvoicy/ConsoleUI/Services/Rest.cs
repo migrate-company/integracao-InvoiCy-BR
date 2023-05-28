@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using ConsoleUI.Models;
 using Microsoft.IdentityModel.Tokens;
@@ -23,10 +24,17 @@ namespace ConsoleUI.Services
                 {
                     httpRequest.Headers.Add("Authorization", header);
                 }
-                using (HttpResponseMessage httpResponse = await _httpClient.SendAsync(httpRequest))
+                try
                 {
-                    var resposta = await httpResponse.Content.ReadAsStringAsync();
-                    return resposta;
+                    using (HttpResponseMessage httpResponse = await _httpClient.SendAsync(httpRequest))
+                    {
+                        var resposta = await httpResponse.Content.ReadAsStringAsync();
+                        return resposta;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return ex.InnerException.Message;
                 }
             }
         }

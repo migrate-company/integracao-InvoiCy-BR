@@ -9,33 +9,39 @@ namespace ConsoleUI.View
             Console.WriteLine("************ MIGRATE INVOICY - INTEGRAÇÃO REST C# ************");
             Console.WriteLine("Os dados da sua empresa devem ser editados na criação do usuário no arquivo IntegracaoController.cs");
             Console.WriteLine("Os arquivos em formato Json devem ser editados no arquivo Source.cs");
-            Console.WriteLine("************ MIGRATE INVOICY - INTEGRAÇÃO REST C# ************\n");
+            Console.WriteLine("************ MIGRATE INVOICY - INTEGRAÇÃO REST C# ************");
         }
 
         public int MenuInicial()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Selecione a opção desejada");
             Console.WriteLine("1 - Autenticação");
             Console.WriteLine("2 - Empresa");
             Console.WriteLine("3 - Série");
-            Console.WriteLine("4 - Documentos\n");
+            Console.WriteLine("4 - Documentos");
             int.TryParse(Console.ReadLine().Trim(), out int valor);
             return valor;
         }
 
         public int MenuAutenticacao()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Selecione a opção desejada:");
             Console.WriteLine("1 - Visualizar Token");
             Console.WriteLine("2 - Gerar Token");       //POST
             Console.WriteLine("3 - Validar Token");     //POST
-            Console.WriteLine("4 - RenovarToken Token\n");//POST
+            Console.WriteLine("4 - RenovarToken Token");//POST
             int.TryParse(Console.ReadLine().Trim(), out int valor);
             return valor;
         }
 
         public int MenuEmpresa()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Selecione a opção desejada:");
             Console.WriteLine("1 - Consultar Empresa"); //GET
             Console.WriteLine("2 - Cadastrar Empresa"); //POST
@@ -50,6 +56,8 @@ namespace ConsoleUI.View
 
         public int MenuSerie()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Selecione a opção desejada:");
             Console.WriteLine("1 - Consultar Série");   //GET
             Console.WriteLine("2 - Cadastrar Série");   //POST
@@ -61,6 +69,8 @@ namespace ConsoleUI.View
 
         public int MenuDocumentos()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Selecione a opção desejada:");
             Console.WriteLine("1 - Enviar");        //POST
             Console.WriteLine("2 - Consultar");     //GET
@@ -76,6 +86,8 @@ namespace ConsoleUI.View
 
         public int MenuTipoDocumentos()
         {
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
             Console.WriteLine("Tipo de documento");
             Console.WriteLine("1 - NFe");
             Console.WriteLine("2 - NFCe");
@@ -87,18 +99,19 @@ namespace ConsoleUI.View
             return valor;
         }
 
-        public int MenuEventos()
+        public void TempoExpirado(string token)
         {
-            Console.WriteLine("Tipo de evento:");
-            Console.WriteLine("1 - Cancelamento");
-            int.TryParse(Console.ReadLine().Trim(), out int valor);
-            return valor;
+            Console.WriteLine(); 
+            Console.WriteLine("**************************************************************");
+            Console.WriteLine($"{token} EXPIRADO!");
+            Console.WriteLine("**************************************************************");
         }
 
-
-        public void Erro()
+        public void Erro(string erro)
         {
-            Console.WriteLine("Opção inválida.");
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine($"Erro: {erro}");
         }
     }
 }
