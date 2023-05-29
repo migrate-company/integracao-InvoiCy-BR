@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="https://homolog.invoicy.com.br/arecepcao.aspx?wsdl" uri="xml-resources/web-service-references/arecepcao/wsdl/homolog.invoicy.com.br/arecepcao.aspx.wsdl"/>
-    <system systemId="file:/C:/Users/jg10093/Documents/Invoicynfe.wsdl" uri="xml-resources/web-service-references/Invoicynfe/wsdl/Invoicynfe.wsdl"/>
-</catalog>
