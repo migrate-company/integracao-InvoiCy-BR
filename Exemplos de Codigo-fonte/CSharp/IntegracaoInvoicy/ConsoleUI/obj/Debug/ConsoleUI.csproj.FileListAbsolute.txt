@@ -1,0 +1,77 @@
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\ConsoleUI.exe
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\ConsoleUI.pdb
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\IntegracaoInvoicy.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\IntegracaoInvoicy.pdb
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.AssemblyReference.cache
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.CopyComplete
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.exe
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.pdb
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Buffers.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Memory.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Json.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.ValueTuple.dll
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Buffers.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Memory.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Json.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.ValueTuple.xml
+C:\Users\ea23318\source\repos\IntegracaoInvoicy\ConsoleUI\bin\Debug\IntegracaoInvoicy.dll.config
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\ConsoleUI.exe
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\ConsoleUI.pdb
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Buffers.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Memory.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Json.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.ValueTuple.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Buffers.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Memory.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Text.Json.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.ValueTuple.xml
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.AssemblyReference.cache
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.CopyComplete
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.exe
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.pdb
