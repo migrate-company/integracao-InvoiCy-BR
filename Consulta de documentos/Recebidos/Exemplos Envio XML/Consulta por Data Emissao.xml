@@ -1,0 +1,10 @@
+<Consulta>
+	<ModeloDocumento>NFSe</ModeloDocumento>
+	<Versao>1.0</Versao>
+	<tpAmb>1</tpAmb>
+	<CnpjEmpresa>06354976000149</CnpjEmpresa>
+	<DataEmissaoInicial>2023-05-01T00:00:00</DataEmissaoInicial>
+	<DataEmissaoFinal>2023-05-01T01:00:00</DataEmissaoFinal>
+	<Serie>1</Serie>
+	<EmitidoRecebido>R</EmitidoRecebido>
+</Consulta>

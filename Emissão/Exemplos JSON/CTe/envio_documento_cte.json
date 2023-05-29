@@ -1,0 +1,460 @@
+[{
+        "Documento": {
+            "ModeloDocumento": "CTe",
+            "Versao": 3.00,
+            "ide": {
+                "cCT": 11,
+                "cUF": 43,
+                "natOp": "Transporte",
+                "CFOP": 5352,
+                "mod": "57",
+                "serie": "305",
+                "nCT": 55,
+                "dhEmi": "2021-02-22T16:02:14",
+                "fusoHorario": "-03:00",
+                "tpImp": 1,
+                "tpEmis": 1,
+                "tpAmb": 2,
+                "tpCTe": 0,
+                "procEmi": 0,
+                "indGlobalizado": 0,
+                "refCTE": "",
+                "cMunEnv": 4321808,
+                "xMunEnv": "TRÊS DE MAIO",
+                "UFEnv": "RS",
+                "modal": "01",
+                "tpServ": 0,
+                "cMunIni": 4321808,
+                "xMunIni": "TRÊS DE MAIO",
+                "UFIni": "RS",
+                "cMunFim": 4300554,
+                "xMunFim": "ALTO ALEGRE",
+                "UFFim": "RS",
+                "retira": 0,
+                "xDetRetira": "Retirar o pacote no local de entrega indicado",
+                "indIEToma": 9,
+                "dhCont": "0000-00-00T00:00:00",
+                "xJust": "",
+                "EmailArquivos": "",
+                "tomador": {
+                    "toma": "4",
+                    "CNPJ_toma": "",
+                    "CPF_toma": "99999999999",
+                    "IE_toma": "",
+                    "xNome_toma": "Tomador de serviço",
+                    "xFant_toma": "Tomador de serviço",
+                    "fone_toma": "5535354800",
+                    "email_toma": "email@email.com.br",
+                    "enderTomador": {
+                        "xLgr_toma": "Rua Senador Salgado Filho",
+                        "nro_toma": "463",
+                        "xCpl_toma": "",
+                        "xBairro_toma": "Centro",
+                        "cMun_toma": 4321808,
+                        "xMun_toma": "TRÊS DE MAIO",
+                        "CEP_toma": "98910000",
+                        "UF_toma": "RS",
+                        "cPais_toma": 1046,
+                        "xPais_toma": "Brasil"
+                    }
+                }
+            },
+            "compl": {
+                "xCaracAd": "Encomenda",
+                "xCaracSer": "Transporte",
+                "xEmi": "Jose Campos",
+                "origCalc": "",
+                "destCalc": "",
+                "xObs": "Observações",
+                "fluxo": {
+                    "xOrig": "Angra dos Reis",
+                    "xDest": "Maria da Silva de Andrade da Conceição Ferreira Pinto Júnior",
+                    "xRota": "129386",
+                    "passagem": [{
+                            "xPass": "LHR"
+                        }, {
+                            "xPass": "CGH"
+                        }, {
+                            "xPass": "POA"
+                        }
+                    ]
+                },
+                "Entrega": {
+                    "tpPer": "1",
+                    "dProg": "2021-03-03",
+                    "dIni": "2021-03-03",
+                    "dFim": "2021-03-03",
+                    "tpHor": "1",
+                    "hProg": "10:30:22",
+                    "hIni": "10:30:22",
+                    "hFim": "10:30:22"
+                },
+                "ObsCont": [],
+                "ObsFisco": []
+            },
+            "emit": {
+                "CNPJ_emit": "06354976000149",
+                "IE": "1470049241",
+                "IEST": "123456789",
+                "xNome": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "xFant": "EMPRESA 1",
+                "CRT": "1",
+                "enderEmit": {
+                    "xLgr": "End",
+                    "nro": "1234",
+                    "xCpl": "teste",
+                    "xBairro": "Centro",
+                    "cMun": 4310405,
+                    "xMun": "Independencia",
+                    "CEP": "98910000",
+                    "UF": "RS",
+                    "fone": "35354560"
+                }
+            },
+            "rem": {
+                "CNPJ_rem": "06354976000149",
+                "CPF_rem": "",
+                "IE_rem": "1470049241",
+                "xNome_rem": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "xFant_rem": "Migrate Company",
+                "fone_rem": "5535355540",
+                "email_rem": "email@email.com.br",
+                "enderRem": {
+                    "xLgr_rem": "Rua Padre Cacique",
+                    "nro_rem": "556",
+                    "xCpl_rem": "Próximo as Lojas Denise",
+                    "xBairro_rem": "Centro",
+                    "cMun_rem": 4310405,
+                    "xMun_rem": "Independencia",
+                    "CEP_rem": "98910000",
+                    "UF_rem": "RS",
+                    "cPais_rem": 1046,
+                    "xPais_rem": "Brasil"
+                }
+            },
+            "exped": {
+                "CNPJ_exp": "23640261001810",
+                "CPF_exp": "",
+                "IE_exp": "421025353115",
+                "xNome_exp": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "fone_exp": "5535358668",
+                "email_exp": "email@email.com.br",
+                "enderExped": {
+                    "xLgr_exp": "Rua das Palmeiras",
+                    "nro_exp": "115",
+                    "xCpl_exp": "Próximo ao bar do Zé",
+                    "xBairro_exp": "Centro",
+                    "cMun_exp": 3524006,
+                    "xMun_exp": "Independencia",
+                    "CEP_exp": "98915000",
+                    "UF_exp": "SP",
+                    "cPais_exp": 1046,
+                    "xPais_exp": "Brasil"
+                }
+            },
+            "receb": {
+                "CNPJ_rec": "",
+                "CPF_rec": "99999999999",
+                "IE_rec": "",
+                "xNome_rec": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "fone_rec": "5597207556",
+                "email_rec": "email@email.com.br",
+                "enderReceb": {
+                    "xLgr_rec": "Rua Senador Salgado Filho",
+                    "nro_rec": "463",
+                    "xCpl_rec": "",
+                    "xBairro_rec": "Centro",
+                    "cMun_rec": 3524006,
+                    "xMun_rec": "Independência",
+                    "CEP_rec": "98915000",
+                    "UF_rec": "SP",
+                    "cPais_rec": 1046,
+                    "xPais_rec": "Brasil"
+                }
+            },
+            "dest": {
+                "CNPJ_dest": "99999999999999",
+                "CPF_dest": "",
+                "IE_dest": "0",
+                "xNome_dest": "CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "fone_dest": "5535354800",
+                "ISUF_dest": "",
+                "email_dest": "",
+                "enderDest": {
+                    "xLgr_dest": "Rua Travessa",
+                    "nro_dest": "280",
+                    "xCpl_dest": "Próximo ao hospital",
+                    "xBairro_dest": "Rita",
+                    "cMun_dest": 4301602,
+                    "xMun_dest": "BAGE",
+                    "CEP_dest": "98910000",
+                    "UF_dest": "RS",
+                    "cPais_dest": 1046,
+                    "xPais_dest": "Brasil"
+                }
+            },
+            "vPrest": {
+                "vTPrest": "32321.23",
+                "vRec": "12312.23",
+                "Comp": [{
+                        "xNome_comp": "Componente 13",
+                        "vComp": "812.44"
+                    }, {
+                        "xNome_comp": "Componente 20",
+                        "vComp": "1612.44"
+                    }
+                ]
+            },
+            "imp": {
+                "vTotImp": "59.90",
+                "vTotTrib": "0.00",
+                "infAdFisco": "Informacoes de interesse do fisco estarão escritas aqui",
+                "ICMS": {
+                    "CST": "00",
+                    "vBC": "12.00",
+                    "pICMS": 13,
+                    "vICMS": "1.56",
+                    "pRedBC": 0,
+                    "vBCSTRet": "0.00",
+                    "vICMSSTRet": "0.00",
+                    "pICMSSTRet": 0,
+                    "vCred": "0.00",
+                    "pRedBCOutraUF": 0,
+                    "vBCOutraUF": "0.00",
+                    "pICMSOutraUF": 0,
+                    "vICMSOutraUF": "0.00",
+                    "indSN": 1
+                },
+                "ICMSUFFim": {
+                    "vBCUFFim": "0.00",
+                    "pFCPUFFim": 0,
+                    "pICMSUFFim": 0,
+                    "pICMSInter": 0,
+                    "pICMSInterPart": 0,
+                    "vFCPUFFim": "0.00",
+                    "vICMSUFIni": "0.00",
+                    "vICMSUFFim": "0.00"
+                }
+            },
+            "infCTeNorm": {
+                "infCarga": {
+                    "vMerc": "10.00",
+                    "proPred": "Parafuso",
+                    "xOutCat": "",
+                    "vCargaAverb": "10.00",
+                    "infQ": [{
+                            "cUnid": "01",
+                            "tpMed": "KILOGRAMAS",
+                            "qCarga": "20"
+                        }
+                    ]
+                },
+                "infDoc": [{
+                        "tipoDocumento": 2,
+                        "nRoma_nf": "",
+                        "nPed_nf": "",
+                        "mod_nf": "",
+                        "serie_nf": "",
+                        "nDoc_nf": "",
+                        "dEmi_nf": "0000-00-00",
+                        "vBC_nf": "0.00",
+                        "vICMS_nf": "0.00",
+                        "vBCST_nf": "0.00",
+                        "vST_nf": "0.00",
+                        "vProd_nf": "0.00",
+                        "vNF_nf": "0.00",
+                        "CFOP_nf": 0,
+                        "peso_nf": "0.000",
+                        "PINSuframa_nf": "",
+                        "dPrev_nf": "0000-00-00",
+                        "chave_nfe": "43210106354976000149553050000003831000241294",
+                        "PINSuframa_nfe": "991233459",
+                        "dPrev_nfe": "2017-05-22",
+                        "tpDoc_outros": "",
+                        "desc_outros": "",
+                        "nDoc_outros": "",
+                        "dEmi_outros": "0000-00-00",
+                        "vDocFisc_outros": "0.00",
+                        "dPrev_outros": "0000-00-00",
+                        "locRet": {
+                            "CNPJ_locRet": "",
+                            "CPF_locRet": "",
+                            "xNome_locRet": "",
+                            "xLgr_locRet": "",
+                            "nro_locRet": "",
+                            "xCpl_locRet": "",
+                            "xBairro_locRet": "",
+                            "cMun_locRet": "",
+                            "xMun_locRet": "",
+                            "UF_locRet": ""
+                        },
+                        "UnidadesTransp": [{
+                                "tipoUnidTransporte": 5,
+                                "idUnidTransporte": "BCIASUDX988",
+                                "qtdRateada": 999,
+                                "LacresUnidTransp": [{
+                                        "nLacreUnidTransp": "999"
+                                    }
+                                ],
+                                "UnidadesCargaTran": [{
+                                        "tipoUnidCargaTran": 2,
+                                        "idUnidCargaTran": "22",
+                                        "qtdRateadaCargaTran": 10,
+                                        "LacresUnidCargaTran": [{
+                                                "nLacreUnidCargaTran": "100"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "UnidadesCarga": []
+                    }
+                ],
+                "docAnt": [],
+                "infModal": {
+                    "versaoModal": 3.00,
+                    "rodo": {
+                        "RNTRC": "89173646",
+                        "occ": []
+                    },
+                    "aereo": {
+                        "nMinu": 0,
+                        "nOCA": 0,
+                        "dPrev_aer": "0000-00-00",
+                        "tarifa": {
+                            "CL": "",
+                            "cTar": "",
+                            "vTar": "0.00"
+                        },
+                        "NatCarga": {
+                            "xDime": "",
+                            "InfManu": []
+                        },
+                        "periAereo": []
+                    },
+                    "aquav": {
+                        "vPrestAFRMM": "0.00",
+                        "vAFRMM": "0.00",
+                        "nBooking": "",
+                        "nCtrl": "",
+                        "xNavio": "",
+                        "nViag": "",
+                        "direc": "",
+                        "prtEmb": "",
+                        "prtTrans": "",
+                        "prtDest": "",
+                        "tpNav": "",
+                        "irin": "",
+                        "detCont": [],
+                        "balsa": []
+                    },
+                    "ferrov": {
+                        "tpTraf": 0,
+                        "fluxo_fer": "",
+                        "idTrem": "",
+                        "vFrete": "0.00",
+                        "trafMut": {
+                            "respFat_fer": 0,
+                            "ferrEmi_fer": 0,
+                            "vFrete_fer": "0.00",
+                            "chCTeFerroOrigem": ""
+                        },
+                        "FerroEnv": [],
+                        "ferroSub": {
+                            "CNPJ_fer": "",
+                            "cInt_fer": "",
+                            "IE_fer": "",
+                            "xNome_fer": "",
+                            "xLgr_fer": "",
+                            "nro_fer": "",
+                            "xCpl_fer": "",
+                            "xBairro_fer": "",
+                            "cMun_fer": 0,
+                            "xMun_fer": "",
+                            "CEP_fer": 0,
+                            "UF_fer": ""
+                        }
+                    },
+                    "duto": {
+                        "vTar_duto": "0.000000",
+                        "dIni_duto": "0000-00-00",
+                        "dFim_duto": "0000-00-00"
+                    },
+                    "multimodal": {
+                        "COTM": "",
+                        "indNegociavel": 0,
+                        "segMulti": {
+                            "xSegMulti": "",
+                            "CNPJSegMulti": "",
+                            "nApolSegMulti": "",
+                            "nAverSegMulti": ""
+                        }
+                    }
+                },
+                "veicNovos": [{
+                        "chassi": "11111111111111111",
+                        "cCor": "1123",
+                        "xCor": "VERDE MUSGO",
+                        "cMod": "7878",
+                        "vUnit": "15000.00",
+                        "vFrete_vNov": "500.99"
+                    }
+                ],
+                "cobr": {
+                    "fat": {
+                        "nFat": "9789988123",
+                        "vOrig": "12200.23",
+                        "vDesc": "5542.12",
+                        "vLiq": "7981.22"
+                    },
+                    "dup": [{
+                            "nDup": "56789658",
+                            "dVenc": "2014-07-03",
+                            "vDup": "12321.33"
+                        }
+                    ]
+                },
+                "infCteSub": {
+                    "chCTe_sub": "",
+                    "refCteAnu": "",
+                    "indAlteraToma": "",
+                    "tomaICMS": {
+                        "refNFe_sub": "",
+                        "refCte_sub": "",
+                        "refNF_CT": {
+                            "CNPJ_sub": "",
+                            "CPF_sub": "",
+                            "mod_sub": "",
+                            "serie_sub": "",
+                            "subserie_sub": "",
+                            "nro_sub": 0,
+                            "valor_sub": "0.00",
+                            "dEmi_sub": "0000-00-00"
+                        }
+                    }
+                },
+                "infGlobalizado": {
+                    "xObsGlob": ""
+                },
+                "infServVinc": []
+            },
+            "infCteComp": {
+                "chave_comp": ""
+            },
+            "infCteAnu": {
+                "chCte_anu": "",
+                "dEmi_anu": "0000-00-00"
+            },
+            "AutXml": [],
+            "infRespTec": {
+                "CNPJ_respTec": "",
+                "xContato": "",
+                "email_respTec": "",
+                "fone_respTec": "",
+                "idCSRT": "",
+                "hashCSRT": ""
+            }
+        }
+    }
+]

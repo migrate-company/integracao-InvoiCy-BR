@@ -1,0 +1,8 @@
+<ConsultaMunicipios>
+	<ModeloDocumento>NFSe</ModeloDocumento>
+	<Versao>1.0</Versao>
+	<CNPJEmissor>06354976000149</CNPJEmissor>
+	<UF>SP</UF>
+	<codMunicipio>0</codMunicipio> <!-- 0 - todos-->
+	<tpAmb>2</tpAmb> <!-- 1- produção, 2-homolog-->
+</ConsultaMunicipios>

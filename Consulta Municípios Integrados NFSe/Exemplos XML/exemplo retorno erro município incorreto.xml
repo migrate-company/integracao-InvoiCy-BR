@@ -1,0 +1,9 @@
+<ConsultaMunicipiosRetorno> 
+	<listaMunicipios /> 
+	<erros> 
+		<erro> 
+			<errCodigo>143</errCodigo> 
+			<errDesc>[ModuloNFS-e] - O código do município informado não existe ou não foi encontrado. Verifique se o código IBGE do município foi informado corretamente.</errDesc>
+		</erro> 
+	</erros> 
+</ConsultaMunicipiosRetorno>

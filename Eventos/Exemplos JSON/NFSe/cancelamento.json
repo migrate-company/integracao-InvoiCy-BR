@@ -1,0 +1,21 @@
+{
+    "ModeloDocumento": "NFSe",
+    "Versao": 1,
+    "Evento": {
+        "CNPJ": "06354976000149",
+        "NFSeNumero": 34400,
+        "RPSNumero": 89547,
+        "RPSSerie": "1",
+        "IDUnico": "",
+        "EveTp": 110111,
+        "tpAmb": 1,
+        "EveCodigo": "1",
+        "EveMotivo": "Nota emitida com dados incorretos.",
+        "NFSeCodVerificacao": "",
+        "Protocolo": "",
+        "SituacaoNota": 0,
+        "NumeroLote": 0,
+        "IntegridadeOCR": "",
+        "CancelamentoViaTela": ""
+    }
+}

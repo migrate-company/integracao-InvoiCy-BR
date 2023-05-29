@@ -1,0 +1,39 @@
+<CadastroEmpresa xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+	<EmpNomFantasia>Migrate Company</EmpNomFantasia>
+	<EmpApelido>Migrate</EmpApelido>
+	<EmpRazSocial>Migrate Company info</EmpRazSocial>
+	<EmpCNPJ>06354976000149</EmpCNPJ>
+	<EmpIE>1470049241</EmpIE>
+	<EmpEndereco>Rua Padre Cacique</EmpEndereco>
+	<EmpNumero>985</EmpNumero>
+	<EmpBairro>Centro</EmpBairro>
+	<EmpCEP>98910000</EmpCEP>
+	<MunCodigo>4321808</MunCodigo>
+	<EmpCRT>123</EmpCRT>
+	<EmpTpoEndereco>Rua</EmpTpoEndereco>
+	<Certificado>
+		<ArquivoPFX>...</ArquivoPFX>
+		<Senha>...</Senha>
+		<TipoCertificado>1</TipoCertificado>
+	</Certificado>
+	<Parametros>
+		<NFSe>
+			<XMLRetornoRequisicao>E</XMLRetornoRequisicao>
+		</NFSe>
+	</Parametros>
+	<Extensao>
+		<ExtensaoItem>
+			<TipoExtensao>3</TipoExtensao><!-- 3 = extensão de captura-->
+			<Ativar>S</Ativar>
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFSe</Modulo>
+				</ModuloItem>
+			</Modulos>
+			<ParametrosExt>
+				<NumeroConsultasDiarias>2</NumeroConsultasDiarias>
+				<TipoConsultaNFSe>R</TipoConsultaNFSe>
+			</ParametrosExt>
+		</ExtensaoItem>
+	</Extensao>
+</CadastroEmpresa>

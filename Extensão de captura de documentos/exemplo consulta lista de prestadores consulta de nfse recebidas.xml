@@ -1,0 +1,8 @@
+<ConsultaPrestadores>
+	<CnpjEmpresa>06354976000149</CnpjEmpresa> <!--CNPJ da empresa consultante (Campo Obrigatório)-->
+	<DataAlteracaoInicial>2022-08-05T00:00:00</DataAlteracaoInicial> <!--Data e Hora da última alteração (Inclusão/Edição) inicial (Campo Opcional)-->
+	<DataAlteracaoFinal>2022-08-16T00:00:00</DataAlteracaoFinal> <!--Data e Hora da última alteração (Inclusão/Edição) final (Campo Opcional)-->
+	<CNPJ></CNPJ> <!--CNPJ de um prestador em específico (Campo Opcional)-->
+	<Status>A</Status> <!--Status do cadastro dos prestadores (A-Ativos/I-Inativos) (Campo Opcional)-->
+	<Pagina>1</Pagina> <!--Página da consulta (Campo Opcional)-->
+</ConsultaPrestadores>

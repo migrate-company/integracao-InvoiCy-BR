@@ -1,0 +1,21 @@
+<EnvioEvento>
+	<ModeloDocumento>NFSe</ModeloDocumento>
+	<Versao>1</Versao>
+	<Evento>
+		<CNPJ>06354976000149</CNPJ>
+		<NFSeNumero>34400</NFSeNumero>
+		<RPSNumero>89547</RPSNumero>
+		<RPSSerie>1</RPSSerie>
+		<IDUnico/>
+		<EveTp>110111</EveTp>
+		<tpAmb>1</tpAmb>
+		<EveCodigo>1</EveCodigo>
+		<EveMotivo>Nota emitida com dados incorretos.</EveMotivo>
+		<NFSeCodVerificacao/>
+		<Protocolo/>
+		<SituacaoNota>0</SituacaoNota>
+		<NumeroLote>0</NumeroLote>
+		<IntegridadeOCR/>
+		<CancelamentoViaTela/>
+	</Evento>
+</EnvioEvento>
