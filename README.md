@@ -1,4 +1,4 @@
-# integracao-invoicy-canarinho
+# Repositório exemplos de integracao Invoicy Canarinho
 Layouts, schemas, exemplos de arquivos de integração
 
 
