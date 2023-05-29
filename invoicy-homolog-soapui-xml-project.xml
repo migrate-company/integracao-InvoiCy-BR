@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="arecepcao_homolog" soapui-version="4.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="recepcaoSoapBinding" type="wsdl" bindingName="{InvoiCy}recepcaoSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://homolog.invoicy.com.br/arecepcao.aspx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://homolog.invoicy.com.br/arecepcao.aspx?wsdl"><con:part><con:url>https://homolog.invoicy.com.br/arecepcao.aspx?wsdl</con:url><con:content><![CDATA[<definitions name="recepcao" targetNamespace="InvoiCy" xmlns:wsdlns="InvoiCy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="InvoiCy">
+  <types>
+    <schema targetNamespace="InvoiCy" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+      <complexType name="InvoiCy">
+        <sequence>
+          <element name="Cabecalho" type="tns:InvoiCyRecepcao.Cabecalho"></element>
+          <element name="Informacoes" type="tns:InvoiCyRecepcao.Informacoes"></element>
+          <element name="Dados">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="DadosItem" type="tns:InvoiCyRecepcao.DadosItem"></element>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="InvoiCyRecepcao.Cabecalho">
+        <sequence>
+          <element name="EmpPK" type="xsd:string"></element>
+          <element name="EmpCK" type="xsd:string"></element>
+          <element name="EmpCO" type="xsd:string"></element>
+        </sequence>
+      </complexType>
+      <complexType name="InvoiCyRecepcao.Informacoes">
+        <sequence>
+          <element name="Texto" type="xsd:string"></element>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfInvoiCyRecepcao.DadosItem">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="InvoiCyRecepcao.DadosItem" type="tns:InvoiCyRecepcao.DadosItem"></element>
+        </sequence>
+      </complexType>
+      <complexType name="InvoiCyRecepcao.DadosItem">
+        <sequence>
+          <element name="Documento" type="xsd:string"></element>
+          <element name="Parametros" type="xsd:string"></element>
+        </sequence>
+      </complexType>
+      <complexType name="Invoicyretorno">
+        <sequence>
+          <element name="Mensagem">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="MensagemItem" type="tns:InvoiCyRetorno.MensagemItem"></element>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfInvoiCyRetorno.MensagemItem">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="InvoiCyRetorno.MensagemItem" type="tns:InvoiCyRetorno.MensagemItem"></element>
+        </sequence>
+      </complexType>
+      <complexType name="InvoiCyRetorno.MensagemItem">
+        <sequence>
+          <element name="Codigo" type="xsd:int"></element>
+          <element name="Descricao" type="xsd:string"></element>
+          <element name="Documentos">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="DocumentosItem" type="tns:InvoiCyRetorno.MensagemItem.DocumentosItem"></element>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfInvoiCyRetorno.MensagemItem.DocumentosItem">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="InvoiCyRetorno.MensagemItem.DocumentosItem" type="tns:InvoiCyRetorno.MensagemItem.DocumentosItem"></element>
+        </sequence>
+      </complexType>
+      <complexType name="InvoiCyRetorno.MensagemItem.DocumentosItem">
+        <sequence>
+          <element name="Documento" type="xsd:string"></element>
+        </sequence>
+      </complexType>
+      <element name="recepcao.Execute">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="Invoicyrecepcao" type="tns:InvoiCy"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="recepcao.ExecuteResponse">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="Invoicyretorno" type="tns:Invoicyretorno"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="recepcao.ExecuteSoapIn">
+    <part name="parameters" element="tns:recepcao.Execute"/>
+  </message>
+  <message name="recepcao.ExecuteSoapOut">
+    <part name="parameters" element="tns:recepcao.ExecuteResponse"/>
+  </message>
+  <portType name="recepcaoSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:recepcao.ExecuteSoapIn"/>
+      <output message="wsdlns:recepcao.ExecuteSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="recepcaoSoapBinding" type="wsdlns:recepcaoSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Execute">
+      <soap:operation soapAction="InvoiCyaction/ARECEPCAO.Execute"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="recepcao">
+    <port name="recepcaoSoapPort" binding="wsdlns:recepcaoSoapBinding">
+      <soap:address location="https://homolog.invoicy.com.br/arecepcao.aspx"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://homolog.invoicy.com.br/arecepcao.aspx</con:endpoint></con:endpoints><con:operation isOneWay="false" action="InvoiCyaction/ARECEPCAO.Execute" name="Execute" bindingOperationName="Execute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://homolog.invoicy.com.br/arecepcao.aspx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inv:recepcao.Execute>
+         <inv:Invoicyrecepcao>
+            <inv:Cabecalho>
+               <inv:EmpPK>?</inv:EmpPK>
+               <inv:EmpCK>?</inv:EmpCK>
+               <inv:EmpCO></inv:EmpCO>
+            </inv:Cabecalho>
+            <inv:Informacoes>
+               <inv:Texto></inv:Texto>
+            </inv:Informacoes>
+            <inv:Dados>               
+               <inv:DadosItem>
+                  <inv:Documento>?</inv:Documento>
+                  <inv:Parametros></inv:Parametros>
+               </inv:DadosItem>
+            </inv:Dados>
+         </inv:Invoicyrecepcao>
+      </inv:recepcao.Execute>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="InvoiCyaction/ARECEPCAO.Execute"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
