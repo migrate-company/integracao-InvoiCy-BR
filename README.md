@@ -11,4 +11,3 @@ Exemplos de código-fonte nas linguagens:
 - [VB.NET](https://github.com/migrate-company/integracao-invoicy-canarinho-vbnet)
 
 - [Projeto Postman (REST)](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest#6bf035dc-7680-439e-baab-884293b1421e)
-- [Projeto SOAPUI (SOAP)]
