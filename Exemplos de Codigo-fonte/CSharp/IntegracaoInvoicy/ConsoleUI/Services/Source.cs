@@ -76,8 +76,8 @@ namespace ConsoleUI.Services
         public string EmpresaLicenciamento = "[\n    {\n        \"CnpjEmpresa\": \"70049563000150\",\n        \"tpAmb\": 2,\n        \"Acao\": 3,\n        \"Modulo\": \"CTe\",\n        \"Modelo\": 2,\n        \"Autor\": \"Empresa 1\"\n    }\n]";
 
         public Source()
-        {
-            this.NFe = new Dictionary<string, string>()
+        {   
+            NFe = new Dictionary<string, string>()
             {
                 { "Emissao" , NFeEnvio },
                 { "EnvioSefaz" , NFeSefaz },
@@ -91,7 +91,7 @@ namespace ConsoleUI.Services
                 { "Evento" , NFeEvento},
                 { "Importacao" , NFeImportacao}
             };
-            this.NFCe = new Dictionary<string, string>()
+            NFCe = new Dictionary<string, string>()
             {
                 { "Emissao" , NFCeEnvio },
                 { "EnvioSefaz" , NFCeSefaz },
@@ -105,7 +105,7 @@ namespace ConsoleUI.Services
                 { "Evento" , NFCeEvento},
                 { "Importacao" , NFCeImportacao}
             };
-            this.MDFe = new Dictionary<string, string>()
+            MDFe = new Dictionary<string, string>()
             {
                 { "Emissao" , MDFeEnvio },
                 { "EnvioSefaz" , MDFeSefaz },
@@ -119,7 +119,7 @@ namespace ConsoleUI.Services
                 { "Evento" , MDFeEvento},
                 { "Importacao" , MDFeImportacao}
             };
-            this.NFSe = new Dictionary<string, string>()
+            NFSe = new Dictionary<string, string>()
             {
                 { "Emissao" , NFSeEnvio },
                 { "EnvioSefaz" , NFSeSefaz },
@@ -133,7 +133,7 @@ namespace ConsoleUI.Services
                 { "Evento" , NFSeEvento},
                 { "Importacao" , NFSeImportacao}
             };
-            this.CTe = new Dictionary<string, string>()
+            CTe = new Dictionary<string, string>()
             {
                 { "Emissao" , CTeEnvio },
                 { "EnvioSefaz" , CTeSefaz },
@@ -148,12 +148,35 @@ namespace ConsoleUI.Services
                 { "Importacao" , CTeImportacao}
             };
 
-            this.Empresa = new Dictionary<string, string>()
+            Empresa = new Dictionary<string, string>()
             {
                 { "Cadastro", EmpresaCadastro },
                 { "Editar", EmpresaEditar },
                 { "Licenciamento", EmpresaLicenciamento }
             };
         }
+    }
+
+    public class Links
+    {
+        public string homolog = "https://apibrhomolog.invoicy.com.br";
+        public string producao = "https://apibr.invoicy.com.br";
+        public Dictionary<string,string> urlBase {  get; set; }
+
+        public Links(string ambiente)
+        {
+            urlBase = new Dictionary<string, string>()
+            {
+                { "autorizacao" , $"{ambiente}/oauth2/invoicy" },
+                { "companies" , $"{ambiente}/companies" },
+                { "series" , $"{ambiente}/companies/series" },
+                { "documentos" , $"{ambiente}/senddocuments" },
+                { "exportdocuments" , $"{ambiente}/exportdocuments" },
+                { "email" , $"{ambiente}/sendemails" },
+                { "exportacaorecorrente" , $"{ambiente}/companiesexportrecorrences.aspx"}, //.aspx ou ?CNPJ=06354976000149
+                { "certificadodigital" , $"{ambiente}/companiescertificates.aspx"}
+            };
+    }
+
     }
 }

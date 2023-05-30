@@ -4,8 +4,8 @@
     {
         public string cnpj { get; set; }
         public string chaveDeAcesso { get; set; }
-        public string chaveDeParceiro { get; set; } 
-        public int segundosExp { get; set; } = 120;
+        public string chaveDeParceiro { get; set; } //EmpPK
+        public int jwtTokenExp { get; set; } //Tempo expiração Token JWT
     }
 }
 

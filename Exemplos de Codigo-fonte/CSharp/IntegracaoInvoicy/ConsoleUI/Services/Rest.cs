@@ -3,9 +3,13 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using ConsoleUI.Models;
 using Microsoft.IdentityModel.Tokens;
+using static System.Net.WebRequestMethods;
 
 namespace ConsoleUI.Services
 {
+    /// <summary>
+    /// Classe que executa requisição do REST API
+    /// </summary>
     public class Rest
     {
         private static readonly HttpClient _httpClient = new HttpClient();
@@ -16,10 +20,8 @@ namespace ConsoleUI.Services
 
             using (HttpRequestMessage httpRequest = new HttpRequestMessage(metodo, uri))
             {
-                if (content != null)
-                {
-                    httpRequest.Content = content;
-                }
+                httpRequest.Content = content ?? null;
+
                 if (header != null)
                 {
                     httpRequest.Headers.Add("Authorization", header);
@@ -28,13 +30,24 @@ namespace ConsoleUI.Services
                 {
                     using (HttpResponseMessage httpResponse = await _httpClient.SendAsync(httpRequest))
                     {
-                        var resposta = await httpResponse.Content.ReadAsStringAsync();
-                        return resposta;
+                        try
+                        {
+                            var resposta = await httpResponse.Content.ReadAsStringAsync();
+                            httpRequest.Dispose();
+                            httpResponse.Dispose();
+                            return resposta;
+                        }
+                        //Falha na requisição
+                        catch (HttpRequestException httpEx)
+                        {
+                            return $"Erro: {httpEx.Message}\n{httpEx.InnerException.Message}";
+                        }
                     }
                 }
-                catch (Exception ex)
+                //Falha na requisição-comunicação
+                catch (HttpRequestException httpEx)
                 {
-                    return ex.InnerException.Message;
+                    return $"Erro: {httpEx.Message}\n{httpEx.InnerException.Message}";
                 }
             }
         }

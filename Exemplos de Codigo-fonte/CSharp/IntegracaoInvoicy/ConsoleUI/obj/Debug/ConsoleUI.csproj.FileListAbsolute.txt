@@ -75,3 +75,5 @@ C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemp
 C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.csproj.CopyComplete
 C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.exe
 C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\obj\Debug\ConsoleUI.pdb
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Net.Http.Json.dll
+C:\Users\ea23318\source\repos\Migrate Company\integracao-invoicy-canarinho\Exemplos de Codigo-fonte\CSharp\IntegracaoInvoicy\ConsoleUI\bin\Debug\System.Net.Http.Json.xml

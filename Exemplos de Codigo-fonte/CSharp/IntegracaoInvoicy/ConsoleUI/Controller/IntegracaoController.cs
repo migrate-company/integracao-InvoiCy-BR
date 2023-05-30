@@ -6,6 +6,10 @@ using ConsoleUI.View;
 using ConsoleUI.Models;
 using ConsoleUI.Services;
 using System.Windows.Threading;
+using System.Collections.Generic;
+using ConsoleUI.Models.Documentos.NFe;
+using System.Threading;
+using System.Timers;
 
 namespace ConsoleUI.Controller
 {
@@ -15,41 +19,42 @@ namespace ConsoleUI.Controller
         Source Dados { get; set; }
         User Usuario {get; set; }
 
-        DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        static System.Timers.Timer _timer = new System.Timers.Timer();
 
-        bool isAccessOk, isRefreshOk;
+        bool isAccessOk, isRefreshOk, isJwtOk;
 
         public IntegracaoController()
         {
-            this.View = new IntegracaoView();
-            this.Dados = new Source();
-            this.Usuario = new User()
+            View = new IntegracaoView();
+            Dados = new Source();
+            Usuario = new User()
             {
                 Params = new RequestParams()
                 {
                     cnpj = "06354976000149",
                     chaveDeAcesso = "eKdz2fcZg9ZMt3DrfF/KSIVoH59Ca6nN",
                     chaveDeParceiro = "YPxRwGxIbpWZtwhuC0m+Wg==",
-                    segundosExp = 10
+                    jwtTokenExp = 10
                 },
                 Token = new UserToken()
             };
 
-            dispatcherTimer.Interval = new TimeSpan(0,0,1);
-            dispatcherTimer.Tick += DispatcherTimer_Tick;
+            _timer.Interval = 1000;
+            _timer.Elapsed += Timer_Tick;
+            _timer.Enabled = false;
         }
 
-        private void DispatcherTimer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, ElapsedEventArgs e)
         {
             if (!isAccessOk && !isRefreshOk)
             {
-                dispatcherTimer.Stop();
+                _timer.Enabled = false;
                 return;
             }
 
             var TempoAccessToken = Usuario.Token.accessTokenExpireAt - DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var TempoRefreshToken = Usuario.Token.refreshTokenExpireAt - DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            
+
             if (TempoAccessToken <= 0 && isAccessOk)
             {
                 View.TempoExpirado("AccessToken");
@@ -112,22 +117,20 @@ namespace ConsoleUI.Controller
 
                     case 2:
                         uri = $"{uri}/auth";
-                        var tokenJWT = JwtTokenCreator.GeraTokenJWT(Usuario.Params); //obtém um token JWT
-                        dados = "{\n\t \"token\": \"" + tokenJWT + "\"\n}";
+                        var jwtToken = JwtTokenCreator.GeraTokenJWT(Usuario.Params); //obtém um token JWT
+                        Console.WriteLine($"JWT Token: {jwtToken}\n");
 
+                        dados = "{\n\t \"token\": \"" + jwtToken + "\"\n}";
                         var tokenGerado = await Rest.GetAsync(HttpMethod.Post, Usuario, dados, uri, false);
 
-                        try
+                        if (RespostaRecebida(tokenGerado))
                         {
                             Usuario.Token = JsonSerializer.Deserialize<UserToken>(tokenGerado);
-                            Console.WriteLine($"JWT Token: {tokenJWT}\n");
                             Console.WriteLine($"Token gerado: {tokenGerado}");
-                            isAccessOk = true; isRefreshOk = true;
-                            dispatcherTimer.Start();
-                        }
-                        catch
-                        {
-                            View.Erro(tokenGerado);
+                            isAccessOk = true; isRefreshOk = true; isJwtOk = true;
+
+                            _timer.Enabled = true;
+                            break;
                         }
                         break;
 
@@ -150,7 +153,7 @@ namespace ConsoleUI.Controller
                         Console.WriteLine($"Token renovado: {tokenRenovado}");
 
                         isAccessOk = true; isRefreshOk = true;
-                        dispatcherTimer.Start();
+                        _timer.Enabled = true;
                         break;
 
                     default:
@@ -177,7 +180,7 @@ namespace ConsoleUI.Controller
                         Console.WriteLine(await Rest.GetAsync(HttpMethod.Put, Usuario, Dados.Empresa["Editar"], uri, true));
                         break;
 
-                    case 4:
+                    case 4: //[{"Codigo":173,"Descricao":"Chave de comunicação inválida."}]
                         uri = $"{uri}?type=licenciamento";
                         Console.WriteLine(await Rest.GetAsync(HttpMethod.Post, Usuario, Dados.Empresa["Licenciamento"], uri, true));
                         break;
@@ -238,21 +241,22 @@ namespace ConsoleUI.Controller
                         var serieAtualizadaJson = JsonSerializer.Serialize(serieAtualizada, new JsonSerializerOptions() { WriteIndented = true });
 
                         Console.WriteLine(await Rest.GetAsync(HttpMethod.Put, Usuario, serieAtualizadaJson, uri, true));
+
                         break;
 
                     case 4:
                         //  The page you are looking for cannot be displayed because an invalid method (HTTP verb) is being used.
-                        //  StatusCode: 405, ReasonPhrease: 'Method Not Allowed'...
+                        //  StatusCode: 405, ReasonPhrease: 'Method Not Allowed'... 
+                        //  Same as POSTMAN
                         Series serieDelete = new Series()
                         {
                             CNPJEmissor = "06354976000149",
                             ModeloDocumento = "NF-e",
                             Serie = "667"
                         };
-                        var delete = "{\n    \"CNPJEmissor\": \"06354976000149\",\n    \"ModeloDocumento\": \"NFS-e\",\n    \"Serie\": \"A1\"\n}";
                         var serieDeleteJson = JsonSerializer.Serialize(serieDelete, new JsonSerializerOptions() { WriteIndented = true });
 
-                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Delete, Usuario, delete, uri, true));
+                        Console.WriteLine(await Rest.GetAsync(HttpMethod.Delete, Usuario, serieDeleteJson, uri, true));
                         break;
                 }
             }
@@ -373,6 +377,16 @@ namespace ConsoleUI.Controller
                 }
             }
 
+        }
+
+        private bool RespostaRecebida(string tokenGerado)
+        {
+            if (tokenGerado.Contains("Erro: "))
+            {
+                View.Erro(tokenGerado);
+                return false;
+            }
+            return true;
         }
     }
 }

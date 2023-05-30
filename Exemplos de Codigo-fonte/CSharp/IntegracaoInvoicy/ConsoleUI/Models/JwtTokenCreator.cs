@@ -21,7 +21,7 @@ namespace ConsoleUI.Models
         public static string GeraTokenJWT(RequestParams requestParams)
         {
             DateTime dtNow = DateTime.UtcNow;
-            var exp = DateTime.Now.AddSeconds(requestParams.segundosExp);
+            var exp = DateTime.Now.AddSeconds(requestParams.jwtTokenExp);
 
             SecurityTokenDescriptor Jwt = new SecurityTokenDescriptor
             {
