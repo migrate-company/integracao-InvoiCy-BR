@@ -91,8 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IntegracaoController.cs" />
-    <Compile Include="Models\Documentos\NFe\NFeEnvio.cs" />
-    <Compile Include="Models\Documentos\NFe\NFeRetorno.cs" />
+    <Compile Include="Models\Documentos\ConsultaDocumento.cs" />
+    <Compile Include="Models\Documentos\Descarte.cs" />
+    <Compile Include="Models\Documentos\Empresa.cs" />
+    <Compile Include="Models\Documentos\NFe\NFe.cs" />
     <Compile Include="Models\JwtTokenCreator.cs" />
     <Compile Include="Models\RequestParams.cs" />
     <Compile Include="Services\Rest.cs" />

@@ -99,19 +99,10 @@ namespace ConsoleUI.View
             return valor;
         }
 
-        public void TempoExpirado(string token)
+        public void Message(string msg)
         {
             Console.WriteLine(); 
-            Console.WriteLine("**************************************************************");
-            Console.WriteLine($"{token} EXPIRADO!");
-            Console.WriteLine("**************************************************************");
-        }
-
-        public void Erro(string erro)
-        {
-            Console.WriteLine();
-            Console.WriteLine("--------------------------------------------------------------");
-            Console.WriteLine($"Erro: {erro}");
+            Console.WriteLine($"{msg}");
         }
     }
 }

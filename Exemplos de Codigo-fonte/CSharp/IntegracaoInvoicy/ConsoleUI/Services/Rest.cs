@@ -1,9 +1,7 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using ConsoleUI.Models;
 using Microsoft.IdentityModel.Tokens;
-using static System.Net.WebRequestMethods;
 
 namespace ConsoleUI.Services
 {

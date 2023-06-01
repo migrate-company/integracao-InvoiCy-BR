@@ -10,11 +10,11 @@ Aplicativo Console no Padrão MVC. O código fonte deste aplicativo pode ser uti
 - [downloads](https://desenvolvedores.migrate.info/downloads/)
 - [Exemplo POSTMAN](https://documenter.getpostman.com/view/9193875/SztEanQL?version=latest)
 
-## Token JWT  [<img src="https://jwt.io/img/pic_logo.svg" height="20px"/>](https://jwt.io/)
+## JWT Token [<img src="https://jwt.io/img/pic_logo.svg" height="20px"/>](https://jwt.io/)
 Criar o JWT Token conforme [Autenticação API REST](https://desenvolvedores.migrate.info/2021/06/autenticacao-api-rest/).
 A função que implementa a criação do Token JWT esta no arquivo JwtTokenCreator.cs.
 
-Para implementar deve-se primeiro passar os parâmetros da empresa na classe RequestParams. Por padrão, o tempo de expiração do AcessToken é definido como 120 segundos.
+Para implementar deve-se primeiro passar os parâmetros da empresa na classe RequestParams. Por padrão, o tempo de expiração do JWT Token é definido como 120 segundos.
 
 ```csharp 
 RequestParams requestParams = new RequestParams(
@@ -62,7 +62,7 @@ A seguir será apresentado alguns códigos de exemplo.
 ```csharp
 uri = $"https://apibrhomolog.invoicy.com.br/oauth2/invoicy/validate";
 var accessToken = user.Token.accessToken;
-dados = "{\n\t \"token\": \"" + accessToken + "\"\n}";
+var dados = "{\n\t \"token\": \"" + accessToken + "\"\n}";
 var response = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
 ```
 
@@ -70,7 +70,7 @@ var response = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
 ```csharp
 uri = "https://apibrhomolog.invoicy.com.br/oauth2/invoicy/auth";
 var refreshToken = user.Token.refreshToken;
-dados = "{\n\t \"refreshToken\": \"" + refreshToken + "\"\n}";
+var dados = "{\n\t \"refreshToken\": \"" + refreshToken + "\"\n}";
 var tokenRenovado = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
 ```
 
@@ -92,13 +92,48 @@ var response = await Rest.GetAsync(HttpMethod.Post, user, serieJson, uri, true);
 ### Enviar arquivo (nfe):
 ```csharp
 uri = "https://apibrhomolog.invoicy.com.br/senddocuments/nfe?type=Emissao";
-dados = Dados.NFe["Emissao"]; //Arquivo NFe a ser enviado em formato Json
+var dados = Dados.NFe["Emissao"]; //Arquivo NFe a ser enviado em formato Json
 var response = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, true);
 ```
 
 ### Descartar arquivo (nfe):
 ```csharp
 uri = "https://apibrhomolog.invoicy.com.br/senddocuments/nfe?type=Descarte";
-dados = nfeJson; //Arquivo de solicitação de descarte em formato JSON
+var dados = JsonSerializer.Serialize(new Descarte
+{
+	ModeloDocumento = tipoDocumento,
+	tpAmb = 2,
+	CNPJ_emit = "06354976000149",
+	Numero = 04823096,
+	Serie = "251"
+});
+
 var response = await Rest.GetAsync(HttpMethod.Post, user, dados, uri, false);
+```
+
+## Expiração do Access e Refresh Token
+O tempo de expiração do AccessToken e RefreshToken podem ser monitorados com a utilização de um timer onde ao detectar que o o token expirou o aplicativo pode automaticamente fazer a renovação. 
+
+```csharp
+static Timer _timer = new Timer();
+_timer.Interval = 1000;
+_timer.Elapsed += Timer_Tick;
+_timer.Enabled = false;
+
+private void Timer_Tick(object sender, ElapsedEventArgs e)
+{
+	var TempoAccessToken = Usuario.Token.accessTokenExpireAt - DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+	var TempoRefreshToken = Usuario.Token.refreshTokenExpireAt - DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+	if (TempoAccessToken <= 0)
+	{
+		View.Message($"AccessToken EXPIRADO!");
+		RenovarToken();
+	}
+	if (TempoRefreshToken <= 0)
+	{
+		View.Message($"RefreshToken EXPIRADO!");
+		GerarToken();
+	}
+}
 ```
