@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="NewDataSet" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<xs:schema xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="NewDataSet">
 	<xs:element name="Envio">
 		<xs:complexType>
 			<xs:sequence>
@@ -92,6 +92,24 @@
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
+					
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="ConsiderarConfEmail">
+								<xs:annotation>
+									<xs:documentation>Receber o e-mail na autorização da nota caso tenha o InvoiCy Bank</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="100"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					
+					
+					
 				</xs:element>
 				<xs:element name="ide">
 					<xs:annotation>
@@ -2002,9 +2020,7 @@
 																			</xs:element>
 																			<xs:element name="tpViaTransp">
 																				<xs:annotation>
-																					<xs:documentation>Via de transporte internacional informada na DI
-                                                                    1-Maritima;2-Fluvial;3-Lacustre;4-Aerea;5-Postal;6-Ferroviaria;7-Rodoviaria;8-Conduto;9-Meios Proprios;10-Entrada/Saida Ficta;
-                                                                    11-Courier;12-Em maos;13-Por reboque.</xs:documentation>
+																					<xs:documentation>Via de transporte internacional informada na DI 1-Maritima;2-Fluvial;3-Lacustre;4-Aerea;5-Postal;6-Ferroviaria;7-Rodoviaria;8-Conduto;9-Meios Proprios;10-Entrada/Saida Ficta; 11-Courier;12-Em maos;13-Por reboque.</xs:documentation>
 																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:string">
@@ -3419,8 +3435,7 @@
 																</xs:element>
 																<xs:element minOccurs="0" name="GerarICMSST">
 																	<xs:annotation>
-																		<xs:documentation>&quot;Indica se irá gerar o grupo ICMS ST - Grupo de Repasse de ICMS ST retido anteriormente em operações interestaduais com repasses através 
-do Substituto Tributário&quot;</xs:documentation>
+																		<xs:documentation>"Indica se irá gerar o grupo ICMS ST - Grupo de Repasse de ICMS ST retido anteriormente em operações interestaduais com repasses através do Substituto Tributário"</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
