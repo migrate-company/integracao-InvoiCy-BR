@@ -1,0 +1,19 @@
+[
+	{
+		"ModeloDocumento": "nfce",
+		"Versao": "4.0",
+		"tpAmb": 2,
+		"CnpjEmissor": "06354976000149",
+		"CnpjEmpresa": "06354976000149",
+		"StatutsDocumento": 2,
+		"NumeroInicial": 4230,
+		"NumeroFinal": 4230,
+		"Serie": "479",
+		"EmitidoRecebido":"E",
+		"ResumoDocumento": "N",
+		"ParmSituacao": "S",
+		"ParmXMLCompleto": "S",
+		"ParmEventos": "S",
+		"ParmPDFBase64":"S"
+	}
+]
