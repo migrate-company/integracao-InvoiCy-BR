@@ -1,0 +1,28 @@
+/**linearizar**/
+
+https://apibrhomolog.invoicy.com.br/senddocuments/nfce?
+    type=Consulta
+    &CnpjEmissor=06354976000149
+    &NumeroInicial=25
+    &NumeroFinal=26
+    &Serie=245
+    &Versao=4.00
+    &CnpjEmpresa=06354976000149
+    &tpAmb=2
+    &dhUF=
+    &ChaveAcesso=
+    &DataEmissaoInicial=
+    &DataEmissaoFinal=
+    &DataInclusaoFinal=
+    &DataInclusaoInicial=
+    &StatusDocumento=2
+    &EmitidoRecebido=E
+    &ParmTipoImpressao=N
+    &DocumentosResumo=N
+    &ParmAutorizadoDownload=N
+    &ParmXMLLink=S
+    &ParmXMLCompleto=N
+    &ParmPDFBase64=N
+    &ParmPDFLink=S
+    &ParmEventos=N
+    &ParmSituacao=S
