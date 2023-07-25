@@ -1,0 +1,8 @@
+<LICENCIAMENTO>
+    <CnpjEmpresa>99999999999999</CnpjEmpresa>
+    <tpAmb>2</tpAmb> <!-- 1 - produção; 2 - homologação -->
+    <Acao>1</Acao>   <!--  1 - Solicitar; 2 - Bloquear; 3 - Desbloquear; 4 - Cancelar  -->
+    <Modulo>NFe</Modulo>
+    <Modelo>2</Modelo> <!--  1 - Bilhetagem; 2 - Licenciamento  -->
+    <Autor>Empresa 1</Autor>  <!--  Responsável pela solicitação da licença  -->
+</LICENCIAMENTO>

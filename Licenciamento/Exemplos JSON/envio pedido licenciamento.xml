@@ -1,0 +1,10 @@
+[
+    {
+        "CnpjEmpresa": "99999999999999",
+        "tpAmb": 2, <!-- 1 - produção; 2 - homologação -->
+        "Acao": 2, <!--  1 - Solicitar; 2 - Bloquear; 3 - Desbloquear; 4 - Cancelar  -->
+        "Modulo": "CTe",
+        "Modelo": 2, <!--  1 - Bilhetagem; 2 - Licenciamento  -->
+        "Autor": "Empresa 1"
+    }
+]
