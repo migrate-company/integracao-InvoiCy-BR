@@ -1,0 +1,107 @@
+{
+    "Mensagem": [
+        {
+            "Codigo": 100,
+            "Descricao": "Protocolo processado",
+            "ConsultaProtocolo": [
+                {
+                    "ProxProtocolo": "",
+                    "ProxConsultaProtocolo": "0000-00-00T00:00:00",
+                    "DocBase64": "",
+                    "DocumentosResumidos": [
+                        {
+                            "DocModelo": "nfce",
+                            "DocNumero": "1",
+                            "DocSerie": "479",
+                            "DocIDUnico": "",
+                            "DocChaAcesso": "43230706354976000149654790000011111111111111",
+                            "DocProtocolo": "143230001011111",
+                            "DocSitCodigo": 100,
+                            "DocSitDescricao": "Autorizado o uso da NF-e",
+                            "DocXML": "",
+                            "DocXMLLink": "https://homolog.invoicy.com.br:443//hnuc002.aspx?ParmCript=gvjBbcQmIWIxjpfkKLR%2fN5GsuoaUWlza3PXinwVVg2M%3d&DocDetArqCodigo=0&DocEveTipo=0&DocEvenSeq=0",
+                            "DocPDF": "",
+                            "DocPDFLink": "https://homolog.invoicy.com.br:443//downloadpdf.aspx?ParmCript=gvjBbcQmIWIxjpfkKLR%2fN5GsuoaUWlza3PXinwVVg2M%3d",
+                            "dhRecbto": "2023-07-25T15:45:03",
+                            "CertDtaVencimento": "0000-00-00",
+                            "CertDiasValido": 0,
+                            "NTEmVigor": "",
+                            "VersaoQRCode": "",
+                            "SerieContingencia": "",
+                            "ImprimirUmaViaContingencia": "",
+                            "DocImpPrefeitura": "",
+                            "DocStatus": 0,
+                            "DocArqNome": "",
+                            "DocArqExtensao": "",
+                            "CertHoraVencimento": "",
+                            "DocCompleto": "",
+                            "tpEmis": "",
+                            "DocNumPedido": "",
+                            "Resumo": {
+                                "DocDataEmissao": "2023-07-25T15:45:03",
+                                "DocFusoHorario": "",
+                                "DocDigestValue": "",
+                                "DocDhAut": "0000-00-00T00:00:00",
+                                "DocNomeEmitente": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+                                "DocCNPJEmitente": "",
+                                "DocCNPJDestinatario": "11111111111111",
+                                "DocNomeDestinatario": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                                "DocVlrTotal": "10.00"
+                            },
+                            "Eventos": [],
+                            "NFSe": {
+                                "NFSeNumero": 0,
+                                "NFSeCodVerificacao": ""
+                            }
+                        },
+                        {
+                            "DocModelo": "nfce",
+                            "DocNumero": "2",
+                            "DocSerie": "479",
+                            "DocIDUnico": "",
+                            "DocChaAcesso": "43230706354976000149654790000011111111111112",
+                            "DocProtocolo": "143230001011112",
+                            "DocSitCodigo": 100,
+                            "DocSitDescricao": "Autorizado o uso da NF-e",
+                            "DocXML": "",
+                            "DocXMLLink": "https://homolog.invoicy.com.br:443//hnuc002.aspx?ParmCript=gvjBbcQmIWIxjpfkKLR%2fN2jSI0W9tyIpnFpiaujLO80%3d&DocDetArqCodigo=0&DocEveTipo=0&DocEvenSeq=0",
+                            "DocPDF": "",
+                            "DocPDFLink": "https://homolog.invoicy.com.br:443//downloadpdf.aspx?ParmCript=gvjBbcQmIWIxjpfkKLR%2fN2jSI0W9tyIpnFpiaujLO80%3d",
+                            "dhRecbto": "2023-07-25T15:45:06",
+                            "CertDtaVencimento": "0000-00-00",
+                            "CertDiasValido": 0,
+                            "NTEmVigor": "",
+                            "VersaoQRCode": "",
+                            "SerieContingencia": "",
+                            "ImprimirUmaViaContingencia": "",
+                            "DocImpPrefeitura": "",
+                            "DocStatus": 0,
+                            "DocArqNome": "",
+                            "DocArqExtensao": "",
+                            "CertHoraVencimento": "",
+                            "DocCompleto": "",
+                            "tpEmis": "",
+                            "DocNumPedido": "",
+                            "Resumo": {
+                                "DocDataEmissao": "2023-07-25T15:45:06",
+                                "DocFusoHorario": "",
+                                "DocDigestValue": "",
+                                "DocDhAut": "0000-00-00T00:00:00",
+                                "DocNomeEmitente": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+                                "DocCNPJEmitente": "",
+                                "DocCNPJDestinatario": "11111111111111",
+                                "DocNomeDestinatario": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                                "DocVlrTotal": "10.00"
+                            },
+                            "Eventos": [],
+                            "NFSe": {
+                                "NFSeNumero": 0,
+                                "NFSeCodVerificacao": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

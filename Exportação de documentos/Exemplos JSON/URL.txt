@@ -1,0 +1,4 @@
+1 - Solicitar exportação: https://apibrhomolog.invoicy.com.br/exportdocumentsv2
+
+2 - consultar protocolo: https://apibrhomolog.invoicy.com.br/exportdocumentsv2?ProtNumero=202307251631121666
+
