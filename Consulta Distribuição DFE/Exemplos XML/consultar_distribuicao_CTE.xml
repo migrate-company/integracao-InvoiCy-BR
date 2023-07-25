@@ -1,0 +1,8 @@
+<DistribuicaoDFe>
+	<ModeloDocumento>CTe</ModeloDocumento>
+	<Versao>1.00</Versao>
+	<CNPJEmissor>99999999999999</CNPJEmissor>
+	<tpAmb>2</tpAmb>
+	<UsarUltimoNSU>S</UsarUltimoNSU><!--  Quando se deseja consultar pelo NSU, preencher com S ou N  -->
+	<NSUEspecifico/><!--  Quando informar 'N' no campo acima, preencher com o NSU específico, caso contrário não informar este campo  -->
+</DistribuicaoDFe>

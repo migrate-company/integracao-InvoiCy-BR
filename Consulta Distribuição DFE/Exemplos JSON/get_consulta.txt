@@ -1,0 +1,11 @@
+/**linearizar**/
+
+https://apibrhomolog.invoicy.com.br/senddocuments/nfe?
+    type=distribuicaodfe
+    &Versao=1.00
+    &CNPJEmissor=06354976000149
+    &tpAmb=2
+    &chaAcesso=
+    &UsarUltimoNSU=N
+    &UltimoNSU=
+    &NSUEspecifico=29732

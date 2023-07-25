@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<inv:recepcao.Execute>
+			<inv:Invoicyrecepcao>
+				<inv:Cabecalho>
+					<inv:EmpPK>YPxRwGxIbpWZtwhuC0</inv:EmpPK>
+					<inv:EmpCK>5e2ab6abd467acc007a5ffc4f39515d0</inv:EmpCK>
+					<inv:EmpCO/>
+				</inv:Cabecalho>
+				<inv:Informacoes>
+					<inv:Texto/>
+				</inv:Informacoes>
+				<inv:Dados>
+					<inv:DadosItem>
+						<inv:Documento>
+							&lt;DescartarDocumento&gt;&lt;ModeloDocumento&gt;NFCe&lt;/ModeloDocumento&gt;&lt;tpAmb&gt;2&lt;/tpAmb&gt;&lt;CNPJ_emit&gt;12345678901234&lt;/CNPJ_emit&gt;&lt;Numero&gt;848&lt;/Numero&gt;&lt;Serie&gt;260&lt;/Serie&gt;&lt;NumeroSubstituta&gt;849&lt;/NumeroSubstituta&gt;&lt;SerieSubstituta&gt;260&lt;/SerieSubstituta&gt;&lt;/DescartarDocumento&gt;
+						</inv:Documento>
+						<inv:Parametros/>
+					</inv:DadosItem>
+				</inv:Dados>
+			</inv:Invoicyrecepcao>
+		</inv:recepcao.Execute>
+	</soapenv:Body>
+</soapenv:Envelope>
