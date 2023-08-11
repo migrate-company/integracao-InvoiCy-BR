@@ -1594,8 +1594,8 @@
 										</xs:element>
 										<xs:element name="Cnae" minOccurs="0">
 											<xs:simpleType>
-												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="10"/>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="10"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
