@@ -27,6 +27,7 @@
 			<UsrEmail>email@gmail.com</UsrEmail>
 			<UsrSenha>789</UsrSenha>
 			<GrupoUsuario>2</GrupoUsuario>
+			<UsrSolicitarTrocaSenha>S</UsrSolicitarTrocaSenha>
 			<Permissoes>
 				<PermissaoCTe>
 					<Visualizar>S</Visualizar>
@@ -178,11 +179,13 @@
 			<BuscarNatOpAlternativa>S</BuscarNatOpAlternativa>
 			<ReenvioAutomatico>S</ReenvioAutomatico>
 			<EmpRegEspTrib>11</EmpRegEspTrib>
+			<CorrigirDadosRPS>S</CorrigirDadosRPS>
 			<WebHook>
 				<Status>A</Status>
 				<URL>url</URL>
 				<TipoAutenticacao>2</TipoAutenticacao>
 				<TokenAutenticacao>tokenautenticacao</TokenAutenticacao>
+				<MEIAmbienteNacional>S</MEIAmbienteNacional>
 			</WebHook>
 		</NFSe>
 	</Parametros>
