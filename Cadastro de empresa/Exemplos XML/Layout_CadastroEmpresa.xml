@@ -29,6 +29,7 @@
 			<UsrNome>Digitador</UsrNome>
 			<UsrEmail>digitador@gmail.com</UsrEmail>
 			<UsrSenha>123</UsrSenha>
+			<UsrSolicitarTrocaSenha>S</UsrSolicitarTrocaSenha>
 		</UsuariosItem>
 	</Usuarios>
 	<Parametros>
@@ -125,11 +126,13 @@
 			<BuscarNatOpAlternativa>S</BuscarNatOpAlternativa>
 			<ReenvioAutomatico>S</ReenvioAutomatico>
 			<EmpRegEspTrib>11</EmpRegEspTrib>
+			<CorrigirDadosRPS>S</CorrigirDadosRPS>
 			<WebHook>
 				<Status>A</Status>
 				<URL>url</URL>
 				<TipoAutenticacao>2</TipoAutenticacao>
 				<TokenAutenticacao>tokenautenticacao</TokenAutenticacao>
+				<MEIAmbienteNacional>S</MEIAmbienteNacional>
 			</WebHook>
 		</NFSe>
 	</Parametros>
