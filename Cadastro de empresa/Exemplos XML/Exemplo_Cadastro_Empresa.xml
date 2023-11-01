@@ -180,12 +180,12 @@
 			<ReenvioAutomatico>S</ReenvioAutomatico>
 			<EmpRegEspTrib>11</EmpRegEspTrib>
 			<CorrigirDadosRPS>S</CorrigirDadosRPS>
+			<MEIAmbienteNacional>S</MEIAmbienteNacional>
 			<WebHook>
 				<Status>A</Status>
 				<URL>url</URL>
 				<TipoAutenticacao>2</TipoAutenticacao>
 				<TokenAutenticacao>tokenautenticacao</TokenAutenticacao>
-				<MEIAmbienteNacional>S</MEIAmbienteNacional>
 			</WebHook>
 		</NFSe>
 	</Parametros>
