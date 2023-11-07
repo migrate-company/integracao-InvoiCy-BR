@@ -1323,18 +1323,18 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="CorrigirDadosRPS" minOccurs="0">
-												<xs:simpleType>
-													<xs:restriction base="xs:string">
-														<xs:maxLength value="1"/>
-														</xs:restriction>
-												</xs:simpleType>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
 										<xs:element name="MEIAmbienteNacional" minOccurs="0">
-														<xs:simpleType>
-															<xs:restriction base="xs:string">
-																<xs:maxLength value="1"/>
-															</xs:restriction>
-														</xs:simpleType>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
 										<xs:element name="WebHook" minOccurs="0">
 											<xs:complexType>
@@ -1923,6 +1923,13 @@
 														</xs:simpleType>
 													</xs:element>
 													<xs:element name="TipoConsultaNFSe" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="AbrangenciaConsultaNFSe" minOccurs="0">
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
 																<xs:maxLength value="2"/>
