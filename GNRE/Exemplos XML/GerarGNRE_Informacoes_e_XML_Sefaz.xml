@@ -1,0 +1,23 @@
+<GerarGNRE>
+	<CNPJEmpresa>99999999999999</CNPJEmpresa>
+	<XMLSefaz>XML Sefaz do documento em Base64</XMLSefaz>
+	<ItensGNRE>
+		<Item>
+			<TipoImposto>DIFAL</TipoImposto>
+			<Receita>10201</Receita>
+			<InfoComplementares>Observação DIFAL</InfoComplementares>
+		</Item>
+		<Item>
+			<TipoImposto>ICMSST</TipoImposto>
+			<Receita>24601</Receita>
+			<InfoComplementares>Observação ICMSST</InfoComplementares>
+		</Item>
+		<Item>
+			<TipoImposto>FCP</TipoImposto>
+			<Receita>1030</Receita>
+			<Vencimento>2023-20-09</Vencimento>
+			<InfoComplementares>Observação FCP</InfoComplementares>
+		</Item>
+	</ItensGNRE>
+</GerarGNRE>
+	
