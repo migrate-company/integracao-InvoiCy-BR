@@ -3638,28 +3638,6 @@
 																			</xs:restriction>
 																		</xs:simpleType>
 																	</xs:element>
-																	<xs:element minOccurs="0" name="qBCMonoDif">
-																		<xs:annotation>
-																			<xs:documentation>Quantidade tributada diferida</xs:documentation>
-																		</xs:annotation>
-																		<xs:simpleType>
-																			<xs:restriction base="xs:decimal">
-																				<xs:totalDigits value="16"/>
-																				<xs:fractionDigits value="4"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element minOccurs="0" name="adRemICMSDif">
-																		<xs:annotation>
-																			<xs:documentation>Alíquota ad rem do imposto diferido</xs:documentation>
-																		</xs:annotation>
-																		<xs:simpleType>
-																			<xs:restriction base="xs:decimal">
-																				<xs:totalDigits value="8"/>
-																				<xs:fractionDigits value="4"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
 																	<xs:element minOccurs="0" name="vICMSMonoDif">
 																		<xs:annotation>
 																			<xs:documentation>Valor do ICMS diferido</xs:documentation>
@@ -3696,6 +3674,17 @@
 																	<xs:element name="vICMSMonoRet">
 																		<xs:annotation>
 																			<xs:documentation>Valor do ICMS retido anteriormente</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:decimal">
+																				<xs:totalDigits value="16"/>
+																				<xs:fractionDigits value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name=" vICMSMonoOp">
+																		<xs:annotation>
+																			<xs:documentation>Valor do ICMS da Operação</xs:documentation>
 																		</xs:annotation>
 																		<xs:simpleType>
 																			<xs:restriction base="xs:decimal">
