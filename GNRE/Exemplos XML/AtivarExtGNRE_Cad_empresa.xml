@@ -1,0 +1,38 @@
+<CadastroEmpresa>
+	<EmpNomFantasia>Empresa ME</EmpNomFantasia>
+	<EmpApelido>Empresa ME</EmpApelido>
+	<EmpRazSocial>Empresa ME</EmpRazSocial>
+	<EmpCNPJ>99999999999999</EmpCNPJ>
+	<EmpEndereco>Rua São Domingos</EmpEndereco>
+	<EmpNumero>713</EmpNumero>
+	<EmpBairro>Santa Helena</EmpBairro>
+	<EmpCEP>98055070</EmpCEP>
+	<MunCodigo>4204202</MunCodigo>
+	<UFCodigo>42</UFCodigo>
+	<EmpStatus>A</EmpStatus>
+	<Extensao>
+		<ExtensaoItem>
+			<Ativar>S</Ativar>
+			<TipoExtensao>15</TipoExtensao> <!--Código 15 = InvoiCy GNRE-->
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFe</Modulo>
+				</ModuloItem>
+				<ModuloItem>
+					<Modulo>CTe</Modulo>
+				</ModuloItem>
+			</Modulos>
+			<ParametrosExt>
+				<GNRE> <!--Adicionado novo grupo-->
+					<EmailNotificacao>email@email.com</EmailNotificacao> <!--Opcional - Varchar(400)-->
+					<DiasVencimento>10</DiasVencimento> <!--Obrigatório - Aceita os valores 1, 2, 3, 4, 5, 7, 10 - Numeric(2,0)-->			
+					<GerarAutomaticamente>N</GerarAutomaticamente> <!--Opcional - Aceita os valores S e N - Character(1)-->
+					<WebHookStatus>I</WebHookStatus> <!--Opcional - Aceita os valores A e I - Character(1)-->
+					<WebHookURL>URL do Webhook</WebHookURL> <!--Obrigatório caso WebHookStatus = A - Varchar(100)-->
+					<WebHookTipoAutenticacao>1</WebHookTipoAutenticacao>  <!--Opcional - Aceita os valores 0, 1 e 2 - Numeric(2,0)-->
+					<WebHookTokenAutenticacao>AAABBBCCC</WebHookTokenAutenticacao> 	 <!--Obrigatório caso WebHookTipoAutenticacao = 1 ou 2 - Varchar(400)-->
+				</GNRE>
+			</ParametrosExt>
+		</ExtensaoItem>
+	</Extensao>
+</CadastroEmpresa>
