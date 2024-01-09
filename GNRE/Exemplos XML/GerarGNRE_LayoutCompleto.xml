@@ -1,0 +1,39 @@
+<GerarGNRE>
+	<CNPJEmpresa>000000000</CNPJEmpresa>
+	<XMLSefaz>XML do documento no layout sefaz</XMLSefaz>
+	<DadosDocumento>
+		<Numero>1</Numero>
+		<Serie>1</Serie>
+		<Modelo>NFe</Modelo>
+	</DadosDocumento>
+	<IE_UFFavorecida>1111111</IE_UFFavorecida>
+	<ItensGNRE>
+		<Item>
+			<TipoImposto>DIFAL</TipoImposto>
+			<Receita>100102</Receita>
+			<DetalhamentoReceita>01</DetalhamentoReceita>
+			<Produto>49</Produto>
+			<Convenio>Descricao do convenio</Convenio>
+			<Vencimento>2023-20-09</Vencimento>
+			<InformacoesComplementares>Observação</InformacoesComplementares>
+		</Item>
+		<Item>
+			<TipoImposto>ICMSST</TipoImposto>
+			<Receita>100102</Receita>
+			<DetalhamentoReceita>01</DetalhamentoReceita>
+			<Produto>49</Produto>
+			<Convenio>Descricao do convenio</Convenio>
+			<Vencimento>2023-20-09</Vencimento>
+			<InformacoesComplementares>Observação</InformacoesComplementares>
+		</Item>
+		<Item>
+			<TipoImposto>FCP</TipoImposto>
+			<Receita>100129</Receita>
+			<DetalhamentoReceita>01</DetalhamentoReceita>
+			<Produto>49</Produto>
+			<Convenio>Descricao do convenio</Convenio>
+			<Vencimento>2023-20-09</Vencimento>
+			<InformacoesComplementares>Observação</InformacoesComplementares>
+		</Item>
+	</ItensGNRE>
+</GerarGNRE>
