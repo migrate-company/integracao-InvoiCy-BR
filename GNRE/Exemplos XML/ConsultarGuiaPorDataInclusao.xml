@@ -1,0 +1,9 @@
+<ConsultarGNRE>
+	<CNPJEmpresa>06354976000149</CNPJEmpresa>
+	<TipoImposto>DIFAL</TipoImposto>
+	<Receita>100102</Receita>
+	<Status>3</Status>
+	<UFFavorecida>PR</UFFavorecida>
+	<DataInclusaoInicial>2023-11-01T15:00:00</DataInclusaoInicial>
+	<DataInclusaoFinal>2023-12-11T17:00:00</DataInclusaoFinal>
+</ConsultarGNRE>
