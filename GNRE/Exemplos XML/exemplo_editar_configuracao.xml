@@ -1,0 +1,13 @@
+<ConfiguracaoGNRE>
+	<CNPJEmpresa>99999999999999</CNPJEmpresa>
+	<CodConfiguracao>20</CodConfiguracao>
+	<UF>SC</UF>
+	<TipoImposto>ICMSST</TipoImposto>
+	<IEnaUF>111222</IEnaUF>
+	<CodReceita>100048</CodReceita>
+	<CodDtlReceita>10</CodDtlReceita>
+	<CodProduto>10</CodProduto>
+	<Convenio>AAABBB</Convenio>
+	<InfoComplementares>Informações</InfoComplementares>
+	<Operacao>A</Operacao>
+</ConfiguracaoGNRE>
