@@ -1,0 +1,16 @@
+<InvoiCy xmlns="InvoiCy">
+	<Cabecalho>
+		<EmpPK>aaaaaaaaaaaaaaaaqaaaaaa==</EmpPK>
+		<EmpCK>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</EmpCK>
+		<EmpCO/>
+	</Cabecalho>
+	<Informacoes>
+		<Texto/>
+	</Informacoes>
+	<Dados>
+		<DadosItem>
+			<Documento><![CDATA[<EnvioEvento><ModeloDocumento>NFSe</ModeloDocumento><Versao>1.0</Versao><Evento><CNPJ>11111111111111</CNPJ><NFSeNumero>265</NFSeNumero><RPSNumero>139</RPSNumero><RPSSerie>A</RPSSerie><EveTp>110111</EveTp><tpAmb>2</tpAmb></Evento></EnvioEvento>]]></Documento>
+			<Parametros/>
+		</DadosItem>
+	</Dados>
+</InvoiCy>

@@ -1,0 +1,33 @@
+<Invoicyretorno xmlns="InvoiCy">
+	<Mensagem>
+		<MensagemItem>
+			<Codigo>100</Codigo>
+			<Descricao>Documentos processados</Descricao>
+			<Documentos>
+				<DocumentosItem>
+					<Documento><![CDATA[<Documento>
+	<DocModelo>NFSe</DocModelo>
+	<DocNumero>139</DocNumero>
+	<DocSerie>A</DocSerie>
+	<DocProtocolo/>
+	<DocPDFBase64>JVBERi0xLjQKJeLjz9MKM...(pdf em base64)...</DocPDFBase64>
+	<DocPDFDownload>https://homolog.invoicy.com.br/DownloadPDF.aspx?ParmCript=aaaaaaaaaaaaaaaaa</DocPDFDownload>
+	<DocXMLBase64>PENhbmNlbGFyTmZzZVJlc3Bv...(xml prefeitura em base64)...</DocXMLBase64>
+	<DocXMLDownload>https://homolog.invoicy.com.br/HNUC002.aspx?ParmCript=aaaaaaaaaaaaaaaaa&amp;DocDetArqCodigo=0&amp;DocEveTipo=0&amp;DocEvenSeq=0</DocXMLDownload>
+	<DocArquivo/>
+	<DocExtensaoArquivo/>
+	<DocCompleto/>
+	<NFSe>
+		<NFSeNumero>547</NFSeNumero>
+		<NFSeCodVerificacao>123456789</NFSeCodVerificacao>
+	</NFSe>
+	<Situacao>
+		<SitCodigo>101</SitCodigo>
+		<SitDescricao>Cancelado</SitDescricao>
+	</Situacao>
+</Documento>]]></Documento>
+				</DocumentosItem>
+			</Documentos>
+		</MensagemItem>
+	</Mensagem>
+</Invoicyretorno>
