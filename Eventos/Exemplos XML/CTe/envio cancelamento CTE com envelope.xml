@@ -1,0 +1,16 @@
+<InvoiCy xmlns="InvoiCy">
+	<Cabecalho>
+		<EmpPK>AAAAAAAAAAAAAAAAAAAAAA==</EmpPK>
+		<EmpCK>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</EmpCK>
+		<EmpCO/>
+	</Cabecalho>
+	<Informacoes>
+		<Texto/>
+	</Informacoes>
+	<Dados>
+		<DadosItem>
+			<Documento><![CDATA[<EnvioEvento><ModeloDocumento>CTe</ModeloDocumento><Versao>4.00</Versao><Evento><CteCnpjEmissor>06354976000149</CteCnpjEmissor><CteNumero>5026</CteNumero><CteSerie>272</CteSerie><tpAmb>2</tpAmb><ChaAcesso>43240206354976000149572720000050261172816385</ChaAcesso><tpEmis>1</tpEmis><EveInf><EveDh>2024-02-20T11:23:07</EveDh><EveFusoHorario>-03:00</EveFusoHorario><EveTp>110180</EveTp><EvenSeq>1</EvenSeq><Evedet><EveDesc>Comprovante de Entrega do CT-e</EveDesc><CompEntrega><dhEntrega>2024-02-20T11:23:07</dhEntrega><FusoEntrega>-03:00</FusoEntrega><nDoc>1234567890</nDoc><xNome>Migrate Company</xNome><latitude>-27.86882359</latitude><longitude>-53.98509979</longitude><hashEntrega>OrikW3hImskYcHzoL6Ir8wJtDvY=</hashEntrega><dhHashEntrega>2024-02-20T11:23:07</dhHashEntrega><FusoHashEntrega>-03:00</FusoHashEntrega><InfEntrega><InfEntregaItem><chNFe>43221112893382000109553140005514711001214562</chNFe></InfEntregaItem></InfEntrega></CompEntrega></Evedet></EveInf></Evento></EnvioEvento>]]></Documento>
+			<Parametros/>
+		</DadosItem>
+	</Dados>
+</InvoiCy>
