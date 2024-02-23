@@ -1,0 +1,302 @@
+<Invoicyretorno xmlns="InvoiCy"><Mensagem><MensagemItem><Codigo>100</Codigo><Descricao>Consulta realizada com sucesso!</Descricao><Documentos><DocumentosItem><Documento><![CDATA[<Receitas>
+	<Receita>
+		<CodReceita>100048</CodReceita>
+		<Descricao>ICMS Substituição Tributária por Apuração</Descricao>
+		<TipoImposto>ICMSST</TipoImposto>
+		<ExigeDetalheReceita>N</ExigeDetalheReceita>
+		<ExigeProduto>S</ExigeProduto>
+		<ExigeConvenio>S</ExigeConvenio>
+		<ExigeDataVencimento>S</ExigeDataVencimento>
+		<ExigeDataPagamento>S</ExigeDataPagamento>
+		<Produtos>
+			<Produto>
+				<CodProduto>1</CodProduto>
+				<Descricao>Aguardente</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>2</CodProduto>
+				<Descricao>Álcool Etílico Hidratado Combustível (AEHC) e Álcool para fins não-combustíveis</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>3</CodProduto>
+				<Descricao>Aparelhos Celulares e Cartão Inteligente (Smart Cards e SimCard)</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>70</CodProduto>
+				<Descricao>Aquisição de mercadorias de forma não presencial (internet, telemarketing e showroom)</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>4</CodProduto>
+				<Descricao>Bebidas Alcoólicas (exceto Cervejas, Chopes e Aguardente)</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>81</CodProduto>
+				<Descricao>Bebidas Quentes</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>5</CodProduto>
+				<Descricao>Cervejas, Chopes, Refrigerantes, Água Mineral ou Potável, Bebidas Eletrolíticas (Isotônicas e Energéticas, nbm/sh 2106.90 e 2202.90) e Gelo</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>6</CodProduto>
+				<Descricao>Cigarros e produtos derivados do fumo</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>7</CodProduto>
+				<Descricao>Cimento</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>8</CodProduto>
+				<Descricao>Combustíveis e Lubrificantes, derivados ou não de petróleo, Alcool Etílico Anidro Combustível (AEAC) e BIODIESEL B100</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>33</CodProduto>
+				<Descricao>Comércio Outros não especificados</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>10</CodProduto>
+				<Descricao>Discos Fonográficos, Fitas Virgens ou Gravadas e Outros Suportes para Reprodução ou Gravação</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>39</CodProduto>
+				<Descricao>Energia Elétrica</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>84</CodProduto>
+				<Descricao>ICMS Complementar Conv. 110/2007</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>34</CodProduto>
+				<Descricao>Indústria não especificados</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>14</CodProduto>
+				<Descricao>Lâminas de Barbear, Aparelhos de Barbear e Isqueiros de Bolso a Gás não recarregáveis</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>15</CodProduto>
+				<Descricao>Lâmpadas Elétricas e Eletrônicas, Reatores e Starters</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>16</CodProduto>
+				<Descricao>Marketing Porta-a-Porta</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>18</CodProduto>
+				<Descricao>Materiais de Construção, Acabamentos, Bricolagens ou Adornos</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>46</CodProduto>
+				<Descricao>Material Elétrico</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>20</CodProduto>
+				<Descricao>Peças, Partes, Componentes, Acessórios e demais produtos para Autopropulsados</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>21</CodProduto>
+				<Descricao>Pilhas, Baterias Elétricas e Acumuladores Elétricos</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>22</CodProduto>
+				<Descricao>Pneumáticos, Câmaras de ar e Protetores</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>24</CodProduto>
+				<Descricao>Rações tipo pet para animais domésticos</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>26</CodProduto>
+				<Descricao>Suportes Elásticos para cama, Colchões (inclusive Box), Travesseiros e Pillows</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>32</CodProduto>
+				<Descricao>Telhas, cumeeira e caixas d agua de cimento, amianto, fibrocimento, polietilieno e fibra de vidro, inclusive suas tampas</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>27</CodProduto>
+				<Descricao>Tintas, Vernizes e outras mercadorias da indústria química</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>29</CodProduto>
+				<Descricao>Veículos Automotores Novos de 4 rodas</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>30</CodProduto>
+				<Descricao>Veículos Automotores Novos Faturamento Direto para o Consumidor</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>31</CodProduto>
+				<Descricao>Veículos de Duas Rodas Motorizados</Descricao>
+			</Produto>
+		</Produtos>
+	</Receita>
+	<Receita>
+		<CodReceita>100099</CodReceita>
+		<Descricao>ICMS Subst. Tributária por Operação</Descricao>
+		<TipoImposto>ICMSST</TipoImposto>
+		<ExigeDetalheReceita>N</ExigeDetalheReceita>
+		<ExigeProduto>S</ExigeProduto>
+		<ExigeConvenio>S</ExigeConvenio>
+		<ExigeDataVencimento>S</ExigeDataVencimento>
+		<ExigeDataPagamento>S</ExigeDataPagamento>
+		<Produtos>
+			<Produto>
+				<CodProduto>1</CodProduto>
+				<Descricao>Aguardente</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>2</CodProduto>
+				<Descricao>Álcool Etílico Hidratado Combustível (AEHC) e Álcool para fins não-combustíveis</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>3</CodProduto>
+				<Descricao>Aparelhos Celulares e Cartão Inteligente (Smart Cards e SimCard)</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>70</CodProduto>
+				<Descricao>Aquisição de mercadorias de forma não presencial (internet, telemarketing e showroom)</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>4</CodProduto>
+				<Descricao>Bebidas Alcoólicas (exceto Cervejas, Chopes e Aguardente)</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>81</CodProduto>
+				<Descricao>Bebidas Quentes</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>5</CodProduto>
+				<Descricao>Cervejas, Chopes, Refrigerantes, Água Mineral ou Potável, Bebidas Eletrolíticas (Isotônicas e Energéticas, nbm/sh 2106.90 e 2202.90) e Gelo</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>6</CodProduto>
+				<Descricao>Cigarros e produtos derivados do fumo</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>7</CodProduto>
+				<Descricao>Cimento</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>8</CodProduto>
+				<Descricao>Combustíveis e Lubrificantes, derivados ou não de petróleo, Alcool Etílico Anidro Combustível (AEAC) e BIODIESEL B100</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>33</CodProduto>
+				<Descricao>Comércio Outros não especificados</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>10</CodProduto>
+				<Descricao>Discos Fonográficos, Fitas Virgens ou Gravadas e Outros Suportes para Reprodução ou Gravação</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>39</CodProduto>
+				<Descricao>Energia Elétrica</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>34</CodProduto>
+				<Descricao>Indústria não especificados</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>14</CodProduto>
+				<Descricao>Lâminas de Barbear, Aparelhos de Barbear e Isqueiros de Bolso a Gás não recarregáveis</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>15</CodProduto>
+				<Descricao>Lâmpadas Elétricas e Eletrônicas, Reatores e Starters</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>16</CodProduto>
+				<Descricao>Marketing Porta-a-Porta</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>18</CodProduto>
+				<Descricao>Materiais de Construção, Acabamentos, Bricolagens ou Adornos</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>46</CodProduto>
+				<Descricao>Material Elétrico</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>20</CodProduto>
+				<Descricao>Peças, Partes, Componentes, Acessórios e demais produtos para Autopropulsados</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>21</CodProduto>
+				<Descricao>Pilhas, Baterias Elétricas e Acumuladores Elétricos</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>22</CodProduto>
+				<Descricao>Pneumáticos, Câmaras de ar e Protetores</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>24</CodProduto>
+				<Descricao>Rações tipo pet para animais domésticos</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>26</CodProduto>
+				<Descricao>Suportes Elásticos para cama, Colchões (inclusive Box), Travesseiros e Pillows</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>32</CodProduto>
+				<Descricao>Telhas, cumeeira e caixas d agua de cimento, amianto, fibrocimento, polietilieno e fibra de vidro, inclusive suas tampas</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>27</CodProduto>
+				<Descricao>Tintas, Vernizes e outras mercadorias da indústria química</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>29</CodProduto>
+				<Descricao>Veículos Automotores Novos de 4 rodas</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>30</CodProduto>
+				<Descricao>Veículos Automotores Novos Faturamento Direto para o Consumidor</Descricao>
+			</Produto>
+			<Produto>
+				<CodProduto>31</CodProduto>
+				<Descricao>Veículos de Duas Rodas Motorizados</Descricao>
+			</Produto>
+		</Produtos>
+	</Receita>
+	<Receita>
+		<CodReceita>100102</CodReceita>
+		<Descricao>ICMS Consumidor Final Não Contribuinte Outra UF por Operação</Descricao>
+		<TipoImposto>DIFAL</TipoImposto>
+		<ExigeDetalheReceita>N</ExigeDetalheReceita>
+		<ExigeProduto>N</ExigeProduto>
+		<ExigeConvenio>S</ExigeConvenio>
+		<ExigeDataVencimento>S</ExigeDataVencimento>
+		<ExigeDataPagamento>S</ExigeDataPagamento>
+	</Receita>
+	<Receita>
+		<CodReceita>100110</CodReceita>
+		<Descricao>ICMS Consumidor Final Não Contribuinte Outra UF por Apuração</Descricao>
+		<TipoImposto>DIFAL</TipoImposto>
+		<ExigeDetalheReceita>N</ExigeDetalheReceita>
+		<ExigeProduto>N</ExigeProduto>
+		<ExigeConvenio>S</ExigeConvenio>
+		<ExigeDataVencimento>S</ExigeDataVencimento>
+		<ExigeDataPagamento>S</ExigeDataPagamento>
+	</Receita>
+	<Receita>
+		<CodReceita>100129</CodReceita>
+		<Descricao>ICMS Fundo Estadual de Combate à Pobreza por Operação</Descricao>
+		<TipoImposto>FCP</TipoImposto>
+		<ExigeDetalheReceita>N</ExigeDetalheReceita>
+		<ExigeProduto>N</ExigeProduto>
+		<ExigeConvenio>S</ExigeConvenio>
+		<ExigeDataVencimento>S</ExigeDataVencimento>
+		<ExigeDataPagamento>S</ExigeDataPagamento>
+	</Receita>
+	<Receita>
+		<CodReceita>100137</CodReceita>
+		<Descricao>ICMS Fundo Estadual de Combate à Pobreza por Apuração</Descricao>
+		<TipoImposto>FCP</TipoImposto>
+		<ExigeDetalheReceita>N</ExigeDetalheReceita>
+		<ExigeProduto>N</ExigeProduto>
+		<ExigeConvenio>S</ExigeConvenio>
+		<ExigeDataVencimento>S</ExigeDataVencimento>
+		<ExigeDataPagamento>S</ExigeDataPagamento>
+	</Receita>
+</Receitas>]]></Documento></DocumentosItem></Documentos></MensagemItem></Mensagem></Invoicyretorno>
