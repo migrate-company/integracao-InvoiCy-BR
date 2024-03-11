@@ -2068,6 +2068,16 @@
 																					</xs:restriction>
 																				</xs:simpleType>
 																			</xs:element>
+																			<xs:element minOccurs="0" name="CPF_adq">
+																				<xs:annotation>
+																					<xs:documentation>CPF do adquirente ou do encomendante</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:pattern value="[0-9]{11}"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
 																			<xs:element minOccurs="0" name="UFTerceiro">
 																				<xs:annotation>
 																					<xs:documentation>Sigla da UF do adquirinte ou do encomendante</xs:documentation>
@@ -2910,11 +2920,12 @@
 																						</xs:sequence>
 																					</xs:complexType>
 																				</xs:element>
-																			</xs:all>
-																		</xs:sequence>
-																	</xs:complexType>
-																</xs:element>
-															</xs:element>
+																			</xs:sequence>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:all>
+															</xs:complexType>
+														</xs:element>
 														</xs:choice>
 														<xs:element maxOccurs="500" minOccurs="0" name="Rastro">
 															<xs:annotation>
@@ -3690,6 +3701,17 @@
 																			<xs:restriction base="xs:decimal">
 																				<xs:totalDigits value="16"/>
 																				<xs:fractionDigits value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="indDeduzDeson">
+																		<xs:annotation>
+																			<xs:documentation>Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd)</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:nonNegativeInteger">
+																				<xs:enumeration value="0"/>
+																				<xs:enumeration value="1"/>
 																			</xs:restriction>
 																		</xs:simpleType>
 																	</xs:element>
@@ -5829,6 +5851,52 @@
 													</xs:restriction>
 												</xs:simpleType>
 											</xs:element>
+											<xs:element minOccurs="0" name="CNPJPag">
+												<xs:annotation>
+													<xs:documentation>CNPJ transacional do pagamento</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:pattern value="[0-9]{14}"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="UFPag">
+												<xs:annotation>
+													<xs:documentation>UF do CNPJ do estabelecimento onde o pagamento foi processado/transacionado/recebido</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="AC"/>
+														<xs:enumeration value="AL"/>
+														<xs:enumeration value="AM"/>
+														<xs:enumeration value="AP"/>
+														<xs:enumeration value="BA"/>
+														<xs:enumeration value="CE"/>
+														<xs:enumeration value="DF"/>
+														<xs:enumeration value="ES"/>
+														<xs:enumeration value="GO"/>
+														<xs:enumeration value="MA"/>
+														<xs:enumeration value="MG"/>
+														<xs:enumeration value="MS"/>
+														<xs:enumeration value="MT"/>
+														<xs:enumeration value="PA"/>
+														<xs:enumeration value="PB"/>
+														<xs:enumeration value="PE"/>
+														<xs:enumeration value="PI"/>
+														<xs:enumeration value="PR"/>
+														<xs:enumeration value="RJ"/>
+														<xs:enumeration value="RN"/>
+														<xs:enumeration value="RO"/>
+														<xs:enumeration value="RR"/>
+														<xs:enumeration value="RS"/>
+														<xs:enumeration value="SC"/>
+														<xs:enumeration value="SE"/>
+														<xs:enumeration value="SP"/>
+														<xs:enumeration value="TO"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
 											<xs:element minOccurs="0" name="card">
 												<xs:annotation>
 													<xs:documentation>TAG de Grupo de Cartões</xs:documentation>
@@ -5881,7 +5949,28 @@
 															<xs:simpleType>
 																<xs:restriction base="xs:string">
 																	<xs:minLength value="1"/>
-																	<xs:maxLength value="20"/>
+																	<xs:maxLength value="128"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element minOccurs="0" name="CNPJReceb">
+															<xs:annotation>
+																<xs:documentation>CNPJ do beneficiário do pagamento </xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:pattern value="[0-9]{14}"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="idTermPag">
+															<xs:annotation>
+																<xs:documentation>Identificador do terminal de pagamento</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:minLength value="1"/>
+																	<xs:maxLength value="40"/>
 																</xs:restriction>
 															</xs:simpleType>
 														</xs:element>
@@ -6031,9 +6120,11 @@
 															</xs:annotation>
 															<xs:simpleType>
 																<xs:restriction base="xs:nonNegativeInteger">
+																	<xs:enumeration value="0"/>
 																	<xs:enumeration value="1"/>
 																	<xs:enumeration value="2"/>
 																	<xs:enumeration value="3"/>
+																	<xs:enumeration value="4"/>
 																	<xs:enumeration value="9"/>
 																</xs:restriction>
 															</xs:simpleType>
