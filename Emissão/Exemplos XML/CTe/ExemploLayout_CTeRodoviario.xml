@@ -1,6 +1,6 @@
 <Envio>
 	<ModeloDocumento>CTe</ModeloDocumento>
-	<Versao>3.00</Versao>
+	<Versao>4.00</Versao>
 	<ide>
 		<cCT>17281638</cCT>
 		<cUF>43</cUF>
@@ -275,7 +275,7 @@
 			</infDocItem>
 		</infDoc>
 		<infModal>
-			<versaoModal>3.00</versaoModal>
+			<versaoModal>4.00</versaoModal>
 			<rodo>
 				<RNTRC>89173646</RNTRC>
 				<occ>
