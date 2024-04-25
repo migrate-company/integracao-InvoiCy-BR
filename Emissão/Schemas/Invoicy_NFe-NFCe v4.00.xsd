@@ -3759,9 +3759,9 @@
 																								<xs:documentation>Indica se o valor do ICMS desonerado (vICMSDeson) deduz do valor do item (vProd)</xs:documentation>
 																							</xs:annotation>
 																							<xs:simpleType>
-																								<xs:restriction base="xs:nonNegativeInteger">
-																									<xs:enumeration value="0"/>
-																									<xs:enumeration value="1"/>
+																								<xs:restriction base="xs:string">
+																									<xs:minLength value="0"/>
+																									<xs:maxLength value="1"/>
 																								</xs:restriction>
 																							</xs:simpleType>
 																						</xs:element>
