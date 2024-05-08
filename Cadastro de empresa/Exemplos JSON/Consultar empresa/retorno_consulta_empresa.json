@@ -5,7 +5,6 @@
         "RetornoConsulta": [
             {
                 "EmpCodigo": 0,
-                "EmpChaveParceiro": "",
                 "EmpNomFantasia": "MIGRATE",
                 "EmpApelido": "MIGRATE",
                 "EmpRazSocial": "MIGRATE",
