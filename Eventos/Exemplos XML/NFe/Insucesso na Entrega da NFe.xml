@@ -1,0 +1,31 @@
+<EnvioEvento>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<Evento>
+		<NtfCnpjEmissor>99999999999999</NtfCnpjEmissor>
+		<NtfNumero>4166</NtfNumero>
+		<NtfSerie>770</NtfSerie>
+		<tpAmb>2</tpAmb>
+		<EveInf>
+			<EveDh>2024-04-18T08:53:21</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>110192</EveTp>
+			<EvenSeq>11</EvenSeq>
+			<Evedet>
+				<InsucessoEntrega>
+					<dhTentativaEntrega>2024-04-18T08:53:21</dhTentativaEntrega>
+					<fusoTentativaEntrega>-03:00</fusoTentativaEntrega>
+					<nTentativa>2</nTentativa>
+					<tpMotivo>4</tpMotivo>
+					<xJustMotivo>teste teste</xJustMotivo>
+					<nProtIE/>
+					<latitude>34.000000</latitude>
+					<longitude>20.000000</longitude>
+					<hashTentativaEntrega>C0d9Tlu+LEn/J9jIZpkmivik37M=</hashTentativaEntrega>
+					<dhHashTentativaEntrega>2024-05-02T09:01:34</dhHashTentativaEntrega>
+					<fusoHashTentativaEntrega>-03:00</fusoHashTentativaEntrega>
+				</InsucessoEntrega>
+			</Evedet>
+		</EveInf>
+	</Evento>
+</EnvioEvento>
