@@ -5912,6 +5912,11 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
+																<xs:element minOccurs="0" name="dPag" type="xs:date">
+																	<xs:annotation>
+																		<xs:documentation>Data do Pagamento</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
 																<xs:element minOccurs="0" name="CNPJPag">
 																	<xs:annotation>
 																		<xs:documentation>CNPJ transacional do pagamento</xs:documentation>
