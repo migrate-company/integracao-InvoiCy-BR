@@ -2670,38 +2670,42 @@
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="LocacaoItem" maxOccurs="unbounded">
-											<xs:element name="categServ" minOccurs="0">
-												<xs:simpleType>
-													<xs:restriction base="xs:nonNegativeInteger">
-														<xs:totalDigits value="1"/>
-														<xs:minInclusive value="1"/>
-														<xs:maxInclusive value="5"/>
-													</xs:restriction>
-												</xs:simpleType>
-											</xs:element>
-											<xs:element name="objetoLocacao" minOccurs="0">
-												<xs:simpleType>
-													<xs:restriction base="xs:nonNegativeInteger">
-														<xs:totalDigits value="1"/>
-														<xs:minInclusive value="1"/>
-														<xs:maxInclusive value="6"/>
-													</xs:restriction>
-												</xs:simpleType>
-											</xs:element>
-											<xs:element name="extensaoFerrovia" minOccurs="0">
-												<xs:simpleType>
-													<xs:restriction base="xs:nonNegativeInteger">
-														<xs:totalDigits value="5"/>
-													</xs:restriction>
-												</xs:simpleType>
-											</xs:element>
-											<xs:element name="nPostes" minOccurs="0">
-												<xs:simpleType>
-													<xs:restriction base="xs:nonNegativeInteger">
-														<xs:totalDigits value="6"/>
-													</xs:restriction>
-												</xs:simpleType>
-											</xs:element>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="categServ" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:nonNegativeInteger">
+																<xs:totalDigits value="1"/>
+																<xs:minInclusive value="1"/>
+																<xs:maxInclusive value="5"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="objetoLocacao" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:nonNegativeInteger">
+																<xs:totalDigits value="1"/>
+																<xs:minInclusive value="1"/>
+																<xs:maxInclusive value="6"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="extensaoFerrovia" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:nonNegativeInteger">
+																<xs:totalDigits value="5"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="nPostes" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:nonNegativeInteger">
+																<xs:totalDigits value="6"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
