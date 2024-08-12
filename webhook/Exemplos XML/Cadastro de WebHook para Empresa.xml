@@ -1,0 +1,17 @@
+<CadastroWebhook>
+	<Descricao>Teste - Cadastro de empresa</Descricao>
+	<URL>https://webhook.site/9f4a27bb-efed-4395-8533-ac891712bbf3</URL>
+	<Status>A</Status>
+	<TipoAutenticacao>0</TipoAutenticacao>
+	<TokenAutenticacao/>
+	<Uso>
+		<UsoItem>
+			<Modulo>4</Modulo>
+			<TipoNotificacao>
+				<TipoNotificacao>9</TipoNotificacao>
+				<TipoNotificacao>10</TipoNotificacao>
+				<TipoNotificacao>11</TipoNotificacao>
+			</TipoNotificacao>
+		</UsoItem>
+	</Uso>
+</CadastroWebhook>
