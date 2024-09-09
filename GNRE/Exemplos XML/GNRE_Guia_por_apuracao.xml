@@ -1,0 +1,16 @@
+<GerarGNRE>
+	<CNPJEmpresa>99999999999999</CNPJEmpresa>
+	<TipoGuia>2</TipoGuia>
+	<IE_UFFavorecida>111111</IE_UFFavorecida>
+	<UFFavorecida>MS</UFFavorecida>
+	<ItensGNRE>
+		<Item>
+			<TipoImposto>DIFAL</TipoImposto>
+			<Receita>100110</Receita>
+			<Vencimento>2024-08-05</Vencimento>
+			<Pagamento>2024-08-05</Pagamento>
+			<PeriodoReferencia>2024-07-30</PeriodoReferencia>
+			<Valor>1.00</Valor>
+		</Item>
+	</ItensGNRE>
+</GerarGNRE>
