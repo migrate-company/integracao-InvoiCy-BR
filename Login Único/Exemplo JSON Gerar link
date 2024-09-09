@@ -1,1 +1,15 @@
 
+{
+    "Cabecalho": {
+        "EmpPK": "chave de parceiro",
+        "EmpCK": "hash MD5"
+    },
+    "Dados": {
+        "Usuario": {
+            "Email": "E-mail"
+        },
+        "Config": {
+            "Pagina": "documentosemitidos"
+        }
+    }
+}
