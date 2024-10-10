@@ -322,7 +322,7 @@
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
-													</xs:element>
+													</xs:element>													
 													<xs:element minOccurs="0" name="InsucessoEntrega">
 														<xs:complexType>
 															<xs:sequence>
@@ -333,75 +333,172 @@
 																			<xs:maxLength value="6"/>
 																		</xs:restriction>
 																	</xs:simpleType>
-																	<xs:element minOccurs="0" name="nTentativa">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:nonNegativeInteger">
-																				<xs:totalDigits value="3"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element minOccurs="0" name="tpMotivo">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:nonNegativeInteger">
-																				<xs:totalDigits value="1"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element name="xJustMotivo">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:string">
-																				<xs:maxLength value="250"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element minOccurs="0" name="nProtIE">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:nonNegativeInteger">
-																				<xs:totalDigits value="15"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element minOccurs="0" name="latitude">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:decimal">
-																				<xs:totalDigits value="2"/>
-																				<xs:fractionDigits value="6"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element minOccurs="0" name="longitude">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:decimal">
-																				<xs:totalDigits value="3"/>
-																				<xs:fractionDigits value="6"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element name="hashTentativaEntrega">
-																		<xs:simpleType>
-																			<xs:restriction base="xs:string">
-																				<xs:maxLength value="28"/>
-																			</xs:restriction>
-																		</xs:simpleType>
-																	</xs:element>
-																	<xs:element minOccurs="0" name="dhHashTentativaEntrega" type="xs:dateTime"/>
-																	<xs:element minOccurs="0" name="fusoHashTentativaEntrega">
+																</xs:element>
+																<xs:element name="nTentativa">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="3"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="tpMotivo">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="1"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="xJustMotivo">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="250"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="nProtIE">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:nonNegativeInteger">
+																			<xs:totalDigits value="15"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>																
+																<xs:element minOccurs="0" name="latitude">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="2"/>
+																			<xs:fractionDigits value="6"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element minOccurs="0" name="longitude">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="3"/>
+																			<xs:fractionDigits value="6"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="hashTentativaEntrega">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="28"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element minOccurs="0" name="dhHashTentativaEntrega" type="xs:dateTime"/>
+																<xs:element minOccurs="0" name="fusoHashTentativaEntrega">
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
 																			<xs:maxLength value="6"/>
 																		</xs:restriction>
 																	</xs:simpleType>
-																	</xs:element>
-																</xs:sequence>
-															</xs:complexType>
-														</xs:element>
-													</xs:sequence>
-												</xs:complexType>
-											</xs:element>
-										</xs:sequence>
-									</xs:complexType>
-								</xs:element>
-							</xs:sequence>
-						</xs:complexType>
-					</xs:element>
-				</xs:schema>
+																</xs:element>																
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="ECONF">
+														<xs:complexType>
+															<xs:sequence>
+															<xs:element minOccurs="0" name="indPag">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="tPag">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="xPag">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="60"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element minOccurs="0" name="vPag">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="13"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element> 
+																<xs:element name="dPag" type="xs:dateTime"/>
+																<xs:element name="CNPJPag">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="14"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>																
+																<xs:element minOccurs="0" name="UFPag">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="2"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="CNPJIF">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="14"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element minOccurs="0" name="tBand">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="2"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="cAut">
+																<xs:simpleType>
+																	<xs:restriction base="xs:nonNegativeInteger">
+																	<xs:minInclusive value="1"/>
+																	<xs:maxInclusive value="128"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="CNPJReceb">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="14"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element minOccurs="0" name="UFReceb">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="2"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="nProtEvento">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="15"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>															
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
