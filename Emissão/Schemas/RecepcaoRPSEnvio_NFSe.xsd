@@ -2244,6 +2244,13 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
+										<xs:element name="descricaoObra" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="255"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="ListaMaterial" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:sequence>
