@@ -325,7 +325,7 @@
 			<ObraNumEncapsulamento/>
 			<AbatimentoMateriais/>
 			<ObraXMun/>
-			<descricaoObra/>
+			<ObraDesc/>
 			<ListaMaterial>
 				<Material>
 					<MatCodigo></MatCodigo>
