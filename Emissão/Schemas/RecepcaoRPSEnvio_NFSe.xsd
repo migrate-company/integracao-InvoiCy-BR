@@ -2244,7 +2244,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="descricaoObra" minOccurs="0">
+										<xs:element name="ObraDesc" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="255"/>
