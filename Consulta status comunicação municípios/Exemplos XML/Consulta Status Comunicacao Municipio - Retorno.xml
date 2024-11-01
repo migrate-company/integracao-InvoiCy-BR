@@ -1,0 +1,78 @@
+<ConsultaStatusComunicacaoMunicipioRetorno>
+	<CodMunicipio>4115200</CodMunicipio>
+	<StatusAtual>Online</StatusAtual>
+	<Servicos>
+		<ServicoItem>
+			<CodServico>1</CodServico>
+			<NomeServico>Recepção Lote RPS</NomeServico>
+			<TempoMinimo>3.868s</TempoMinimo>
+			<TempoMaximo>3.868s</TempoMaximo>
+			<TempoMedio>3.868s</TempoMedio>
+			<DataUltimoSucesso>2024-10-23T09:21:00</DataUltimoSucesso>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>2</CodServico>
+			<NomeServico>Consulta Situação Lote RPS</NomeServico>
+			<TempoMinimo/>
+			<TempoMaximo/>
+			<TempoMedio/>
+			<DataUltimoSucesso p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance"/>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>3</CodServico>
+			<NomeServico>Consulta NFS-e por RPS</NomeServico>
+			<TempoMinimo>175ms</TempoMinimo>
+			<TempoMaximo>175ms</TempoMaximo>
+			<TempoMedio>175ms</TempoMedio>
+			<DataUltimoSucesso>2024-10-23T09:27:00</DataUltimoSucesso>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>4</CodServico>
+			<NomeServico>Consulta Lote RPS</NomeServico>
+			<TempoMinimo/>
+			<TempoMaximo/>
+			<TempoMedio/>
+			<DataUltimoSucesso p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance"/>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>6</CodServico>
+			<NomeServico>Cancelamento NFS-e</NomeServico>
+			<TempoMinimo>2.810s</TempoMinimo>
+			<TempoMaximo>2.810s</TempoMaximo>
+			<TempoMedio>2.810s</TempoMedio>
+			<DataUltimoSucesso>2024-10-23T09:27:00</DataUltimoSucesso>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>9</CodServico>
+			<NomeServico>Inutilização de Numero de RPS</NomeServico>
+			<TempoMinimo/>
+			<TempoMaximo/>
+			<TempoMedio/>
+			<DataUltimoSucesso p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance"/>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>11</CodServico>
+			<NomeServico>Substituicao NFS-e</NomeServico>
+			<TempoMinimo/>
+			<TempoMaximo/>
+			<TempoMedio/>
+			<DataUltimoSucesso p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance"/>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>15</CodServico>
+			<NomeServico>Consulta NFSe Recebidas</NomeServico>
+			<TempoMinimo/>
+			<TempoMaximo/>
+			<TempoMedio/>
+			<DataUltimoSucesso p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance"/>
+		</ServicoItem>
+		<ServicoItem>
+			<CodServico>17</CodServico>
+			<NomeServico>Consulta NFSe Emitidas</NomeServico>
+			<TempoMinimo/>
+			<TempoMaximo/>
+			<TempoMedio/>
+			<DataUltimoSucesso p4:nil="true" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance"/>
+		</ServicoItem>
+	</Servicos>
+</ConsultaStatusComunicacaoMunicipioRetorno>
