@@ -1,0 +1,7 @@
+{
+	"notificacao": {
+		"TipoNotificacao": "9 - Inclusão na fila para consulta; 10 - Novo documento não encontrado; 11 - Novo documento econtrado",
+		"DescNotificacao": "Descrição da notificação",
+		"MsgPrefeitura": "Retorna a quantidade de documento localizados na prefeitura"
+	}
+}

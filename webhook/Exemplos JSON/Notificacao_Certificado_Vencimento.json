@@ -1,0 +1,9 @@
+{
+  "Certificado": {
+    "CNPJ": "CNPJ empresa",
+    "RazaoSocial": "Razão social",
+    "Apelido": "Apelido",
+    "Vencimento": "Data de vencimento",
+    "Mensagem": "Mensagem de vencimento"
+  }
+}

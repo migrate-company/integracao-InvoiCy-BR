@@ -1,0 +1,31 @@
+{
+	"documento": {
+		"Protocolo": "Protocolo de autorização",
+		"DocNumero": "Número do documento",
+		"DocSerie": "Série do documeno",
+		"DocModelo": "Modelo do documento",
+		"DocChaAcesso": "Chave de acesso",
+		"Guias": [
+			{
+				"NumRecibo": "Número do recibo",
+				"DataEmis": "Data da emissão da guia",
+				"DataVcto": "Data de vencimento da guia",
+				"Status": "1 - Pendente; 2 - Em processamento; 3 - Autorizado; 4 - Rejeitado",
+				"SitCodigo": "Código da Situação",
+				"SitDescricao": "Descrição da Situação",
+				"Receita": "Receita",
+				"TpImposto": "Tipo do imposto",
+				"CodBarra": "Codigo de barras",
+				"LnDigitavel": "Linha Digitavel",
+				"NossoNumero": "Código do detalhe da receita que será informada na Guia",
+				"qrcodePayload": "QRCode para pagamento da guia via PIX",
+				"Valor": "Valor da guia",
+				"VlrMulta": "Valor da multa",
+				"VlrJuros": "Valor do juros",
+				"VlrTotal": "Valor total da guia",
+				"PDFBase64": "Arquivo PDF em base64",
+				"PDFDownload": "Link para download do PDF"
+			}
+		]
+	}
+}
