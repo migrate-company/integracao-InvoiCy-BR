@@ -855,10 +855,10 @@
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
-								</xs:element>
-							</xs:sequence>
-						</xs:complexType>
-					</xs:element>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 				<xs:element minOccurs="0" name="TermAdicional">
 					<xs:annotation>
 						<xs:documentation>Terminal Adicional</xs:documentation>
@@ -2688,4 +2688,12 @@
 											</xs:all>
 										</xs:complexType>
 									</xs:element>
-								</xs:schema>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
