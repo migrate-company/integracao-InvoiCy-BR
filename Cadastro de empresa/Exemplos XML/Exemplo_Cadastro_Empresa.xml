@@ -99,13 +99,6 @@
 			<EnviarPDFEmail>S</EnviarPDFEmail>
 			<EnviarXMLEmail>S</EnviarXMLEmail>
 			<JustCont>Aqui vai a justificativa de contingencia da NF-e</JustCont>
-			<WebHook>
-				<Status>A</Status>
-				<URL>URL do webhook</URL>
-				<TipoRetorno>1</TipoRetorno>
-				<TipoAutenticacao>1</TipoAutenticacao>
-				<TokenAutenticacao>Token</TokenAutenticacao>
-			</WebHook>
 		</NFe>
 		<CTe>
 			<FormaRetornoPDFIntegracao>1</FormaRetornoPDFIntegracao>
@@ -142,13 +135,6 @@
 			<EnviarPDFEmail>N</EnviarPDFEmail>
 			<EnviarXMLEmail>N</EnviarXMLEmail>
 			<JustCont>Aqui vai a justificativa de contingencia da NFC-e</JustCont>
-			<WebHook>
-				<Status>A</Status>
-				<URL>URL do webhook</URL>
-				<TipoRetorno>1</TipoRetorno>
-				<TipoAutenticacao>1</TipoAutenticacao>
-				<TokenAutenticacao>Token</TokenAutenticacao>
-			</WebHook>
 		</NFCe>
 		<NFSe>
 			<CodCMC>444</CodCMC>
@@ -181,12 +167,7 @@
 			<EmpRegEspTrib>11</EmpRegEspTrib>
 			<CorrigirDadosRPS>S</CorrigirDadosRPS>
 			<MEIAmbienteNacional>S</MEIAmbienteNacional>
-			<WebHook>
-				<Status>A</Status>
-				<URL>url</URL>
-				<TipoAutenticacao>2</TipoAutenticacao>
-				<TokenAutenticacao>tokenautenticacao</TokenAutenticacao>
-			</WebHook>
+			<AlertarDiferencaVlrsRPSNFSe>N</AlertarDiferencaVlrsRPSNFSe>
 		</NFSe>
 	</Parametros>
 	<Licenciamento>
