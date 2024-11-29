@@ -1336,6 +1336,13 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
+										<xs:element name="DestacarValLiqImpressao" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="MEIAmbienteNacional" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -1343,41 +1350,12 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="WebHook" minOccurs="0">
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="Status" minOccurs="0">
-														<xs:simpleType>
-															<xs:restriction base="xs:string">
-																<xs:maxLength value="1"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element name="URL" minOccurs="0">
-														<xs:simpleType>
-															<xs:restriction base="xs:string">
-																<xs:maxLength value="2000"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element name="TipoAutenticacao" minOccurs="0">
-														<xs:simpleType>
-															<xs:restriction base="xs:nonNegativeInteger">
-																<xs:totalDigits value="3"/>
-																<xs:minInclusive value="0"/>
-																<xs:maxInclusive value="2"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element name="TokenAutenticacao" minOccurs="0">
-														<xs:simpleType>
-															<xs:restriction base="xs:string">
-																<xs:maxLength value="400"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
+										<xs:element name="AlertarDiferencaVlrsRPSNFSe" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
@@ -1811,8 +1789,8 @@
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
 													<xs:totalDigits value="4"/>
-													<xs:minInclusive value="3"/>
-													<xs:maxInclusive value="4"/>
+													<xs:minInclusive value="1"/>
+													<xs:maxInclusive value="16"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
