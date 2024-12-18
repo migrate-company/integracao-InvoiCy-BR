@@ -1,57 +1,73 @@
 {
-	"documento": {
-		"DocModelo": "Modelo do documento (NFS-e, NF-e, NFC-e)",
-		"DocNumero": "Número do documento",
-		"DocSerie": "Série do documeno",
-		"DocIDUnico": "Controle de Numeração de RPS utilizado no InvoiCy",
-		"DocChaAcesso": "Chave de acesso",
-		"DocProtocolo": "Protocolo de autorização",
-		"DocSitCodigo": "Código da Situação",
-		"DocSitDescricao": "Descrição da Situação",
-		"DocXML": "Arquivo XML em base64",
-		"DocXMLLink": "Link para download do XML",
-		"DocPDF": "Arquivo PDF em base64",
-		"DocPDFLink": "Link para download do PDF",
-		"dhRecbto": "Data e hora da UF",
-		"CertDtaVencimento": "Data de vencimento do certificado digital",
-		"CertDiasValido": "Quantidade de dias de validade do certificado digital",
-		"NTEmVigor": "Nota Técnica em vigor",
-		"VersaoQRCode": "Versão do QRCode",
-		"SerieContingencia": "Série da contingência",
-		"ImprimirUmaViaContingencia": "Imprimir uma via do DANFE em contingência",
-		"DocImpPrefeitura": "Retornar link para impressão na prefeitura",
-		"DocStatus": "Status do documento",
-		"DocArqNome": "Nomde do arquivo",
-		"DocArqExtensao": "xml",
-		"CertHoraVencimento": "Horário de vencimento do certificado digital",
-		"DocCompleto": "JSON/XML do documento",
-		"TipoNotificacaoWebHook": "1 - Emissão de documento; 2 - Atualização de status; 3 - Evento; 4 - Documento recebido; 5 - Atualização de dados; 6 - Documento Inutilizado; 7 - Documento autorizado na sefaz; 8 - Vencimento certificado; 13 - Atualização de status offline",
-		"Resumo": {
-			"DocDataEmissao": "Data de emissão",
-			"DocFusoHorario": "Fuso horário da emissão",
-			"DocDigestValue": "Digest Value do documento",
-			"DocDhAut": "Data e hora de autorização do documento",
-			"DocNomeEmitente": "Nome do emissor",
-			"DocCNPJEmitente": "CNPJ do emissor",
-			"DocCNPJDestinatario": "CNPJ do destinatário",
-			"DocNomeDestinatario": "Nome do destinatário",
-			"DocVlrTotal": "Valor total do documento"
-		},
-		"Eventos": [],
-		"NFSe": {
-			"NFSeNumero": "Número",
-			"NFSeCodVerificacao": "Código de verificação"
-		},
-		"Parametros": {
-			"AcaoEntradaContingencia": 0
-		},
-		"ResponsavelTecnico": {
-			"CNPJ": "CNPJ do responsável técnico",
-			"Contato": "Telefone do responsável técnico",
-			"Email": "E-mail do responsável técnico",
-			"Fone": "Telefone do responsável técnico",
-			"IdCSRT": "ID CSRT ddo responsável técnico",
-			"CSRT": "CSRT do responsável técnico"
-		}
-	}
+    "documento": {
+        "DocModelo": "Modelo do documento (NFS-e, NF-e, NFC-e)",
+        "DocNumero": "Número do documento",
+        "DocSerie": "Série do documeno",
+        "DocIDUnico": "Controle de Numeração de RPS utilizado no InvoiCy",
+        "DocChaAcesso": "Chave de acesso",
+        "DocProtocolo": "Protocolo de autorização",
+        "DocSitCodigo": "Código da Situação",
+        "DocSitDescricao": "Descrição da Situação",
+        "DocXML": "Arquivo XML em base64",
+        "DocXMLLink": "Link para download do XML",
+        "DocPDF": "Arquivo PDF em base64",
+        "DocPDFLink": "Link para download do PDF",
+        "dhRecbto": "Data e hora da UF",
+        "CertDtaVencimento": "Data de vencimento do certificado digital",
+        "CertDiasValido": "Quantidade de dias de validade do certificado digital",
+        "NTEmVigor": "Nota Técnica em vigor",
+        "VersaoQRCode": "Versão do QRCode",
+        "SerieContingencia": "Série da contingência",
+        "ImprimirUmaViaContingencia": "Imprimir uma via do DANFE em contingência",
+        "DocImpPrefeitura": "Retornar link para impressão na prefeitura",
+        "DocStatus": "Status do documento",
+        "DocArqNome": "Nomde do arquivo",
+        "DocArqExtensao": "xml",
+        "CertHoraVencimento": "Horário de vencimento do certificado digital",
+        "DocCompleto": "JSON/XML do documento",
+        "TipoNotificacaoWebHook": "1 - Emissão de documento; 2 - Atualização de status; 3 - Evento; 4 - Documento recebido; 5 - Atualização de dados; 6 - Documento Inutilizado; 7 - Documento autorizado na sefaz; 8 - Vencimento certificado; 13 - Atualização de status offline",
+        "Resumo": {
+            "DocDataEmissao": "Data de emissão",
+            "DocFusoHorario": "Fuso horário da emissão",
+            "DocDigestValue": "Digest Value do documento",
+            "DocDhAut": "Data e hora de autorização do documento",
+            "DocNomeEmitente": "Nome do emissor",
+            "DocCNPJEmitente": "CNPJ do emissor",
+            "DocCNPJDestinatario": "CNPJ do destinatário",
+            "DocNomeDestinatario": "Nome do destinatário",
+            "DocVlrTotal": "Valor total do documento"
+        },
+        "Eventos": [
+            {
+                "DocEvenSeq": "Sequencial",
+                "DocEveTp": "Tipo de evento",
+                "DocEveXML": "XML do evento em base64",
+                "DocEveXMLLink": "Link para download do XML",
+                "cStat": "Status do Evento",
+                "DocEveDescricao": "Identificação do evento do documento",
+                "DocEveId": "Identificação do evento do documento",
+                "DocEveArqNome": "Nome do arquivo",
+                "DocEveArqExtensao": "xml",
+                "DocEvePDF": "Arquivo PDF em base64",
+                "DocEvePDFLink": "Link para download do PDF",
+                "DocEveProtocolo": "Protocolo de autorização do evento",
+                "DocEveDhReg": "Data e hora de autorização do evento"
+            }
+        ],
+        "NFSe": {
+            "NFSeNumero": "Número",
+            "NFSeCodVerificacao": "Código de verificação"
+        },
+        "Parametros": {
+            "AcaoEntradaContingencia": 0
+        },
+        "ResponsavelTecnico": {
+            "CNPJ": "CNPJ do responsável técnico",
+            "Contato": "Telefone do responsável técnico",
+            "Email": "E-mail do responsável técnico",
+            "Fone": "Telefone do responsável técnico",
+            "IdCSRT": "ID CSRT ddo responsável técnico",
+            "CSRT": "CSRT do responsável técnico"
+        }
+    }
 }
