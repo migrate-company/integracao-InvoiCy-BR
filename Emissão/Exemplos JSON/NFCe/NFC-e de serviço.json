@@ -1,0 +1,236 @@
+[
+	{
+		"Documento": {
+			"ModeloDocumento": "NFCe",
+			"Versao": 4,
+			"ide": {
+				"cUF": 13,
+				"natOp": "Prestação de serviço",
+				"mod": "65",
+				"serie": "1",
+				"nNF": 1,
+				"dhEmi": "2025-01-01T00:00:00",
+				"fusoHorario": "-03:00",
+				"dhSaiEnt": "0000-00-00T00:00:00",
+				"tpNf": 1,
+				"idDest": 1,
+				"indFinal": 1,
+				"indPres": 1,
+				"cMunFg": 1302603,
+				"tpImp": 4,
+				"tpEmis": 1,
+				"tpAmb": 2,
+				"xJust": "",
+				"dhCont": "0000-00-00T00:00:00",
+				"finNFe": 1,
+				"EmailArquivos": "email@email.com.br"
+			},
+			"emit": {
+				"CNPJ_emit": "99999999999999",
+				"CPF_emit": "",
+				"xNome": "EMPRESA TESTE NFe e NFCe",
+				"xFant": "EMPRESA TESTE NFe e NFCe",
+				"IM": "99999999",
+				"CNAE": "",
+				"IE": "99999999",
+				"IEST": "",
+				"CRT": 3,
+				"enderEmit": {
+					"xLgr": "RUA TESTE",
+					"nro": "999",
+					"xCpl": "",
+					"xBairro": "BAIRRO TESTE",
+					"cMun": 1302603,
+					"xMun": "Manaus",
+					"UF": "AM",
+					"CEP": 69033000,
+					"cPais": 1058,
+					"xPais": "Brasil",
+					"fone": 0,
+					"fax": 0,
+					"Email": ""
+				}
+			},
+			"dest": {
+				"CNPJ_dest": "99999999999999",
+				"CPF_dest": "",
+				"idEstrangeiro": "",
+				"xNome_dest": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+				"IE_dest": "",
+				"ISUF": "",
+				"indIEDest": 9,
+				"IM_dest": "",
+				"enderDest": {
+					"nro_dest": "999",
+					"xCpl_dest": "",
+					"xBairro_dest": "BAIRRO TESTE",
+					"xEmail_dest": "",
+					"xLgr_dest": "RUA TESTE",
+					"xPais_dest": "Brasil",
+					"cMun_dest": 1302603,
+					"xMun_dest": "Manaus",
+					"UF_dest": "AM",
+					"CEP_dest": "69033000",
+					"cPais_dest": 1058,
+					"fone_dest": 0
+				}
+			},
+			"det": [
+				{
+					"infADProd": "Informações Adicionais",
+					"prod": {
+						"cProd": "1",
+						"cEAN": "SEM GTIN",
+						"cBarra": "",
+						"xProd": "NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+						"NCM": "00",
+						"EXTIPI": "",
+						"CFOP": 5933,
+						"uCOM": "UN",
+						"qCOM": "1.0000",
+						"vUnCom": "16.6000000000",
+						"vProd": "16.60",
+						"cEANTrib": "SEM GTIN",
+						"cBarraTrib": "",
+						"uTrib": "UN",
+						"qTrib": "1.0000",
+						"vUnTrib": "16.6000000000",
+						"vFrete": "0.00",
+						"vSeg": "0.00",
+						"vDesc": "0.00",
+						"vOutro_item": "0.00",
+						"indTot": 1,
+						"nTipoItem": 5,
+						"dProd": 0,
+						"xPed_item": "",
+						"nItemPed": "",
+						"nFCI": "",
+						"nRECOPI": "",
+						"CEST": "",
+						"cBenef": "",
+						"indEscala": "",
+						"CNPJFab": ""
+					},
+					"imposto": {
+						"vTotTrib": "2.37",
+						"PIS": {
+							"CST_pis": "01",
+							"vBC_pis": "16.60",
+							"pPIS": 1.65,
+							"vPIS": "0.27",
+							"qBCprod_pis": "0.0000",
+							"vAliqProd_pis": "0.0000"
+						},
+						"COFINS": {
+							"CST_cofins": "01",
+							"vBC_cofins": "16.60",
+							"pCOFINS": 7.6,
+							"vCOFINS": "1.26",
+							"qBCProd_cofins": "0.0000",
+							"vAliqProd_cofins": "0.0000"
+						},
+						"ISSQN": {
+							"vBC_issqn": "16.60",
+							"vAliq": 5,
+							"vISSQN": "0.83",
+							"cMunFg_issqn": 5300108,
+							"cListServ": "11.01",
+							"cSitTrib": "",
+							"vDeducao": "0.00",
+							"vOutro_issqn": "0.00",
+							"vDescIncond": "0.00",
+							"vDescCond": "0.00",
+							"indISSRet": 0,
+							"vISSRet": "0.00",
+							"indISS": 1,
+							"cServico": "",
+							"cMun_issqn": 0,
+							"cPais_issqn": 0,
+							"nProcesso": "",
+							"indIncentivo": 2
+						}
+					}
+				}
+			],
+			"total": {
+				"ICMStot": {
+					"vBC_ttlnfe": "0.00",
+					"vICMS_ttlnfe": "0.00",
+					"vICMSDeson_ttlnfe": "0.00",
+					"vBCST_ttlnfe": "0.00",
+					"vST_ttlnfe": "0.00",
+					"vProd_ttlnfe": "0.00",
+					"vFrete_ttlnfe": "0.00",
+					"vSeg_ttlnfe": "0.00",
+					"vDesc_ttlnfe": "0.00",
+					"vII_ttlnfe": "0.00",
+					"vIPI_ttlnfe": "0.00",
+					"vPIS_ttlnfe": "0.00",
+					"vCOFINS_ttlnfe": "0.00",
+					"vOutro": "0.00",
+					"vNF": "16.60",
+					"vTotTrib_ttlnfe": "2.37",
+					"vFCPUFDest_ttlnfe": "0.00",
+					"vICMSUFDest_ttlnfe": "0.00",
+					"vICMSUFRemet_ttlnfe": "0.00",
+					"vFCP_ttlnfe": "0.00",
+					"vFCPST_ttlnfe": "0.00",
+					"vFCPSTRet_ttlnfe": "0.00",
+					"vIPIDevol_ttlnfe": "0.00",
+					"vAFRMM_ttlnfe": "0.00"
+				},
+				"ISSQNtot": {
+					"vServ": "16.60",
+					"vBC_ttlnfe_iss": "16.60",
+					"vISS": "0.83",
+					"vPIS_servttlnfe": "0.27",
+					"vCOFINS_servttlnfe": "1.26",
+					"dCompet": "2022-02-28",
+					"vDeducao_servttlnfe": "0.00",
+					"vOutro_servttlnfe": "0.00",
+					"vDescIncond_servttlnfe": "0.00",
+					"vDescCond_servttlnfe": "0.00",
+					"vISSRet_servttlnfe": "0.00",
+					"cRegTrib": 0
+				},
+				"retTrib": {
+					"vRetPIS": "0.00",
+					"vRetCOFINS_servttlnfe": "0.00",
+					"vRetCSLL": "0.00",
+					"vBCIRRF": "0.00",
+					"vIRRF": "0.00",
+					"vBCRetPrev": "0.00",
+					"vRetPrev": "0.00"
+				}
+			},
+			"transp": {
+				"modFrete": 9,
+				"balsa": "",
+				"vagao": ""
+			},
+			"pag": [
+				{
+					"indPag_pag": "0",
+					"tPag": "01",
+					"xPag": "",
+					"vPag": "16.60",
+					"dPag": "0000-00-00",
+					"CNPJPag": "",
+					"UFPag": ""
+				}
+			],
+			"vTroco": "0.00",
+			"Informacoes": {
+				"Informacoes": ""
+			},
+			"RespTecnico": {
+				"CNPJ": "87610802000100",
+				"xContato": "Joao Carlos da Cunha Pereira",
+				"email": "testemigrate1@gmail.com",
+				"fone": 35351285,
+				"idCSRT": "12",
+				"hashCSRT": "v61uDiGY1KWigdgMfHGYi6qilQo="
+			}
+		}
+	}
+]
