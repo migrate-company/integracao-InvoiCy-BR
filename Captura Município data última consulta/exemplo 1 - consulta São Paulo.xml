@@ -1,0 +1,10 @@
+<ConsultaExecucaoMunicipio>
+    <ModeloDocumento>NFSe</ModeloDocumento>
+    <Versao>1.00</Versao>
+    <CNPJEmissor>00000000000191</CNPJEmissor> <!--CNPJ da empresa com extensão ativa-->
+    <codMunicipio>3550308</codMunicipio> <!--município onde as consultas foram realizadas-->
+    <tpAmb>1</tpAmb> <!--amiente. 1 - produção, 2 - homologação -->
+    <EmitidosRecebidos>2</EmitidosRecebidos>  <!--emitidos=1, Recebidos=2-->
+    <UltimaImportacao>true</UltimaImportacao> <!-- retorna a última consulta que teve notas importadas. Desconsidera as consultas que não tiveram notas.
+    Como é necessário percorrer logs de consulta, o limite de busca é dos últimos 7 dias -->
+</ConsultaExecucaoMunicipio>

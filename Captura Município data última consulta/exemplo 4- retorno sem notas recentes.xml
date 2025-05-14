@@ -1,0 +1,15 @@
+<!--prefeitura possui serviço, as consultas foram realizadas, porém não obteve notas nos últimos 7 dias-->
+
+<Invoicyretorno xmlns="InvoiCy">
+	<Mensagem>
+		<MensagemItem>
+			<Codigo>446</Codigo>
+			<Descricao>[#inv0446] - Não foram importadas notas neste município nos últimos 7 dias </Descricao>
+			<Documentos>
+				<DocumentosItem>
+					<Documento><![CDATA[]]></Documento>
+				</DocumentosItem>
+			</Documentos>
+		</MensagemItem>
+	</Mensagem>
+</Invoicyretorno>

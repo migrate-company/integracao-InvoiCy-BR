@@ -1,0 +1,14 @@
+<!--neste exemplo a prefeitura não tem o serviço de consulta notas recebidas -->
+<Invoicyretorno xmlns="InvoiCy">
+	<Mensagem>
+		<MensagemItem>
+			<Codigo>444</Codigo>
+			<Descricao>[#inv0444] - Ainda não há histórico de consultas da empresa para este município. </Descricao>
+			<Documentos>
+				<DocumentosItem>
+					<Documento><![CDATA[]]></Documento>
+				</DocumentosItem>
+			</Documentos>
+		</MensagemItem>
+	</Mensagem>
+</Invoicyretorno>

@@ -1,0 +1,18 @@
+<Invoicyretorno xmlns="InvoiCy">
+	<Mensagem>
+		<MensagemItem>
+			<Codigo>100</Codigo>
+			<Descricao>Consulta processada com sucesso!</Descricao>
+			<Documentos>
+				<DocumentosItem>
+					<Documento><![CDATA[<ConsultaExecucaoMunicipioRetorno>
+	<codMunicipio>4202404</codMunicipio>
+	<DataUltimaExecucao>14-05-2025 01:05:55</DataUltimaExecucao> <!--data da última consulta-->
+	<UltimoRetorno>Mensagem retornada pela prefeitura  Código: E78, Descrição: Numero da Nfs-e inexistente na base de dados para o prestador de servico pesquisado., Correção: Informe o numero correto da Nfs-e.</UltimoRetorno> <!--mensagem retornada pela prefeitura nessa consulta-->
+	<QuantidadeDocumentos>0</QuantidadeDocumentos>
+</ConsultaExecucaoMunicipioRetorno>]]></Documento>
+				</DocumentosItem>
+			</Documentos>
+		</MensagemItem>
+	</Mensagem>
+</Invoicyretorno>

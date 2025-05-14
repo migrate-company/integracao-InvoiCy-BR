@@ -1,0 +1,13 @@
+<Invoicyretorno xmlns="InvoiCy">
+	<Mensagem>
+		<MensagemItem>
+			<Codigo>441</Codigo>
+			<Descricao>[#inv0441] - Sua extensão não está ativa para busca de notas recebidas! </Descricao>
+			<Documentos>
+				<DocumentosItem>
+					<Documento><![CDATA[]]></Documento>
+				</DocumentosItem>
+			</Documentos>
+		</MensagemItem>
+	</Mensagem>
+</Invoicyretorno>

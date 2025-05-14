@@ -1,0 +1,18 @@
+<Invoicyretorno xmlns="InvoiCy">
+	<Mensagem>
+		<MensagemItem>
+			<Codigo>100</Codigo>
+			<Descricao>Consulta processada com sucesso!</Descricao>
+			<Documentos>
+				<DocumentosItem>
+					<Documento><![CDATA[<ConsultaExecucaoMunicipioRetorno>
+	<codMunicipio>3550308</codMunicipio>
+	<DataUltimaExecucao>12-05-2025 01:39:34</DataUltimaExecucao> <!--data da última consulta-->
+	<UltimoRetorno/> <!--mensagem gravada no último retorno, em caso de erro-->
+	<QuantidadeDocumentos>5</QuantidadeDocumentos> <!--quantos documentos foram importados nessa consulta-->
+</ConsultaExecucaoMunicipioRetorno>]]></Documento>
+				</DocumentosItem>
+			</Documentos>
+		</MensagemItem>
+	</Mensagem>
+</Invoicyretorno>
