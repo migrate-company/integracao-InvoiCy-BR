@@ -218,7 +218,6 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="dhEmi"
-										minOccurs="0"
 							            type="xs:dateTime">
 								<xs:annotation>
 									<xs:documentation>Data de emissão do Documento Fiscal</xs:documentation>
