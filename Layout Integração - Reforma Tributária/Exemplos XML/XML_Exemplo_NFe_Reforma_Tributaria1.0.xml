@@ -10,7 +10,9 @@
         <mod>55</mod>
         <serie>237</serie>
         <nNF>8016</nNF>
-        <fusoHorario>-03:00</fusoHorario>
+        <dhEmi>2025-05-21T07:50:01-03:00</dhEmi>
+		<fusoHorario>-03:00</fusoHorario>
+		<dhSaiEnt>2025-05-21T07:50:01-03:00</dhSaiEnt>
         <tpNf>1</tpNf>
         <idDest>1</idDest>
         <indFinal>1</indFinal>
