@@ -5446,7 +5446,7 @@
 																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="CST">
+																						<xs:element name="CSTReg">
 																							<xs:annotation>
 																								<xs:documentation>Código de Situação Tributária</xs:documentation>
 																							</xs:annotation>
@@ -5456,7 +5456,7 @@
 																								</xs:restriction>
 																							</xs:simpleType>
 																						</xs:element>
-																						<xs:element name="cClassTrib">
+																						<xs:element name="cClassTribReg">
 																							<xs:annotation>
 																								<xs:documentation>Código de Classificação Tributária</xs:documentation>
 																							</xs:annotation>
