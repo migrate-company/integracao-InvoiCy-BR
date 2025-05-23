@@ -30,7 +30,7 @@
         <verProc>MigrateInvoiCy</verProc>
         <DocImpNSU>0</DocImpNSU>
         <gCompraGov>
-            <TpCompraGov>1</TpCompraGov>
+            <tpEnteGov>1</tpEnteGov>
             <pRedutor>2</pRedutor>
         </gCompraGov>
     </ide>
