@@ -1,0 +1,592 @@
+{
+    "ModeloDocumento": "NFCe",
+    "Versao": 4,
+    "HashRequisicao": "6c2xxxxxxxxxxxxxx4cc48dac",
+    "DocIntegracao": 1,
+    "AcaoDigitacao": "",
+    "EmpCodigoDigitacao": "0",
+    "FlagRecalcularNFDigitacao": "",
+    "dhInclusao": "2025-04-10T11:58:26",
+    "DocStatus": 2,
+    "DocStatusDescricao": "Efetivado",
+    "CorrecaoNFe": "",
+    "ImprimirDuasVias": "",
+    "Parametros": {
+        "ApelidoLogomarca": "",
+        "ConsiderarConfEmail": ""
+    },
+    "ide": {
+        "ChaveAcesso": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "cNF": 89480,
+        "cUF": 43,
+        "natOp": "Venda",
+        "indPag": 0,
+        "mod": "65",
+        "serie": "0",
+        "nNF": xxxx,
+        "IDUnico": "",
+        "dhEmi": "2025-04-10T11:58:26",
+        "dhEmiDigitacao": "",
+        "fusoHorario": "-03:00",
+        "dhSaiEnt": "0000-00-00T00:00:00",
+        "hSaiEnt": "",
+        "dhSaiEntDigitacao": "",
+        "tpNf": "1",
+        "idDest": 1,
+        "indFinal": "1",
+        "indPres": "1",
+        "indIntermed": "0",
+        "cMunFg": 4303004,
+        "tpImp": 4,
+        "tpEmis": 1,
+        "cDV": 9,
+        "tpAmb": 1,
+        "xJust": "",
+        "dhCont": "0000-00-00T00:00:00",
+        "finNFe": 1,
+        "procEmi": 0,
+        "verProc": "MigrateInvoiCy",
+        "EmailArquivos": "",
+        "LayoutBuffer": "",
+        "Impressora": "",
+        "NumeroPedido": "",
+        "Plataforma": "",
+        "qtdeItnRefDigitacao": 0,
+        "DocImpNSU": 0,
+        "NFRef": [
+        ]
+    },
+    "emit": {
+        "CNPJ_emit": "xxxxxxxxxxxxxxxxxx",
+        "CPF_emit": "",
+        "xNome": "xxxxxxxxxxxxxxx",
+        "xFant": "xxxxxxxxx",
+        "IM": "",
+        "CNAE": "",
+        "IE": "xxxxxxxxxxxxx",
+        "IEST": "",
+        "CRT": 1,
+        "enderEmit": {
+            "xLgr": "RUA JAGUARÃO",
+            "nro": "xx",
+            "xCpl": "sobrado",
+            "xBairro": "GONÇALVES",
+            "cMun": 4303004,
+            "xMun": "Cachoeira do Sul",
+            "UF": "RS",
+            "UFCodigoDigitacao": "0",
+            "CEP": "96501260",
+            "cPais": 0,
+            "xPais": "",
+            "fone": 5197205118,
+            "fax": 0,
+            "Email": ""
+        }
+    },
+    "dest": {
+        "PesCodigo": 0,
+        "InicializouDestDigitacao": false,
+        "CNPJ_dest": "",
+        "CPF_dest": "",
+        "idEstrangeiro": "",
+        "xNome_dest": "",
+        "DestinatarioDigitacao": "",
+        "IE_dest": "",
+        "ISUF": "",
+        "indIEDest": 0,
+        "IM_dest": "",
+        "enderDest": {
+            "nro_dest": "",
+            "xCpl_dest": "",
+            "xBairro_dest": "",
+            "xEmail_dest": "",
+            "xLgr_dest": "",
+            "xPais_dest": "",
+            "cMun_dest": 0,
+            "xMun_dest": "",
+            "UF_dest": "",
+            "CEP_dest": "",
+            "CEP_destDigitacao": "",
+            "cPais_dest": 0,
+            "fone_dest": 0,
+            "UFCodigoDestDigitacao": 0
+        }
+    },
+    "retirada": {
+        "TipoPessoaRetDigitacao": "",
+        "CNPJ_ret": "",
+        "CPF_ret": "",
+        "xNome_ret": "",
+        "CNPJ_ret_Digitacao": "",
+        "CPF_ret_Digitacao": "",
+        "xLgr_ret": "",
+        "nro_ret": "",
+        "xCpl_ret": "",
+        "xBairro_ret": "",
+        "xMun_ret": "",
+        "cMun_ret": 0,
+        "UF_ret": "",
+        "UFCodigoRetiradaDigitacao": 0,
+        "CEP_ret": 0,
+        "cPais_ret": 0,
+        "xPais_ret": "",
+        "fone_ret": 0,
+        "email_ret": "",
+        "IE_ret": "",
+        "CEP_retDigitacao": "",
+        "fone_retDigitacao": ""
+    },
+    "entrega": {
+        "TipoPessoaEntrDigitacao": "",
+        "CNPJ_entr": "",
+        "CPF_entr": "",
+        "CNPJ_entr_Digitacao": "",
+        "CPF_entr_Digitacao": "",
+        "xLgr_entr": "",
+        "nro_entr": "",
+        "xCpl_entr": "",
+        "xBairro_entr": "",
+        "cMun_entr": 0,
+        "xMun_entr": "",
+        "UF_entr": "",
+        "UFCodigoEntregaDigitacao": 0,
+        "xNome_entr": "",
+        "CEP_entr": 0,
+        "cPais_entr": 0,
+        "xPais_entr": "",
+        "fone_entr": 0,
+        "email_entr": "",
+        "IE_entr": "",
+        "CEP_entrDigitacao": "",
+        "fone_entrDigitacao": ""
+    },
+    "autXML": [
+    ],
+    "det": [
+        {
+            "infADProd": "",
+            "prod": {
+                "cProd": "0064",
+                "cEAN": "7898994443254",
+                "cBarra": "",
+                "xProd": "GELO TCHE GELOS 10 KG",
+                "NCM": "22019000",
+                "EXTIPI": "",
+                "CFOP": 5102,
+                "uCOM": "SC",
+                "qCOM": "8.0000",
+                "vUnCom": "15.0000000000",
+                "vProd": "120.00",
+                "cEANTrib": "7898994443254",
+                "cBarraTrib": "",
+                "uTrib": "SC",
+                "qTrib": "8.0000",
+                "vUnTrib": "15.0000000000",
+                "vFrete": "0.00",
+                "vSeg": "0.00",
+                "vDesc": "0.00",
+                "vOutro_item": "0.00",
+                "indTot": 1,
+                "nTipoItem": 0,
+                "dProd": 0,
+                "xPed_item": "",
+                "nItemPed": "",
+                "nFCI": "",
+                "nRECOPI": "",
+                "CEST": "0300600",
+                "cBenef": "",
+                "gCred": [
+                ],
+                "indEscala": "",
+                "CNPJFab": "",
+                "NVEs": [
+                ],
+                "detDI": [
+                ],
+                "detExport": [
+                ],
+                "med": [
+                ],
+                "arma": [
+                ],
+                "CodigoDigitacao": 0,
+                "nSeqItemDigitacao": "0",
+                "IncializouItemDigitacao": false,
+                "Rastro": [
+                ]
+            },
+            "imposto": {
+                "vTotTrib": "",
+                "vTotFedDigitacao": 0,
+                "vTotEstDigitacao": 0,
+                "vTotMunDigitacao": 0,
+                "ICMS": {
+                    "orig": 0,
+                    "CST": "102",
+                    "modBC": "0",
+                    "vBC": "0.00",
+                    "pICMS": 0,
+                    "vICMS_icms": "0.00",
+                    "modBCST": 0,
+                    "pMVAST": 0,
+                    "pRedBCST": 0,
+                    "vBCST": "0.00",
+                    "vBCSTRet": "0.00",
+                    "pICMSST": 0,
+                    "vICMSST_icms": "0.00",
+                    "vICMSSTRet": "0.00",
+                    "pRedBC": 0,
+                    "motDesICMS": 0,
+                    "vICMSDeson": "0.00",
+                    "vICMSOp": "0.00",
+                    "pDif": 0,
+                    "vICMSDif": "0.00",
+                    "pBCOp": 0,
+                    "UFST": "",
+                    "vBCSTDest": "0.00",
+                    "vICMSSTDest_icms": "0.00",
+                    "pCredSN": 0,
+                    "vCredICMSSN": "0.00",
+                    "GerarTagStRet": "",
+                    "pFCP": 0,
+                    "vFCP": "0.00",
+                    "vBCFCP": "0.00",
+                    "vBCFCPST": "0.00",
+                    "pFCPST": 0,
+                    "vFCPST": "0.00",
+                    "pST": 0,
+                    "vICMSSubstituto": "0.00",
+                    "vBCFCPSTRet": "0.00",
+                    "pFCPSTRet": 0,
+                    "vFCPSTRet": "0.00",
+                    "GerarICMSST": "",
+                    "pRedBCEfet": 0,
+                    "vBCEfet": "0.00",
+                    "pICMSEfet": 0,
+                    "vICMSEfet": "0.00",
+                    "DigitacaoDescICMSDeson": "",
+                    "vICMSSTDeson": "0.00",
+                    "motDesICMSST": 0,
+                    "pFCPDif": 0,
+                    "vFCPDif": "0.00",
+                    "vFCPEfet": "0.00",
+                    "qBCMono": "0.0000",
+                    "adRemICMS": 0,
+                    "vICMSMonoOp": "0.00",
+                    "vICMSMono": "0.00",
+                    "qBCMonoReten": "0.0000",
+                    "adRemICMSReten": 0,
+                    "vICMSMonoReten": "0.00",
+                    "pRedAdRem": 0,
+                    "motRedAdRem": 0,
+                    "qBCMonoDif": "0.0000",
+                    "adRemICMSDif": 0,
+                    "vICMSMonoDif": "0.00",
+                    "qBCMonoRet": "0.0000",
+                    "adRemICMSRet": 0,
+                    "vICMSMonoRet": "0.00",
+                    "indDeduzDeson": "",
+                    "cBenefRBC": ""
+                },
+                "IPI": {
+                    "clEnq": "",
+                    "CNPJProd": "",
+                    "cSelo": "",
+                    "qSelo": 0,
+                    "cEnq": "",
+                    "CSTIPI": {
+                        "CST_IPI": "",
+                        "vBC_IPI": "0.00",
+                        "qUnid_IPI": "0.0000",
+                        "vUnid_IPI": "0.0000",
+                        "pIPI": 0,
+                        "vIPI": "0.00",
+                        "DigitacaoTipoCalculoIPI": 0
+                    }
+                },
+                "II": {
+                    "vBC_imp": "0.00",
+                    "vDespAdu": "0.00",
+                    "vII": "0.00",
+                    "vIOF": "0.00"
+                },
+                "PIS": {
+                    "CST_pis": "99",
+                    "vBC_pis": "0.00",
+                    "pPIS": 0,
+                    "vPIS": "0.00",
+                    "qBCprod_pis": "0.0000",
+                    "vAliqProd_pis": "0.0000",
+                    "DigitacaoTipoCalculoPIS": 0
+                },
+                "PISST": {
+                    "vBC_pis_ST": "0.00",
+                    "pPIS_ST": 0,
+                    "qBCprod_pis_ST": "0.0000",
+                    "vAliqProd_pis_ST": "0.0000",
+                    "vPIS_ST": "0.00",
+                    "DigitacaoTipoCalculoPIS_ST": 0,
+                    "indSomaPISST": ""
+                },
+                "COFINS": {
+                    "CST_cofins": "99",
+                    "vBC_cofins": "0.00",
+                    "pCOFINS": 0,
+                    "vCOFINS": "0.00",
+                    "qBCProd_cofins": "0.0000",
+                    "vAliqProd_cofins": "0.0000",
+                    "DigitacaoTipoCalculoCOFINS": 0
+                },
+                "COFINSST": {
+                    "vBC_cofins_ST": "0.00",
+                    "pCOFINS_cofins_ST": 0,
+                    "qBCProd_cofins_ST": "0.0000",
+                    "vAliqProd_cofins_ST": "0.0000",
+                    "vCOFINS_cofins_ST": "0.00",
+                    "DigitacaoTipoCalculoCOFINS_ST": 0,
+                    "indSomaCOFINSST": ""
+                },
+                "ICMSUFDest": {
+                    "vBCUFDest": "0.00",
+                    "pFCPUFDest": 0,
+                    "pICMSUFDest": 0,
+                    "pICMSInter": 0,
+                    "pICMSInterPart": 0,
+                    "vFCPUFDest": "0.00",
+                    "vICMSUFDest": "0.00",
+                    "vICMSUFRemet": "0.00",
+                    "vBCFCPUFDest": "0.00"
+                }
+            },
+            "impostoDevol": {
+                "pDevol": 0,
+                "IPIDevol": {
+                    "vIPIDevol": "0.00"
+                }
+            },
+            "prodObsCont": [
+            ],
+            "prodObsFisco": [
+            ]
+        }
+    ],
+    "total": {
+        "ICMStot": {
+            "vBC_ttlnfe": "0.00",
+            "vICMS_ttlnfe": "0.00",
+            "vICMSDeson_ttlnfe": "0.00",
+            "DigitacaovICMSDesonDesc": "0.00",
+            "vBCST_ttlnfe": "0.00",
+            "vST_ttlnfe": "0.00",
+            "vProd_ttlnfe": "120.00",
+            "vFrete_ttlnfe": "0.00",
+            "vSeg_ttlnfe": "0.00",
+            "vDesc_ttlnfe": "0.00",
+            "vII_ttlnfe": "0.00",
+            "vIPI_ttlnfe": "0.00",
+            "vPIS_ttlnfe": "0.00",
+            "vCOFINS_ttlnfe": "0.00",
+            "vOutro": "0.00",
+            "vNF": "120.00",
+            "vTotTrib_ttlnfe": "",
+            "vFCPUFDest_ttlnfe": "0.00",
+            "vICMSUFDest_ttlnfe": "0.00",
+            "vICMSUFRemet_ttlnfe": "0.00",
+            "vFCP_ttlnfe": "0.00",
+            "vFCPST_ttlnfe": "0.00",
+            "vFCPSTRet_ttlnfe": "0.00",
+            "qBCMono_ttlnfe": "0.00",
+            "vICMSMono_ttlnfe": "0.00",
+            "qBCMonoReten_ttlnfe": "0.00",
+            "vICMSMonoReten_ttlnfe": "0.00",
+            "qBCMonoRet_ttlnfe": "0.00",
+            "vICMSMonoRet_ttlnfe": "0.00",
+            "vIPIDevol_ttlnfe": "0.00",
+            "vAFRMM_ttlnfe": "0.00"
+        },
+        "ISSQNtot": {
+            "vServ": "0.00",
+            "vBC_ttlnfe_iss": "0.00",
+            "vISS": "0.00",
+            "vPIS_servttlnfe": "0.00",
+            "vCOFINS_servttlnfe": "0.00",
+            "dCompet": "0000-00-00",
+            "vDeducao_servttlnfe": "0.00",
+            "vOutro_servttlnfe": "0.00",
+            "vDescIncond_servttlnfe": "0.00",
+            "vDescCond_servttlnfe": "0.00",
+            "vISSRet_servttlnfe": "0.00",
+            "cRegTrib": 0
+        },
+        "retTrib": {
+            "vRetPIS": "0.00",
+            "vRetCOFINS_servttlnfe": "0.00",
+            "vRetCSLL": "0.00",
+            "vBCIRRF": "0.00",
+            "vIRRF": "0.00",
+            "vBCRetPrev": "0.00",
+            "vRetPrev": "0.00"
+        }
+    },
+    "transp": {
+        "modFrete": 9,
+        "balsa": "",
+        "vagao": "",
+        "SeqReboquesDigitacao": 0,
+        "SeqVolumesDigitacao": 0,
+        "transporta": {
+            "CNPJ_transp": "",
+            "CPF_transp": "",
+            "xNome_transp": "",
+            "IE_transp": "",
+            "xEnder": "",
+            "xMun_transp": "",
+            "UF_transp": "",
+            "MunCodigoTranspDigitacao": "0",
+            "UFCodigoTranspDigitacao": 0,
+            "PesCodigoTranspDigitacao": "0",
+            "TransportadoraDigitacao": "",
+            "InicializouTranspDigitacao": false
+        },
+        "retTransp": {
+            "vServ_transp": "0.00",
+            "vBCRet": "0.00",
+            "pICMSRet": 0,
+            "vICMSRet": "0.00",
+            "CFOP_transp": 0,
+            "cMunFG_transp": 0
+        },
+        "veicTransp": {
+            "placa": "",
+            "UF_veictransp": "",
+            "RNTC": ""
+        },
+        "reboque": [
+        ],
+        "vol": [
+        ]
+    },
+    "cobr": {
+        "fat": {
+            "nFat": "",
+            "vOrig": "0.00",
+            "vDesc_cob": "0.00",
+            "vLiq": "0.00"
+        },
+        "dup": [
+        ],
+        "CobrParcelasDigitacao": "",
+        "CobrPrimVencimentoDigitacao": "",
+        "CobrParGerDigitacao": false
+    },
+    "pag": [
+        {
+            "indPag_pag": "",
+            "tPag": "20",
+            "xPag": "",
+            "vPag": "120.00",
+            "dPag": "0000-00-00",
+            "dPagDigitacao": "",
+            "CNPJPag": "",
+            "UFPag": "",
+            "card": {
+                "tipoIntegracao": 0,
+                "CNPJ_card": "",
+                "tBand": "",
+                "cAut": "",
+                "CNPJReceb": "",
+                "idTermPag": ""
+            }
+        }
+    ],
+    "vTroco": "0.00",
+    "infIntermed": {
+        "CNPJ_int": "",
+        "idCadIntTran": ""
+    },
+    "infAdic": {
+        "infAdFisco": "",
+        "infCpl": "Trib aprox R$: 16,14 Fed e 20,40 Est Fonte: IBPT 0D61CD",
+        "obsCont": [
+        ],
+        "obsFisco": [
+        ],
+        "procRef": [
+        ]
+    },
+    "infSuplem": {
+        "qrCode": "https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx?p=43250420958670000122650000000044741000894809|2|1|1|0E2077DDBE77D625B161C2DCCADD0B6102FC3994",
+        "urlChave": "www.sefaz.rs.gov.br/nfce/consulta"
+    },
+    "exporta": {
+        "UFEmbarq": "",
+        "xLocEmbarq": "",
+        "xLocDespacho": ""
+    },
+    "compra": {
+        "xNEmp": "",
+        "xPed": "",
+        "xCont": ""
+    },
+    "cana": {
+        "safra": "",
+        "ref": "",
+        "qTotMes": "0.0000000000",
+        "qTotAnt": "0.0000000000",
+        "qTotGer": "0.0000000000",
+        "vFor": "0.00",
+        "vTotDed": "0.00",
+        "vLiqFor": "0.00",
+        "canaDiario": [
+        ],
+        "canaDeducoes": [
+        ]
+    },
+    "eventos": [
+    ],
+    "procNFe": {
+        "verAplic": "RSnfce2501301714DR",
+        "dhRecebto": "2025-04-10T11:58:26",
+        "FusoHorarioProc": "",
+        "nProt": 2xxxxxxxxxx43x4200,
+        "digVal": "HxxxxxxxxxxxxxxxxxxxxxxC9o=",
+        "cStat": 100,
+        "xMotivo": "Autorizado o uso da NF-e",
+        "cMsg": 0,
+        "xMsg": ""
+    },
+    "Logs": [
+    ],
+    "Informacoes": {
+        "Informacoes": ""
+    },
+    "DocReferenciado": 0,
+    "Descarte": {
+        "DocRefEmtCnpj": "",
+        "DocRefModelo": "",
+        "DocRefNumero": "0",
+        "DocRefSerie": "",
+        "DocRefDescarte": 0,
+        "DocRefDtaDescarte": "0000-00-00T00:00:00"
+    },
+    "RespTecnico": {
+        "CNPJ": "xxxxxxxxxxxxxxxxxxxxxx",
+        "xContato": "xxxxxxxxxxx xxxxxxxxxxxxxx",
+        "email": "xxxxxxxxxxxxxxxxx@xxxxxxxxxxxxx.com.br",
+        "fone": xxxxxxxxxxxxxxxxxx,
+        "idCSRT": "",
+        "hashCSRT": ""
+    },
+    "ProdDigitacao": [
+    ],
+    "SDTItensAlterados": [
+    ],
+    "Aplicativo": {
+        "Framework": "",
+        "Tradutor": "",
+        "VersaoFramework": "",
+        "Plataforma": "",
+        "Impressora": "",
+        "MAC": ""
+    }
+}
