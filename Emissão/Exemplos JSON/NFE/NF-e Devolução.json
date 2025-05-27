@@ -1,0 +1,644 @@
+{
+    "ModeloDocumento": "NFe",
+    "Versao": 4,
+    "HashRequisicao": "xxxxxxxxxxxxxxxx",
+    "DocIntegracao": 4,
+    "AcaoDigitacao": "",
+    "EmpCodigoDigitacao": "0",
+    "FlagRecalcularNFDigitacao": "",
+    "dhInclusao": "2025-05-15T12:41:18",
+    "DocStatus": 2,
+    "DocStatusDescricao": "Efetivado",
+    "CorrecaoNFe": "",
+    "ImprimirDuasVias": "",
+    "Parametros": {
+        "ApelidoLogomarca": "",
+        "ConsiderarConfEmail": ""
+    },
+    "ide": {
+        "ChaveAcesso": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "cNF": 6654202,
+        "cUF": 43,
+        "natOp": "5.106  VENDA DE MERCADORIA ADQUIRIDA TERCEIROS",
+        "indPag": 0,
+        "mod": "55",
+        "serie": "1",
+        "nNF": xxxx,
+        "IDUnico": "",
+        "dhEmi": "2025-05-15T12:41:18",
+        "dhEmiDigitacao": "",
+        "fusoHorario": "-03:00",
+        "dhSaiEnt": "2025-05-15T13:30:00",
+        "hSaiEnt": "",
+        "dhSaiEntDigitacao": "",
+        "tpNf": "1",
+        "idDest": 1,
+        "indFinal": "0",
+        "indPres": "9",
+        "indIntermed": "0",
+        "cMunFg": 4305108,
+        "tpImp": 1,
+        "tpEmis": 1,
+        "cDV": 5,
+        "tpAmb": 1,
+        "xJust": "",
+        "dhCont": "0000-00-00T00:00:00",
+        "finNFe": 1,
+        "procEmi": 0,
+        "verProc": "MigrateInvoiCy",
+        "EmailArquivos": "xxxxxx@xxxxxxxxx.com.br",
+        "LayoutBuffer": "",
+        "Impressora": "",
+        "NumeroPedido": "",
+        "Plataforma": "",
+        "qtdeItnRefDigitacao": 0,
+        "DocImpNSU": 0,
+        "NFRef": [
+			"NFRefItem":{
+				"refNFe": "43180806354976000149553090000005751000362258",
+			},
+		]
+	},
+    "emit": {
+        "CNPJ_emit": "xxxxxxxxxxxxxxxxxxxx",
+        "CPF_emit": "",
+        "xNome": "xxxxxxxxxxxxxxxxxxxxx",
+        "xFant": "",
+        "IM": "",
+        "CNAE": "",
+        "IE": "xxxxxxxxxxxxxxx",
+        "IEST": "",
+        "CRT": 3,
+        "enderEmit": {
+            "xLgr": "RODOVIA RSC 453",
+            "nro": "xxxxxxxx",
+            "xCpl": "..",	
+            "xBairro": "SAO GIACOMO",
+            "cMun": 4305108,
+            "xMun": "CAXIAS DO SUL",
+            "UF": "RS",
+            "UFCodigoDigitacao": "0",
+            "CEP": "95112360",
+            "cPais": 1058,
+            "xPais": "BRASIL",
+            "fone": 1155940678,
+            "fax": 0,
+            "Email": ""
+        }
+    },
+    "dest": {
+        "PesCodigo": 0,
+        "InicializouDestDigitacao": false,
+        "CNPJ_dest": "xxxxxxxxxxxxxxxxx",
+        "CPF_dest": "",
+        "idEstrangeiro": "",
+        "xNome_dest": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "DestinatarioDigitacao": "",
+        "IE_dest": "0290370981",
+        "ISUF": "",
+        "indIEDest": 1,
+        "IM_dest": "",
+        "enderDest": {
+            "nro_dest": ".",
+            "xCpl_dest": "",
+            "xBairro_dest": "PANAZZOLO",
+            "xEmail_dest": "",
+            "xLgr_dest": "RUA GUILHERME MOZ, 210",
+            "xPais_dest": "BRASIL",
+            "cMun_dest": 4305108,
+            "xMun_dest": "CAXIAS DO SUL",
+            "UF_dest": "RS",
+            "CEP_dest": "95080160",
+            "CEP_destDigitacao": "",
+            "cPais_dest": 1058,
+            "fone_dest": 5432137154,
+            "UFCodigoDestDigitacao": 0
+        }
+    },
+    "retirada": {
+        "TipoPessoaRetDigitacao": "",
+        "CNPJ_ret": "",
+        "CPF_ret": "",
+        "xNome_ret": "",
+        "CNPJ_ret_Digitacao": "",
+        "CPF_ret_Digitacao": "",
+        "xLgr_ret": "",
+        "nro_ret": "",
+        "xCpl_ret": "",
+        "xBairro_ret": "",
+        "xMun_ret": "",
+        "cMun_ret": 0,
+        "UF_ret": "",
+        "UFCodigoRetiradaDigitacao": 0,
+        "CEP_ret": 0,
+        "cPais_ret": 0,
+        "xPais_ret": "",
+        "fone_ret": 0,
+        "email_ret": "",
+        "IE_ret": "",
+        "CEP_retDigitacao": "",
+        "fone_retDigitacao": ""
+    },
+    "entrega": {
+        "TipoPessoaEntrDigitacao": "",
+        "CNPJ_entr": "",
+        "CPF_entr": "",
+        "CNPJ_entr_Digitacao": "",
+        "CPF_entr_Digitacao": "",
+        "xLgr_entr": "",
+        "nro_entr": "",
+        "xCpl_entr": "",
+        "xBairro_entr": "",
+        "cMun_entr": 0,
+        "xMun_entr": "",
+        "UF_entr": "",
+        "UFCodigoEntregaDigitacao": 0,
+        "xNome_entr": "",
+        "CEP_entr": 0,
+        "cPais_entr": 0,
+        "xPais_entr": "",
+        "fone_entr": 0,
+        "email_entr": "",
+        "IE_entr": "",
+        "CEP_entrDigitacao": "",
+        "fone_entrDigitacao": ""
+    },
+    "autXML": [
+        {
+            "CNPJ_aut": "27749054000100",
+            "CPF_aut": ""
+        }
+    ],
+    "det": [
+        {
+            "infADProd": "",
+            "prod": {
+                "cProd": "1514",
+                "cEAN": "SEM GTIN",
+                "cBarra": "",
+                "xProd": "FORTIPRENE TPE 7101/A45CO",
+                "NCM": "40059990",
+                "EXTIPI": "",
+                "CFOP": 5106,
+                "uCOM": "KG",
+                "qCOM": "50.0000",
+                "vUnCom": "39.2100000000",
+                "vProd": "1960.50",
+                "cEANTrib": "SEM GTIN",
+                "cBarraTrib": "",
+                "uTrib": "KG",
+                "qTrib": "50.0000",
+                "vUnTrib": "39.2100000000",
+                "vFrete": "0.00",
+                "vSeg": "0.00",
+                "vDesc": "0.00",
+                "vOutro_item": "0.00",
+                "indTot": 1,
+                "nTipoItem": 0,
+                "dProd": 0,
+                "xPed_item": "",
+                "nItemPed": "",
+                "nFCI": "",
+                "nRECOPI": "",
+                "CEST": "",
+                "cBenef": "",
+                "gCred": [
+                ],
+                "indEscala": "",
+                "CNPJFab": "",
+                "NVEs": [
+                ],
+                "detDI": [
+                ],
+                "detExport": [
+                ],
+                "med": [
+                ],
+                "arma": [
+                ],
+                "CodigoDigitacao": 0,
+                "nSeqItemDigitacao": "0",
+                "IncializouItemDigitacao": false,
+                "Rastro": [
+                ]
+            },
+            "imposto": {
+                "vTotTrib": "458.57",
+                "vTotFedDigitacao": 0,
+                "vTotEstDigitacao": 0,
+                "vTotMunDigitacao": 0,
+                "ICMS": {
+                    "orig": 0,
+                    "CST": "51",
+                    "modBC": "3",
+                    "vBC": "1960.50",
+                    "pICMS": 17,
+                    "vICMS_icms": "235.26",
+                    "modBCST": 0,
+                    "pMVAST": 0,
+                    "pRedBCST": 0,
+                    "vBCST": "0.00",
+                    "vBCSTRet": "0.00",
+                    "pICMSST": 0,
+                    "vICMSST_icms": "0.00",
+                    "vICMSSTRet": "0.00",
+                    "pRedBC": 0,
+                    "motDesICMS": 0,
+                    "vICMSDeson": "0.00",
+                    "vICMSOp": "333.28",
+                    "pDif": 29.4117,
+                    "vICMSDif": "98.02",
+                    "pBCOp": 0,
+                    "UFST": "",
+                    "vBCSTDest": "0.00",
+                    "vICMSSTDest_icms": "0.00",
+                    "pCredSN": 0,
+                    "vCredICMSSN": "0.00",
+                    "GerarTagStRet": "",
+                    "pFCP": 0,
+                    "vFCP": "0.00",
+                    "vBCFCP": "0.00",
+                    "vBCFCPST": "0.00",
+                    "pFCPST": 0,
+                    "vFCPST": "0.00",
+                    "pST": 0,
+                    "vICMSSubstituto": "0.00",
+                    "vBCFCPSTRet": "0.00",
+                    "pFCPSTRet": 0,
+                    "vFCPSTRet": "0.00",
+                    "GerarICMSST": "",
+                    "pRedBCEfet": 0,
+                    "vBCEfet": "0.00",
+                    "pICMSEfet": 0,
+                    "vICMSEfet": "0.00",
+                    "DigitacaoDescICMSDeson": "",
+                    "vICMSSTDeson": "0.00",
+                    "motDesICMSST": 0,
+                    "pFCPDif": 0,
+                    "vFCPDif": "0.00",
+                    "vFCPEfet": "0.00",
+                    "qBCMono": "0.0000",
+                    "adRemICMS": 0,
+                    "vICMSMonoOp": "0.00",
+                    "vICMSMono": "0.00",
+                    "qBCMonoReten": "0.0000",
+                    "adRemICMSReten": 0,
+                    "vICMSMonoReten": "0.00",
+                    "pRedAdRem": 0,
+                    "motRedAdRem": 0,
+                    "qBCMonoDif": "0.0000",
+                    "adRemICMSDif": 0,
+                    "vICMSMonoDif": "0.00",
+                    "qBCMonoRet": "0.0000",
+                    "adRemICMSRet": 0,
+                    "vICMSMonoRet": "0.00",
+                    "indDeduzDeson": "",
+                    "cBenefRBC": ""
+                },
+                "IPI": {
+                    "clEnq": "",
+                    "CNPJProd": "",
+                    "cSelo": "",
+                    "qSelo": 0,
+                    "cEnq": "999",
+                    "CSTIPI": {
+                        "CST_IPI": "50",
+                        "vBC_IPI": "1960.50",
+                        "qUnid_IPI": "0.0000",
+                        "vUnid_IPI": "0.0000",
+                        "pIPI": 3.25,
+                        "vIPI": "63.72",
+                        "DigitacaoTipoCalculoIPI": 0
+                    }
+                },
+                "II": {
+                    "vBC_imp": "0.00",
+                    "vDespAdu": "0.00",
+                    "vII": "0.00",
+                    "vIOF": "0.00"
+                },
+                "PIS": {
+                    "CST_pis": "01",
+                    "vBC_pis": "1725.24",
+                    "pPIS": 1.65,
+                    "vPIS": "28.47",
+                    "qBCprod_pis": "0.0000",
+                    "vAliqProd_pis": "0.0000",
+                    "DigitacaoTipoCalculoPIS": 0
+                },
+                "PISST": {
+                    "vBC_pis_ST": "0.00",
+                    "pPIS_ST": 0,
+                    "qBCprod_pis_ST": "0.0000",
+                    "vAliqProd_pis_ST": "0.0000",
+                    "vPIS_ST": "0.00",
+                    "DigitacaoTipoCalculoPIS_ST": 0,
+                    "indSomaPISST": ""
+                },
+                "COFINS": {
+                    "CST_cofins": "01",
+                    "vBC_cofins": "1725.24",
+                    "pCOFINS": 7.6,
+                    "vCOFINS": "131.12",
+                    "qBCProd_cofins": "0.0000",
+                    "vAliqProd_cofins": "0.0000",
+                    "DigitacaoTipoCalculoCOFINS": 0
+                },
+                "COFINSST": {
+                    "vBC_cofins_ST": "0.00",
+                    "pCOFINS_cofins_ST": 0,
+                    "qBCProd_cofins_ST": "0.0000",
+                    "vAliqProd_cofins_ST": "0.0000",
+                    "vCOFINS_cofins_ST": "0.00",
+                    "DigitacaoTipoCalculoCOFINS_ST": 0,
+                    "indSomaCOFINSST": ""
+                },
+                "ICMSUFDest": {
+                    "vBCUFDest": "0.00",
+                    "pFCPUFDest": 0,
+                    "pICMSUFDest": 0,
+                    "pICMSInter": 0,
+                    "pICMSInterPart": 0,
+                    "vFCPUFDest": "0.00",
+                    "vICMSUFDest": "0.00",
+                    "vICMSUFRemet": "0.00",
+                    "vBCFCPUFDest": "0.00"
+                }
+            },
+            "impostoDevol": {
+                "pDevol": 0,
+                "IPIDevol": {
+                    "vIPIDevol": "0.00"
+                }
+            },
+            "prodObsCont": [
+            ],
+            "prodObsFisco": [
+            ]
+        }
+    ],
+    "total": {
+        "ICMStot": {
+            "vBC_ttlnfe": "1960.50",
+            "vICMS_ttlnfe": "235.26",
+            "vICMSDeson_ttlnfe": "0.00",
+            "DigitacaovICMSDesonDesc": "0.00",
+            "vBCST_ttlnfe": "0.00",
+            "vST_ttlnfe": "0.00",
+            "vProd_ttlnfe": "1960.50",
+            "vFrete_ttlnfe": "0.00",
+            "vSeg_ttlnfe": "0.00",
+            "vDesc_ttlnfe": "0.00",
+            "vII_ttlnfe": "0.00",
+            "vIPI_ttlnfe": "63.72",
+            "vPIS_ttlnfe": "28.47",
+            "vCOFINS_ttlnfe": "131.12",
+            "vOutro": "0.00",
+            "vNF": "2024.22",
+            "vTotTrib_ttlnfe": "458.57",
+            "vFCPUFDest_ttlnfe": "0.00",
+            "vICMSUFDest_ttlnfe": "0.00",
+            "vICMSUFRemet_ttlnfe": "0.00",
+            "vFCP_ttlnfe": "0.00",
+            "vFCPST_ttlnfe": "0.00",
+            "vFCPSTRet_ttlnfe": "0.00",
+            "qBCMono_ttlnfe": "0.00",
+            "vICMSMono_ttlnfe": "0.00",
+            "qBCMonoReten_ttlnfe": "0.00",
+            "vICMSMonoReten_ttlnfe": "0.00",
+            "qBCMonoRet_ttlnfe": "0.00",
+            "vICMSMonoRet_ttlnfe": "0.00",
+            "vIPIDevol_ttlnfe": "0.00",
+            "vAFRMM_ttlnfe": "0.00"
+        },
+        "ISSQNtot": {
+            "vServ": "0.00",
+            "vBC_ttlnfe_iss": "0.00",
+            "vISS": "0.00",
+            "vPIS_servttlnfe": "0.00",
+            "vCOFINS_servttlnfe": "0.00",
+            "dCompet": "0000-00-00",
+            "vDeducao_servttlnfe": "0.00",
+            "vOutro_servttlnfe": "0.00",
+            "vDescIncond_servttlnfe": "0.00",
+            "vDescCond_servttlnfe": "0.00",
+            "vISSRet_servttlnfe": "0.00",
+            "cRegTrib": 0
+        },
+        "retTrib": {
+            "vRetPIS": "0.00",
+            "vRetCOFINS_servttlnfe": "0.00",
+            "vRetCSLL": "0.00",
+            "vBCIRRF": "0.00",
+            "vIRRF": "0.00",
+            "vBCRetPrev": "0.00",
+            "vRetPrev": "0.00"
+        }
+    },
+    "transp": {
+        "modFrete": 1,
+        "balsa": "",
+        "vagao": "",
+        "SeqReboquesDigitacao": 0,
+        "SeqVolumesDigitacao": 0,
+        "transporta": {
+            "CNPJ_transp": "",
+            "CPF_transp": "",
+            "xNome_transp": "CLIENTE RETIRA",
+            "IE_transp": "",
+            "xEnder": "",
+            "xMun_transp": "",
+            "UF_transp": "",
+            "MunCodigoTranspDigitacao": "0",
+            "UFCodigoTranspDigitacao": 0,
+            "PesCodigoTranspDigitacao": "0",
+            "TransportadoraDigitacao": "",
+            "InicializouTranspDigitacao": false
+        },
+        "retTransp": {
+            "vServ_transp": "0.00",
+            "vBCRet": "0.00",
+            "pICMSRet": 0,
+            "vICMSRet": "0.00",
+            "CFOP_transp": 0,
+            "cMunFG_transp": 0
+        },
+        "veicTransp": {
+            "placa": "",
+            "UF_veictransp": "",
+            "RNTC": ""
+        },
+        "reboque": [
+        ],
+        "vol": [
+            {
+                "qVol": 2,
+                "esp": "VOLUME(S)",
+                "marca": "",
+                "nVol": "",
+                "pesoL_transp": "50.000",
+                "pesoB_transp": "50.000",
+                "SeqVolDigitacao": 0,
+                "SeqLacresDigitacao": 0,
+                "lacres": [
+                ]
+            }
+        ]
+    },
+    "cobr": {
+        "fat": {
+            "nFat": "008240",
+            "vOrig": "2024.22",
+            "vDesc_cob": "0.00",
+            "vLiq": "2024.22"
+        },
+        "dup": [
+            {
+                "nDup": "001",
+                "dVenc": "2025-06-12",
+                "dVencDigitacao": "",
+                "vDup": "1012.22"
+            },
+            {
+                "nDup": "002",
+                "dVenc": "2025-06-26",
+                "dVencDigitacao": "",
+                "vDup": "1012.00"
+            }
+        ],
+        "CobrParcelasDigitacao": "",
+        "CobrPrimVencimentoDigitacao": "",
+        "CobrParGerDigitacao": false
+    },
+    "pag": [
+        {
+            "indPag_pag": "1",
+            "tPag": "15",
+            "xPag": "",
+            "vPag": "2024.22",
+            "dPag": "0000-00-00",
+            "dPagDigitacao": "",
+            "CNPJPag": "",
+            "UFPag": "",
+            "card": {
+                "tipoIntegracao": 0,
+                "CNPJ_card": "",
+                "tBand": "",
+                "cAut": "",
+                "CNPJReceb": "",
+                "idTermPag": ""
+            }
+        }
+    ],
+    "vTroco": "0.00",
+    "infIntermed": {
+        "CNPJ_int": "",
+        "idCadIntTran": ""
+    },
+    "infAdic": {
+        "infAdFisco": "",
+        "infCpl": "Local de saida: |ECKERT LOG OPERADOR LOGISTICO|RODOVIA RSC 453, No.38200 - Bairro Sao Giacomo - Caxias do Sul -  RS|CNPJ: 20.723.074/0001-63  IE: 0290588685||Diferimento de ICMS conforme Livro III Artigo artigo 1-K|EMITIDO PELO SISTEMA GP-WSISADMIN ",
+        "obsCont": [
+        ],
+        "obsFisco": [
+        ],
+        "procRef": [
+        ]
+    },
+    "infSuplem": {
+        "qrCode": "",
+        "urlChave": ""
+    },
+    "exporta": {
+        "UFEmbarq": "",
+        "xLocEmbarq": "",
+        "xLocDespacho": ""
+    },
+    "compra": {
+        "xNEmp": "",
+        "xPed": "",
+        "xCont": ""
+    },
+    "cana": {
+        "safra": "",
+        "ref": "",
+        "qTotMes": "0.0000000000",
+        "qTotAnt": "0.0000000000",
+        "qTotGer": "0.0000000000",
+        "vFor": "0.00",
+        "vTotDed": "0.00",
+        "vLiqFor": "0.00",
+        "canaDiario": [
+        ],
+        "canaDeducoes": [
+        ]
+    },
+    "eventos": [
+    ],
+    "procNFe": {
+        "verAplic": "RS2504091452DR",
+        "dhRecebto": "2025-05-15T12:41:18",
+        "FusoHorarioProc": "",
+        "nProt": 243250145022897,
+        "digVal": "iHfFnkuGJg2cmVCfWVbzBhflNyk=",
+        "cStat": 100,
+        "xMotivo": "Autorizado o uso da NF-e",
+        "cMsg": 0,
+        "xMsg": ""
+    },
+    "Logs": [
+        {
+            "LogData": "2025-05-15T12:41:18",
+            "LogErrCode": 0,
+            "LogDescricao": "Documento assinado e incluído no lote",
+            "LogObjeto": "PNFE091",
+            "LogTipo": 4
+        },
+        {
+            "LogData": "2025-05-15T12:41:18",
+            "LogErrCode": 0,
+            "LogDescricao": "Autorizado o uso da NF-e",
+            "LogObjeto": "PNFE083",
+            "LogTipo": 4
+        },
+        {
+            "LogData": "2025-05-15T13:14:47",
+            "LogErrCode": 100,
+            "LogDescricao": "[#inv406] - Mensagem de e-mail enviada com sucesso! [714158198]",
+            "LogObjeto": "PNUC040",
+            "LogTipo": 1
+        }
+    ],
+    "Informacoes": {
+        "Informacoes": "<InformacoesConector><GUID>8142d690-8e0b-442d-ae2e-faceb355f0eb</GUID><GUID_CONECTOR>7b122db178e744b08f83bee0e3c08b0c</GUID_CONECTOR><NomeMaquina>SVERPCOMP01</NomeMaquina><ApelidoInstancia>Instância Conector RS</ApelidoInstancia><DiretorioEntrada>C:\\Invoicy\\EntradaRS</DiretorioEntrada><UsandoImpressaoAutomatica>A</UsandoImpressaoAutomatica><UsandoAssinaturaA3>N</UsandoAssinaturaA3><CocRetornoAssincronoNFSe>false</CocRetornoAssincronoNFSe><VersaoConector>5.2.0.32</VersaoConector><VersoesDotNet>4.7.03190, v2.0.50727, v3.0, v3.5, v4.0</VersoesDotNet><VersaoCLR>4.0.30319.42000</VersaoCLR><SistemaOperacional>Microsoft Windows NT 6.2.9200.0</SistemaOperacional><UltimoLog></UltimoLog><DataValidadeCert>01/01/0001 00:00:00</DataValidadeCert><AutoridadeCertificadora></AutoridadeCertificadora><UltimoDocEmitido>01/01/0001 00:00:00</UltimoDocEmitido></InformacoesConector>"
+    },
+    "DocReferenciado": 0,
+    "Descarte": {
+        "DocRefEmtCnpj": "",
+        "DocRefModelo": "",
+        "DocRefNumero": "0",
+        "DocRefSerie": "",
+        "DocRefDescarte": 0,
+        "DocRefDtaDescarte": "0000-00-00T00:00:00"
+    },
+    "RespTecnico": {
+        "CNPJ": "",
+        "xContato": "",
+        "email": "",
+        "fone": 0,
+        "idCSRT": "",
+        "hashCSRT": ""
+    },
+    "ProdDigitacao": [
+    ],
+    "SDTItensAlterados": [
+    ],
+    "Aplicativo": {
+        "Framework": "",
+        "Tradutor": "",
+        "VersaoFramework": "",
+        "Plataforma": "",
+        "Impressora": "",
+        "MAC": ""
+    }
+}

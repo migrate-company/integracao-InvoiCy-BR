@@ -1,0 +1,161 @@
+{
+    "infNFe": {
+        "versao": "4.00",
+        "ide": {
+            "cUF": "43",
+            "cNF": "87654321",
+            "natOp": "Venda de combustivel",
+            "mod": "55",
+            "serie": "1",
+            "nNF": "xxx",
+            "dhEmi": "2025-05-15T14:00:00-03:00",
+            "dhSaiEnt": "2025-05-15T14:00:00-03:00",
+            "tpNF": "1",
+            "idDest": "1",
+            "cMunFG": "4314902",
+            "tpImp": "1",
+            "tpEmis": "1",
+            "cDV": "7",
+            "tpAmb": "2",
+            "finNFe": "1",
+            "indFinal": "1",
+            "indPres": "1",
+            "procEmi": "0",
+            "verProc": "AppPosto v2.0"
+        },
+        "emit": {
+            "CNPJ": "xxxxxxxxxxxxxx",
+            "xNome": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "xFant": "xxxxxxxxxxxxxxx",
+            "enderEmit": {
+                "xLgr": "RODOVIA BR-285",
+                "nro": "xxx",
+                "xBairro": "ZONA RURAL",
+                "cMun": "4321401",
+                "xMun": "TRÊS DE MAIO",
+                "UF": "RS",
+                "CEP": "98910000",
+                "cPais": "1058",
+                "xPais": "BRASIL"
+            },
+            "IE": "1230000456",
+            "CRT": "3"
+        },
+        "dest": {
+            "CPF": "xxxxxxxxxxxxxxxxxxxx",
+            "xNome": "JOAQUIM SILVA SAURO - PRODUTOR RURAL",
+            "enderDest": {
+                "xLgr": "LINHA CAMPO VERDE",
+                "nro": "xxxxx",
+                "xBairro": "INTERIOR",
+                "cMun": "4321401",
+                "xMun": "TRÊS DE MAIO",
+                "UF": "RS",
+                "CEP": "98910970",
+                "cPais": "1058",
+                "xPais": "BRASIL"
+            },
+            "indIEDest": "9",
+            "email": "xxxxxxxxxxxxxxxxxx@xxxxxxxxxxxxxx.com"
+        },
+        "det": [
+            {
+                "nItem": "1",
+                "prod": {
+                    "cProd": "GCOM001",
+                    "cEAN": "",
+                    "xProd": "GASOLINA COMUM",
+                    "NCM": "27101259",
+                    "CFOP": "5656",
+                    "uCom": "L",
+                    "qCom": "30.0000",
+                    "vUnCom": "5.9500",
+                    "vProd": "178.50",
+                    "cEANTrib": "",
+                    "uTrib": "L",
+                    "qTrib": "30.0000",
+                    "vUnTrib": "5.9500",
+                    "indTot": "1",
+                    "comb": {
+                        "cProdANP": "820101001",
+                        "descANP": "GASOLINA C COMUM",
+                        "pGLP": "0.0000",
+                        "pGNn": "0.0000",
+                        "pGNi": "0.0000",
+                        "UFCons": "RS",
+                        "encerrante": {
+                            "nBico": "03",
+                            "nBomba": "01",
+                            "nTanque": "02",
+                            "vEncIni": "12500.500",
+                            "vEncFin": "12530.500"
+                        }
+                    }
+                },
+                "imposto": {
+                    "ICMS": {
+                        "ICMS60": {
+                            "orig": "0",
+                            "CST": "60",
+                            "vBCSTRet": "0.00",
+                            "pST": "0.00",
+                            "vICMSSTRet": "0.00"
+                        }
+                    },
+                    "PIS": {
+                        "PISOutr": {
+                            "CST": "04",
+                            "vBC": "0.00",
+                            "pPIS": "0.00",
+                            "vPIS": "0.00"
+                        }
+                    },
+                    "COFINS": {
+                        "COFINSOutr": {
+                            "CST": "04",
+                            "vBC": "0.00",
+                            "pCOFINS": "0.00",
+                            "vCOFINS": "0.00"
+                        }
+                    }
+                }
+            }
+        ],
+        "total": {
+            "ICMSTot": {
+                "vBC": "0.00",
+                "vICMS": "0.00",
+                "vICMSDeson": "0.00",
+                "vFCP": "0.00",
+                "vBCST": "0.00",
+                "vST": "0.00",
+                "vFCPST": "0.00",
+                "vFCPSTRet": "0.00",
+                "vProd": "178.50",
+                "vFrete": "0.00",
+                "vSeg": "0.00",
+                "vDesc": "0.00",
+                "vII": "0.00",
+                "vIPI": "0.00",
+                "vIPIDevol": "0.00",
+                "vPIS": "0.00",
+                "vCOFINS": "0.00",
+                "vOutro": "0.00",
+                "vNF": "178.50",
+                "vTotTrib": "0.00"
+            }
+        },
+        "transp": {
+            "modFrete": "9"
+        },
+        "pag": {
+            "detPag": [
+                {
+                    "tPag": "01",
+                    "vPag": "178.50"
+                }
+            ],
+            "vTroco": "0.00"
+        }
+    }
+}

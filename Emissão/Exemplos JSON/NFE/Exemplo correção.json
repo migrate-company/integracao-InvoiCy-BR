@@ -1,0 +1,21 @@
+{
+    "Evento": {
+        "EveInf": {
+            "EveTp": "210210",
+            "Evedet": {
+                "EveXJust": "Teste de Conhecimento",
+                "EveDesc": "Ciencia da Operacao"
+            },
+            "EveFusoHorario": "-03:00",
+            "EvenSeq": "1",
+            "EveDh": "2025-05-19T09:45:27"
+        },
+        "NtfSerie": 70,
+        "NtfCnpjEmissor": "28036305000172",
+        "ChaAcesso": "432505280363050001725507000000024301000194098",
+        "NtfNumero": "2430",
+        "tpAmb": "2"
+    },
+    "Versao": "4.00",
+    "ModeloDocumento": "NFe"
+}
