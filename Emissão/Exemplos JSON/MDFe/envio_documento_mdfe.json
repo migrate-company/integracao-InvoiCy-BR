@@ -1,245 +1,341 @@
-[
-    {
-        "Documento": {
-            "ModeloDocumento": "MDFe",
-            "Versao": 3,
-            "ide": {
-                "cMDF": 9576,
-                "cUF": 43,
-                "tpAmb": 2,
-                "tpEmit": 1,
-                "tpTransp": 1,
-                "serie": "261",
-                "nMDF": 153,
-                "modal": 1,
-                "dhEmi": "2021-02-22T16:29:00",
-                "fusoHorario": "-03:00",
-                "tpEmis": 2,
-                "UFIni": "RS",
-                "UFFim": "SC",
-                "dhIniViagem": "2021-02-22T16:29:00",
-                "indCanalVerde": 0,
-                "indCarregaPosterior": 0,
-                "MunicipiosCarreg": [
-                    {
-                        "cMunCarreg": 4321808,
-                        "xMunCarreg": "TRES DE MAIO"
-                    },
-                    {
-                        "cMunCarreg": 4310207,
-                        "xMunCarreg": "IJUI"
-                    }
-                ]
-            },
-            "emit": {
-                "CNPJ_emit": "06354976000149",
-                "CPF_emit": "",
-                "xNome": "Migrate",
-                "xFant": "",
-                "IE": "1470049241",
-                "enderEmit": {
-                    "xLgr": "Rua Padre Cacique",
-                    "nro": "900",
-                    "xCpl": "",
-                    "xBairro": "Centro",
-                    "cMun": 4321808,
-                    "xMun": "TRES DE MAIO",
-                    "CEP": "98910000",
-                    "UF": "RS",
-                    "fone": "",
-                    "email": ""
-                }
-            },
-            "InfModal": {
-                "versaoModal": 3,
-                "Rodoviario": {
-                    "RNTRC": "12345678",
-                    "CIOT": "",
-                    "codAgPorto": "UIASDHI332",
-                    "infCIOT": [
-                        {
-                            "CIOT": "123456789412",
-                            "CPF_CIOT": "03935034024",
-                            "CNPJ_CIOT": ""
-                        }
-                    ],
-                    "Contratante": [
-                        {
-                            "CPF_Contr": "65675003010",
-                            "CNPJ_Contr": "",
-                            "IdEstrangeiro_Contr": "",
-                            "Nome_Contr": ""
-                        }
-                    ],
-                    "VeicTracao": {
-                        "codigo_veiculo": "001",
-                        "placa": "KLB0152",
-                        "tara": 13000,
-                        "capacidadeKG": 666,
-                        "capacidadeM3": 333,
-                        "tipoRodado": "01",
-                        "tipoCarroceria": "02",
-                        "UF_veiculo": "RS",
-                        "RENAVAM": "",
-                        "Proprietario": {
-                            "CPF_prop": "65675003010",
-                            "CNPJ_prop": "",
-                            "RNTRC_prop": "12345679",
-                            "nome_prop": "Gaius Claudius Glaber",
-                            "IE_prop": "123456",
-                            "UF_prop": "RS",
-                            "tipo_prop": 0
-                        },
-                        "Condutores": [
-                            {
-                                "nome_cond": "Lentulus Batiatus",
-                                "CPF_cond": "58691676043"
-                            },
-                            {
-                                "nome_cond": "Edinaldo",
-                                "CPF_cond": "77657488239"
-                            },
-                            {
-                                "nome_cond": "Boras",
-                                "CPF_cond": "93244749011"
-                            }
-                        ]
-                    },
-                    "VeicReboque": [
-                        {
-                            "codigo_reb": "0027",
-                            "placa_reb": "IKS5686",
-                            "tara_reb": 254,
-                            "capacidadeKG_reb": 652,
-                            "capacidadeM3_reb": 255,
-                            "tipoCarroceria_reb": "01",
-                            "UF_reb": "RS",
-                            "RENAVAM": "",
-                            "Proprietario_reb": {
-                                "CPF_prop_reb": "",
-                                "CNPJ_prop_reb": "03702076000157",
-                                "RNTRC_reb": "12345678",
-                                "nome_prop_reb": "Ilithyia",
-                                "IE_prop_reb": "12245645",
-                                "UF_prop_reb": "RS",
-                                "tipo_prop_reb": 1
-                            }
-                        }
-                    ],
-                    "ValePedagio": [
-                        {
-                            "CNPJForn": "03702076000157",
-                            "CNPJPagamento": "14812749000148",
-                            "numeroCompra": "5544",
-                            "vValePed": "66.80"
-                        }
-                    ],
-                    "LacresRodo": [
-                        {
-                            "nLacreRodo": "1234567"
-                        },
-                        {
-                            "nLacreRodo": "343445"
-                        }
-                    ]
-                }
-            },
-            "Documentos": {
-                "MunicipiosDescarreg": [
-                    {
-                        "cMunDescarreg": 4205407,
-                        "xMunDescarreg": "FLORIANOPOLIS",
-                        "InfDoc": [
-                            {
-                                "tipoDocumento": 1,
-                                "chaveAcesso": "43130406354976000149572890000000211123456788",
-                                "segCodBarras": "",
-                                "numero_ct": "",
-                                "serie_ct": "",
-                                "subserie_ct": 0,
-                                "dEmi_ct": "0000-00-00",
-                                "valorCarga_ct": "0.00",
-                                "CNPJ_nf": "",
-                                "UF_nf": "",
-                                "numero_nf": "",
-                                "serie_nf": "",
-                                "dEmi_nf": "0000-00-00",
-                                "valor_nf": "0.00",
-                                "PINSuframa_nf": "",
-                                "indReentrega": 1
-                            },
-                            {
-                                "tipoDocumento": 1,
-                                "chaveAcesso": "43190806354976000149522600000012021000001001",
-                                "segCodBarras": "",
-                                "numero_ct": "",
-                                "serie_ct": "",
-                                "subserie_ct": 0,
-                                "dEmi_ct": "0000-00-00",
-                                "valorCarga_ct": "0.00",
-                                "CNPJ_nf": "",
-                                "UF_nf": "",
-                                "numero_nf": "",
-                                "serie_nf": "",
-                                "dEmi_nf": "0000-00-00",
-                                "valor_nf": "0.00",
-                                "PINSuframa_nf": "",
-                                "indReentrega": 1
-                            }
-                        ]
-                    }
-                ]
-            },
-            "Seguro": [
+{
+    "ModeloDocumento": "MDFe",
+    "Versao": 3,
+    "HashRequisicao": "41a9c78cxxxxxxxxxxxxxx90e64897",
+    "DocIntegracao": 1,
+    "dhInclusao": "2025-04-30T12:39:36",
+    "DocStatus": 2,
+    "DocStatusDescricao": "Efetivado",
+    "AcaoDigitacao": "",
+    "EmpCodigoDigitacao": 0,
+    "DocDigCorrecao": "",
+    "ide": {
+        "ChaveAcesso": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "cMDF": 59904041,
+        "cUF": 31,
+        "tpAmb": 1,
+        "tpEmit": 1,
+        "tpTransp": 1,
+        "mod": "58",
+        "serie": "0",
+        "nMDF": 23917,
+        "cDV": 3,
+        "modal": 1,
+        "dhEmi": "2025-04-30T12:39:00",
+        "fusoHorario": "-03:00",
+        "tpEmis": 1,
+        "procEmi": 0,
+        "verProc": "MigrateInvoiCy",
+        "UFIni": "MG",
+        "UFFim": "SP",
+        "dhIniViagem": "0000-00-00T00:00:00",
+        "indCanalVerde": 0,
+        "Impressora": "",
+        "indCarregaPosterior": 0,
+        "dhEmiDigitacao": "",
+        "dhSaiEntDigitacao": "",
+        "MunicipiosCarreg": [
+            {
+                "cMunCarreg": 3151800,
+                "xMunCarreg": "POCOS DE CALDAS",
+                "xUFMunCarreg": ""
+            }
+        ],
+        "infPercurso": [
+        ]
+    },
+    "emit": {
+        "CNPJ_emit": "xxxxxxxxxxxxxxxxxx",
+        "CPF_emit": "",
+        "xNome": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "xFant": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "IE": "xxxxxxxxxxxxxxxxxxx",
+        "enderEmit": {
+            "xLgr": "AV JOAO PINHEIRO",
+            "nro": "xxxx",
+            "xCpl": "",
+            "xBairro": "CENTRO",
+            "cMun": 3151800,
+            "xMun": "POCOS DE CALDAS",
+            "CEP": "37701386",
+            "UF": "MG",
+            "fone": "xxxxxxxxxxxxxx",
+            "email": ""
+        }
+    },
+    "InfModal": {
+        "versaoModal": 3,
+        "Rodoviario": {
+            "RNTRC": "06350863",
+            "CIOT": "",
+            "codAgPorto": "",
+            "infCIOT": [
+            ],
+            "Contratante": [
                 {
-                    "nApol": "4321",
-                    "Averbacoes": [
-                        {
-                            "nAver": "1"
-                        },
-                        {
-                            "nAver": "2"
-                        }
-                    ],
-                    "infResp": {
-                        "respSeg": 1,
-                        "CNPJ_respSeg": "12345678901344",
-                        "CPF_respSeg": "14743208645"
-                    },
-                    "infSeg": {
-                        "XSeg": "Seguro de Moto",
-                        "CNPJ_seg": "12345678901344"
+                    "CPF_Contr": "",
+                    "CNPJ_Contr": "xxxxxxxxxxxxxxxxxx",
+                    "IdEstrangeiro_Contr": "",
+                    "Nome_Contr": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "tpDocResponsavelContratante": "",
+                    "infContrato": {
+                        "NroContrato": "0",
+                        "vContratoGlobal": 0
                     }
                 }
             ],
-            "ProdPredominante": {
-                "tpCarga": "05",
-                "xProd": "Latas de atum",
-                "cEAN": "SEM GTIN",
-                "NCM": "98765432",
-                "Lotacao": {
-                    "LocalCarrega": {
-                        "CEP_LocalCarrega": "98910000",
-                        "Latitude_LocalCarrega": "",
-                        "Longitude_LocalCarrega": ""
-                    },
-                    "LocalDescarrega": {
-                        "CEP_LocalDescarrega": "98915000",
-                        "Latitude_LocalDescarrega": "",
-                        "Longitude_LocalDescarrega": ""
+            "InfPagamento": [
+            ],
+            "VeicTracao": {
+                "codigo_veiculo": "",
+                "placa": "xxxxxxxx",
+                "tara": 8651,
+                "capacidadeKG": 28000,
+                "capacidadeM3": 100,
+                "tipoRodado": "03",
+                "tipoCarroceria": "00",
+                "UF_veiculo": "MG",
+                "RENAVAM": "xxxxxxxxxxxxx",
+                "Proprietario": {
+                    "CPF_prop": "",
+                    "CNPJ_prop": "xxxxxxxxxxxxxxx",
+                    "RNTRC_prop": "xxxxxxxxxxxx",
+                    "nome_prop": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "IE_prop": "xxxxxxxxxxxxxxxxxx",
+                    "UF_prop": "MG",
+                    "tipo_prop": 0
+                },
+                "Condutores": [
+                    {
+                        "nome_cond": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "CPF_cond": "xxxxxxxxxxxxxxxxxxx"
+                    }
+                ]
+            },
+            "VeicReboque": [
+                {
+                    "codigo_reb": "",
+                    "placa_reb": "xxxxxxxx",
+                    "tara_reb": 8500,
+                    "capacidadeKG_reb": 28000,
+                    "capacidadeM3_reb": 100,
+                    "tipoCarroceria_reb": "00",
+                    "UF_reb": "MG",
+                    "RENAVAM": "xxxxxxxxxxxxxxx",
+                    "Proprietario_reb": {
+                        "CPF_prop_reb": "",
+                        "CNPJ_prop_reb": "xxxxxxxxxxxxxxxxxx",
+                        "RNTRC_reb": "xxxxxxxxx",
+                        "nome_prop_reb": "xxxxxxxxxxxxxxxxxxxxx",
+                        "IE_prop_reb": "xxxxxxxxxxxxxx",
+                        "UF_prop_reb": "MG",
+                        "tipo_prop_reb": 0
                     }
                 }
+            ],
+            "ValePedagio": [
+            ],
+            "LacresRodo": [
+            ]
+        },
+        "Aereo": {
+            "nacionalidade": "",
+            "matricula": "",
+            "numeroVoo": "",
+            "aerEmbarque": "",
+            "aerDestino": "",
+            "dataVoo": "0000-00-00"
+        },
+        "Aquaviario": {
+            "irin": "",
+            "CNPJAgenciaNav": "",
+            "tipoEmbarcacao": "",
+            "codEmbarcacao": "",
+            "nomeEmbarcacao": "",
+            "numViagem": "",
+            "codPortoEmb": "",
+            "codPortoDes": "",
+            "portoTrans": "",
+            "tipoNav": "",
+            "TerminaisCarreg": [
+            ],
+            "TerminaisDescarreg": [
+            ],
+            "EmbarcacoesComboio": [
+            ],
+            "UnidCargaVazia": [
+            ],
+            "UnidTranspVazia": [
+            ]
+        },
+        "Ferroviario": {
+            "Trem": {
+                "prefixo": "",
+                "dhLiberacao": "0000-00-00T00:00:00",
+                "origem": "",
+                "destino": "",
+                "qtdeVagoes": 0
             },
-            "Totais": {
-                "qtdCTe": 2,
-                "qtdCT": 0,
-                "qtdNFe": 0,
-                "qtdNF": 0,
-                "qtdMDFe": 0,
-                "valorCarga": "5666.66",
-                "codUnidMedida": "01",
-                "qtdCarga": "666.0000"
+            "Vagoes": [
+            ]
+        }
+    },
+    "Documentos": {
+        "MunicipiosDescarreg": [
+            {
+                "cMunDescarreg": 3548906,
+                "xMunDescarreg": "SAO CARLOS",
+                "xUFMunDescarreg": "",
+                "InfDoc": [
+                    {
+                        "tipoDocumento": 1,
+                        "chaveAcesso": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "segCodBarras": "",
+                        "numero_ct": "",
+                        "serie_ct": "",
+                        "subserie_ct": 0,
+                        "dEmi_ct": "0000-00-00",
+                        "valorCarga_ct": "0.00",
+                        "CNPJ_nf": "",
+                        "UF_nf": "",
+                        "numero_nf": "",
+                        "serie_nf": "",
+                        "dEmi_nf": "0000-00-00",
+                        "valor_nf": "0.00",
+                        "PINSuframa_nf": "",
+                        "indReentrega": 0,
+                        "valorDocumento": "0.00",
+                        "PrestacaoParcial": {
+                            "indPrestacaoParcial": 0
+                        },
+                        "UnidadesTransp": [
+                        ],
+                        "ProdutosPerigosos": [
+                        ],
+                        "EntregaParcial": {
+                            "qtdTotal": 0,
+                            "qtdParcial": 0
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "Seguro": [
+        {
+            "nApol": "00000001005400002878",
+            "Averbacoes": [
+                {
+                    "nAver": "0572010252xxxxxxxxxxxxx00000031728106"
+                }
+            ],
+            "infResp": {
+                "respSeg": 1,
+                "CNPJ_respSeg": "xxxxxxxxxxxxxx",
+                "CPF_respSeg": ""
+            },
+            "infSeg": {
+                "XSeg": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "CNPJ_seg": "xxxxxxxxxxxxxxxxxxxxxx"
             }
         }
+    ],
+    "ProdPredominante": {
+        "tpCarga": "05",
+        "xProd": "auto pecas",
+        "cEAN": "",
+        "NCM": "",
+        "Lotacao": {
+            "LocalCarrega": {
+                "CEP_LocalCarrega": "37701970",
+                "Latitude_LocalCarrega": "",
+                "Longitude_LocalCarrega": ""
+            },
+            "LocalDescarrega": {
+                "CEP_LocalDescarrega": "13573600",
+                "Latitude_LocalDescarrega": "",
+                "Longitude_LocalDescarrega": ""
+            }
+        }
+    },
+    "Totais": {
+        "qtdCTe": 1,
+        "qtdCT": 0,
+        "qtdNFe": 0,
+        "qtdNF": 0,
+        "qtdMDFe": 0,
+        "valorCarga": "186994.56",
+        "codUnidMedida": "02",
+        "qtdCarga": "1.8305"
+    },
+    "Lacres": [
+    ],
+    "AutXML": [
+        {
+            "CNPJ_aut": "xxxxxxxxxxxxxxx",
+            "CPF_aut": ""
+        },
+        {
+            "CNPJ_aut": "xxxxxxxxxxxxxxxx",
+            "CPF_aut": ""
+        }
+    ],
+    "InfAdicionais": {
+        "infAdFisco": "",
+        "infCpl": "Referente CT-e: xxxxxx,"
+    },
+    "infMDFeSupl": {
+        "qrCodMDFe": "https://dfe-portal.svrs.rs.gov.br/mdfe/qrCode?chMDFe=31250423640261000171580000000239171599040413&tpAmb=1"
+    },
+    "procMDFe": {
+        "verAplic": "RS20250408083447",
+        "dhRecebto": "2025-04-30T12:39:37",
+        "nProt": 931250020441290,
+        "digVal": "M4CwELnQU10OW1jtWUp6S/vzl+0=",
+        "Cstat": 100,
+        "xMotivo": "Autorizado o uso do MDF-e"
+    },
+    "Eventos": [
+    ],
+    "Logs": [
+        {
+            "LogData": "2025-04-30T12:39:36",
+            "LogErrCode": 0,
+            "LogDescricao": "Documento assinado e incluído no lote",
+            "LogObjeto": "PMDF002",
+            "LogTipo": 4
+        },
+        {
+            "LogData": "2025-04-30T12:39:37",
+            "LogErrCode": 0,
+            "LogDescricao": "[#0091] Autorizado o uso do MDF-e",
+            "LogObjeto": "PMDF002",
+            "LogTipo": 1
+        }
+    ],
+    "Informacoes": {
+        "Informacoes": ""
+    },
+    "DocReferenciado": 0,
+    "Descarte": {
+        "DocRefSeq": "0",
+        "DocRefEmtCnpj": "",
+        "DocRefModelo": "",
+        "DocRefNumero": "0",
+        "DocRefSerie": "",
+        "DocRefDescarte": 0,
+        "DocRefDtaDescarte": "0000-00-00T00:00:00"
+    },
+    "infRespTec": {
+        "CNPJ": "xxxxxxxxxxxxxxxxx",
+        "xContato": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "email": "xxxxxxxxxxxxxxxxxxx@xxxxxx.com.br",
+        "fone": xxxxxxxxxxxx,
+        "idCSRT": 0,
+        "hashCSRT": ""
+    },
+    "procInfraSA": {
+        "nProtDTe": 0,
+        "dhProt": "0000-00-00T00:00:00"
     }
-]
+}
