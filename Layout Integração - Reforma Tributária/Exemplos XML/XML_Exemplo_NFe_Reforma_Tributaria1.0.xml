@@ -511,6 +511,16 @@
                 <pAliqEfet>1</pAliqEfet>
               </gRed>
             </gCBS>
+            <gTribRegular>
+              <CSTReg>1</CSTReg>
+              <cClassTribReg>cClas1</cClassTribReg>
+              <pAliqEfetRegIBSUF>1</pAliqEfetRegIBSUF>
+              <vTribRegIBSUF>1</vTribRegIBSUF>
+              <pAliqEfetRegIBSMun>1</pAliqEfetRegIBSMun>
+              <vTribRegIBSMun>1</vTribRegIBSMun>
+              <pAliqEfetRegCBS>1</pAliqEfetRegCBS>
+              <vTribRegCBS>1</vTribRegCBS>
+            </gTribRegular>
             <gIBSCredPres>
               <cCredPres>1</cCredPres>
               <pCredPres>1</pCredPres>
