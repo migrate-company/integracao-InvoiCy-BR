@@ -5440,6 +5440,103 @@
 																				</xs:complexType>
 																			</xs:element>
 																			<xs:element minOccurs="0"
+																						name="gTribRegular">
+																				<xs:annotation>
+																					<xs:documentation>Grupo de informações da Tributação Regular</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="CSTReg">
+																							<xs:annotation>
+																								<xs:documentation>Código de Situação Tributária</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:integer">
+																									<xs:pattern value="[0-9]{1,3}"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="cClassTribReg">
+																							<xs:annotation>
+																								<xs:documentation>Código de Classificação Tributária</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:string">
+																									<xs:minLength value="1"/>
+																									<xs:maxLength value="6"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="pAliqEfetRegIBSUF">
+																							<xs:annotation>
+																								<xs:documentation>Valor da alíquota do IBS da UF</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="8"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vTribRegIBSUF">
+																							<xs:annotation>
+																								<xs:documentation>Valor do Tributo do IBS da UF</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="16"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="pAliqEfetRegIBSMun">
+																							<xs:annotation>
+																								<xs:documentation>Valor da alíquota do IBS do Município</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="8"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vTribRegIBSMun">
+																							<xs:annotation>
+																								<xs:documentation>Valor do Tributo do IBS do Município</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="16"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="pAliqEfetRegCBS">
+																							<xs:annotation>
+																								<xs:documentation>Valor da alíquota da CBS </xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="8"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vTribRegCBS">
+																							<xs:annotation>
+																								<xs:documentation>Valor do Tributo da CBS</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="16"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0"
 																						name="gIBSCredPres">
 																				<xs:annotation>
 																					<xs:documentation>Grupo de Informações do Crédito Presumido referente ao IBS</xs:documentation>
