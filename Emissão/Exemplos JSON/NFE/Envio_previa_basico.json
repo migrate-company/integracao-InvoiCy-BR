@@ -1,0 +1,16 @@
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "NFe",
+            "Versao": "4.00",
+            "ide": {
+                "cUF": "43",
+                "tpAmb": "2",
+                "NumeroPedido": "113"
+            },
+            "emit": {
+                "CNPJ_emit": "06354976000149"
+            }
+        }
+    }
+]
