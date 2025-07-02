@@ -1907,9 +1907,6 @@
     <IBSCBSTot>
       <vBCIBSCBS>1</vBCIBSCBS>
       <gIBS>
-        <vIBS>1</vIBS>
-        <vCredPres>1</vCredPres>
-        <vCredPresCondSus>1</vCredPresCondSus>
         <gIBSUF>
           <vDif>1</vDif>
           <vDevTrib>1</vDevTrib>
@@ -1920,6 +1917,9 @@
           <vDevTrib>1</vDevTrib>
           <vIBSMun>1</vIBSMun>
         </gIBSMun>
+        <vIBS>1</vIBS>
+        <vCredPres>1</vCredPres>
+        <vCredPresCondSus>1</vCredPresCondSus>
       </gIBS>
       <gCBS>
         <vDif>1</vDif>
