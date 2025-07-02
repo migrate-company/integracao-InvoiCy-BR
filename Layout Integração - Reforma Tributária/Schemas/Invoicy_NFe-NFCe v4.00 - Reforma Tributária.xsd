@@ -6551,36 +6551,6 @@
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element minOccurs="0" name="vIBS">
-														<xs:annotation>
-															<xs:documentation>Valor total do IBS</xs:documentation>
-														</xs:annotation>
-														<xs:simpleType>
-															<xs:restriction base="xs:decimal">
-																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element minOccurs="0" name="vCredPres">
-														<xs:annotation>
-															<xs:documentation>Valor total do crédito presumido</xs:documentation>
-														</xs:annotation>
-														<xs:simpleType>
-															<xs:restriction base="xs:decimal">
-																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element minOccurs="0" name="vCredPresCondSus">
-														<xs:annotation>
-															<xs:documentation>Valor total do crédito presumido em condição suspensiva.</xs:documentation>
-														</xs:annotation>
-														<xs:simpleType>
-															<xs:restriction base="xs:decimal">
-																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
 													<xs:element minOccurs="0" name="gIBSUF">
 														<xs:annotation>
 															<xs:documentation>Grupo total do IBS da UF</xs:documentation>
@@ -6658,6 +6628,36 @@
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="vIBS">
+														<xs:annotation>
+															<xs:documentation>Valor total do IBS</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element minOccurs="0" name="vCredPres">
+														<xs:annotation>
+															<xs:documentation>Valor total do crédito presumido</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element minOccurs="0" name="vCredPresCondSus">
+														<xs:annotation>
+															<xs:documentation>Valor total do crédito presumido em condição suspensiva.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+															</xs:restriction>
+														</xs:simpleType>
 													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
