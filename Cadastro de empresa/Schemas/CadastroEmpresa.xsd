@@ -248,12 +248,10 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="GrupoUsuario" minOccurs="0">
+										<xs:element name="GrupoUsuario">
 											<xs:simpleType>
-												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="1"/>
-													<xs:minInclusive value="1"/>
-													<xs:maxInclusive value="3"/>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="10"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
