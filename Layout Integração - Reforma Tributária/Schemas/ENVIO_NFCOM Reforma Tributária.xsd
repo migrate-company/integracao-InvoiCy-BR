@@ -2104,6 +2104,17 @@
 																								</xs:sequence>
 																							</xs:complexType>
 																						</xs:element>
+																						<xs:element name="vIBS">
+																							<xs:annotation>
+																								<xs:documentation>Valor do IBS (vIBSUF + vIBSMun)</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="16"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
 																						<xs:element name="gCBS">
 																							<xs:annotation>
 																								<xs:documentation>Grupo de Informações da CBS</xs:documentation>
