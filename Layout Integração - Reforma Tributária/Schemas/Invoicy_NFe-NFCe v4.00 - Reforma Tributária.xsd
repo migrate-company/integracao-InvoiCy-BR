@@ -8163,6 +8163,130 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element minOccurs="0" name="agropecuario">
+					<xs:annotation>
+						<xs:documentation>TAG de grupo do detalhamento de produtos Agrícolas, Pecuários e Produção Florestal</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="defensivo">
+								<xs:annotation>
+									<xs:documentation>Elemento do grupo agropecuario</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element maxOccurs="unbounded" name="defensivoItem">
+											<xs:annotation>
+												<xs:documentation>Elemento do grupo de defensivos</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:all>
+													<xs:element name="nReceituario">
+														<xs:annotation>
+															<xs:documentation>numero do receituário</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="30"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element minOccurs="0" name="CPFRespTec">
+														<xs:annotation>
+															<xs:documentation>CPF do responsável técnico</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:pattern value="[0-9]{11}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" name="guiaTransito">
+								<xs:annotation>
+									<xs:documentation>Elemento do grupo agropecuario</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element minOccurs="0" name="UFGuia">
+											<xs:annotation>
+												<xs:documentation>Sigla da UF de emissão da guia </xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="AC"/>
+													<xs:enumeration value="AL"/>
+													<xs:enumeration value="AM"/>
+													<xs:enumeration value="AP"/>
+													<xs:enumeration value="BA"/>
+													<xs:enumeration value="CE"/>
+													<xs:enumeration value="DF"/>
+													<xs:enumeration value="ES"/>
+													<xs:enumeration value="GO"/>
+													<xs:enumeration value="MA"/>
+													<xs:enumeration value="MG"/>
+													<xs:enumeration value="MS"/>
+													<xs:enumeration value="MT"/>
+													<xs:enumeration value="PA"/>
+													<xs:enumeration value="PB"/>
+													<xs:enumeration value="PE"/>
+													<xs:enumeration value="PI"/>
+													<xs:enumeration value="PR"/>
+													<xs:enumeration value="RJ"/>
+													<xs:enumeration value="RN"/>
+													<xs:enumeration value="RO"/>
+													<xs:enumeration value="RR"/>
+													<xs:enumeration value="RS"/>
+													<xs:enumeration value="SC"/>
+													<xs:enumeration value="SE"/>
+													<xs:enumeration value="SP"/>
+													<xs:enumeration value="TO"/>
+													<xs:enumeration value="EX"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tpGuia">
+											<xs:annotation>
+												<xs:documentation>Tipo da Guia</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element minOccurs="0" name="serieGuia">
+											<xs:annotation>
+												<xs:documentation>Serie da Guia</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="[0-9]{1,9}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="nGuia">
+											<xs:annotation>
+												<xs:documentation>Número da Guia</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:pattern value="[0-9]{1,9}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
