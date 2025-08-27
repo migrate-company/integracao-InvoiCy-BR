@@ -1476,7 +1476,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="codtributNacional" minOccurs="0" maxOccurs="1">
+										<xs:element name="CodTributNacional" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>Código de tributação Nacional</xs:documentation>
 											</xs:annotation>
