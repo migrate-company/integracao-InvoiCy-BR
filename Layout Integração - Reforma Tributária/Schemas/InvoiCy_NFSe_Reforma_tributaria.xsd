@@ -2604,7 +2604,7 @@
 																		<xs:sequence>
 																			<xs:element name="ValpIBSUF" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
-																					<xs:documentation>Alíquota do IBS de competência do Estado</xs:documentation>
+																					<xs:documentation>Total valor desonerado municipal</xs:documentation>
 																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:decimal">
@@ -2723,7 +2723,7 @@
 																			</xs:element>
 																			<xs:element name="ValpIBSUF" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
-																					<xs:documentation>Toral valor desonerado municipal</xs:documentation>
+																					<xs:documentation>Total valor desonerado municipal</xs:documentation>
 																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:decimal">
@@ -2878,7 +2878,10 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>
-																<xs:element name="CBS" minOccurs="0" maxOccurs="1">
+																<xs:element name="CBS" minOccurs="1" maxOccurs="1">
+																	<xs:annotation>
+																		<xs:documentation>Grupo de Informações Relativas às Totalizações do CBS</xs:documentation>
+																	</xs:annotation>
 																	<xs:complexType>
 																		<xs:sequence>
 																			<xs:element name="ValCBS" minOccurs="1" maxOccurs="1">
@@ -3211,16 +3214,6 @@
 													<xs:element name="xLocalidadeIncid" minOccurs="1" maxOccurs="1">
 														<xs:annotation>
 															<xs:documentation>Nome da localidade de incidência do IBS/CBS.</xs:documentation>
-														</xs:annotation>
-														<xs:simpleType>
-															<xs:restriction base="xs:string">
-																<xs:maxLength value="600"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element name="xIndOp" minOccurs="1" maxOccurs="1">
-														<xs:annotation>
-															<xs:documentation>Descrição do código indicador da operação de fornecimento, conforme tabela “código indicador de operação”</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
@@ -3791,11 +3784,11 @@
 													Motivo para não informação do NIF:
 
 
-													- Não informado na nota de origem;
+													0- Não informado na nota de origem;
 
-													- Dispensado do NIF;
+													1- Dispensado do NIF;
 
-													- Não exigência do NIF;
+													2- Não exigência do NIF;
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -3817,8 +3810,8 @@
 										<xs:element name="DestEndereco" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													Código do município do endereço do destinatário do serviço.
-													(Tabela do IBGE)
+													Tipo e nome do logradouro do endereço do
+destinatário do serviço.
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -3830,8 +3823,8 @@
 										<xs:element name="DestNumero" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													Código numérico do Endereçamento Postal nacional (CEP)
-													do endereço do destinatário do serviço.
+													Número no logradouro do endereço do destinatário
+do serviço
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -3843,8 +3836,7 @@
 										<xs:element name="DestComplemento" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													Código do país do endereço do destinatário do serviço.
-													(Tabela de Países ISO)
+													Complemento do endereço do destinatário do serviço.
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -3855,7 +3847,7 @@
 										</xs:element>
 										<xs:element name="DestBairro" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Código alfanumérico do Endereçamento Postal no exterior do destinatário do serviço.</xs:documentation>
+												<xs:documentation>Bairro do endereço do destinatário do serviço.</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3865,7 +3857,9 @@
 										</xs:element>
 										<xs:element name="DestFone" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Nome da cidade no exterior do destinatário do serviço.</xs:documentation>
+												<xs:documentation>Número do telefone do destinatário.
+(Preencher com o Código DDD + número do
+telefone)</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3875,7 +3869,7 @@
 										</xs:element>
 										<xs:element name="DestEmail" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Estado, província ou região da cidade no exterior do destinatário do serviço.</xs:documentation>
+												<xs:documentation>E-mail do destinatário</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3885,7 +3879,8 @@
 										</xs:element>
 										<xs:element name="DestcMun" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Tipo e nome do logradouro do endereço do destinatário do serviço.</xs:documentation>
+												<xs:documentation>Código do município do endereço do destinatário do
+serviço.</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3895,7 +3890,8 @@
 										</xs:element>
 										<xs:element name="DestxMun" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Número no logradouro do endereço do destinatário do serviço.</xs:documentation>
+												<xs:documentation>Nome da cidade do destinatário do
+serviço</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3905,7 +3901,8 @@
 										</xs:element>
 										<xs:element name="DestCEP" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Complemento do endereço do destinatário do serviço.</xs:documentation>
+												<xs:documentation>Código numérico do Endereçamento Postal nacional (CEP)
+ do endereço do destinatário do serviço.</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3915,7 +3912,8 @@
 										</xs:element>
 										<xs:element name="DestPais" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Bairro do endereço do destinatário do serviço.</xs:documentation>
+												<xs:documentation>Código do país do endereço do destinatário do
+serviço</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -3926,8 +3924,8 @@
 										<xs:element name="DestEstProvReg" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													Número do telefone do destinatário. (Preencher com o Código DDD + número do
-													telefone. Nas operações com exterior é permitido informar o código do país + código da localidade + número do telefone)
+													Estado, província ou região da cidade no exterior do
+destinatário do serviço
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -5020,8 +5018,7 @@
 										<xs:element name="ImovEndereco" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													Código de Endereçamento Postal alfanumérico do
-													endereço no exterior do imóvel.
+													Tipo e nome do logradouro do endereço do imóvel
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -5032,7 +5029,7 @@
 										</xs:element>
 										<xs:element name="ImovNumero" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Nome da cidade no exterior, local do imóvel.</xs:documentation>
+												<xs:documentation>Número no logradouro do endereço do imóvel</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -5043,8 +5040,7 @@
 										<xs:element name="ImovComplemento" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													Estado, província ou região da cidade no exterior,
-													local do imóvel.
+													Complemento do endereço do imóve
 												</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
@@ -5055,7 +5051,7 @@
 										</xs:element>
 										<xs:element name="ImovBairro" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Tipo e nome do logradouro do endereço do imóvel.</xs:documentation>
+												<xs:documentation>Bairro do endereço do imóvel.</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -5065,7 +5061,7 @@
 										</xs:element>
 										<xs:element name="ImovxMun" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Número no logradouro do endereço do imóvel.</xs:documentation>
+												<xs:documentation>Nome da cidade no local do imóvel</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -5075,7 +5071,8 @@
 										</xs:element>
 										<xs:element name="ImovEstProvReg" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Complemento do endereço do imóvel.</xs:documentation>
+												<xs:documentation>Estado, província ou região da cidade no exterior,
+local do imóvel.</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
