@@ -328,7 +328,6 @@
 				</TribRegular>
 				<cLocalidadeIncid/>
 				<xLocalidadeIncid/>
-				<xIndOp/>
 				<CSTIBSCBS/>
 				<cClassTrib/>
 				<cCredPres/>
@@ -564,4 +563,5 @@
 			<DocChaveNFSe/>
 		</NFSeReferenciadas>
 	</RPS>
+
 </Envio>
