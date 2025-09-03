@@ -347,7 +347,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="tpOper" minOccurs="1" maxOccurs="1">
+							<xs:element name="tpOper" minOccurs="0" maxOccurs="1">
 								<xs:annotation>
 									<xs:documentation>
 										Tipo de Operação com Entes Governanementais ou outros
@@ -5337,3 +5337,4 @@ local do imóvel.</xs:documentation>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
