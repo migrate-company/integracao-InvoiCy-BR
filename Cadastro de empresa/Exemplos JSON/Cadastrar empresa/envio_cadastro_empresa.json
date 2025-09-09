@@ -3,7 +3,7 @@
         "EmpNomFantasia": "Cadastro Empresa REST",
         "EmpApelido": "Cadastro Empresa REST",
         "EmpRazSocial": "Cadastro Empresa REST",
-        "EmpCNPJ": "36762131000153",
+        "EmpCNPJ": "99999999999999",
         "EmpCPF": "",
         "EmpIE": "9353071823",
         "EmpTelefone": "5535354830",
@@ -323,6 +323,22 @@
                     "MunicipiosDesativar": ""
                 },
                 "Ativar": "S"
+            }
+        ],
+		"Endereco": [
+            {
+                "EmpEndTpoEndereco": "Rua",
+                "EmpEndEndereco": "Rua dos Andradas",
+                "EmpEndNumero": "12345",
+                "EmpEndBairro": "Centro",
+                "EmpEndCEP": "69380000",
+                "EmpEndComplemento": "",
+                "EmpEndIM": "1906",
+                "EmpEndEmail": "",
+                "EmpEndTelefone": "",
+                "EmpEndIE": "",
+                "EmpEndMunCodigo": 1400159,
+                "EmpEndStatus": "A"
             }
         ]
     }
