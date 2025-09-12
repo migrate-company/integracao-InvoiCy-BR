@@ -1,0 +1,2813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="CadastroEmpresa">
+    <xs:annotation>
+      <xs:documentation>None</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EmpNomFantasia" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Nome fantasia</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpApelido" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Apelido da Empresa. Irá caracterizar a empresa no sistema, podendo utilizar qualquer denominação.</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpRazSocial" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Razão social</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpCNPJ" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>CNPJ da Empresa</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpCPF" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>CPF da Empresa</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpIE" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Inscrição Estadual</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpTelefone" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Telefone da empresa</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpEndereco" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Endereço</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpNumero" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Número</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpBairro" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Bairro</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpCEP" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>CEP</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpComplemento" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Complemento do endereço</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpIM" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Inscrição Municipal</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MunCodigo" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Código do Município</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpCNAE" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Código CNAE</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpCRT" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Código CRT</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpIEST" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Código IEST</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpMtrCNPJ" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>CNPJ da Matriz</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpMarca" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Logomarca da empresa</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpMarcaExtensao" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Extensão da logomarca</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpArqApelido" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Descrição da Logomarca</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpEmail" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>E-mail para Notificações</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpObservacao" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Observações da empresa</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpTpoEndereco" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Tipo de Endereço</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EmpIdentificacao" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Identificador</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Certificado" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ArquivoPFX" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Arquivo do Certificado</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Senha" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Senha do Certificado</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoCertificado" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Tipo do certificado digital</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MetodoCriptografiaSenha" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Método de criptografia da senha do certificado</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Usuarios" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UsuariosItem" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="UsrNome" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Nome do usuário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UsrEmail" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>E-mail do usuário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ApenasVincular" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Vincular usuário já cadastrado  a um novo CNPJ de forma integrada</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UsrSolicitarTrocaSenha" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Solicitar alteração de senha</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Permissoes" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Permissões dos Usuários</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PermissaoCTe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Permissões para o módulo CT-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Visualizar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar Documentos CT-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Baixar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Efetuar o download de Documentos CT-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PermissaoMDFe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Permissões para o módulo MDF-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Visualizar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar Documentos MDF-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Baixar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Efetuar o download de Documentos MDF-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PermissaoNFSe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Permissões para o módulo NFS-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Visualizar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar Documentos NFS-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Baixar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Efetuar o download de Documentos NFS-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="EnviarConsultarDocs" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Enviar e\ou consultar Documentos NFS-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PermissaoNFe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Permissões para o módulo NF-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Visualizar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar Documentos NF-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Baixar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Efetuar o download de Documentos NF-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PermissaoNFCe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Permissões para o módulo NFC-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Visualizar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar Documentos NFC-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Baixar" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Efetuar o download de Documentos NFC-e</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PermissoesGerais" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Permissões Gerais do Sistema</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ImportarDocumentos" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Importar Documentos</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarDadosDoUsuario" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar dados do Usuário</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarDadosDaEmpresa" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar dados da Empresa</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarMarcasDaEmpresa" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar logomarca da Empresa</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarCertificadosDaEmpresa" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar o certificado digital da Empresa</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarConfiguracoesParametros" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar as configurações dos parâmetros</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CadastrarEmpresas" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Cadastrar Empresas</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarCaixasDeEmail" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar as caixas de e-mail</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AlterarPermissoesDeUsuario" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Alterar as permissões do Usuário</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="AdicionarNovosUsuarios" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Adicionar novos Usuários</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="VisualizarChaveAcesso" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar a chave de acesso da Empresa Emissora</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="VisualizarAcoesDeUsuarios" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar as ações dos usuários</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="VisualizarQuantidadesEmitidas" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar a quantidade de documentos emitidos pela empresa</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="VisualizarLicencas" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Visualizar as licenças da empresa</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="ConfiguracaoSenha" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Efetuar configuração das senhas</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="GerarRelatorios" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Executar a geração de relatórios</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="InutilizarDocumentos" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Inutilizar documentos através da tela de inutilização do sistema</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="FerramentasIntegracao" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Ferramentas de Integração da Aplicação</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CaixaEnvioEmail" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmlValCertificado" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Validar Certificado</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlTmpEspera" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Tempo de Espera (Time out)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlAutenticacao" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Tipo de Autenticação</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlSSL" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Conexão SSL</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlPorta" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Porta</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlHost" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Host</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlSenha" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Senha</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlUsuario" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Usuário</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlNomeRemetente" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Nome do Remetente</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmlEmailRemetente" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>E-mail do Remetente</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CaixasLeituraEmail" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CaixasLeituraEmailItem" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="EmlValCertificado" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Validar Certificado</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlTmpEspera" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tempo de Espera (Time out)</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlAutenticacao" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tipo de Autenticação</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlSSL" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Conexão SSL</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlPorta" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Porta</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlHost" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Host</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlSenha" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Senha</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlUsuario" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Usuário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlNomeRemetente" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Nome do Remetente</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmlEmailRemetente" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>E-mail do Remetente</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Parametros" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NFe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Parâmetros do Módulo NF-e</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FormaRetornoPDFIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do PDF na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormaRetornoXMLIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do XML na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UltimoNSU" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Último NSU</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustInut" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa da Inutilização da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCanc" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa do Cancelamento da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailAutorizado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail autorizado da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailCancelado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail cancelado da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailCCe" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail da CC-e da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmailTitulo" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Título do E-mail da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarPDFEmail" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar PDF da NF-e por E-mail</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarXMLEmail" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar XML da NF-e por E-mail</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCont" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa de Contingência da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="OrdemContingencia" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>None</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="OrdemContingenciaItem" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>None</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="OrdemContingenciaNFe" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Ordem de entrada em Contingência</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CTe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Parâmetros do Módulo CT-e</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FormaRetornoPDFIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do PDF na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormaRetornoXMLIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do XML na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UltimoNSU" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Último NSU</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustInut" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa da Inutilização do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCanc" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa do Cancelamento do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailAutorizado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail autorizado do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailCancelado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail cancelado do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailCCe" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail da CC-e do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmailTitulo" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Título do E-mail do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarPDFEmail" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar PDF do CT-e por E-mail</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarXMLEmail" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar XML do CT-e por E-mail</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCont" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa de Contingência do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="OrdemContingencia" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>None</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="OrdemContingenciaItem" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>None</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="OrdemContingenciaCTe" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Ordem de entrada em Contingência</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MDFe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Parâmetros do Módulo MDF-e</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FormaRetornoPDFIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do PDF na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormaRetornoXMLIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do XML na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UltimoNSU" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Último NSU</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCanc" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa do Cancelamento do MDF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCont" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa de Contingência do MDF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NFCe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Parâmetros do Módulo NFC-e</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FormaRetornoPDFIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do PDF na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormaRetornoXMLIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do XML na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="IDTokenCscSEFAZ" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>ID do Token CSC disponibilizado pela SEFAZ</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="CscSEFAZ" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>CSC disponibilizado pela SEFAZ para a empresa</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="PossuiLeituraX" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Possui Leitura X</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustInut" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa da Inutilização da NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCanc" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa do Cancelamento da NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailAutorizado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail autorizado da NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoEmailCancelado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto do e-mail cancelado da NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmailTitulo" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Título do E-mail da NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarPDFEmail" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar PDF da NFC-e por E-mail</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarXMLEmail" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar XML da NFC-e por E-mail</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="JustCont" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Justificativa de Contingência da NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="OrdemContingencia" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>None</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="OrdemContingenciaItem" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>None</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="OrdemContingenciaNFCe" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Ordem de entrada em Contingência</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NFSe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Parâmetros do Módulo NFS-e</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CodCMC" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Código de Cadastro Mobiliário do Contribuinte</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="AmbienteEmissao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tipo de Ambiente</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MaxRPSLote" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Quantidade Máxima de RPS por Lote</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TipoProcessamento" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tipo de Processamento da Empresa. Síncrono: para envio de pequenos lotes por requisição e resposta em tempo real (depende do tempo de processamento da prefeitura. Muitas prefeituras não processam a nota em tempo real). Assíncrono: para envio de grandes lotes por requisição, e resposta em uma segunda requisição.</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UsuarioAutent" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Usuário para autenticação no sistema da prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SenhaAutent" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Senha para autenticação no sistema da prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimeNFSeEfetivada" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprime NFS-e se efetivada. Cada município possui a sua própria legislação. É altamente recomendado que ela seja verificada antes de configurar a opção para SIM.</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EnviarNFSeTomador" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar a NFS-e ao tomador</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpRetImpPrefeitura" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Retorna um link para impressão na prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpConcatOutrasInfo" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Concatenar o valor do campo Outras Informações na Discriminação do Serviço</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpImprimeCanhoto" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir Canhoto do Espelho do RPS/NFS-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpChavePrimaria" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Chave Primária de autenticação da empresa</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormaRetornoPDFIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do PDF na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormaRetornoXmlIntegracao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Forma de retorno do XML na integração</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpDiscriminacaoBetha" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Discriminação do Padrão Betha</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpAutorizacaoRegimeRPS" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Autorização para utilizar regime de RPS Londrina</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpEspelhoNovo" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Modelo de impressão do espelho RPS</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpEnviaCPFPrestador" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar CPF do Prestador</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="VerCodigo" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Código da versão da prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DataAdesaoSimplesNacional" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Data de Adesão ao Simples Nacional</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:dateTime">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpEnviaEmailCompactado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Enviar Anexos de e-mail de NFS-e compactados?</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimeItensEspelho" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprime Itens no Espelho</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpClientId" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Cliente Id para o padrão NFPSe WS</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpClientSecret" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Cliente Secret para o padrão NFPSe WS</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpImgRodapeBase64" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imagem do rodapé do espelho RPS</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FaixaRPSAutorizadoInicial" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Faixa inicial do RPS autorizado na prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FaixaRPSAutorizadoFinal" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Faixa final do RPS autorizado na prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirOutrasInformacoes" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Deifne a forma de impressão das informações complementares</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirRetencoesFederais" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir Retenções Federais</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="PreencherCNAEAusente" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Define se será impresso o CNAE no espelho mesmo sem enviar o código na tag &lt;Cnae&gt; na emissão do RPS.</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="XMLRetornoRequisicao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Retornar RPS completo no modelo InvoiCy</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="NomeCanhoto" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir nome do tomador no canhoto</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ReceberEmailEmpresaTrancada" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Permite configurar se a empresa deseja receber ou não e-mails avisando que a fila está trancada quando a prefeitura é sequencial</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="BuscarNatOpAlternativa" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Permite configurar a busca de uma natureza da operação alternativa válida para o município caso a informada não seja aceita</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ReenvioAutomatico" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Reenvio automático de NFS-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="EmpRegEspTrib" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Código de identificação do regime especial de tributação</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Licenciamento" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LicenciamentoItem" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Modulo" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Módulo Contratado</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Modelo" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Modelo de licenciamento</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Autor" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Autor do licenciamento</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Impressao" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CTe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OrientacaoCTe" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Orientação do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MolduraNaLogomarca" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Moldura na logomarca</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="LocalImpressaoCanhoto" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Local de impressão do canhoto</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoImpressaoTributos" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto para impressão dos tributos</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImpNomeEmissor" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir informações do nome do emissor do CT-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NFe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OrientacaoNFe" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Orientação da NF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirDataHoraImpressao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir data e hora de impressão</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirTributos" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir tributos</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TextoImpressaoTributos" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Texto para impressão dos tributos</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ExibirDescontoEIcmsNoItem" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Exibir desconto e ICMS no item</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="LocalImpressaoCanhoto" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Local de impressão do canhoto</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MolduraNaLogomarca" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Moldura na logomarca</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ModeloDANFE" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Modelo do DANFE</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ExibirEndEntregaInfoAdic" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Exibir endereço de entrega nas informações adicionais</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirDuplicatas" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir duplicatas</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="UtilizarImagemInfoEmitente" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Utilizar imagem nas informações do emitente</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirVolumesItensDestacados" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir volumes e itens destacados</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirTotalPISCOFINS" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir total de PIS e COFINS</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="InfoComplementar" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Informações complementares</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DestaqueProdutosPerigosos" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Destaque dos produtos perigosos</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TamanhoFonteInfComplementares" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tamanho da fonte nas informações complementares</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimeUNTribDiferenteComercial" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir unidade tributável diferente da comercial</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirEnderecoEntregaRetirada" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Exibição do endereço de entrega e retirada</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirCamposDIFAL" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir campos do DIFAL</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirICMSCST51" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir alíquota e valor de ICMS - CST 51 Diferimento</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TamanhoFonteProdutos" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tamanho da Fonte dos produtos/serviços</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TamanhoFonteInfComplementaresProd" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tamanho da fonte da informação adicional do produto</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirICMSDesonerado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir ICMS Desonerado</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirEmitenteCentralizado" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir informações do bloco emitente centralizadas</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirFatura" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir fatura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirVolumes" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir volumes</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirVolumesNegrito" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir volumes em negrito</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirVolumesEspacados" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir volumes com maior espaçamento</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirItensEspacados" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir itens com maior espaçamento</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="AgruparInfoAdicProdutos" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Agrupar descrição do produto e informações adicionais</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirTotalAFRMM" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir valor total da AFRMM</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirICMSSTItem" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir dados ICMS ST no item</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirTotalImpostoImportacao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir valor do imposto de importação</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirFCP" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir FCP</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirTextosNegrito" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir textos em negrito</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirFCI" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir FCI</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImprimirConfirmEntregaCanhoto" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir frase de confirmação de entrega no canhoto</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MDFe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OrientacaoMDFe" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Orientação do MDF-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MolduraNaLogomarca" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Moldura na logomarca</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NFCe" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ModeloDANFE" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Modelo do DANFE NFCe</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="ImpAcrescDescItens" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Imprimir acréscimo e desconto nos itens</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="FormatoDANFE" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Formato do DANFE NFC-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Extensao" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>None</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ExtensaoItem" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>None</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TipoExtensao" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Tipo da extensão</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Ativar" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Ativar ou desativar a extensão</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Modulos" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Definir para quais módulos a extensão será ativada</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ModuloItem" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>None</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Modulo" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Módulo para o qual será ativa a extensão</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ParametrosExt" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Parâmetros de configuração das extensões</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Email" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>E-mail para ser notificado</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoNotificacao" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Tipo de notificação que deseja receber por e-mail</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="NumeroConsultasDiarias" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Número de consultas diárias na SEFAZ e PREFEITURA</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ArmazenarEveTerceiros" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Armazenar os eventos emitidos por terceiros sobre seus documentos</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="BaixarDocsNaoArmazenados" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Baixar documentos emitidos que não estejam armazenados no sistema</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CienciaAutomatica" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Ciência da operação automática</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Justificativa" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Justificativa padrão da manifestação</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ValorMin" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Valor mínimo da NF-e obrigada a ser manifestada</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="MunicipiosAtivar" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Código dos Municípios para ativar</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="MunicipiosDesativar" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Código dos Municípios para desativar</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="BuscarDocsRetroativos" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Buscar documentos retroativos</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoConsultaNFSe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Tipo de arquivos para importar no módulo NFS-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="AbrangenciaConsultaNFSe" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Abrangência da consulta de NFS-e recebidas</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="2"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="PeriodoConsultaNFSeRetroativa" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Período e frequência para consulta de NFS-e recebidas retroativas</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="ConsultarNFSeAmbienteNacional" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Consulta NFS-e recebidas no Ambiente Nacional</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Nome" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Nome do prestador de serviços</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Prestadores" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Cadastro de prestadores de serviço para importação de NFS-e</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="IM" minOccurs="0" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Inscrição municipal do prestador de serviços</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Endereco" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Grupo de informações de Outros Endereços do Prestador</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpEndTpoEndereco" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Tipo de Endereço do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndEndereco" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Endereço do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndNumero" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Número do endereço do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndBairro" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Bairro do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndCEP" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>CEP do Endereço do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndComplemento" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Complemento do endereço</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndIM" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Inscrição Municipal</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndEmail" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>E-mail do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndTelefone" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Telefone do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndIE" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Inscrição Estadual do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndMunCodigo" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Código do Município do Prestador</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpEndStatus" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>Status do Endereço</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <!-- sem restrições adicionais -->
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
