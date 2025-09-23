@@ -285,9 +285,7 @@
 						<ValIBSMun/>
 						<ValDifMun/>
 						<ValpDifMun/>
-						<ValAliqMunDesonIBS/>
 						<ValDevTribMunIBS/>
-						<ValTribOpMun/>
 						<ValpAliqEfetMun/>
 						<ValpRedAliqMun/>
 					</IBS>
@@ -565,3 +563,4 @@
 	</RPS>
 
 </Envio>
+
