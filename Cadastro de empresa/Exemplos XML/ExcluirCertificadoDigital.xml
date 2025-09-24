@@ -1,0 +1,10 @@
+<EmpresaCertificado>
+	<Empresas>
+		<CNPJ>
+			<CNPJ>99999999999996</CNPJ>
+			<CNPJ>99999999999994</CNPJ>
+			<CNPJ>99999999999997</CNPJ>
+		</CNPJ>
+	</Empresas>
+	<Acao>EXCLUIR</Acao>
+</EmpresaCertificado>
