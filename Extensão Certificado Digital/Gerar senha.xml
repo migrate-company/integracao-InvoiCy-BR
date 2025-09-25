@@ -1,0 +1,4 @@
+<CertificadoGerarSenha>
+	<CNPJCPF>CPF ou CNPJ vinculado ao certificado</CNPJCPF>
+	<Senha>senha</Senha>
+</CertificadoGerarSenha>
