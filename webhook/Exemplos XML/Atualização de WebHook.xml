@@ -1,0 +1,18 @@
+<CadastroWebhook>
+	<Descricao>Atualização de WebHook</Descricao>
+	<URL>https://webhook.site/9f4a27bb-efed-4395-8533-ac891712bbf3</URL>
+	<Status>A</Status>
+	<TipoAutenticacao>0</TipoAutenticacao>
+	<TokenAutenticacao/>
+	<Identificador>ab1c2ba3-1ac2-3b1a-2c3b-123abc321cba</Identificador>
+	<Uso>
+		<UsoItem>
+			<Modulo>4</Modulo>
+			<TipoNotificacao>
+				<TipoNotificacao>9</TipoNotificacao>
+				<TipoNotificacao>10</TipoNotificacao>
+				<TipoNotificacao>11</TipoNotificacao>
+			</TipoNotificacao>
+		</UsoItem>
+	</Uso>
+</CadastroWebhook>
