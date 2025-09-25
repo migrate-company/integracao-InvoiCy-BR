@@ -1,0 +1,17 @@
+<CertificadoGerarLink>
+	<urlRedirecionaSucesso/>
+	<urlRedirecionaCancela/>
+	<dados>
+		<documento>Informar CNPJ ou CPF do cliente que irá realizar a compra do certificado</documento>
+		<nome/>
+		<email/>
+		<fone/>
+		<cep/>
+		<endereco/>
+		<numero/>
+		<bairro/>
+		<complemento/>
+		<cidade/>
+		<uf/>
+	</dados>
+</CertificadoGerarLink>
