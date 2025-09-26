@@ -32,6 +32,7 @@
 		<indFinal>1</indFinal>
 		<cIndOp>1</cIndOp>
 		<tpEnteGov>1</tpEnteGov>
+		<xTpEnteGov/>
 		<indDest>1</indDest>
 		<tpOper>1</tpOper>
 		<NFSOutrasinformacoes>NFS Outras informacoes</NFSOutrasinformacoes>
@@ -39,7 +40,7 @@
 		<Arquivo/>
 		<ExtensaoArquivo/>
 		<RPSSubs>
-			<RPSSubs>0</RPSSubs>
+			<SubsNumero/>
 			<SubsSerie/>
 			<SubsTipo>0</SubsTipo>
 			<SubsNFSeNumero>0</SubsNFSeNumero>
@@ -76,7 +77,7 @@
 				<ItemDesc>TESTE NFSE</ItemDesc>
 				<ItemQtde>1</ItemQtde>
 				<ItemvUnit>0.95</ItemvUnit>
-				<ItemuMed>ItemuMed1</ItemuMed>
+				<ItemuMed>UN</ItemuMed>
 				<ItemvlDed>0</ItemvlDed>
 				<ItemTributavel/>
 				<ItemcCnae/>
@@ -179,7 +180,6 @@
 				<ValServicos>0.95</ValServicos>
 				<ValPercDeducoes>0</ValPercDeducoes>
 				<ValDeducoes>0</ValDeducoes>
-				<ValOutrasDeducoes/>
 				<ValPIS>0</ValPIS>
 				<ValBCPIS>0</ValBCPIS>
 				<ValCOFINS>0</ValCOFINS>
@@ -262,6 +262,7 @@
 						<ValpAliqEfeRegIBSMun/>
 						<ValTribRegIBSMun/>
 						<ValpAliqEfeRegCBS/>
+						<ValTribRegCBS/>
 					</TribRegular>
 					<TribCompraGov>
 						<ValpIBSUF/>
@@ -280,17 +281,20 @@
 						<ValDifUF/>
 						<ValpDifUF/>
 						<ValTribOpUF/>
-						<ValRedAliqUF/>
+						<ValpRedAliqUF/>
 						<ValpAliqEfetUF/>
 						<ValIBSMun/>
 						<ValDifMun/>
 						<ValpDifMun/>
+						<ValAliqMunDesonIBS/>
 						<ValDevTribMunIBS/>
+						<ValTribOpMun/>
 						<ValpAliqEfetMun/>
 						<ValpRedAliqMun/>
 					</IBS>
 					<CBS>
 						<ValCBS/>
+						<ValpCBS/>
 						<ValCredPresCBS/>
 						<ValpCredPresCBS/>
 						<ValDesonCBS/>
@@ -306,6 +310,12 @@
 					<ValBCIBSCBS/>
 					<ValCalcReeRepRes/>
 					<ValpRedutor/>
+					<ValMulta/>
+					<ValJuros/>
+					<ValInicialCobrado/>
+					<ValFinalCobrado/>
+					<ValDeducaoCIBS/>
+					<ValIPI/>
 				</IBSCBS>
 			</Valores>
 			<LocalPrestacao>
@@ -326,15 +336,21 @@
 				</TribRegular>
 				<cLocalidadeIncid/>
 				<xLocalidadeIncid/>
+				<xIndOp/>
 				<CSTIBSCBS/>
+				<xCSTIBSCBS/>
 				<cClassTrib/>
+				<xClassTrib/>
 				<cCredPres/>
+				<Onerosidade/>
+				<PagParceladoAntecipado/>
+				<NCM/>
+				<indCompGov/>
 			</IBSCBS>
 		</Servico>
 		<Tomador>
 			<TomaCNPJ>99999999999999</TomaCNPJ>
 			<TomaCPF/>
-			<TomaIE/>
 			<TomaIM>999999999</TomaIM>
 			<TomaRazaoSocial>NFS-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</TomaRazaoSocial>
 			<TomatpLgr>RUA GUARANI</TomatpLgr>
@@ -352,7 +368,6 @@
 			<TomaEmail>teste@teste.com</TomaEmail>
 			<TomaSite/>
 			<TomaIE/>
-			<TomaIME/>
 			<TomaIME/>
 			<TomaSituacaoEspecial/>
 			<DocTomadorEstrangeiro/>
@@ -532,35 +547,33 @@
 			<ImovxMun/>
 			<ImovEstProvReg/>
 		</Imovel>
-		<Documentos>
+		<ListaDocumentos/>
+		<Documento>
 			<RepositorioNacional>
 				<DocTipoChaveDFe/>
 				<DocxTipoChaveDFe/>
 				<DocChaveDFe/>
-				<DoccMunDocFiscal/>
 			</RepositorioNacional>
-			<DocDescricao>
+			<DocumentoFiscalOutro>
 				<DoccMun/>
 				<DocNumero/>
 				<DocDescricao/>
-			</DocDescricao>
+			</DocumentoFiscalOutro>
 			<Fornecedor>
 				<DocCNPJ/>
 				<DocCPF/>
 				<DocNIF/>
 				<DoccNaoNIF/>
 				<DocxNome/>
-				<DocDataEmissao/>
-				<DocDCompetencia/>
-				<DoctpReeRepRes/>
-				<DocDescTpReeRepRes/>
-				<DocValorReeRepRes/>
 			</Fornecedor>
-		</Documentos>
-		<NFSeReferenciadas>
+			<DocDataEmissao/>
+			<DocDCompetencia/>
+			<DoctpReeRepRes/>
+			<DocDescTpReeRepRes/>
+			<DocValorReeRepRes/>
+		</Documento>
+		<ListaNFSeReferenciadas>
 			<DocChaveNFSe/>
-		</NFSeReferenciadas>
+		</ListaNFSeReferenciadas>
 	</RPS>
-
 </Envio>
-
