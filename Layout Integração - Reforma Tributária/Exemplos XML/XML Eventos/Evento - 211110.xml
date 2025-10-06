@@ -1,0 +1,35 @@
+<EnvioEvento>
+    <ModeloDocumento>NFe</ModeloDocumento>
+    <Versao>4.00</Versao>
+    <Evento>
+        <NtfCnpjEmissor>06354976000149</NtfCnpjEmissor>
+        <NtfNumero>7002</NtfNumero>
+        <NtfSerie>274</NtfSerie>
+        <tpAmb>2</tpAmb>
+        <ChaAcesso>43250706354976000149552740000070021000012345</ChaAcesso>
+        <EveInf>
+            <EveDh>2025-07-16T08:26:00</EveDh>
+            <EveFusoHorario>-03:00</EveFusoHorario>
+            <EveTp>211110</EveTp>
+            <EvenSeq>1</EvenSeq>
+            <Evedet>
+                <gCredPres>
+                    <credPresItem>
+                        <nItem></nItem>
+                        <vBC></vBC>
+                        <gIBS>
+                            <cCredPres></cCredPres>
+                            <pCredPres></pCredPres>
+                            <vCredPres></vCredPres>
+                        </gIBS>
+                        <gCBS>
+                            <cCredPres></cCredPres>
+                            <pCredPres></pCredPres>
+                            <vCredPres></vCredPres>
+                        </gCBS>
+                    </credPresItem> 
+                </gCredPres>
+            </Evedet>
+        </EveInf>
+    </Evento>
+</EnvioEvento>
