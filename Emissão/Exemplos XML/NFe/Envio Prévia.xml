@@ -1,0 +1,12 @@
+<EnvioPrevia>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<ide>
+		<cUF>43</cUF>
+		<tpAmb>2</tpAmb>
+		<NumeroPedido>10</NumeroPedido>
+	</ide>
+	<emit>
+		<CNPJ_emit>99999999999999</CNPJ_emit>
+	</emit>
+</EnvioPrevia>
