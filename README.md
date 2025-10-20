@@ -1,4 +1,4 @@
-# Repositório exemplos de integração com Invoicy Brasil
+# Repositório exemplos de integração com InvoiCy Brasil
 Os diretórios estão organizados por serviços disponíveis. Dentro de cada um são encontrados os Layouts de envio e retorno (lista de campos), schemas XSD e exemplos XML/JSON.
 
 Também disponibilizamos repositórios com exemplos de código-fonte nas linguagens:
