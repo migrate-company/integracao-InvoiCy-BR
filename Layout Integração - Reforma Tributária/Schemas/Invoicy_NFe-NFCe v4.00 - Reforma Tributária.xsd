@@ -3252,6 +3252,7 @@
 																			<xs:enumeration value="70"/>
 																			<xs:enumeration value="90"/>
 																			<xs:enumeration value="101"/>
+																			<xs:enumeration value="102"/>
 																			<xs:enumeration value="103"/>
 																			<xs:enumeration value="201"/>
 																			<xs:enumeration value="202"/>
