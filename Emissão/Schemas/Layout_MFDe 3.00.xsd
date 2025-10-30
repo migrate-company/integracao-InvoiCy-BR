@@ -915,6 +915,20 @@
 																			</xs:restriction>
 																		</xs:simpleType>
 																	</xs:element>
+																	<xs:element name="tpValePed" minOccurs="0">
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:maxLength value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>																	
+																	<xs:element name="categCombVeic" minOccurs="0">
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:maxLength value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>																	
 																</xs:sequence>
 															</xs:complexType>
 														</xs:element>
