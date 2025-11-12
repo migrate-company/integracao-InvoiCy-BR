@@ -4872,6 +4872,16 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
+																<xs:element minOccurs="0" name="indDoacao">
+																	<xs:annotation>
+																		<xs:documentation>Indica a natureza da operação de doação, orientando a apuração e a geração de débitos ou estornos conforme o cenário</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:integer">
+																			<xs:pattern value="[0-1]{1}"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
 																<xs:element name=" gIBSCBS">
 																	<xs:annotation>
 																		<xs:documentation>Grupo de Informações do IBS e CBS</xs:documentation>
@@ -5335,110 +5345,6 @@
 																					</xs:sequence>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element minOccurs="0" name="gIBSCredPres">
-																				<xs:annotation>
-																					<xs:documentation>Grupo de Informações do Crédito Presumido referente ao IBS</xs:documentation>
-																				</xs:annotation>
-																				<xs:complexType>
-																					<xs:sequence>
-																						<xs:element name="cCredPres">
-																							<xs:annotation>
-																								<xs:documentation>Código de Classificação do Crédito Presumido</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:integer">
-																									<xs:pattern value="[0-9]{1,2}"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="pCredPres">
-																							<xs:annotation>
-																								<xs:documentation>Percentual do Crédito Presumido</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCredPres">
-																							<xs:annotation>
-																								<xs:documentation>Valor do Crédito Presumido</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCredPresCondSus">
-																							<xs:annotation>
-																								<xs:documentation>Valor do Crédito Presumido em condição suspensiva.</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																					</xs:sequence>
-																				</xs:complexType>
-																			</xs:element>
-																			<xs:element minOccurs="0" name="gCBSCredPres">
-																				<xs:annotation>
-																					<xs:documentation>Grupo de Informações do Crédito Presumido referente ao CBS</xs:documentation>
-																				</xs:annotation>
-																				<xs:complexType>
-																					<xs:sequence>
-																						<xs:element name="cCredPres">
-																							<xs:annotation>
-																								<xs:documentation>Código de Classificação do Crédito Presumido</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:integer">
-																									<xs:pattern value="[0-9]{1,2}"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="pCredPres">
-																							<xs:annotation>
-																								<xs:documentation>Percentual do Crédito Presumido</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCredPres">
-																							<xs:annotation>
-																								<xs:documentation>Valor do Crédito Presumido</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCredPresCondSus">
-																							<xs:annotation>
-																								<xs:documentation>Valor do Crédito Presumido em condição suspensiva.</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																					</xs:sequence>
-																				</xs:complexType>
-																			</xs:element>
 																			<xs:element minOccurs="0" name="gTribCompraGov">
 																				<xs:annotation>
 																					<xs:documentation>Grupo de informações da composição do valor do IBS e da CBS em compras governamentais</xs:documentation>
@@ -5824,12 +5730,208 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>
+																<xs:element name="gAjusteCompet">
+																	<xs:annotation>
+																		<xs:documentation>Ajuste de Competência</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="competApur">
+																				<xs:annotation>
+																					<xs:documentation>Ano e mês referência do período de apuração (AAAA-MM)</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:length value="7"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vIBS">
+																				<xs:annotation>
+																					<xs:documentation>Valor do IBS</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCBS">
+																				<xs:annotation>
+																					<xs:documentation>Valor da CBS</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gEstornoCred">
+																	<xs:annotation>
+																		<xs:documentation>Estorno de Crédito</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="vIBSEstCred">
+																				<xs:annotation>
+																					<xs:documentation>Valor do IBS a ser estornado</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCBSEstCred">
+																				<xs:annotation>
+																					<xs:documentation>Valor da CBS a ser estornada</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gCredPresOper">
+																	<xs:annotation>
+																		<xs:documentation>Crédito Presumido da Operação</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="vBCCredPres">
+																				<xs:annotation>
+																					<xs:documentation>Valor da Base de Cálculo do Crédito Presumido da Operação</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="cCredPres">
+																				<xs:annotation>
+																					<xs:documentation>Código de Classificação do Crédito Presumido</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:integer">
+																						<xs:pattern value="[0-9]{1,2}"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element minOccurs="0" name="gIBSCredPres">
+																	<xs:annotation>
+																		<xs:documentation>Grupo de Informações do Crédito Presumido referente ao IBS</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pCredPres">
+																				<xs:annotation>
+																					<xs:documentation>Percentual do Crédito Presumido</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="8"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCredPres">
+																				<xs:annotation>
+																					<xs:documentation>Valor do Crédito Presumido</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCredPresCondSus">
+																				<xs:annotation>
+																					<xs:documentation>Valor do Crédito Presumido em condição suspensiva.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element minOccurs="0" name="gCBSCredPres">
+																	<xs:annotation>
+																		<xs:documentation>Grupo de Informações do Crédito Presumido referente ao CBS</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pCredPres">
+																				<xs:annotation>
+																					<xs:documentation>Percentual do Crédito Presumido</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="8"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCredPres">
+																				<xs:annotation>
+																					<xs:documentation>Valor do Crédito Presumido</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCredPresCondSus">
+																				<xs:annotation>
+																					<xs:documentation>Valor do Crédito Presumido em condição suspensiva.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
 																<xs:element minOccurs="0" name="gCredPresIBSZFM">
 																	<xs:annotation>
 																		<xs:documentation>Informações do crédito presumido de IBS para fornecimentos a partir da ZFM</xs:documentation>
 																	</xs:annotation>
 																	<xs:complexType>
 																		<xs:sequence>
+																			<xs:element name="competApur">
+																				<xs:annotation>
+																					<xs:documentation>Ano e mês referência do período de apuração (AAAA-MM)</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:length value="7"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
 																			<xs:element name="tpCredPresIBSZFM">
 																				<xs:annotation>
 																					<xs:documentation>Tipo de classificação de acordo com o art. 450, § 1º, da LC 214/25 para o cálculo do crédito presumido na ZFM</xs:documentation>
@@ -6828,6 +6930,35 @@
 													<xs:element minOccurs="0" name="vCBSMonoRet">
 														<xs:annotation>
 															<xs:documentation>Total do CBS monofásico retido anteriormente</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="gEstornoCred">
+											<xs:annotation>
+												<xs:documentation>Grupo total do Estorno de Crédito</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="vIBSEstCred">
+														<xs:annotation>
+															<xs:documentation>Valor total do IBS estornado</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="vCBSEstCred">
+														<xs:annotation>
+															<xs:documentation>Valor total da CBS estornado</xs:documentation>
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:decimal">
