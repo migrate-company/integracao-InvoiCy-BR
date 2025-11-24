@@ -148,12 +148,13 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="tpSusp">
+							<xs:element name="tpSusp" minOccurs="0" maxOccurs="1">
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
-										<xs:totalDigits value="1"/>
-										<xs:minInclusive value="1"/>
-										<xs:maxInclusive value="2"/>
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+										<xs:enumeration value="5"/>
+										<xs:enumeration value="6"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
