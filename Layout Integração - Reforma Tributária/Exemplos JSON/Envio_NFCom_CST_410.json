@@ -1,0 +1,161 @@
+[
+    {
+        "Documento": {
+            "Versao": "1.00",
+            "ModeloDocumento": "NFCom",
+            "ide": {
+                "cUF": 43,
+                "tpAmb": 2,
+                "mod": 62,
+                "serie": "30",
+                "nNF": 66,
+                "cNF": 1234567,
+                "dhEmi": "2025-11-27T14:50:00",
+                "fusoHorario": "-03:00",
+                "tpEmis": 1,
+                "nSiteAutoriz": "0",
+                "cMunFG": "4321808",
+                "finNFCom": "0",
+                "tpFat": "0",
+                "verProc": "Exemplo-1.0",
+                "indPrePago": "1"
+            },
+            "emit": {
+                "CNPJ": "99999999999999",
+                "IE": "001800",
+                "CRT": 3,
+                "xNome": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+                "enderEmit": {
+                    "xLgr": "RUA PE CACIQUE",
+                    "nro": "985",
+                    "xBairro": "CENTRO",
+                    "cMun": "4321808",
+                    "xMun": "TRÊS DE MAIO",
+                    "CEP": "98910000",
+                    "UF": "RS",
+                    "fone": 5535354830
+                }
+            },
+            "dest": {
+                "xNome": "NFCOM EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "CPF": "12345678900",
+                "indIEDest": 9,
+                "enderDest": {
+                    "xLgr": "Rua Projetada",
+                    "nro": "41",
+                    "xBairro": "ZONA RURAL",
+                    "cMun": "2510808",
+                    "xMun": "PATOS",
+                    "CEP": "58700020",
+                    "UF": "PB",
+                    "fone": 8377777777
+                }
+            },
+            "assinante": {
+                "iCodAssinante": "123456789101122",
+                "tpAssinante": 4,
+                "tpServUtil": 6,
+                "nContrato": "458798",
+                "dContratoIni": "2025-09-01",
+                "dContratoFim": "2025-09-30",
+                "NroTermPrinc": "8377077000",
+                "cUFPrinc": "25",
+                "NroTermAdic": "8377077001",
+                "cUFAdic": "25"
+            },
+            "det": [
+                {
+                    "nItem": "1",
+                    "nItemAnt": "1",
+                    "prod": {
+                        "cProd": "123",
+                        "xProd": "TESTE DE EMISSÃO DE FATURA DE SERVIÇOS DE TELECOMUNICAÇÕES",
+                        "cClass": "0100101",
+                        "CFOP": "5301",
+                        "uMed": 4,
+                        "qFaturada": "1.0000",
+                        "vItem": "100.00000000",
+                        "vDesc": "0.00",
+                        "vOutro": "0.00",
+                        "vProd": "100.00000000"
+                    },
+                    "imposto": {
+                        "ICMS": {
+                            "CST": "00",
+                            "vBC": "100.00",
+                            "pICMS": "25.00",
+                            "vICMS": "25.00",
+                            "pFCP": "0.00",
+                            "vFCP": "0.00",
+                            "indSN": 0
+                        },
+                        "ICMSUFDest": {
+                            "cUFDest": "",
+                            "vBCUFDest": "0.00",
+                            "pFCPUFDest": "0.00",
+                            "pICMSUFDest": "0.00",
+                            "pICMSInter": "0.00",
+                            "vFCPUFDest": "0.00",
+                            "vICMSUFDest": "0.00",
+                            "vICMSUFEmi": "0.00"
+                        },
+                        "PIS": {
+                            "CST": "01",
+                            "vBC": "100.00",
+                            "pPIS": "1.65",
+                            "vPIS": "1.65"
+                        },
+                        "COFINS": {
+                            "CST": "01",
+                            "vBC": "100.00",
+                            "pCOFINS": "7.60",
+                            "vCOFINS": "7.60"
+                        },
+                        "IBSCBS": {
+                            "CST": "410",
+                            "cClassTrib": "410999"
+                        }
+                    }
+                }
+            ],
+            "total": {
+                "vProd": "100.00",
+                "ICMSTot": {
+                    "vBC": "100.00",
+                    "vICMS": "25.00",
+                    "vICMSDeson": "0.00",
+                    "vFCP": "0.00"
+                },
+                "vCOFINS": "7.60",
+                "vPIS": "1.65",
+                "vDesc": "0.00",
+                "vNF": "100.00",
+                "IBSCBSTot": {
+                    "vBCIBSCBS": "0.00",
+                    "gIBS": {
+                        "gIBSUF": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSUF": "0.00"
+                        },
+                        "gIBSMun": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSMun": "0.00"
+                        },
+                        "vIBS": "0.00",
+                        "vCredPres": "0.00",
+                        "vCredPresCondSus": "0.00"
+                    },
+                    "gCBS": {
+                        "vDif": "0.00",
+                        "vDevTrib": "0.00",
+                        "vCBS": "0.00",
+                        "vCredPres": "0.00",
+                        "vCredPresCondSus": "0.00"
+                    }
+                }
+            }
+        }
+    }
+]
