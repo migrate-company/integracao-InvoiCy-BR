@@ -9,7 +9,7 @@
 	</Informacoes>
 	<Dados>
 		<DadosItem>
-			<Documento><![CDATA[<EnvioEvento><ModeloDocumento>NFSe</ModeloDocumento><Versao>1.0</Versao><Evento><CNPJ>11111111111111</CNPJ><NFSeNumero>265</NFSeNumero><RPSNumero>139</RPSNumero><RPSSerie>A</RPSSerie><EveTp>110111</EveTp><tpAmb>2</tpAmb></Evento></EnvioEvento>]]></Documento>
+			<Documento>&lt;EnvioEvento&gt;&lt;ModeloDocumento&gt;NFSe&lt;/ModeloDocumento&gt;&lt;Versao&gt;1&lt;/Versao&gt;&lt;Evento&gt;&lt;CNPJ&gt;99999999999999&lt;/CNPJ&gt;&lt;NFSeNumero&gt;34400&lt;/NFSeNumero&gt;&lt;RPSNumero&gt;89547&lt;/RPSNumero&gt;&lt;RPSSerie&gt;1&lt;/RPSSerie&gt;&lt;IDUnico/&gt;&lt;EveTp&gt;110111&lt;/EveTp&gt;&lt;tpAmb&gt;2&lt;/tpAmb&gt;&lt;EveCodigo&gt;1&lt;/EveCodigo&gt;&lt;EveMotivo&gt;Nota emitida com dados incorretos.&lt;/EveMotivo&gt;&lt;NFSeCodVerificacao/&gt;&lt;Protocolo/&gt;&lt;SituacaoNota&gt;0&lt;/SituacaoNota&gt;&lt;NumeroLote&gt;0&lt;/NumeroLote&gt;&lt;IntegridadeOCR/&gt;&lt;CancelamentoViaTela/&gt;&lt;/Evento&gt;&lt;/EnvioEvento&gt;</Documento>
 			<Parametros/>
 		</DadosItem>
 	</Dados>
