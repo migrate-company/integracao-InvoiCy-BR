@@ -1,0 +1,23 @@
+<CadastroPrestadores>
+    <CNPJEmpresa>99999999999999</CNPJEmpresa>
+	<Prestadores>
+	    <Prestador>
+		    <CNPJ>11111111111111</CNPJ>
+			<Nome>Prestador 1</Nome>
+			<IBGE>4317202</IBGE>
+			<IM>123456789</IM>
+			<Status>A</Status>
+		</Prestador>
+		<Prestador>
+		    <CNPJ>22222222222222</CNPJ>
+			<Nome>Prestador 2</Nome>
+			<IBGE>4321808</IBGE>
+			<IM>987654321</IM>
+			<Status>A</Status>
+		</Prestador>
+	</Prestadores>
+	<CNPJEmpresaCadastro>
+	    <Item>33333333333333</Item>
+		<Item>44444444444444</Item>
+	</CNPJEmpresaCadastro>
+</CadastroPrestadores>
