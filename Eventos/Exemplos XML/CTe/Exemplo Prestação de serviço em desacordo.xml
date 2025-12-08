@@ -1,0 +1,24 @@
+<EnvioEvento>
+   <ModeloDocumento>CTe</ModeloDocumento>
+   <Versao>4.00</Versao>
+   <Evento>
+      <CteCnpjEmissor>9999999999999</CteCnpjEmissor>
+      <CteNumero>17</CteNumero>
+      <CteSerie>770</CteSerie>
+      <tpAmb>2</tpAmb>
+      <ChaAcesso>123456789012345678901234567890123456789012</ChaAcesso>
+      <EveInf>
+         <EveDh>2025-06-12T14:13:13</EveDh>
+         <EveFusoHorario>-03:00</EveFusoHorario>
+         <EveTp>610110</EveTp>
+         <EvenSeq>1</EvenSeq>
+         <Evedet>
+            <EveDesc>Prestação do Serviço em Desacordo</EveDesc>
+            <PrestDesacordo>
+               <indDesacordo>1</indDesacordo>
+               <Observacao>Teste de envio de Desacordo</Observacao>
+            </PrestDesacordo>
+         </Evedet>
+      </EveInf>
+   </Evento>
+</EnvioEvento>
