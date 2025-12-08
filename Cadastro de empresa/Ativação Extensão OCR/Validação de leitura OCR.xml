@@ -1,0 +1,13 @@
+<EnvioEvento>
+  <ModeloDocumento>NFSe</ModeloDocumento>
+  <Versao>1</Versao>
+  <Evento>
+    <CNPJ>99999999999999</CNPJ>
+	<NFSeNumero>1</NFSeNumero>
+	<RPSNumero>2</RPSNumero>
+	<RPSSerie>123</RPSSerie>
+	<EveTp>110120</EveTp>
+	<tpAmb>2</tpAmb>
+	<IntegridadeOCR>V</IntegridadeOCR><!--Informar "V" para Válido e "I" para Inconsistente-->
+  </Evento>
+</EnvioEvento>
