@@ -1,0 +1,189 @@
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "NFe",
+            "Versao": 4,
+            "ide": {
+                "cUF": "43",
+                "cNF": "90056984",
+                "natOp": "VENDA",
+                "mod": "55",
+                "serie": "1",
+                "nNF": "12391",
+                "dhEmi": "2025-11-18T09:05:00",
+				"fusoHorario": "-03:00",
+                "tpNf": 1,
+                "idDest": 1,
+                "indFinal": 1,
+                "indPres": 1,
+                "cMunFg": "3518800",
+                "tpImp": 1,
+                "tpEmis": 1,
+                "tpAmb": 2,
+                "finNFe": 1,
+                "procEmi": 0,
+                "verProc": "4.00"
+            },
+            "emit": {
+				"CNPJ_emit": "99999999999999",
+				"xNome": "MIGRATE",
+				"xFant": "MIGRATE",
+				"IM": "99999999999",
+				"IE": "14700534",
+				"CRT": 3,
+				"enderEmit": {
+					"xLgr": "RUA PE CACIQUE",
+					"nro": "985",
+					"xCpl": "2 ANDAR",
+					"xBairro": "CENTRO",
+					"cMun": 4321808,
+					"xMun": "TRÊS DE MAIO",
+					"UF": "RS",
+					"CEP": "98910000",
+					"cPais": 0,
+					"fone": 5535354830,
+					"Email": "seu@email.com"
+				}
+			},
+            "dest": {
+				"CNPJ_dest": "99999999999999",
+				"xNome_dest": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+				"IE_dest": "1770014",
+				"indIEDest": 1,
+				"enderDest": {
+					"nro_dest": "1402567890",
+					"xBairro_dest": "Exemplo",
+					"xEmail_dest": "abc@hotmail.com",
+					"xLgr_dest": "Rua Teste",
+					"xPais_dest": "BRASIL",
+					"cMun_dest": 4321808,
+					"xMun_dest": "TRÊS DE MAIO",
+					"UF_dest": "RS",
+					"CEP_dest": "98910000",
+					"cPais_dest": 1058,
+					"fone_dest": 0
+				}
+			},
+            "det": [
+                {
+                    "infADProd": "Informações Adicionais",
+                    "vItem": "10.00",
+                    "prod": {
+                        "cProd": "000001",
+                        "cEAN": "SEM GTIN",
+                        "xProd": "VENDA TESTE HOMOLOGAÇÃO - SEM VALOR FISCAL",
+                        "NCM": "00000000",
+                        "CFOP": 5102,
+                        "uCOM": "UN",
+                        "qCOM": "1.0000",
+                        "vUnCom": "10.00000000",
+                        "vProd": "10.00",
+                        "cEANTrib": "SEM GTIN",
+                        "uTrib": "UN",
+                        "qTrib": "1.0000",
+                        "vUnTrib": "10.00000000",
+                        "indTot": 1
+                    },
+                    "imposto": {
+                        "ICMS": {
+                            "orig": 0,
+                            "CST": "40"
+                        },
+                        "PIS": {
+                            "CST_pis": "07"
+                        },
+                        "COFINS": {
+                            "CST_cofins": "07"
+                        },
+                        "IBSCBS": {
+                            "CST": "000",
+                            "cClassTrib": "000001",
+                            "gIBSCBS": {
+                                "vBC": 10.0,
+                                "gIBSUF": {
+                                    "pIBSUF": 0.1,
+                                    "vIBSUF": 0.01
+                                },
+                                "gIBSMun": {
+                                    "pIBSMun": 0.0,
+                                    "vIBSMun": 0.0
+                                },
+                                "vIBS": 0.01,
+                                "gCBS": {
+                                    "pCBS": 0.9,
+                                    "vCBS": 0.09
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "total": {
+                "vNFIBScbsIS": 10.1,
+                "ICMSTot": {
+                    "vBC_ttlnfe": "0.00",
+                    "vICMS_ttlnfe": "0.00",
+                    "vICMSDeson_ttlnfe": "0.00",
+                    "vFCP_ttlnfe": "0.00",
+                    "vBCST_ttlnfe": "0.00",
+                    "vST_ttlnfe": "0.00",
+                    "vFCPST_ttlnfe": "0.00",
+                    "vFCPSTRet_ttlnfe": "0.00",
+                    "vProd_ttlnfe": "10.00",
+                    "vFrete_ttlnfe": "0.00",
+                    "vSeg_ttlnfe": "0.00",
+                    "vDesc_ttlnfe": "0.00",
+                    "vII_ttlnfe": "0.00",
+                    "vIPI_ttlnfe": "0.00",
+                    "vPIS_ttlnfe": "0.00",
+                    "vCOFINS_ttlnfe": "0.00",
+                    "vOutro": "0.00",
+                    "vNF": "10.00"
+                },
+                "IBSCBSTot": {
+                    "vBCIBSCBS": 10.0,
+                    "gIBS": {
+                        "gIBSUF": {
+                            "vDif": 0.0,
+                            "vDevTrib": 0.0,
+                            "vIBSUF": 0.01
+                        },
+                        "gIBSMun": {
+                            "vDif": 0.0,
+                            "vDevTrib": 0.0,
+                            "vIBSMun": 0.0
+                        },
+                        "vIBS": 0.01,
+                        "vCredPres": 0.0,
+                        "vCredPresCondSus": 0.0
+                    },
+                    "gCBS": {
+                        "vDif": 0.0,
+                        "vDevTrib": 0.0,
+                        "vCBS": 0.09,
+                        "vCredPres": 0.0,
+                        "vCredPresCondSus": 0.0
+                    }
+                }
+            },
+            "transp": {
+                "modFrete": 9
+            },
+            "pag": [
+                {
+                    "tPag": "01",
+                    "vPag": "10.00"
+                }
+            ],
+            "infAdic": {
+                "infCpl": "DOCUMENTO EMITIDO EM AMBIENTE DE HOMOLOGAÇÃO - SEM VALOR FISCAL"
+            },
+            "RespTecnico": {
+                "CNPJ": "35398904000100",
+                "xContato": "Kauã Patricki de Azevedo Rosa",
+                "email": "kauarosa@migrate.info",
+                "fone": 5599674381
+            }
+        }
+    }
+]
