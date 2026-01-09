@@ -1,0 +1,443 @@
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "CTe",
+            "Versao": "4.0",
+            "ide": {
+                "cCT": "17281638",
+                "cUF": "43",
+                "natOp": "Frete",
+                "CFOP": "5352",
+                "forPag": "0",
+                "mod": "57",
+                "serie": "0",
+                "nCT": 1,
+                "dhEmi": "2026-01-08T14:25:18",
+                "fusoHorario": "-03:00",
+                "tpImp": "1",
+                "tpEmis": "1",
+                "cDV": "3",
+                "tpAmb": "2",
+                "tpCTe": "0",
+                "procEmi": "0",
+                "verProc": "MigrateInvoiCy",
+                "indGlobalizado": "0",
+                "cMunEnv": "4313904",
+                "xMunEnv": "PANAMBI",
+                "UFEnv": "RS",
+                "modal": "01",
+                "tpServ": "0",
+                "cMunIni": "4313904",
+                "xMunIni": "PANAMBI",
+                "UFIni": "RS",
+                "cMunFim": "4313904",
+                "xMunFim": "PANAMBI",
+                "UFFim": "RS",
+                "retira": "0",
+                "xDetRetira": "Retirar o pacote no local de entrega indicado",
+                "indIEToma": "9",
+                "tomador": {
+                    "toma": "4",
+                    "CNPJ_toma": "99999999000199",
+                    "IE_toma": "IE",
+                    "xNome_toma": "Pedro da Silva",
+                    "fone_toma": "5599999999",
+                    "enderTomador": {
+                        "xLgr_toma": "Rua Exemplo",
+                        "nro_toma": "463",
+                        "xCpl_toma": "Complemento Exemplo",
+                        "xBairro_toma": "Centro",
+                        "cMun_toma": "4310405",
+                        "xMun_toma": "PANAMBI",
+                        "CEP_toma": "98915000",
+                        "UF_toma": "RS",
+                        "cPais_toma": "1058",
+                        "xPais_toma": "Brasil"
+                    }
+                }
+            },
+            "compl": {
+                "xCaracAd": "Encomenda",
+                "xCaracSer": "Transporte",
+                "xEmi": "Jose Campos",
+                "xObs": "voce pode pagar este conhecimento de transporte eletronico em qualquer lugar de sua preferencia. o prazo em dias para pagamento e de ate trinta e quatro dias uteis, lembrando que dias uteis nao incluem os dias de sabado e domingo, que sao considerados dias de final de semana. dessa forma, voce tem ate trinta e quatro dias uteis para fazer o pagamento desse documento que e um conhecimento de transporte eletronico, contando a e a ",
+                "fluxo": {
+                    "xOrig": "Angra dos Reis",
+                    "xDest": "Maria da Silva de Andrade da Conceicao Ferreira Pinto Junior",
+                    "xRota": "129386",
+                    "passagem": [
+                        {
+                            "xPass": "LHR"
+                        },
+                        {
+                            "xPass": "CGH"
+                        },
+                        {
+                            "xPass": "POA"
+                        }
+                    ]
+                },
+                "Entrega": {
+                    "tpPer": "1",
+                    "dProg": "2014-07-03",
+                    "tpHor": "1",
+                    "hProg": "0001-01-01T10:30:22"
+                }
+            },
+            "emit": {
+                "CNPJ_emit": "99999999000199",
+                "IE": "IE",
+                "xNome": "MIGRATE",
+                "xFant": "MIGRATE",
+                "CRT": 1,
+                "enderEmit": {
+                    "xLgr": "RUA PE CACIQUE",
+                    "nro": "985",
+                    "xCpl": "2 ANDAR",
+                    "xBairro": "CENTRO",
+                    "cMun": "4321808",
+                    "xMun": "TRÊS DE MAIO",
+                    "CEP": "98910000",
+                    "UF": "RS",
+                    "fone": "55999999999",
+                    "cPais": "0"
+                }
+            },
+            "rem": {
+                "CNPJ_rem": "99999999000199",
+                "IE_rem": "IE",
+                "xNome_rem": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "xFant_rem": "Empresa de Teste",
+                "fone_rem": "55999999999",
+                "email_rem": "email@email.com.br",
+                "enderRem": {
+                    "xLgr_rem": "Rua Padre",
+                    "nro_rem": "556",
+                    "xCpl_rem": "Proximo as Lojas",
+                    "xBairro_rem": "Centro",
+                    "cMun_rem": "4310405",
+                    "xMun_rem": "PANAMBI",
+                    "CEP_rem": "98910000",
+                    "UF_rem": "RS",
+                    "cPais_rem": "1046",
+                    "xPais_rem": "Brasil"
+                },
+                "locColeta": {
+                    "cMun_col": "0"
+                }
+            },
+            "exped": {
+                "CNPJ_exp": "99999999000199",
+                "IE_exp": "IE",
+                "xNome_exp": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "fone_exp": "55999999999",
+                "email_exp": "email@email.com.br",
+                "enderExped": {
+                    "xLgr_exp": "Rua das Palmeiras",
+                    "nro_exp": "115",
+                    "xCpl_exp": "Proximo ao bar do Ze",
+                    "xBairro_exp": "Centro",
+                    "cMun_exp": "3524006",
+                    "xMun_exp": "PANAMBI",
+                    "CEP_exp": "98915000",
+                    "UF_exp": "SP",
+                    "cPais_exp": "1046",
+                    "xPais_exp": "Brasil"
+                }
+            },
+            "receb": {
+                "CPF_rec": "99999999999",
+                "xNome_rec": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "fone_rec": "55999999999",
+                "email_rec": "email@email.com.br",
+                "enderReceb": {
+                    "xLgr_rec": "Rua Senador Salgado Filho",
+                    "nro_rec": "463",
+                    "xBairro_rec": "Centro",
+                    "cMun_rec": "3524006",
+                    "xMun_rec": "PANAMBI",
+                    "CEP_rec": "98915000",
+                    "UF_rec": "SP",
+                    "cPais_rec": "1046",
+                    "xPais_rec": "Brasil"
+                }
+            },
+            "dest": {
+                "CNPJ_dest": "99999999000199",
+                "IE_dest": "IE",
+                "xNome_dest": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "fone_dest": "55999999999",
+                "email_dest": "email@email.com.br",
+                "enderDest": {
+                    "xLgr_dest": "Rua Travessa",
+                    "nro_dest": "280",
+                    "xCpl_dest": "Proximo ao hospital",
+                    "xBairro_dest": "Rita",
+                    "cMun_dest": "4312401",
+                    "xMun_dest": "belo horizonte",
+                    "CEP_dest": "98910000",
+                    "UF_dest": "RS",
+                    "cPais_dest": "1046",
+                    "xPais_dest": "Brasil"
+                },
+                "locEnt": {
+                    "cMun_locEnt": "0"
+                }
+            },
+            "vPrest": {
+                "vTPrest": "32321.23",
+                "vRec": "12312.23",
+                "Comp": [
+                    {
+                        "xNome_comp": "Componente 13",
+                        "vComp": "812.44"
+                    },
+                    {
+                        "xNome_comp": "Componente 20",
+                        "vComp": "1612.44"
+                    }
+                ]
+            },
+            "imp": {
+                "vTotImp": "59.90",
+                "vTotTrib": "0.00",
+                "infAdFisco": "Informacoes de interesse do fisco estarao escritas aqui",
+                "ICMS": {
+                    "CST": "00",
+                    "vBC": "12.00",
+                    "pICMS": "13.0",
+                    "vICMS": "1.56",
+                    "pRedBC": "0",
+                    "vBCSTRet": "0.00",
+                    "vICMSSTRet": "0.00",
+                    "pICMSSTRet": "0",
+                    "vCred": "0.00",
+                    "pRedBCOutraUF": "0",
+                    "vBCOutraUF": "0.00",
+                    "pICMSOutraUF": "0",
+                    "vICMSOutraUF": "0.00",
+                    "indSN": "0"
+                },
+                "ICMSUFFim": {
+                    "vBCUFFim": "0.00",
+                    "pFCPUFFim": "0",
+                    "pICMSUFFim": "0",
+                    "pICMSInter": "0",
+                    "pICMSInterPart": "0",
+                    "vFCPUFFim": "0.00",
+                    "vICMSUFIni": "0.00",
+                    "vICMSUFFim": "0.00"
+                },
+                "IBSCBS": {
+                    "CST": "000",
+                    "cClassTrib": "000001",
+                    "gIBSCBS": {
+                        "vBC": "500.00",
+                        "gIBSCredPres": {
+                            "pCredPres": "0",
+                            "vCredPres": "0.00",
+                            "vCredPresCondSus": "0.00"
+                        },
+                        "gCBSCredPres": {
+                            "pCredPres": "0",
+                            "vCredPres": "0.00",
+                            "vCredPresCondSus": "0.00"
+                        },
+                        "vIBS": "0.50",
+                        "gIBSUF": {
+                            "pIBSUF": "0.10",
+                            "gDif": {
+                                "pDif": "0",
+                                "vDif": "0.00"
+                            },
+                            "gDevTrib": {
+                                "vDevTrib": "0.00"
+                            },
+                            "gRed": {
+                                "pRedAliq": "0.00",
+                                "pAliqEfet": "0.00"
+                            },
+                            "vIBSUF": "0.50"
+                        },
+                        "gIBSMun": {
+                            "pIBSMun": "0",
+                            "gDif": {
+                                "pDif": "0",
+                                "vDif": "0.00"
+                            },
+                            "gDevTrib": {
+                                "vDevTrib": "0.00"
+                            },
+                            "gRed": {
+                                "pRedAliq": "0.00",
+                                "pAliqEfet": "0"
+                            },
+                            "vIBSMun": "0.00"
+                        },
+                        "gCBS": {
+                            "pCBS": "0.90",
+                            "gDif": {
+                                "pDif": "0",
+                                "vDif": "0.00"
+                            },
+                            "gDevTrib": {
+                                "vDevTrib": "0.00"
+                            },
+                            "gRed": {
+                                "pRedAliq": "0.00",
+                                "pAliqEfet": "0"
+                            },
+                            "vCBS": "4.50"
+                        },
+                        "gTribRegular": {
+                            "pAliqEfetRegIBSUF": "0",
+                            "vTribRegIBSUF": "0.00",
+                            "pAliqEfetRegIBSMun": "0",
+                            "vTribRegIBSMun": "0.00",
+                            "pAliqEfetRegCBS": "0",
+                            "vTribRegCBS": "0.00"
+                        },
+                        "gTribCompraGov": {
+                            "pAliqIBSUF": "0",
+                            "vTribIBSUF": "0.00",
+                            "pAliqIBSMun": "0",
+                            "vTribIBSMun": "0.00",
+                            "pAliqCBS": "0",
+                            "vTribCBS": "0.00"
+                        },
+                        "gEstornoCred": {
+                            "vIBSEstCred": "0.00",
+                            "vCBSEstCred": "0.00"
+                        }
+                    }
+                }
+                },
+                "infCTeNorm": {
+                    "infCarga": {
+                        "vMerc": "599.65",
+                        "proPred": "Pepitas de ouro",
+                        "xOutCat": "Que valem mais do que dinheiro",
+                        "vCargaAverb": "200.00",
+                        "infQ": [
+                            {
+                                "cUnid": "02",
+                                "tpMed": "TONELADA",
+                                "qCarga": "899.0000"
+                            }
+                        ]
+                    },
+                    "infDoc": [
+                        {
+                            "tipoDocumento": "2",
+                            "vBC_nf": "0.00",
+                            "vICMS_nf": "0.00",
+                            "vBCST_nf": "0.00",
+                            "vST_nf": "0.00",
+                            "vProd_nf": "0.00",
+                            "vNF_nf": "0.00",
+                            "CFOP_nf": "0",
+                            "peso_nf": "0.000",
+                            "chave_nfe": "99999999999999999999999999999999999999999999",
+                            "PINSuframa_nfe": "991233459",
+                            "dPrev_nfe": "2026-01-08",
+                            "vDocFisc_outros": "0.00",
+                            "UnidadesTransp": [
+                                {
+                                    "tipoUnidTransporte": "5",
+                                    "idUnidTransporte": "BCIASUDX988",
+                                    "qtdRateada": "999",
+                                    "LacresUnidTransp": [
+                                        {
+                                            "nLacreUnidTransp": "999"
+                                        }
+                                    ],
+                                    "UnidadesCargaTran": [
+                                        {
+                                            "tipoUnidCargaTran": "2",
+                                            "idUnidCargaTran": "22",
+                                            "qtdRateadaCargaTran": "10",
+                                            "LacresUnidCargaTran": [
+                                                {
+                                                    "nLacreUnidCargaTran": "100"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "infModal": {
+                        "versaoModal": "4.0",
+                        "rodo": {
+                            "RNTRC": "89173646",
+                            "lota": "0",
+                            "CTRB": {
+                                "nCTRB": "0"
+                            }
+                        },
+                        "aereo": {
+                            "nMinu": "0",
+                            "nOCA": "0",
+                            "tarifa": {
+                                "vTar": "0.00"
+                            },
+                            "NatCarga": []
+                        },
+                        "aquav": {
+                            "vPrestAFRMM": "0.00",
+                            "vAFRMM": "0.00"
+                        },
+                        "duto": {
+                            "vTar_duto": "0.000000"
+                        },
+                        "multimodal": {
+                            "indNegociavel": "0",
+                            "segMulti": []
+                        }
+                    }
+                },
+                "veicNovos": [
+                    {
+                        "chassi": "11111111111111111",
+                        "cCor": "1123",
+                        "xCor": "VERDE MUSGO",
+                        "cMod": "7878",
+                        "vUnit": "15000.00",
+                        "vFrete_vNov": "500.99"
+                    }
+                ],
+                "cobr": {
+                    "fat": {
+                        "nFat": "9789988123",
+                        "vOrig": "12200.23",
+                        "vDesc": "5542.12",
+                        "vLiq": "7981.22"
+                    },
+                    "dup": [
+                        {
+                            "nDup": "56789658",
+                            "dVenc": "2014-07-03",
+                            "vDup": "12321.33"
+                        }
+                    ]
+                },
+                "infCteSub": {
+                    "tomaICMS": {
+                        "refNF_CT": {
+                            "nro_sub": "0",
+                            "valor_sub": "0.00"
+                        }
+                    }
+                },
+                "infRespTec": {
+                    "CNPJ_respTec": "99999999000199",
+                    "xContato": "RESPONSÁVEL TÉCNICO",
+                    "email_respTec": "email@email.com.br",
+                    "fone_respTec": "55999999999",
+                    "idCSRT": "",
+                    "hashCSRT": ""
+                }
+            }
+        }
+    ]
