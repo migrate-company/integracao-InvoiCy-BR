@@ -5,6 +5,8 @@
 	<TipoAutenticacao>0</TipoAutenticacao>
 	<TokenAutenticacao/>
 	<Identificador>ab1c2ba3-1ac2-3b1a-2c3b-123abc321cba</Identificador>
+	<TentativasReenvioAut>0</TentativasReenvioAut>
+	<IntervaloTentativas>5</IntervaloTentativas>
 	<Uso>
 		<UsoItem>
 			<Modulo>4</Modulo>
