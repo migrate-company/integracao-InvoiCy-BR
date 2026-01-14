@@ -4,6 +4,8 @@
 	<Status>A</Status>
 	<TipoAutenticacao>0</TipoAutenticacao>
 	<TokenAutenticacao/>
+	<TentativasReenvioAut>0</TentativasReenvioAut>
+	<IntervaloTentativas>5</IntervaloTentativas>
 	<Uso>
 		<UsoItem>
 			<Modulo>4</Modulo>
