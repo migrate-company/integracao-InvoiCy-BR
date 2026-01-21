@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="ConsultaMunicipiosImportacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CnpjEmpresa" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>CNPJ da Empresa</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+		<xs:element name="DataAlteracaoInicial" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Data da alteração Inicial</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:dateTime">
+                <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+		<xs:element name="DataAlteracaoFinal" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Data da alteração Final</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:dateTime">
+                <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="IBGE" minOccurs="1" maxOccurs="1">
+		  <xs:annotation>
+            <xs:documentation>Código IBGE do município</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+		<xs:element name="Status" minOccurs="1" maxOccurs="1">
+		  <xs:annotation>
+            <xs:documentation>Status do município</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+		<xs:element name="Pagina" minOccurs="1" maxOccurs="1">
+		  <xs:annotation>
+            <xs:documentation>Quantidade de páginas</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- sem restrições adicionais -->
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
