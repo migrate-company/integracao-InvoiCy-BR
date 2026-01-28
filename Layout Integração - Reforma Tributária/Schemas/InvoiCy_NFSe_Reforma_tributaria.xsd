@@ -4363,6 +4363,26 @@ destinatário do serviço</xs:documentation>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
+										<xs:element name="ObraDesc" minOccurs="0" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Descrição da obra</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="100"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ObraCIB" minOccurs="0" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Cadastro Imobiliário Brasileiro da Obra</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="ObraInscImobFis" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>Inscrição imobiliária fiscal da obra</xs:documentation>
@@ -4370,6 +4390,26 @@ destinatário do serviço</xs:documentation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ObraCPFNF" minOccurs="0" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>ICNPJ do fornecedor da NF da Obra</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="14"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ObraCNPJNF" minOccurs="0" maxOccurs="1">
+											<xs:annotation>
+												<xs:documentation>CPF do fornecedor da NF da Obra</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="11"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
