@@ -84,7 +84,6 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="VersaoQRCode" type="xs:string" minOccurs="0"/>
 				<xs:element name="ImprimirUmaViaContingencia" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
@@ -110,6 +109,13 @@
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="40"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DocIntegracao" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:nonNegativeInteger">
+							<xs:totalDigits value="2"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
@@ -199,7 +205,6 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="DocEveDescricao" type="xs:string" minOccurs="0"/>
 										<xs:element name="DocEveId" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
