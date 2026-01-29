@@ -337,6 +337,16 @@
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
+                    <xs:element name="UsrSenha" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Senha do usuário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                     <xs:element name="ApenasVincular" minOccurs="0" maxOccurs="1">
                       <xs:annotation>
                         <xs:documentation>Vincular usuário já cadastrado  a um novo CNPJ de forma integrada</xs:documentation>
@@ -347,6 +357,16 @@
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
+                    <xs:element name="GrupoUsuario" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Grupo de permissões do Usuário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>					
                     <xs:element name="UsrSolicitarTrocaSenha" minOccurs="0" maxOccurs="1">
                       <xs:annotation>
                         <xs:documentation>Solicitar alteração de senha</xs:documentation>
@@ -1855,6 +1875,46 @@
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
+                    <xs:element name="CorrigirDadosRPS" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Permite corrigir automaticamente alguns dados do RPS conforme mensagem de rejeição da prefeitura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DestacarValLiqImpressao" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Permite definir se o valor a ser impresso no Espelho da NFS-e será o Valor dos Serviços ou o Valor Líquido</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="MEIAmbienteNacional" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Configurar empresa MEI para utilizar o Ambiente Nacional da NFS-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="AlertarDiferencaVlrsRPSNFSe" minOccurs="0" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Verifica se há diferença entre o valor do RPS e da NFS-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <!-- sem restrições adicionais -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>					
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -2640,9 +2700,9 @@
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="Nome" minOccurs="0" maxOccurs="1">
+                          <xs:element name="RemoverAnoNFSeCapturada" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
-                              <xs:documentation>Nome do prestador de serviços</xs:documentation>
+                              <xs:documentation>Remove ano do numero da NFSe para documentos via captura automática</xs:documentation>
                             </xs:annotation>
                             <xs:simpleType>
                               <xs:restriction base="xs:string">
@@ -2650,13 +2710,49 @@
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="Prestadores" minOccurs="0" maxOccurs="1">
+                    <xs:element name="Prestadores" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Cadastro de prestadores de serviço para importação de NFS-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Prestador" minOccurs="1" maxOccurs="unbounded">
                             <xs:annotation>
-                              <xs:documentation>Cadastro de prestadores de serviço para importação de NFS-e</xs:documentation>
+                              <xs:documentation>Informações do prestador de serviços</xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element name="IM" minOccurs="0" maxOccurs="1">
+                                <xs:element name="CNPJ" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>CNPJ do prestador de serviços</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>								
+                                <xs:element name="Nome" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Nome do prestador de serviços</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <!-- sem restrições adicionais -->
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+								<xs:element name="IBGE" minOccurs="0" maxOccurs="1">
+								  <xs:annotation>
+									<xs:documentation>Código IBGE do município do prestador de serviços</xs:documentation>
+								  </xs:annotation>
+								  <xs:simpleType>
+									<xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+									</xs:restriction>
+								  </xs:simpleType>
+								</xs:element>								
+                                <xs:element name="IM" minOccurs="1" maxOccurs="1">
                                   <xs:annotation>
                                     <xs:documentation>Inscrição municipal do prestador de serviços</xs:documentation>
                                   </xs:annotation>
@@ -2665,144 +2761,76 @@
                                       <!-- sem restrições adicionais -->
                                     </xs:restriction>
                                   </xs:simpleType>
-                                </xs:element>
+                                </xs:element>								
+								<xs:element name="Status" minOccurs="0" maxOccurs="1">
+								  <xs:annotation>
+									<xs:documentation>Status</xs:documentation>
+								  </xs:annotation>
+								  <xs:simpleType>
+									<xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+									</xs:restriction>
+								  </xs:simpleType>
+								</xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>					
+                    <xs:element name="Municipios" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Cadastro de municípios para importação de NFS-e</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Municipio" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>Informações dos municípios </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>                                
+								<xs:element name="IBGE" minOccurs="0" maxOccurs="1">
+								  <xs:annotation>
+									<xs:documentation>Código IBGE do município </xs:documentation>
+								  </xs:annotation>
+								  <xs:simpleType>
+									<xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+									</xs:restriction>
+								  </xs:simpleType>
+								</xs:element>
+								<xs:element name="Status" minOccurs="0" maxOccurs="1">
+								  <xs:annotation>
+									<xs:documentation>Status</xs:documentation>
+								  </xs:annotation>
+								  <xs:simpleType>
+									<xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+									</xs:restriction>
+								  </xs:simpleType>
+								</xs:element>
+								<xs:element name="ExtMunConsADN" minOccurs="0" maxOccurs="1">
+								  <xs:annotation>
+									<xs:documentation>Consulta notas no ADN</xs:documentation>
+								  </xs:annotation>
+								  <xs:simpleType>
+									<xs:restriction base="xs:string">
+                                <!-- sem restrições adicionais -->
+									</xs:restriction>
+								  </xs:simpleType>
+								</xs:element>                     							
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                  </xs:sequence>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>				  
                 </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Endereco" minOccurs="0" maxOccurs="unbounded">
-          <xs:annotation>
-            <xs:documentation>Grupo de informações de Outros Endereços do Prestador</xs:documentation>
-          </xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="EmpEndTpoEndereco" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Tipo de Endereço do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="80"/>
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndEndereco" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Endereço do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndNumero" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Número do endereço do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndBairro" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Bairro do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndCEP" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>CEP do Endereço do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndComplemento" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Complemento do endereço</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndIM" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Inscrição Municipal</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100"/>
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndEmail" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>E-mail do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100"/>
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndTelefone" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Telefone do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndIE" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Inscrição Estadual do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndMunCodigo" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Código do Município do Prestador</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EmpEndStatus" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>Status do Endereço</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <!-- sem restrições adicionais -->
-                  </xs:restriction>
-                </xs:simpleType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
