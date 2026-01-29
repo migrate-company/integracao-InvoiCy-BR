@@ -438,6 +438,11 @@
 			<ObraNumEncapsulamento/>
 			<AbatimentoMateriais/>
 			<ObraXMun/>
+			<ObraDesc/>
+			<ObraCIB/>
+			<ObraInscImobFis/>
+			<ObraCPFNF/>
+			<ObraCNPJNF/>
 			<ListaMaterial>
 				<Material>
 					<MatCodigo/>
