@@ -1,1 +1,24 @@
-
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inv="InvoiCy">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<inv:recepcao.Execute>
+			<inv:Invoicyrecepcao>
+				<inv:Cabecalho>
+					<inv:EmpPK>T2NsBN9HkK1fpGtGsNdXQw==</inv:EmpPK>
+					<inv:EmpCK>6443d4e2dFt13037dc73a56e152c862e</inv:EmpCK>
+					<inv:EmpCO>?</inv:EmpCO>
+				</inv:Cabecalho>
+				<inv:Informacoes>
+					<inv:Texto>?</inv:Texto>
+				</inv:Informacoes>
+				<inv:Dados>
+					<!--Zero or more repetitions:-->
+					<inv:DadosItem>
+						<inv:Documento>&lt;ConsultaRetroativaMunicipio&gt;&lt;ModeloDocumento&gt;NFSe&lt;/ModeloDocumento&gt;&lt;tpAmb&gt;2&lt;/tpAmb&gt;&lt;Versao&gt;1.00&lt;/Versao&gt;&lt;codMunicipio&gt;4202404&lt;/codMunicipio&gt;&lt;CNPJEmissor&gt;80680093001234&lt;/CNPJEmissor&gt;&lt;DataInicial&gt;2025-02-17&lt;/DataInicial&gt;&lt;DataFinal&gt;2025-02-24&lt;/DataFinal&gt;&lt;EmitidoRecebido&gt;R&lt;/EmitidoRecebido&gt;&lt;/ConsultaRetroativaMunicipio&gt;</inv:Documento>
+						<inv:Parametros>?</inv:Parametros>
+					</inv:DadosItem>
+				</inv:Dados>
+			</inv:Invoicyrecepcao>
+		</inv:recepcao.Execute>
+	</soapenv:Body>
+</soapenv:Envelope>
