@@ -134,7 +134,10 @@
                                 "ItemCodQuartoHospedagem": "",
                                 "ItemDtaEntrHospedagem": "0000-00-00T00:00:00",
                                 "ItemDtaSaiHospedagem": "0000-00-00T00:00:00",
-                                "ItemValorDiariaHospedagem": "0"
+                                "ItemValorDiariaHospedagem": "0",
+                                "ItemCSTPisCofins": "",
+                                "ItemTpRetPisCofins": "",
+                                "ItemNBS": ""
                             }
                         ]
                     },
@@ -277,8 +280,6 @@
                                     "ValIBSMun": 1.0,
                                     "ValDifMun": 0,
                                     "ValpDifMun": 0,
-                                    "ValAliqMunDesonIBS": 1.0,
-                                    "ValTribOpMun": 1.0,
                                     "ValpAliqEfetMun": 1.0,
                                     "ValpRedAliqMun": 1.0,
                                     "ValIBSEstCred": 1.0
@@ -302,7 +303,6 @@
                                 "ValJuros": 0.0,
                                 "ValInicialCobrado": 0.0,
                                 "ValFinalCobrado": 0.0,
-                                "ValDeducaoCIBS": 0.0,
                                 "ValIPI": 0.0
                             }
                         },
@@ -324,13 +324,9 @@
                             },
                             "cLocalidadeIncid": 1,
                             "xLocalidadeIncid": "TESTE",
-                            "xIndOp": "TESTE",
                             "CSTIBSCBS": "011",
-                            "xCSTIBSCBS": "TESTE",
                             "cClassTrib": "011003",
-                            "xClassTrib": "TESTE",
                             "cCredPres": 0,
-                            "Onerosidade": "1",
                             "PagParceladoAntecipado": "1",
                             "NCM": "121",
                             "indCompGov": ""
@@ -533,5 +529,5 @@
             ]
         }
     }
-
 ]
+
