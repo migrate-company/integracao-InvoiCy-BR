@@ -149,7 +149,7 @@
                         "Cnae": 0,
                         "fPagamento": "",
                         "tpag": 0,
-                        "CodTributNacional": "170801",
+                        "codTributNacional": "170801",
                         "TributMunicipio": "0",
                         "TributMunicDesc": "",
                         "Discriminacao": "ESTACIONAMENTO DE VEICULOS",
@@ -530,4 +530,5 @@
         }
     }
 ]
+
 
