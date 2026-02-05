@@ -280,14 +280,12 @@
 						<ValpIBSUF/>
 						<ValDifUF/>
 						<ValpDifUF/>
-						<ValTribOpUF/>
 						<ValpRedAliqUF/>
 						<ValpAliqEfetUF/>
 						<ValIBSMun/>
 						<ValDifMun/>
 						<ValpDifMun/>
 						<ValAliqMunDesonIBS/>
-						<ValDevTribMunIBS/>
 						<ValTribOpMun/>
 						<ValpAliqEfetMun/>
 						<ValpRedAliqMun/>
@@ -297,14 +295,10 @@
 						<ValpCBS/>
 						<ValCredPresCBS/>
 						<ValpCredPresCBS/>
-						<ValDesonCBS/>
-						<ValpAliqCBSDeson/>
 						<ValDifCBS/>
 						<ValpDifCBS/>
-						<ValTribOpCBS/>
 						<ValpAliqEfetCBS/>
 						<ValpRedAliqCBS/>
-						<ValDevTribCBS/>
 					</CBS>
 					<ValTotNF/>
 					<ValBCIBSCBS/>
@@ -581,4 +575,5 @@
 			<DocChaveNFSe/>
 		</ListaNFSeReferenciadas>
 	</RPS>
+
 </Envio>
