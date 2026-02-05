@@ -135,6 +135,9 @@
 				<ItemDtaEntrHospedagem/>
 				<ItemDtaSaiHospedagem/>
 				<ItemValorDiariaHospedagem/>
+				<ItemCSTPisCofins/>
+				<ItemTpRetPisCofins/>
+				<ItemNBS/>
 			</Item>
 		</ListaItens>
 		<ListaParcelas>
@@ -154,7 +157,7 @@
 			<Cnae/>
 			<fPagamento/>
 			<tpag>1</tpag>
-			<CodTributNacional>170801</CodTributNacional>
+			<codTributNacional>170801</codTributNacional>
 			<TributMunicipio/>
 			<TributMunicDesc/>
 			<Discriminacao/>
@@ -283,12 +286,12 @@
 						<ValpRedAliqUF/>
 						<ValpAliqEfetUF/>
 						<ValIBSMun/>
+						<ValpIBSMun/>
 						<ValDifMun/>
 						<ValpDifMun/>
-						<ValAliqMunDesonIBS/>
-						<ValTribOpMun/>
 						<ValpAliqEfetMun/>
 						<ValpRedAliqMun/>
+						<ValIBSEstCred/>
 					</IBS>
 					<CBS>
 						<ValCBS/>
@@ -299,6 +302,7 @@
 						<ValpDifCBS/>
 						<ValpAliqEfetCBS/>
 						<ValpRedAliqCBS/>
+						<ValCBSEstCred/>
 					</CBS>
 					<ValTotNF/>
 					<ValBCIBSCBS/>
@@ -308,7 +312,6 @@
 					<ValJuros/>
 					<ValInicialCobrado/>
 					<ValFinalCobrado/>
-					<ValDeducaoCIBS/>
 					<ValIPI/>
 				</IBSCBS>
 			</Valores>
@@ -330,13 +333,9 @@
 				</TribRegular>
 				<cLocalidadeIncid/>
 				<xLocalidadeIncid/>
-				<xIndOp/>
 				<CSTIBSCBS/>
-				<xCSTIBSCBS/>
 				<cClassTrib/>
-				<xClassTrib/>
 				<cCredPres/>
-				<Onerosidade/>
 				<PagParceladoAntecipado/>
 				<NCM/>
 				<indCompGov/>
@@ -575,5 +574,5 @@
 			<DocChaveNFSe/>
 		</ListaNFSeReferenciadas>
 	</RPS>
-
 </Envio>
+
