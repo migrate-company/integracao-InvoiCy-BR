@@ -29,6 +29,7 @@
 		<EmpreitadaGlobal>1</EmpreitadaGlobal>
 		<tpAmb>2</tpAmb>
 		<finNFSe>1</finNFSe>
+		<indDoacao/>
 		<indFinal>1</indFinal>
 		<cIndOp>1</cIndOp>
 		<tpEnteGov>1</tpEnteGov>
@@ -575,4 +576,5 @@
 		</ListaNFSeReferenciadas>
 	</RPS>
 </Envio>
+
 
