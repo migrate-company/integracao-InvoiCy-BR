@@ -272,14 +272,12 @@
                                     "ValpIBSUF": 1.0,
                                     "ValDifUF": 0,
                                     "ValpDifUF": 0,
-                                    "ValTribOpUF": 1.0,
                                     "ValpRedAliqUF": 1.0,
                                     "ValpAliqEfetUF": 1.0,
                                     "ValIBSMun": 1.0,
                                     "ValDifMun": 0,
                                     "ValpDifMun": 0,
                                     "ValAliqMunDesonIBS": 1.0,
-                                    "ValDevTribMunIBS": 1.0,
                                     "ValTribOpMun": 1.0,
                                     "ValpAliqEfetMun": 1.0,
                                     "ValpRedAliqMun": 1.0,
@@ -290,14 +288,10 @@
                                     "ValpCBS": 1.0,
                                     "ValCredPresCBS": 1.0,
                                     "ValpCredPresCBS": 1.0,
-                                    "ValDesonCBS": 1.0,
-                                    "ValpAliqCBSDeson": 1.0,
                                     "ValDifCBS": 0,
                                     "ValpDifCBS": 0,
-                                    "ValTribOpCBS": 1.0,
                                     "ValpAliqEfetCBS": 1.0,
                                     "ValpRedAliqCBS": 1.0,
-                                    "ValDevTribCBS": 1.0,
                                     "ValCBSEstCred": 1.0
                                 },
                                 "ValTotNF": 0.95,
@@ -539,4 +533,5 @@
             ]
         }
     }
+
 ]
