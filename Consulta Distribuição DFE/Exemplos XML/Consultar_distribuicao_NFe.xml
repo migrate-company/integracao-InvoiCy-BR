@@ -1,0 +1,10 @@
+<DistribuicaoDFe>
+    <ModeloDocumento>NFe</ModeloDocumento>
+	<Versao>1.01</Versao>
+	<CNPJEmissor>99999999999999</CNPJEmissor>
+	<tpAmb>2</tpAmb>
+	<UsarUltimoNSU/> <!-- Quando se deseja consultar pelo NSU, preencher com S ou N -->
+	<UltimoNSU>000000000000123</UltimoNSU> <!-- Quando informar 'S' no campo 'UsarUltimoNSU' o InvoiCy irá fazer a consulta a partir do NSU informado neste campo. Caso não informar, o InvoiCy irá utilizar o NSU configurado nos parâmetros das extensões de importação a manifestação ativas para a empresa. -->
+	<NSUEspecifico/><!-- Quando informar 'N' no campo 'UsarUltimoNSU', preencher com o NSU específico, caso contrário não informar este campo -->
+	<chaAcesso>12345678901234567890123456789012345678901234</chaAcesso><!-- Quando se deseja consultar pela chave de acesso, preencher com a chave de acesso específica -->
+</DistribuicaoDFe>

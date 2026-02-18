@@ -1,0 +1,9 @@
+<DistribuicaoDFe>
+	<ModeloDocumento>MDFE</ModeloDocumento>
+	<Versao>1.00</Versao>
+	<CNPJEmissor>99999999999999</CNPJEmissor>
+	<tpAmb>2</tpAmb>
+	<UfEmissor>43</UfEmissor>
+	<UsarUltimoNSU>N</UsarUltimoNSU>
+	<NSUEspecifico>1111111111</NSUEspecifico>
+</DistribuicaoDFe>
