@@ -1,0 +1,13 @@
+<Bilhetagem>
+	<ModeloDocumento>NFe</ModeloDocumento>
+	<tpAmb>2</tpAmb>
+	<TipoConsulta>1</TipoConsulta>
+	<Acumulado>1</Acumulado>
+	<DataInclusaoInicial/>
+	<DataInclusaoFinal/>
+	<Emissores>
+		<EmissoresItem>
+			<CNPJ>99999999999999</CNPJ>
+		</EmissoresItem>
+	</Emissores>
+</Bilhetagem>
