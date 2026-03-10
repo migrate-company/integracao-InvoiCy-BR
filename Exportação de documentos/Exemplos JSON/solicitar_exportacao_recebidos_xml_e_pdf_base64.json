@@ -1,0 +1,18 @@
+[
+	{
+		"ModeloDocumento": "nfe",
+		"Versao": "4.0",
+		"tpAmb": 2,
+		"CnpjEmpresa": "99999999000199",
+		"StatutsDocumento": 2,
+		"DataEmissaoInicial": "2026-02-25T00:00:00", 
+        "DataEmissaoFinal": "2026-02-25T23:59:00",
+        "EmitidoRecebido": "R",
+		"ResumoDocumento": "S",
+		"ParmSituacao": "S",
+		"ParmXMLCompleto": "S",
+		"ParmEventos": "S",
+        "ParmResumoXMLBase64": "S",
+        "ParmResumoPDFBase64": "S"
+	}
+]
