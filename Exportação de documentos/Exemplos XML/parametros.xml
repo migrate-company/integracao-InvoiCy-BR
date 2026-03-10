@@ -3,4 +3,6 @@
 	<XMLCompleto>S</XMLCompleto>
 	<PDFBase64>S</PDFBase64>
 	<Eventos>N</Eventos>
+	<ResumoXMLBase64>N</ResumoXMLBase64> 
+	<ResumoPDFBase64>N</ResumoPDFBase64>
 </ParametrosConsulta>
