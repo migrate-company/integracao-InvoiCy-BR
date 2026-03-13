@@ -19,12 +19,13 @@
                         <vIBS></vIBS>
                         <vCBS></vCBS>
                         <gControleEstoque>
-                            <qtde></qtde>
-                            <unidade></unidade>
+                            <qConsumo></qConsumo>
+                            <uConsumo></uConsumo>
                         </gControleEstoque>
                     </consumoItem> 
                 </gConsumo>
             </Evedet>
         </EveInf>
     </Evento>
+
 </EnvioEvento>
