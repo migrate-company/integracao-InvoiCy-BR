@@ -2,11 +2,11 @@
     <ModeloDocumento>NFe</ModeloDocumento>
     <Versao>4.00</Versao>
     <Evento>
-        <NtfCnpjEmissor>06354976000149</NtfCnpjEmissor>
+        <NtfCnpjEmissor>99999999999999</NtfCnpjEmissor>
         <NtfNumero>7002</NtfNumero>
         <NtfSerie>274</NtfSerie>
         <tpAmb>2</tpAmb>
-        <ChaAcesso>43250706354976000149552740000070022000012345</ChaAcesso>
+        <ChaAcesso>99999999999999999999999999999999999999999999</ChaAcesso>
         <EveInf>
             <EveDh>2025-07-16T08:26:00</EveDh>
             <EveFusoHorario>-03:00</EveFusoHorario>
