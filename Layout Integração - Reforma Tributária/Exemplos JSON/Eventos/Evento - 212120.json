@@ -1,0 +1,23 @@
+[
+    {
+        "ModeloDocumento": "NFe",
+        "Versao": 4.00,
+        "Evento": {
+            "NtfCnpjEmissor": "99999999999999",
+            "NtfNumero": 1512,
+            "NtfSerie": "770",
+            "tpAmb": 2,
+            "ChaAcesso": "99999999999999999999999999999999999999999999",
+            "EveInf": {
+                "EveDh": "2026-03-17T16:30:59",
+                "EveFusoHorario": "-03:00",
+                "EveTp": 212120,
+                "EvenSeq": 1,
+                "Evedet": {
+                    "tpAutor": 8,
+                    "indAceitacao": 1
+                }
+            }
+        }
+    }
+]

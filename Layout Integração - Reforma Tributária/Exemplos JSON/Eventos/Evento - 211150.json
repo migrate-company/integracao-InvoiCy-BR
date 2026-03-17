@@ -1,0 +1,28 @@
+[
+    {
+        "ModeloDocumento": "NFe",
+        "Versao": 4.00,
+        "Evento": {
+            "NtfCnpjEmissor": "99999999999999",
+            "NtfNumero": 1512,
+            "NtfSerie": "770",
+            "tpAmb": 2,
+            "ChaAcesso": "99999999999999999999999999999999999999999999",
+            "EveInf": {
+                "EveDh": "2026-03-17T16:27:19",
+                "EveFusoHorario": "-03:00",
+                "EveTp": 211150,
+                "EvenSeq": 1,
+                "Evedet": {
+                    "gCredito": [
+                        {
+                            "nItem": 1,
+                            "vCredIBS": "0.01",
+                            "vCredCBS": "0.09",
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]
