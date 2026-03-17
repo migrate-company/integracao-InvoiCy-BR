@@ -120,6 +120,7 @@
             ],
             "total": {
                 "vProd": "100.00",
+                "vTotDFe": "100",
                 "ICMSTot": {
                     "vBC": "100.00",
                     "vICMS": "25.00",
