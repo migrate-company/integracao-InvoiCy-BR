@@ -16,8 +16,8 @@
 			<Status>A</Status>
 		</Prestador>
 	</Prestadores>
-	<CNPJEmpresaCadastro>
+	<CNPJEmpresasCadastro>
 	    <Item>33333333333333</Item>
 		<Item>44444444444444</Item>
-	</CNPJEmpresaCadastro>
+	</CNPJEmpresasCadastro>
 </CadastroPrestadores>
