@@ -14,6 +14,7 @@
                 "EveTp": 112150,
                 "EvenSeq": 1,
                 "Evedet": {
+                    "tpAutor": 1,
                     "dPrevEntrega": "2026-03-18"
                 }
             }
