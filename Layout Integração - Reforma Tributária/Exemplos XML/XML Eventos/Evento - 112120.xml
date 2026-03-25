@@ -13,6 +13,7 @@
             <EveTp>112120</EveTp>
             <EvenSeq>1</EvenSeq>
             <Evedet>
+                <tpAutor>1</tpAutor>
                 <gConsumo>
                     <consumoItem>
                         <nItem></nItem>
