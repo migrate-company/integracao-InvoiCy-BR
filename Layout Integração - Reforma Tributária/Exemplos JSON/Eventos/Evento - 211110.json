@@ -14,6 +14,7 @@
                 "EveTp": 211110,
                 "EvenSeq": 1,
                 "Evedet": {
+                    "tpAutor": 2,
                     "gCredPres": [
                         {
                             "nItem": 1,
