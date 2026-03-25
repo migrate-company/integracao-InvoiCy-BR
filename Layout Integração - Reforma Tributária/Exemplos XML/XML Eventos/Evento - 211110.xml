@@ -13,6 +13,7 @@
 			<EveTp>211110</EveTp>
 			<EvenSeq>1</EvenSeq>
 			<Evedet>
+				<tpAutor>2</tpAutor>
 				<gCredPres>
 					<credPresItem>
 						<nItem>1</nItem>
