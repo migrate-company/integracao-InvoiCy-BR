@@ -14,6 +14,7 @@
                 "EveTp": 112130,
                 "EvenSeq": 1,
                 "Evedet": {
+                    "tpAutor": 1,
                     "gPerecimento": [
                         {
                             "nItem": 1,
