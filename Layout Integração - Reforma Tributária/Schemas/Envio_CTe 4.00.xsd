@@ -659,6 +659,18 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
+							<xs:element name="CRT">
+								<xs:annotation>
+									<xs:documentation>Código de Regime Tributário</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+										<xs:enumeration value="3"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>	
 							<xs:element name="enderEmit">
 								<xs:complexType>
 									<xs:sequence>
@@ -729,18 +741,6 @@
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
-						<xs:element name="CRT">
-							<xs:annotation>
-								<xs:documentation>Código de Regime Tributário</xs:documentation>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:integer">
-									<xs:enumeration value="1"/>
-									<xs:enumeration value="2"/>
-									<xs:enumeration value="3"/>
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="rem" minOccurs="0">
@@ -1816,7 +1816,7 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element name="CSTReg">
+																<xs:element name="cClassTribReg">
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
 																			<xs:maxLength value="6"/>
@@ -2501,6 +2501,54 @@
 										</xs:sequence>
 									</xs:complexType>
 								</xs:element>
+								<xs:element name="seg">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="segItem" maxOccurs="10">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="respSeg" minOccurs="0">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:maxLength value="2"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="xSeg" minOccurs="0">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:maxLength value="50"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="nApol" minOccurs="0">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:maxLength value="20"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="nAver" minOccurs="0">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:maxLength value="20"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="vCarga_seg" minOccurs="0">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:totalDigits value="18"/>
+																	<xs:fractionDigits value="2"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>	
+								</xs:element>
 								<xs:element name="infModal">
 									<xs:complexType>
 										<xs:sequence>
@@ -3068,6 +3116,41 @@
 															</xs:element>
 															<xs:element name="dIni_duto" type="xs:date"/>
 															<xs:element name="dFim_duto" type="xs:date"/>
+															<xs:element name="classDuto" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:decimal">
+																		<xs:maxLength value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="tpContratacao" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:decimal">
+																		<xs:maxLength value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="codPontoEntrada" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:decimal">
+																		<xs:maxLength value="20"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="codPontoSaida" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:decimal">
+																		<xs:maxLength value="20"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="nContrato" minOccurs="0">
+																<xs:simpleType>
+																	<xs:restriction base="xs:decimal">
+																		<xs:maxLength value="20"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
