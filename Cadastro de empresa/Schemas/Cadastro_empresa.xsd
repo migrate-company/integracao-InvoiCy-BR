@@ -1355,6 +1355,22 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
+										<xs:element name="EmpRegApTribSN" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FormaRetornoWH" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="1"/>
+													<xs:minInclusive value="1"/>
+													<xs:maxInclusive value="3"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
