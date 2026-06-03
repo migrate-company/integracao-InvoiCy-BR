@@ -83,7 +83,7 @@
 		<DescricaoDigitacao>18719948000167-CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</DescricaoDigitacao>
 		<CNPJ_rem>18719948000167</CNPJ_rem>
 		<CPF_rem>00000000000</CPF_rem>
-		<xNome_rem>CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_rem>
+		<xNome_rem>CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_rem>
 		<fone_rem>5535351111</fone_rem>
 		<enderRem>
 			<xLgr_rem>teste</xLgr_rem>
@@ -121,7 +121,7 @@
 		<PesCodigo>741</PesCodigo>
 		<DescricaoDigitacao>18719948000167-CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</DescricaoDigitacao>
 		<CNPJ_dest>18719948000167</CNPJ_dest>
-		<xNome_dest>CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_dest>
+		<xNome_dest>CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome_dest>
 		<fone_dest>5535351111</fone_dest>
 		<DestinatarioDigitacao>18719948000167 - CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</DestinatarioDigitacao>
 		<InicializouDestDigitacao>true</InicializouDestDigitacao>
