@@ -1,0 +1,31 @@
+<EnvioEvento>
+	<ModeloDocumento>CTe</ModeloDocumento>
+	<Versao>4.00</Versao>
+	<InvIdentificacao>
+		<TipoIntegracao>0</TipoIntegracao>
+		<UsrEmail/>
+		<UsrNome/>
+	</InvIdentificacao>
+	<Evento>
+		<CteCnpjEmissor>99999999999999</CteCnpjEmissor>
+		<CteNumero>1</CteNumero>
+		<CteSerie>1</CteSerie>
+		<tpAmb>2</tpAmb>
+		<ChaAcesso>43260502344976000149572720000012003284816386</ChaAcesso>
+		<EveInf>
+			<EveDh>2026-05-12T17:20:00</EveDh>
+			<EveFusoHorario>-03:00</EveFusoHorario>
+			<EveTp>110301</EveTp>
+			<EvenSeq>1</EvenSeq>
+			<EvecOrgao>0</EvecOrgao>
+			<Evedet>
+				<EveDesc>Cancelamento da Vinculação de Pagamento</EveDesc>
+				<EvenProt>143260000068635</EvenProt>
+				<CancVincPagamento>
+					<nProtVincPgto>143260000025764</nProtVincPgto>
+				</CancVincPagamento>
+			</Evedet>
+		</EveInf>
+		<tpEmis>1</tpEmis>
+	</Evento>
+</EnvioEvento>
