@@ -1,0 +1,43 @@
+<CadastroEmpresa>
+	<EmpNomFantasia>Nome da empresa</EmpNomFantasia>
+	<EmpApelido>Nome da empresa</EmpApelido>
+	<EmpRazSocial>Nome da empresa</EmpRazSocial>
+	<EmpCNPJ>00000000000000</EmpCNPJ>
+	<EmpIE>0</EmpIE>
+	<EmpTelefone>5500000000</EmpTelefone>
+	<EmpEndereco>RUA XPTO</EmpEndereco>
+	<EmpNumero>112</EmpNumero>
+	<EmpBairro>Centro</EmpBairro>
+	<EmpCEP>98910000</EmpCEP>
+	<EmpComplemento></EmpComplemento>
+	<EmpIM>0</EmpIM>
+	<MunCodigo>3550308</MunCodigo>
+	<EmpTpoEndereco>RUA</EmpTpoEndereco>
+	<EmpDtaCadastro>2026-03-07T14:02:52</EmpDtaCadastro>
+	<EmpModelo>N</EmpModelo>
+	<ProcessoSuperLogica>false</ProcessoSuperLogica>
+	<EmpPreValidarDoc>N</EmpPreValidarDoc>
+	<Certificado>
+		<ArquivoPFX>base64Certificado</ArquivoPFX>
+		<Senha>senhaCertificado1234</Senha>
+		<TipoCertificado>1</TipoCertificado>
+	</Certificado>
+	<Extensao>
+		<ExtensaoItem>
+			<TipoExtensao>4</TipoExtensao>
+			<Ativar>S</Ativar>
+			<Modulos>
+				<ModuloItem>
+					<Modulo>NFe</Modulo>
+				</ModuloItem>
+			</Modulos>
+			<ParametrosExt>
+				<NumeroConsultasDiarias>1</NumeroConsultasDiarias>
+				<ArmazenarEveTerceiros>N</ArmazenarEveTerceiros>
+				<BaixarDocsNaoArmazenados>N</BaixarDocsNaoArmazenados>
+				<CienciaAutomatica>0</CienciaAutomatica>
+				<Justificativa>Operação não realizada.</Justificativa>
+			</ParametrosExt>
+		</ExtensaoItem>
+	</Extensao>
+</CadastroEmpresa>
