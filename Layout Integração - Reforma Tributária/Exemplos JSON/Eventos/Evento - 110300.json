@@ -1,0 +1,29 @@
+{
+	"ModeloDocumento": "",
+	"Versao": 0,
+	"Evento": {
+		"CteCnpjEmissor": "",
+		"CteNumero": 0,
+		"CteSerie": "",
+		"tpAmb": 0,
+		"ChaAcesso": "",
+		"EveInf": {
+			"EveDh": "0000-00-00T00:00:00",
+			"EveFusoHorario": "",
+			"EveTp": 0,
+			"EvenSeq": 0,
+			"EvecOrgao": 0,
+			"Evedet": {
+				"EveDesc": "",
+				"EvexJust": "",
+				"EvenProt": 0,
+				"xRegistro": "",
+				"IdDoc": "",
+				"xCondUso": "",
+				"CancelamentoVincPagamento": {
+					"nProtVincPgto": 123
+				}
+			}
+		}
+	}
+}
