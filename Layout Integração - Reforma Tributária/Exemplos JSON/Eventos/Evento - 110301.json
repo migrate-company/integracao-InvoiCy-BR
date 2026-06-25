@@ -1,0 +1,30 @@
+[{
+	"ModeloDocumento": "CTe",
+	"Versao": 4.00,
+	"Evento": {
+		"CteCnpjEmissor": "99999999999999",
+		"CteNumero": 1,
+		"CteSerie": "123",
+		"tpAmb": 2,
+		"ChaAcesso": "43260599999999999999572720000012001172816386",
+		"EveInf": {
+			"EveDh": "2026-06-25T08:00:00",
+			"EveFusoHorario": "-03:00",
+			"EveTp": 110300,
+			"EvenSeq": 1,
+			"EvecOrgao": 0,
+			"Evedet": {
+				"EveDesc": "Vinculação Pagamento",
+				"EvenProt": 143260000069935,
+				"VincPagamento": {
+					"nPag": 123,
+					"idTransacao": "ABC987123",
+					"tpMeioPgto": "15",
+					"CNPJReceb": "99999999999999",
+					"CNPJBasePSP": "99999999"
+				}
+			}
+		}
+	}
+}
+]
