@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Envio">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ModeloDocumento">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Versao">
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ide">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="cUF">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cDC">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="6"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mod">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="serie">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="3"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nDC">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="9"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="dhEmi" type="xs:dateTime"/>
+							<xs:element name="fusoHorario">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="6"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="tpEmis">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="tpEmit">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nSiteAutoriz">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="tpAmb">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="verProc">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="20"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="emit">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="CPF">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="11"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="idOutros">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="2"/>
+											<xs:maxLength value="60"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="xNome">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="2"/>
+										<xs:maxLength value="60"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="enderEmit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="xLgr">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="nro">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xCpl" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xBairro">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="cMun">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="7"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xMun">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="UF">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CEP" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="cPais" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="4"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xPais" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="fone" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="14"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice minOccurs="0">
+					<xs:element name="Fisco">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="xOrgao">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="1"/>
+											<xs:maxLength value="60"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="UF">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="2"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Marketplace">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="xNome">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="1"/>
+											<xs:maxLength value="60"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="Site">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="1"/>
+											<xs:maxLength value="120"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Transportadora">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="xNome">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="1"/>
+											<xs:maxLength value="60"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ECT">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="xNome">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="1"/>
+											<xs:maxLength value="60"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+				<xs:element name="dest">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="CPF">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="11"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="idOutros">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="2"/>
+											<xs:maxLength value="60"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="xNome">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="2"/>
+										<xs:maxLength value="60"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="enderDest">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="xLgr">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="nro">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xCpl">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xBairro">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="cMun">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="7"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xMun">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="UF">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CEP" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="cPais">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="4"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xPais">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="fone" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="14"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="email" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="autXML" minOccurs="0" maxOccurs="10">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="CNPJ">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="14"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="CPF">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="11"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="det">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="detItem" maxOccurs="999">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="nItem">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="[1-9]{1}[0-9]{0,3}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="infADProd" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="500"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="prod">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="xProd">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="120"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="NCM">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="8"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="qCom">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="11"/>
+																<xs:fractionDigits value="4"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="vUnCom">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="11"/>
+																<xs:fractionDigits value="10"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="vProd">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="13"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="total">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="vDC">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:totalDigits value="13"/>
+										<xs:fractionDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="transp">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="modTrans">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CNPJTransp" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="14"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="infAdic" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="infAdFisco" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="5000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="infCpl" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="5000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="infAdMarketplace" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="5000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="infAdTransp" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="5000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="infAdECT" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="5000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="obsFisco" minOccurs="0" maxOccurs="10">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="xTexto">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="xCampo">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="obsMarketplace" minOccurs="0" maxOccurs="10">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="xTexto">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="xCampo">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="obsEmit" minOccurs="0" maxOccurs="10">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="xTexto">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="xCampo">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="obsECT" minOccurs="0" maxOccurs="10">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="xTexto">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="xCampo">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="infDec" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="xObs1" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="2000"/>	
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="xObs2" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="5000"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="infSolicDCe">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="xSolic">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="2000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="infDCeSupl">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="qrCodDCe">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="100"/>
+							<xs:maxLength value="600"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="urlChave">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="21"/>
+							<xs:maxLength value="85"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
