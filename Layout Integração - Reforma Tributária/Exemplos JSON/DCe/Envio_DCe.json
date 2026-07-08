@@ -1,0 +1,88 @@
+[
+	{
+		"Documento": {
+			"ModeloDocumento": "DCe",
+			"Versao": 1.0,
+			"ide": {
+				"cUF": 43,
+				"cDC": "006426",
+				"mod": 99,
+				"serie": "479",
+				"nDC": 10,
+				"dhEmi": "2026-06-30T14:20:28",
+				"fusoHorario": "-03:00",
+				"tpEmis": 1,
+				"tpEmit": 1,
+				"nSiteAutoriz": "0",
+				"cDV": "0",
+				"tpAmb": "2",
+				"verProc": "MigrateInvoiCy"
+			},
+			"emit": {
+				"CNPJ": "06354976000149",
+				"xNome": "MIGRATE SISTEMAS DE INFORMACAO LTDA",
+				"enderEmit": {
+					"xLgr": "LOGRADOURO",
+					"nro": "1700",
+					"xCpl": "ANDAR 02",
+					"xBairro": "BAIRRO",
+					"cMun": "4321808",
+					"xMun": "ENCANTADO",
+					"UF": "RS",
+					"CEP": "95960000",
+					"cPais": 1058,
+					"xPais": "BRASIL",
+					"fone": 5137513322
+				}
+			},
+			"Marketplace": {
+				"CNPJ": "06354976000149",
+				"xNome": "NOME DO MARKETPLACE",
+				"Site": "teste.com.br"
+			},
+			"dest": {
+				"CNPJ": "06354976000149",
+				"xNome": "DCE EMITIDA EM AMBIENTE DE HOMOLOGACAO",
+				"enderDest": {
+					"xLgr": "LOGRADOURO",
+					"nro": "67",
+					"xCpl": "CENTRO",
+					"xBairro": "CENTRO",
+					"cMun": "4309605",
+					"xMun": "CONTAGEM",
+					"UF": "RS",
+					"CEP": "32145900",
+					"cPais": 1058,
+					"xPais": "Brasil",
+					"fone": 5535485105
+				}
+			},
+			"det": [
+				{
+					"nItem": "1",
+					"prod": {
+						"xProd": "DECLARAÇÃO DE CONTEÚDO EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+						"NCM": "22029900",
+						"qCom": 1.0,
+						"vUnCom": 10.0,
+						"vProd": 10.0
+					}
+				}
+			],
+			"total": {
+				"vDC": 10.0
+			},
+			"infAdic": {
+				"infAdFisco": "",
+				"infAdCpl": "",
+				"infAdMarketplace": "Observações do Marketplace",
+				"infAdTransp": "",
+				"infAdECT": ""
+			},
+			"infDCeSupl": {
+				"qrCodDCe": "",
+				"urlChave": ""
+			}
+		}
+	}
+]
