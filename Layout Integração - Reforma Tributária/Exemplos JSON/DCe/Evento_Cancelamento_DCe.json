@@ -1,0 +1,24 @@
+[
+  {
+    "ModeloDocumento": "DCe",
+    "Versao": "1.00",
+    "Evento": {
+      "DCeCnpjEmissor": "99999999999999",
+      "DCeNumero": "52465495",
+      "DCeSerie": "251",
+      "tpAmb": "2"
+	  "ChaAcesso": "43260499999999999999991570000006721100064261"
+      "EveInf": {
+        "EveDh": "2020-05-20T11:00:00-03:00",
+        "EveFusoHorario": "-03:00",
+        "EveTp": "110111",
+        "EvenSeq": "1",
+        "Evedet": {
+          "EveDesc": "Cancelamento",
+          "EvenProt": "123456789987657",
+          "EvexJust": "Aqui vai a justificativa de cancelamento"
+        }
+      }
+    }
+  }
+]
