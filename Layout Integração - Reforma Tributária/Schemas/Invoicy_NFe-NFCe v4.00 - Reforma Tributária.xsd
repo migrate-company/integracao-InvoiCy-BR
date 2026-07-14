@@ -284,6 +284,16 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
+							<xs:element minOccurs="0" name="cIndOp">
+								<xs:annotation>
+									<xs:documentation>Código indicador do local da operação de fornecimento</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="6"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 							<xs:element name="cMunFg">
 								<xs:annotation>
 									<xs:documentation>Código do Município de Ocorrência do Fato Gerador</xs:documentation>
@@ -402,8 +412,12 @@
 									<xs:restriction base="xs:integer">
 										<xs:enumeration value="01"/>
 										<xs:enumeration value="02"/>
+										<xs:enumeration value="03"/>
 										<xs:enumeration value="04"/>
 										<xs:enumeration value="05"/>
+										<xs:enumeration value="06"/>
+										<xs:enumeration value="07"/>
+										<xs:enumeration value="08"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -415,6 +429,10 @@
 									<xs:restriction base="xs:integer">
 										<xs:enumeration value="01"/>
 										<xs:enumeration value="02"/>
+										<xs:enumeration value="03"/>
+										<xs:enumeration value="04"/>
+										<xs:enumeration value="05"/>
+										<xs:enumeration value="06"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -639,6 +657,22 @@
 													<xs:enumeration value="2"/>
 												</xs:restriction>
 											</xs:simpleType>
+										</xs:element>
+										<xs:element minOccurs="0" name="refDFeAnt">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="1" maxOccurs="99" name="Item">
+														<xs:annotation>
+															<xs:documentation>Chave de acesso do documento fiscal anterior</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="44"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
@@ -952,6 +986,22 @@
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
+							</xs:element>
+							<xs:element name="ISUFEmit">
+								<xs:annotation>
+									<xs:documentation>
+										Inscrição do emitente da Suframa
+										Informar o número do Cadastro do emitente na Suframa. Campo
+										obrigatório nas operações que se beneficiam de incentivos fiscais
+										existentes nas áreas sob controle da SUFRAMA com alíquota zero
+										da CBS referente aos arts. 451 e 466 da LC 214/25
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="[0-9]{8,9}"/>
+									</xs:restriction>
+								</xs:simpleType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
@@ -4809,7 +4859,7 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element minOccurs="0" name="pISEspec">
+																<xs:element minOccurs="0" name="adRemIS">
 																	<xs:annotation>
 																		<xs:documentation>Alíquota específica por unidade de medida apropriada</xs:documentation>
 																	</xs:annotation>
@@ -5122,6 +5172,17 @@
 																							</xs:annotation>
 																							<xs:complexType>
 																								<xs:all>
+																									<xs:element name="pDevTrib">
+																										<xs:annotation>
+																											<xs:documentation>Percentual de devolução</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
 																									<xs:element name="vDevTrib">
 																										<xs:annotation>
 																											<xs:documentation>Valor do tributo devolvido</xs:documentation>
@@ -5235,6 +5296,17 @@
 																							</xs:annotation>
 																							<xs:complexType>
 																								<xs:all>
+																									<xs:element name="pDevTrib">
+																										<xs:annotation>
+																											<xs:documentation>Percentual de devolução</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
 																									<xs:element name="vDevTrib">
 																										<xs:annotation>
 																											<xs:documentation>Valor do tributo devolvido</xs:documentation>
@@ -5359,6 +5431,17 @@
 																							</xs:annotation>
 																							<xs:complexType>
 																								<xs:sequence>
+																									<xs:element name="pDevTrib">
+																										<xs:annotation>
+																											<xs:documentation>Percentual de devolução</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
 																									<xs:element name="vDevTrib">
 																										<xs:annotation>
 																											<xs:documentation>Valor do tributo devolvido</xs:documentation>
@@ -5398,6 +5481,70 @@
 																											<xs:restriction base="xs:decimal">
 																												<xs:totalDigits value="8"/>
 																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element minOccurs="0" name="gALCZFMCBS">
+																							<xs:annotation>
+																								<xs:documentation>Grupo de operações em áreas incentivadas (ALC/ZFM) - CBS (alíquota zero)</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="tpALCZFMCBS">
+																										<xs:annotation>
+																											<xs:documentation>
+																												Tipo de aplicação da alíquota zero da CBS
+																												1 - quando o fornecedor e o destinatário estiverem
+																												localizados em área incentivada, a operação estiver
+																												amparada por alíquota zero da CBS e não se tratar
+																												de operação industrial com processo aprovado na
+																												Suframa para o item;
+																												2 - quando o fornecedor e o destinatário estiverem
+																												localizados em área incentivada, a operação estiver
+																												amparada por alíquota zero da CBS e se tratar de
+																												operação industrial com processo aprovado na
+																												Suframa para o item.
+																											</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:nonNegativeInteger">
+																												<xs:enumeration value="1"/>
+																												<xs:enumeration value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="nProcSuframa">
+																										<xs:annotation>
+																											<xs:documentation>Número do processo na Suframa para o item comercializado</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:string">
+																												<xs:pattern value="[0-9]{8,12}"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="pAliqEfetRegCBS">
+																										<xs:annotation>
+																											<xs:documentation>Percentual efetivo sem a redução</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vTribRegCBS">
+																										<xs:annotation>
+																											<xs:documentation>Valor efetivo sem a redução</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
 																											</xs:restriction>
 																										</xs:simpleType>
 																									</xs:element>
