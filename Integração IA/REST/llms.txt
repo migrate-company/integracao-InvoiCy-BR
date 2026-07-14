@@ -1,0 +1,2156 @@
+# Migrate API (InvoiCy)
+
+> API REST para emissão e gerenciamento de documentos fiscais eletrônicos brasileiros (NF-e, NFC-e, NFS-e, CT-e, MDF-e, NFCom), além de recursos complementares (Webhooks, Exportações em lote e Extensões/produtos adicionais).
+> Idioma: Português (pt-BR)
+
+---
+
+## Visão Geral e Arquitetura
+
+- Formato de dados: JSON sobre HTTPS.
+- Autenticação: JWT (RFC 7519), trocado por par accessToken/refreshToken.
+- Pré-requisito: empresa cadastrada, com certificado digital vinculado e **série fiscal cadastrada** (ver seção "Séries Fiscais") antes de emitir documentos.
+
+| Ambiente     | Base URL                                  |
+|--------------|--------------------------------------------|
+| Homologação  | https://apibrhomolog.invoicy.com.br       |
+| Produção     | https://apibr.invoicy.com.br              |
+
+**Links úteis (portal):** Portal de Homologação, Portal de Produção, Portal InvoiCy for Dev (guias completos), GitHub (exemplos/layouts), Postman (coleção de exemplos), site institucional da Migrate. Ver seção "Links Úteis" ao final deste documento.
+
+---
+
+## Autenticação
+
+Fluxo em 2 etapas: (1) gerar um JWT assinado localmente, (2) trocar esse JWT por um `accessToken`. No portal, os dois passos finais aparecem como dois endpoints distintos dentro do menu "Empresas": **Gerar Token** e **Refresh Token** (ambos `POST /oauth2/invoicy/auth`).
+
+### Etapa 1 — Montar o JWT
+
+Dois tipos de JWT, dependendo do escopo. **A escolha de qual JWT usar depende da operação que será chamada**, não é livre:
+
+**JWT de Parceiro** — usar para operações gerais de empresa: cadastro, atualização, licenciamento.
+
+| Claim  | Descrição                          |
+|--------|-------------------------------------|
+| iat    | timestamp Unix (UTC) atual          |
+| exp    | iat + 120 segundos (máx.)           |
+| sub    | Chave de Parceiro                   |
+| secret | Chave de acesso de parceiro (assina o token) |
+
+**JWT de Empresa** — usar para operação com documentos: consulta, emissão, importação/exportação, eventos, extensões.
+
+| Claim      | Descrição                            |
+|------------|----------------------------------------|
+| iat        | timestamp Unix (UTC) atual            |
+| exp        | iat + 120 segundos (máx.)             |
+| sub        | CNPJ da empresa                       |
+| partnerKey | Chave de Parceiro fornecida pela InvoiCy |
+| secret     | Chave de acesso da empresa (assina o token) |
+
+> `sub`, `partnerKey` e as `secrets` ficam em "Dados da Empresa" no Painel de Controle do InvoiCy.
+> O JWT deve ser enviado em até 120s após gerado (`exp`).
+> O algoritmo de assinatura do JWT é HS256.
+
+### Etapa 2 — Trocar o JWT por tokens de acesso ("Gerar Token")
+
+**Endpoint:** `POST /oauth2/invoicy/auth`
+**Descrição oficial:** "Gera um token de acesso para o sistema. 1 hora de duração."
+
+**Request:**
+```json
+{
+  "token": "{{jwt}}"
+}
+```
+
+**Resposta:**
+```json
+{
+    "accessToken": "<jwt_de_acesso>",
+    "accessTokenExpireAt": "<timestamp Unix UTC, iat + 1h>",
+    "refreshToken": "<token_de_refresh>",
+    "refreshTokenExpireAt": "<timestamp Unix UTC, iat + 24h>"
+}
+```
+
+| Campo                | Descrição |
+|-----------------------|-----------|
+| accessToken           | JWT — enviar no header `Authorization` em toda chamada autenticada |
+| accessTokenExpireAt   | timestamp Unix (UTC) de expiração do accessToken |
+| refreshToken          | usado para gerar novo accessToken sem repetir a Etapa 1 |
+| refreshTokenExpireAt  | timestamp Unix (UTC) de expiração do refreshToken |
+
+### Etapa 3 — Renovar o accessToken ("Refresh Token")
+
+Quando o `accessToken` expirar, use o `refreshToken` para obter um novo par sem repetir as Etapas 1 e 2.
+
+**Endpoint:** `POST /oauth2/invoicy/auth`
+**Descrição oficial:** "Atualiza o token de acesso para o sistema. 24 horas de duração."
+
+**Request:**
+```json
+{
+  "refreshToken": "<refreshToken_recebido_na_etapa_2>"
+}
+```
+
+**Resposta:** mesma estrutura da Etapa 2 — novo `accessToken`, novo `refreshToken` e novos timestamps de expiração.
+
+> O `refreshToken` é de uso único — cada refresh retorna um novo par. Armazene sempre o mais recente.
+> Após 24h sem refresh, é necessário reiniciar do JWT (Etapa 1).
+
+### Header em todas as chamadas autenticadas
+
+```
+Authorization: <accessToken>
+```
+
+---
+
+## Endpoints Principais
+
+### Empresas
+Base: requer accessToken válido no header `Authorization` (JWT de **Parceiro**, exceto onde indicado).
+
+| Operação                     | Método | Rota                          | Parâmetros / Observação |
+|------------------------------|--------|-------------------------------|---------------------------|
+| Gerar Token                  | POST   | `/oauth2/invoicy/auth`        | Ver seção "Autenticação" |
+| Refresh Token                | POST   | `/oauth2/invoicy/auth`        | Ver seção "Autenticação" |
+| Cadastrar Empresa            | POST   | `/companies`                  | Body raw — payload completo (ver abaixo) |
+| Consultar Empresa            | GET    | `/companies?CNPJ={CNPJ}`      | Query param: `CNPJ` (obrigatório) |
+| Atualizar Empresa            | PUT    | `/companies`                  | Body raw — **subset** de campos do cadastro (ver nota abaixo) |
+| Enviar Certificado Digital   | POST   | `/companiescertificates.aspx` | Body raw (JSON, não multipart) — ver seção "Certificado Digital" abaixo |
+| Excluir Certificado Digital  | DELETE | `/companiescertificates.aspx` | Body: `{ "Empresas": { "CNPJ": ["<CNPJ>", ...] } }` — mesmo formato do envio, sem `ArquivoPFX`/`Senha` |
+| Licenciamento                | POST   | `/companies?type=licenciamento` | Body: `[{ "CnpjEmpresa", "tpAmb", "Acao", "Modulo", "Modelo", "Autor" }]` — **endpoint dedicado**, diferente do bloco `Licenciamento` embutido no cadastro (ver nota abaixo) |
+| Consultar Bilhetagem         | GET    | `/companies?ModeloDocumento={modulo}&type=consultabilhetagem&tpAmb={amb}&TipoConsulta={tipo}&Acumulado=&DataInclusaoInicial={data}&DataInclusaoFinal={data}&CnpjEmpresa={CNPJ}` | Todos os parâmetros na query string |
+| Consulta CNPJ SEFAZ          | GET    | `/companies?tpAmb=2&type=consultasefaz&Versao=2&CNPJ_emit={CNPJ}&CPF_emit=&cUF={UF}` | Consulta o cadastro da empresa perante a SEFAZ |
+| Cadastrar Série              | POST   | `/companies/series`           | Ver seção "Séries Fiscais" |
+| Consultar Séries             | GET    | `/companies/series`           | Ver seção "Séries Fiscais" |
+| Atualizar Série              | PUT    | `/companies/series`           | Ver seção "Séries Fiscais" |
+| Deletar Série                | DELETE | `/companies/series`           | Ver seção "Séries Fiscais" |
+| Pré-visualização do DANFE    | POST   | (ver portal — "Pré-visualização do DANFE") | Gera um preview do DANFE sem autorizar o documento na SEFAZ. Payload extenso (mesma estrutura de emissão) |
+| Enviar E-mail                | POST   | (ver portal — "Enviar E-mail") | Reenvia por e-mail um documento já emitido (PDF/XML) para o destinatário configurado |
+
+> **Nota — Licenciamento tem duas representações:** (1) como sub-bloco `Licenciamento` dentro do payload de `POST /companies` (cadastro/atualização, com **3 campos por item**: `Modulo`, `Modelo`, `Autor`) e (2) como **endpoint dedicado** `POST /companies?type=licenciamento` para solicitar/alterar o licenciamento de um módulo já depois da empresa cadastrada. Não confundir os dois formatos.
+
+#### Séries Fiscais
+
+Pré-requisito para emitir documentos: cada empresa precisa de ao menos **uma série cadastrada por módulo/modelo de documento** e o certificado digital cadastrado antes da primeira emissão daquele módulo.
+
+| Operação | Método | Rota |
+|---|---|---|
+| Cadastrar Série | POST | `/companies/series` |
+| Consultar Séries | GET | `/companies/series` |
+| Atualizar Série | PUT | `/companies/series` |
+| Deletar Série | DELETE | `/companies/series` |
+
+**Request (Cadastrar Série):**
+```json
+{
+  "CNPJEmissor": "12345678998765",
+  "ModeloDocumento": "NFS-e",
+  "Serie": "1",
+  "UltimoNumero": "",
+  "SeriePadrao": "S"
+}
+```
+| Campo | Descrição |
+|---|---|
+| `CNPJEmissor` | CNPJ da empresa emissora |
+| `ModeloDocumento` | Módulo do documento (`NFS-e`, `NF-e`, `NFC-e`, `CT-e`, `MDF-e`, `NFCom`) |
+| `Serie` | Número/identificador da série |
+| `UltimoNumero` | Último número emitido nessa série (usado para continuar numeração de uma série pré-existente) |
+| `SeriePadrao` | `S`/`N` — se é a série padrão usada quando a emissão não especifica série |
+
+#### POST /companies — Cadastrar Empresa
+
+Payload aceita estrutura completa: dados cadastrais, `Certificado` (PFX em base64 + senha), `Usuarios` (com `Permissoes` granulares por módulo), `CaixaEnvioEmail`/`CaixasLeituraEmail` (SMTP/POP), `Parametros` por módulo (NFe/NFSe/MDFe/NFCe/CTe), `Licenciamento`, `Impressao` (layout DANFE) e `Extensao` (regras de eventos/consultas automáticas, ver seção "Extensões").
+
+```json
+{
+  "EmpNomFantasia": "Empresa Exemplo",
+  "EmpRazSocial": "Empresa Exemplo LTDA",
+  "EmpCNPJ": "12345678998765",
+  "EmpIE": "14709241",
+  "EmpTelefone": "5535354830",
+  "EmpEndereco": "RUA EXEMPLO",
+  "EmpNumero": "985",
+  "EmpBairro": "CENTRO",
+  "EmpCEP": "98910000",
+  "EmpIM": "447410",
+  "MunCodigo": 4321808,
+  "EmpCRT": 3,
+  "EmpEmail": "seu@email.com",
+  "Certificado": {
+    "ArquivoPFX": "<base64_do_certificado>",
+    "Senha": "<senha_do_certificado>",
+    "TipoCertificado": 0
+  },
+  "Usuarios": [
+    {
+      "UsrNome": "Ana",
+      "UsrEmail": "email@gmail.com",
+      "UsrSenha": "789",
+      "Permissoes": { "...": "ver detalhamento abaixo" }
+    }
+  ],
+  "CaixaEnvioEmail": { "...": "ver detalhamento abaixo" },
+  "CaixasLeituraEmail": { "...": "ver detalhamento abaixo" },
+  "Parametros": { "NFe": {"...": "..."}, "NFSe": {"...": "..."}, "NFCe": {"...": "..."}, "CTe": {"...": "..."}, "MDFe": {"...": "..."} },
+  "Licenciamento": [{ "Modulo": "NF-e", "Modelo": "", "Autor": "" }],
+  "Impressao": { "...": "ver detalhamento abaixo" },
+  "Extensao": [{ "TipoExtensao": 4, "Modulos": [{ "Modulo": "NFe" }], "ParametrosExt": { "...": "..." }, "Ativar": "S" }]
+}
+```
+> Ver GitHub: `Cadastro de empresa/Exemplos JSON/Cadastrar empresa`.
+
+**Detalhamento dos blocos aninhados:**
+
+- **`Usuarios[].Permissoes`** — um sub-bloco por módulo, cada um com `Visualizar`/`Baixar` (`S`/`N`): `PermissaoCTe`, `PermissaoMDFe`, `PermissaoNFSe` (+ `EnviarConsultarDocs`), `PermissaoNFe`, `PermissaoNFCe`. Mais um bloco `PermissoesGerais` com 17 flags `S`/`N`: `ImportarDocumentos`, `AlterarDadosDoUsuario`, `AlterarDadosDaEmpresa`, `AlterarMarcasDaEmpresa`, `AlterarCertificadosDaEmpresa`, `AlterarConfiguracoesParametros`, `CadastrarEmpresas`, `AlterarCaixasDeEmail`, `AlterarPermissoesDeUsuario`, `AdicionarNovosUsuarios`, `VisualizarChaveAcesso`, `VisualizarAcoesDeUsuarios`, `VisualizarQuantidadesEmitidas`, `VisualizarLicencas`, `ConfiguracaoSenha`, `GerarRelatorios`, `InutilizarDocumentos`, `FerramentasIntegracao`.
+- **`CaixaEnvioEmail` / `CaixasLeituraEmail`** (SMTP/POP) — campos: `EmlValCertificado`, `EmlTmpEspera`, `EmlAutenticacao`, `EmlSSL`, `EmlPorta`, `EmlHost`, `EmlSenha`, `EmlUsuario`, `EmlNomeRemetente`, `EmlEmailRemetente`.
+- **`Parametros.NFe`** (exemplo; NFSe/NFCe/MDFe/CTe seguem padrão similar por módulo) — `UltimoNSU`, `JustInut`, `JustCanc`, `JustCont`, `TextoEmailAutorizado`, `TextoEmailCancelado`, `TextoEmailCCe`, `EmailTitulo`, `EnviarPDFEmail`, `EnviarXMLEmail`, `OrdemContingencia`, `OrdemContingenciaNFe`. `Parametros.NFCe` tem adicionalmente `IDTokenCscSEFAZ`, `CscSEFAZ`, `PossuiLeituraX`. `Parametros.NFSe` tem adicionalmente `CodCMC`, `AmbienteEmissao`, `MaxRPSLote`, `TipoProcessamento`, `UsuarioAutent`, `SenhaAutent`, `ImprimeNFSeEfetivada`, `EnviarNFSeTomador`, `EmpRetImpPrefeitura`, `DataAdesaoSimplesNacional`, entre outros.
+- **`Impressao.NFe/MDFe/CTe/NFCe`** — dezenas de flags de layout do DANFE, ex.: `OrientacaoNFe`, `ImprimirTributos`, `LocalImpressaoCanhoto`, `ModeloDANFE`, `ImprimirDuplicatas`, `ImprimirFCP`, `ImprimirFCI`, `TamanhoFonteProdutos`, `ImprimirICMSDesonerado`, `FormatoDANFE`.
+- **`Extensao[]`** — `{ TipoExtensao (numérico), Modulos: [{Modulo}], ParametrosExt: {...}, Ativar: "S"/"N" }`. Campos observados dentro de `ParametrosExt`: `NumeroConsultasDiarias`, `ArmazenarEveTerceiros`, `BaixarDocsNaoArmazenados`, `CienciaAutomatica`, `Justificativa`, `ValorMin`, `Email`, `TipoNotificacao`, `BuscarDocsRetroativos`, `TipoConsultaNFSe`. Cada `TipoExtensao` corresponde a um dos produtos descritos na seção "Extensões" abaixo.
+
+**Resposta de sucesso:**
+```json
+[
+  {
+    "Codigo": 100,
+    "Descricao": "Solicitação de cadastro de empresa recebida.",
+    "RetornoCadastro": [
+      { "Codigo": 100, "Descricao": "A empresa foi cadastrada no InvoiCy.", "EmpAK": "/ai6mZOGzTp", "ChaveCriptografia": "28ede4b65ccf" }
+    ]
+  }
+]
+```
+`EmpAK` é o identificador da empresa retornado pelo InvoiCy — guardar para operações futuras.
+`Codigo: 102` (`"Certificado não informado"`) indica que a empresa foi criada mas sem certificado vinculado — necessário enviar depois via endpoint de Certificado Digital antes de emitir documentos.
+
+#### GET /companies?CNPJ={CNPJ} — Consultar Empresa
+
+**Resposta de sucesso (resumo de campos):**
+```json
+[
+  {
+    "Codigo": 100,
+    "Descricao": "Consulta realizada com sucesso",
+    "RetornoConsulta": [
+      {
+        "EmpCNPJ": "12345678998765",
+        "EmpStatus": "A",
+        "MunCodigo": 4321808,
+        "MunDescricao": "TRÊS DE MAIO",
+        "UFDescricao": "RIO GRANDE DO SUL",
+        "EmpDtaCadastro": "2012-02-01T04:47:16",
+        "Parametros": { "NFe": {"...":"..."}, "NFSe": {"...":"..."}, "NFCe": {"...":"..."}, "MDFe": {"...":"..."}, "CTe": {"...":"..."} },
+        "Licenciamento": [{ "Modulo": "NF-e" }],
+        "Impressao": { "NFe": {"...":"..."} },
+        "Extensao": [{ "TipoExtensao": 4, "ParametrosExt": {"...":"..."} }],
+        "ResponsavelTecnico": { "CNPJ": "12345678998765", "Contato": "...", "Email": "...", "CSRT": "654151" },
+        "InformacoesAdicionais": { "URLQRCode": "...", "URLConsChave": "..." }
+      }
+    ]
+  }
+]
+```
+> `EmpStatus: "A"` = empresa ativa. Resposta espelha a estrutura de cadastro com todos os parâmetros configurados (NFe/NFSe/NFCe/CTe/MDFe), impressão e extensões — mesmo nível de detalhe descrito em "Cadastrar Empresa" acima (os campos de `Parametros`/`Impressao`/`Extensao` seguem o mesmo schema).
+
+#### PUT /companies — Atualizar Empresa
+
+> Exemplo de envio
+
+```json
+{
+  "EmpNomFantasia": "Empresa de teste de cadastro 2",
+  "EmpRazSocial": "Empresa de teste de cadastro 2",
+  "EmpCNPJ": "12345678998765",
+  "EmpIE": "342423324",
+  "EmpTelefone": "234234",
+  "EmpEndereco": "Rua legal",
+  "EmpNumero": "1",
+  "EmpBairro": "Centro",
+  "EmpCEP": "98918000",
+  "EmpComplemento": "Perto de outra rua",
+  "EmpIM": "664544654",
+  "MunCodigo": 4321808,
+  "EmpCRT": 0
+}
+```
+
+**Resposta de sucesso:**
+```json
+[
+  {
+    "Codigo": 100,
+    "Descricao": "Solicitação de cadastro de empresa recebida.",
+    "RetornoCadastro": [
+      { "Codigo": 100, "Descricao": "A empresa foi atualizada com sucesso.", "EmpAK": "/aybPWMb6mZOGzTp", "ChaveCriptografia": "2456565ccac5ff" }
+    ]
+  }
+]
+```
+> Nota: a mensagem de nível superior (`"Solicitação de cadastro..."`) é a mesma do endpoint de cadastro mesmo em update — não é erro, é texto genérico reaproveitado pela API.
+
+### Emissão de Documentos
+Requer accessToken de **JWT de Empresa** no header `Authorization`.
+
+Pré-requisitos: empresa com certificado digital vinculado + série fiscal cadastrada (ver "Séries Fiscais").
+
+**Rotas por módulo:**
+
+| Módulo | Emissão (POST) | Consulta (GET) | Evento (POST) |
+|--------|---------------|----------------|---------------|
+| NF-e   | `/senddocuments/nfe?type=Emissao`   | `/senddocuments/nfe?type=Consulta&...`   | `/senddocuments/nfe?type=Evento`   |
+| NFC-e  | `/senddocuments/nfce?type=Emissao`  | `/senddocuments/nfce?type=Consulta&...`  | `/senddocuments/nfce?type=Evento`  |
+| NFS-e  | `/senddocuments/nfse?type=Emissao`  | `/senddocuments/nfse?type=Consulta&...`  | `/senddocuments/nfse?type=Evento`  |
+| CT-e   | `/senddocuments/cte?type=Emissao`   | `/senddocuments/cte?type=Consulta&...`   | `/senddocuments/cte?type=Evento`   |
+| MDF-e  | `/senddocuments/mdfe?type=Emissao`  | `/senddocuments/mdfe?type=Consulta&...`  | `/senddocuments/mdfe?type=Evento`  |
+| NFCom  | `/senddocuments/nfcom?type=Emissao` | `/senddocuments/nfcom?type=Consulta&...` | `/senddocuments/nfcom?type=Evento` |
+
+**Endpoints adicionais por módulo (Ver "Ver exemplos no GitHub" de cada card no portal):**
+
+| Módulo | Endpoints extras |
+|---|---|
+| NF-e | Inutilização de documento (POST) · Enviar prévia da NF-e para digitação (POST) · Enviar documentos Sefaz (POST) |
+| NFC-e | Inutilização de documento (POST) · Enviar documentos/substituição (POST) · Descartar documentos (POST) · Leitura X — leitura de PDV fiscal (POST) |
+| NFS-e | Inutilização de documento (POST) · Consultar municípios integrados (GET) · Natureza Operação (GET) — tabelas de domínio a consultar antes de montar o payload de emissão |
+| MDF-e | Encerrar MDF-e (POST, evento específico — ver "Eventos de Documentos") · Consulta de MDF-e não encerrados (GET) |
+
+#### Estrutura do payload de emissão
+
+```json
+[
+  {
+    "Documento": {
+      "ModeloDocumento": "NFCe",
+      "Versao": 4,
+      "ide": { ... },
+      "emit": { "CNPJ_emit": "99999999999999", ... },
+      "det": [ { "prod": { ... }, "imposto": { "ICMS": {...}, "PIS": {...}, "COFINS": {...}, "IBSCBS": {...} } } ],
+      "total": { "ICMSTot": {...}, "IBSCBSTot": {...} },
+      "transp": { "modFrete": 9 },
+      "pag": [ { "tPag": "01", "vPag": "10.00" } ],
+      "infAdic": { "infCpl": "..." }
+    }
+  }
+]
+```
+
+> Payload sempre é um array. `ModeloDocumento` determina qual módulo processa o documento.
+> Campos `IBSCBS`/`IBSCBSTot` são obrigatórios para documentos emitidos após a Reforma Tributária. **Atenção:** a estrutura de `IBSCBS` é diferente para documentos de produto (NF-e/NFC-e/CT-e/NFCom) e para documentos de serviço (NFS-e) — ver detalhamento em cada subseção abaixo.
+> `tpAmb: 2` = homologação | `tpAmb: 1` = produção.
+> **`mod` varia por módulo do documento**: `"55"` = NF-e, `"65"` = NFC-e, `"57"` = CT-e, `"62"` = NFCom. Não usar o mesmo valor para módulos diferentes.
+
+
+#### Exemplos completos de emissão (dados reais de homologação, por módulo)
+
+Os exemplos abaixo são payloads reais de homologação.
+
+##### NF-e
+
+```json
+[
+  {
+    "Documento": {
+      "ModeloDocumento": "NFe",
+      "Versao": 4,
+      "ide": {
+        "cUF": "43",
+        "natOp": "VENDA DE MATERIAL DIDATICO 12334555",
+        "mod": "55",
+        "serie": 1,
+        "nNF": 4,
+        "dhEmi": "2025-11-27T10:26:32",
+        "fusoHorario": "-03:00",
+        "dhSaiEnt": "2025-11-27T10:26:32",
+        "tpNf": 1,
+        "idDest": 1,
+        "indFinal": 1,
+        "indPres": 1,
+        "cMunFg": "4321808",
+        "tpImp": 1,
+        "tpEmis": 1,
+        "tpAmb": 2,
+        "finNFe": 1
+      },
+      "emit": {
+        "CNPJ_emit": "99999999999999",
+        "xNome": "MIGRATE",
+        "xFant": "MIGRATE",
+        "IM": "999999999",
+        "IE": "1470058534",
+        "CRT": 3,
+        "enderEmit": {
+          "xLgr": "RUA PE CACIQUE",
+          "nro": "985",
+          "xCpl": "2 ANDAR",
+          "xBairro": "CENTRO",
+          "cMun": 4321808,
+          "xMun": "TRÊS DE MAIO",
+          "UF": "RS",
+          "CEP": "98910000",
+          "cPais": 0,
+          "fone": 5535354830,
+          "Email": "seu@email.com"
+        }
+      },
+      "dest": {
+        "CNPJ_dest": "",
+        "CPF_dest": "12345678900",
+        "idEstrangeiro": "",
+        "xNome_dest": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "indIEDest": 9,
+        "enderDest": {
+          "nro_dest": "2",
+          "xBairro_dest": "Cidade Jardim",
+          "xLgr_dest": "Conjunto Pedra Mole",
+          "xEmail_dest": "testemigrate@gmail.com",
+          "CEP_dest": "64066000",
+          "cMun_dest": "2211001",
+          "xMun_dest": "TERESINA",
+          "UF_dest": "PI"
+        }
+      },
+      "autXML": [],
+      "det": [
+        {
+          "infADProd": "Informações Adicionais",
+          "vItem": "450.00",
+          "prod": {
+            "cProd": "CFOP5.102",
+            "cEAN": "SEM GTIN",
+            "xProd": "NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+            "NCM": "49011000",
+            "CFOP": 5102,
+            "uCOM": "UN",
+            "qCOM": "3.00",
+            "vUnCom": "150.00",
+            "vProd": "450.00",
+            "cEANTrib": "SEM GTIN",
+            "uTrib": "UN",
+            "qTrib": "3.00",
+            "vUnTrib": "150.00",
+            "vDesc": 0,
+            "indTot": 1,
+            "nTipoItem": 0,
+            "dProd": 1,
+            "cBenef": "SP070130"
+          },
+          "imposto": {
+            "ICMS": { "orig": 0, "CST": "41" },
+            "PIS": { "CST_pis": "06" },
+            "COFINS": { "CST_cofins": "06" },
+            "IBSCBS": { "CST": "410", "cClassTrib": "410008" }
+          }
+        }
+      ],
+      "total": {
+        "vNFIBScbsIS": 450.0,
+        "ICMStot": {
+          "vBC_ttlnfe": 0,
+          "vICMS_ttlnfe": "0.00",
+          "vBCST_ttlnfe": "0.00",
+          "vST_ttlnfe": "0.00",
+          "vProd_ttlnfe": 450,
+          "vFrete_ttlnfe": "0.00",
+          "vSeg_ttlnfe": "0.00",
+          "vDesc_ttlnfe": 0,
+          "vII_ttlnfe": "0.00",
+          "vIPI_ttlnfe": "0.00",
+          "vPIS_ttlnfe": 0,
+          "vCOFINS_ttlnfe": 0,
+          "vOutro": "0.00",
+          "vNF": 450,
+          "vTotTrib_ttlnfe": "0.00"
+        },
+        "IBSCBSTot": {
+          "vBCIBSCBS": 0.0,
+          "gIBS": {
+            "gIBSUF": { "vDif": 0.0, "vDevTrib": 0.0, "vIBSUF": 0.0 },
+            "gIBSMun": { "vDif": 0.0, "vDevTrib": 0.0, "vIBSMun": 0.0 },
+            "vIBS": 0.0,
+            "vCredPres": 0.0,
+            "vCredPresCondSus": 0.0
+          },
+          "gCBS": { "vDif": 0.0, "vDevTrib": 0.0, "vCBS": 0.0, "vCredPres": 0.0, "vCredPresCondSus": 0.0 }
+        }
+      },
+      "transp": { "modFrete": 9 },
+      "pag": [ { "tPag": "01", "vPag": "450.00" } ],
+      "infNFeSupl": {},
+      "RespTecnico": {
+        "CNPJ": "14185211000150",
+        "xContato": "Kauã Patricki de Azevedo Rosa",
+        "email": "testemigrate@gmail.com",
+        "fone": 35351285,
+        "idCSRT": "12"
+      }
+    }
+  }
+]
+```
+
+##### NFC-e
+
+```json
+[
+  {
+    "Documento": {
+      "ModeloDocumento": "NFCe",
+      "Versao": 4,
+      "ide": {
+        "cUF": "43",
+        "natOp": "VENDA",
+        "mod": "65",
+        "serie": "30",
+        "nNF": "984642144",
+        "dhEmi": "2025-11-27T14:30:00",
+        "fusoHorario": "-03:00",
+        "tpNf": 1,
+        "idDest": 1,
+        "indFinal": 1,
+        "indPres": 1,
+        "cMunFg": "4321808",
+        "tpImp": 4,
+        "tpEmis": 1,
+        "tpAmb": 2,
+        "finNFe": 1,
+        "procEmi": 0,
+        "verProc": "4.00"
+      },
+      "emit": {
+        "CNPJ_emit": "99999999999999",
+        "xNome": "MIGRATE",
+        "xFant": "MIGRATE",
+        "IM": "99999999",
+        "IE": "1470034",
+        "CRT": 3,
+        "enderEmit": {
+          "xLgr": "RUA PE CACIQUE",
+          "nro": "985",
+          "xCpl": "2 ANDAR",
+          "xBairro": "CENTRO",
+          "cMun": 4321808,
+          "xMun": "TRÊS DE MAIO",
+          "UF": "RS",
+          "CEP": "98910000",
+          "cPais": 0,
+          "fone": 5535354830,
+          "Email": "seu@email.com"
+        }
+      },
+      "det": [
+        {
+          "infADProd": "Informações Adicionais",
+          "vItem": "10.00",
+          "prod": {
+            "cProd": "000001",
+            "cEAN": "SEM GTIN",
+            "xProd": "NOTA FISCAL EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+            "NCM": "00000000",
+            "CFOP": 5102,
+            "uCOM": "UN",
+            "qCOM": "1.0000",
+            "vUnCom": "10.00000000",
+            "vProd": "10.00",
+            "cEANTrib": "SEM GTIN",
+            "uTrib": "UN",
+            "qTrib": "1.0000",
+            "vUnTrib": "10.00000000",
+            "indTot": 1
+          },
+          "imposto": {
+            "ICMS": { "orig": 0, "CST": "40" },
+            "PIS": { "CST_pis": "07" },
+            "COFINS": { "CST_cofins": "07" },
+            "IBSCBS": {
+              "CST": "000",
+              "cClassTrib": "000001",
+              "gIBSCBS": {
+                "vBC": 10.0,
+                "gIBSUF": { "pIBSUF": 0.1, "vIBSUF": 0.01 },
+                "gIBSMun": { "pIBSMun": 0.0, "vIBSMun": 0.0 },
+                "vIBS": 0.01,
+                "gCBS": { "pCBS": 0.9, "vCBS": 0.09 }
+              }
+            }
+          }
+        }
+      ],
+      "total": {
+        "vNFIBScbsIS": 10,
+        "ICMSTot": {
+          "vBC_ttlnfe": "0.00",
+          "vICMS_ttlnfe": "0.00",
+          "vICMSDeson_ttlnfe": "0.00",
+          "vFCP_ttlnfe": "0.00",
+          "vBCST_ttlnfe": "0.00",
+          "vST_ttlnfe": "0.00",
+          "vFCPST_ttlnfe": "0.00",
+          "vFCPSTRet_ttlnfe": "0.00",
+          "vProd_ttlnfe": "10.00",
+          "vFrete_ttlnfe": "0.00",
+          "vSeg_ttlnfe": "0.00",
+          "vDesc_ttlnfe": "0.00",
+          "vII_ttlnfe": "0.00",
+          "vIPI_ttlnfe": "0.00",
+          "vPIS_ttlnfe": "0.00",
+          "vCOFINS_ttlnfe": "0.00",
+          "vOutro": "0.00",
+          "vNF": "10.00"
+        },
+        "IBSCBSTot": {
+          "vBCIBSCBS": 10.0,
+          "gIBS": {
+            "gIBSUF": { "vDif": 0.0, "vDevTrib": 0.0, "vIBSUF": 0.01 },
+            "gIBSMun": { "vDif": 0.0, "vDevTrib": 0.0, "vIBSMun": 0.0 },
+            "vIBS": 0.01,
+            "vCredPres": 0.0,
+            "vCredPresCondSus": 0.0
+          },
+          "gCBS": { "vDif": 0.0, "vDevTrib": 0.0, "vCBS": 0.09, "vCredPres": 0.0, "vCredPresCondSus": 0.0 }
+        }
+      },
+      "transp": { "modFrete": 9 },
+      "pag": [ { "tPag": "01", "vPag": "10.00" } ],
+      "infAdic": { "infCpl": "DOCUMENTO EMITIDO EM AMBIENTE DE HOMOLOGAÇÃO - SEM VALOR FISCAL" },
+      "RespTecnico": {
+        "CNPJ": "35398904000100",
+        "xContato": "Kauã Patricki de Azevedo Rosa",
+        "email": "kauarosa@migrate.info",
+        "fone": 5599674381
+      }
+    }
+  }
+]
+```
+
+##### CT-e
+
+```json
+[
+  {
+    "Documento": {
+      "ModeloDocumento": "CTe",
+      "Versao": "4.0",
+      "ide": {
+        "cCT": "17281638",
+        "cUF": "43",
+        "natOp": "Frete",
+        "CFOP": "5352",
+        "forPag": "0",
+        "mod": "57",
+        "serie": "0",
+        "nCT": 1,
+        "dhEmi": "2026-01-08T14:25:18",
+        "fusoHorario": "-03:00",
+        "tpImp": "1",
+        "tpEmis": "1",
+        "cDV": "3",
+        "tpAmb": "2",
+        "tpCTe": "0",
+        "procEmi": "0",
+        "verProc": "MigrateInvoiCy",
+        "indGlobalizado": "0",
+        "cMunEnv": "4313904",
+        "xMunEnv": "PANAMBI",
+        "UFEnv": "RS",
+        "modal": "01",
+        "tpServ": "0",
+        "cMunIni": "4313904",
+        "xMunIni": "PANAMBI",
+        "UFIni": "RS",
+        "cMunFim": "4313904",
+        "xMunFim": "PANAMBI",
+        "UFFim": "RS",
+        "retira": "0",
+        "xDetRetira": "Retirar o pacote no local de entrega indicado",
+        "indIEToma": "9",
+        "tomador": {
+          "toma": "4",
+          "CNPJ_toma": "99999999000199",
+          "IE_toma": "IE",
+          "xNome_toma": "Pedro da Silva",
+          "fone_toma": "5599999999",
+          "enderTomador": {
+            "xLgr_toma": "Rua Exemplo",
+            "nro_toma": "463",
+            "xCpl_toma": "Complemento Exemplo",
+            "xBairro_toma": "Centro",
+            "cMun_toma": "4310405",
+            "xMun_toma": "PANAMBI",
+            "CEP_toma": "98915000",
+            "UF_toma": "RS",
+            "cPais_toma": "1058",
+            "xPais_toma": "Brasil"
+          }
+        }
+      },
+      "compl": {
+        "xCaracAd": "Encomenda",
+        "xCaracSer": "Transporte",
+        "xEmi": "Jose Campos",
+        "xObs": "Observações livres do CT-e",
+        "fluxo": {
+          "xOrig": "Angra dos Reis",
+          "xDest": "Maria da Silva de Andrade da Conceicao Ferreira Pinto Junior",
+          "xRota": "129386",
+          "passagem": [ { "xPass": "LHR" }, { "xPass": "CGH" }, { "xPass": "POA" } ]
+        },
+        "Entrega": { "tpPer": "1", "dProg": "2014-07-03", "tpHor": "1", "hProg": "0001-01-01T10:30:22" }
+      },
+      "emit": {
+        "CNPJ_emit": "99999999000199",
+        "IE": "IE",
+        "xNome": "MIGRATE",
+        "xFant": "MIGRATE",
+        "CRT": 1,
+        "enderEmit": {
+          "xLgr": "RUA PE CACIQUE",
+          "nro": "985",
+          "xCpl": "2 ANDAR",
+          "xBairro": "CENTRO",
+          "cMun": "4321808",
+          "xMun": "TRÊS DE MAIO",
+          "CEP": "98910000",
+          "UF": "RS",
+          "fone": "55999999999",
+          "cPais": "0"
+        }
+      },
+      "rem": {
+        "CNPJ_rem": "99999999000199",
+        "IE_rem": "IE",
+        "xNome_rem": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "xFant_rem": "Empresa de Teste",
+        "fone_rem": "55999999999",
+        "email_rem": "email@email.com.br",
+        "enderRem": {
+          "xLgr_rem": "Rua Padre",
+          "nro_rem": "556",
+          "xCpl_rem": "Proximo as Lojas",
+          "xBairro_rem": "Centro",
+          "cMun_rem": "4310405",
+          "xMun_rem": "PANAMBI",
+          "CEP_rem": "98910000",
+          "UF_rem": "RS",
+          "cPais_rem": "1046",
+          "xPais_rem": "Brasil"
+        },
+        "locColeta": { "cMun_col": "0" }
+      },
+      "exped": {
+        "CNPJ_exp": "99999999000199",
+        "IE_exp": "IE",
+        "xNome_exp": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "fone_exp": "55999999999",
+        "email_exp": "email@email.com.br",
+        "enderExped": {
+          "xLgr_exp": "Rua das Palmeiras",
+          "nro_exp": "115",
+          "xCpl_exp": "Proximo ao bar do Ze",
+          "xBairro_exp": "Centro",
+          "cMun_exp": "3524006",
+          "xMun_exp": "PANAMBI",
+          "CEP_exp": "98915000",
+          "UF_exp": "SP",
+          "cPais_exp": "1046",
+          "xPais_exp": "Brasil"
+        }
+      },
+      "receb": {
+        "CPF_rec": "99999999999",
+        "xNome_rec": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "fone_rec": "55999999999",
+        "email_rec": "email@email.com.br",
+        "enderReceb": {
+          "xLgr_rec": "Rua Senador Salgado Filho",
+          "nro_rec": "463",
+          "xBairro_rec": "Centro",
+          "cMun_rec": "3524006",
+          "xMun_rec": "PANAMBI",
+          "CEP_rec": "98915000",
+          "UF_rec": "SP",
+          "cPais_rec": "1046",
+          "xPais_rec": "Brasil"
+        }
+      },
+      "dest": {
+        "CNPJ_dest": "99999999000199",
+        "IE_dest": "IE",
+        "xNome_dest": "CTE EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "fone_dest": "55999999999",
+        "email_dest": "email@email.com.br",
+        "enderDest": {
+          "xLgr_dest": "Rua Travessa",
+          "nro_dest": "280",
+          "xCpl_dest": "Proximo ao hospital",
+          "xBairro_dest": "Rita",
+          "cMun_dest": "4312401",
+          "xMun_dest": "belo horizonte",
+          "CEP_dest": "98910000",
+          "UF_dest": "RS",
+          "cPais_dest": "1046",
+          "xPais_dest": "Brasil"
+        },
+        "locEnt": { "cMun_locEnt": "0" }
+      },
+      "vPrest": {
+        "vTPrest": "32321.23",
+        "vRec": "12312.23",
+        "Comp": [
+          { "xNome_comp": "Componente 13", "vComp": "812.44" },
+          { "xNome_comp": "Componente 20", "vComp": "1612.44" }
+        ]
+      },
+      "imp": {
+        "vTotImp": "59.90",
+        "vTotTrib": "0.00",
+        "infAdFisco": "Informacoes de interesse do fisco estarao escritas aqui",
+        "vTotDFe": "32321.23",
+        "ICMS": {
+          "CST": "00",
+          "vBC": "12.00",
+          "pICMS": "13.0",
+          "vICMS": "1.56",
+          "pRedBC": "0",
+          "vBCSTRet": "0.00",
+          "vICMSSTRet": "0.00",
+          "pICMSSTRet": "0",
+          "vCred": "0.00",
+          "pRedBCOutraUF": "0",
+          "vBCOutraUF": "0.00",
+          "pICMSOutraUF": "0",
+          "vICMSOutraUF": "0.00",
+          "indSN": "0"
+        },
+        "ICMSUFFim": {
+          "vBCUFFim": "0.00",
+          "pFCPUFFim": "0",
+          "pICMSUFFim": "0",
+          "pICMSInter": "0",
+          "pICMSInterPart": "0",
+          "vFCPUFFim": "0.00",
+          "vICMSUFIni": "0.00",
+          "vICMSUFFim": "0.00"
+        },
+        "IBSCBS": {
+          "CST": "000",
+          "cClassTrib": "000001",
+          "gIBSCBS": {
+            "vBC": "500.00",
+            "gIBSCredPres": { "pCredPres": "0", "vCredPres": "0.00", "vCredPresCondSus": "0.00" },
+            "gCBSCredPres": { "pCredPres": "0", "vCredPres": "0.00", "vCredPresCondSus": "0.00" },
+            "vIBS": "0.50",
+            "gIBSUF": {
+              "pIBSUF": "0.10",
+              "gDif": { "pDif": "0", "vDif": "0.00" },
+              "gDevTrib": { "vDevTrib": "0.00" },
+              "gRed": { "pRedAliq": "0.00", "pAliqEfet": "0.00" },
+              "vIBSUF": "0.50"
+            },
+            "gIBSMun": {
+              "pIBSMun": "0",
+              "gDif": { "pDif": "0", "vDif": "0.00" },
+              "gDevTrib": { "vDevTrib": "0.00" },
+              "gRed": { "pRedAliq": "0.00", "pAliqEfet": "0" },
+              "vIBSMun": "0.00"
+            },
+            "gCBS": {
+              "pCBS": "0.90",
+              "gDif": { "pDif": "0", "vDif": "0.00" },
+              "gDevTrib": { "vDevTrib": "0.00" },
+              "gRed": { "pRedAliq": "0.00", "pAliqEfet": "0" },
+              "vCBS": "4.50"
+            },
+            "gTribRegular": {
+              "pAliqEfetRegIBSUF": "0",
+              "vTribRegIBSUF": "0.00",
+              "pAliqEfetRegIBSMun": "0",
+              "vTribRegIBSMun": "0.00",
+              "pAliqEfetRegCBS": "0",
+              "vTribRegCBS": "0.00"
+            },
+            "gTribCompraGov": {
+              "pAliqIBSUF": "0",
+              "vTribIBSUF": "0.00",
+              "pAliqIBSMun": "0",
+              "vTribIBSMun": "0.00",
+              "pAliqCBS": "0",
+              "vTribCBS": "0.00"
+            },
+            "gEstornoCred": { "vIBSEstCred": "0.00", "vCBSEstCred": "0.00" }
+          }
+        }
+      },
+      "infCTeNorm": {
+        "infCarga": {
+          "vMerc": "599.65",
+          "proPred": "Pepitas de ouro",
+          "xOutCat": "Que valem mais do que dinheiro",
+          "vCargaAverb": "200.00",
+          "infQ": [ { "cUnid": "02", "tpMed": "TONELADA", "qCarga": "899.0000" } ]
+        },
+        "infDoc": [
+          {
+            "tipoDocumento": "2",
+            "vBC_nf": "0.00",
+            "vICMS_nf": "0.00",
+            "vBCST_nf": "0.00",
+            "vST_nf": "0.00",
+            "vProd_nf": "0.00",
+            "vNF_nf": "0.00",
+            "CFOP_nf": "0",
+            "peso_nf": "0.000",
+            "chave_nfe": "99999999999999999999999999999999999999999999",
+            "PINSuframa_nfe": "991233459",
+            "dPrev_nfe": "2026-01-08",
+            "vDocFisc_outros": "0.00",
+            "UnidadesTransp": [
+              {
+                "tipoUnidTransporte": "5",
+                "idUnidTransporte": "BCIASUDX988",
+                "qtdRateada": "999",
+                "LacresUnidTransp": [ { "nLacreUnidTransp": "999" } ],
+                "UnidadesCargaTran": [
+                  {
+                    "tipoUnidCargaTran": "2",
+                    "idUnidCargaTran": "22",
+                    "qtdRateadaCargaTran": "10",
+                    "LacresUnidCargaTran": [ { "nLacreUnidCargaTran": "100" } ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "infModal": {
+          "versaoModal": "4.0",
+          "rodo": { "RNTRC": "89173646", "lota": "0", "CTRB": { "nCTRB": "0" } },
+          "aereo": { "nMinu": "0", "nOCA": "0", "tarifa": { "vTar": "0.00" }, "NatCarga": [] },
+          "aquav": { "vPrestAFRMM": "0.00", "vAFRMM": "0.00" },
+          "duto": { "vTar_duto": "0.000000" },
+          "multimodal": { "indNegociavel": "0", "segMulti": [] }
+        }
+      },
+      "veicNovos": [
+        { "chassi": "11111111111111111", "cCor": "1123", "xCor": "VERDE MUSGO", "cMod": "7878", "vUnit": "15000.00", "vFrete_vNov": "500.99" }
+      ],
+      "cobr": {
+        "fat": { "nFat": "9789988123", "vOrig": "12200.23", "vDesc": "5542.12", "vLiq": "7981.22" },
+        "dup": [ { "nDup": "56789658", "dVenc": "2014-07-03", "vDup": "12321.33" } ]
+      },
+      "infCteSub": { "tomaICMS": { "refNF_CT": { "nro_sub": "0", "valor_sub": "0.00" } } },
+      "infRespTec": {
+        "CNPJ_respTec": "99999999000199",
+        "xContato": "RESPONSÁVEL TÉCNICO",
+        "email_respTec": "email@email.com.br",
+        "fone_respTec": "55999999999",
+        "idCSRT": "",
+        "hashCSRT": ""
+      }
+    }
+  }
+]
+```
+
+##### NFCom
+
+```json
+[
+  {
+    "Documento": {
+      "Versao": "1.00",
+      "ModeloDocumento": "NFCom",
+      "ide": {
+        "cUF": 43,
+        "tpAmb": 2,
+        "mod": 62,
+        "serie": "30",
+        "nNF": 65,
+        "cNF": 1234567,
+        "dhEmi": "2025-11-27T14:50:00",
+        "fusoHorario": "-03:00",
+        "tpEmis": 1,
+        "nSiteAutoriz": "0",
+        "cMunFG": "4321808",
+        "finNFCom": "0",
+        "tpFat": "0",
+        "verProc": "Exemplo-1.0",
+        "indPrePago": "1"
+      },
+      "emit": {
+        "CNPJ": "99999999999999",
+        "IE": "001800",
+        "CRT": 3,
+        "xNome": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+        "enderEmit": {
+          "xLgr": "RUA PE CACIQUE",
+          "nro": "985",
+          "xBairro": "CENTRO",
+          "cMun": "4321808",
+          "xMun": "TRÊS DE MAIO",
+          "CEP": "98910000",
+          "UF": "RS",
+          "fone": 5535354830
+        }
+      },
+      "dest": {
+        "xNome": "NFCOM EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+        "CPF": "12345678900",
+        "indIEDest": 9,
+        "enderDest": {
+          "xLgr": "Rua Projetada",
+          "nro": "41",
+          "xBairro": "ZONA RURAL",
+          "cMun": "2510808",
+          "xMun": "PATOS",
+          "CEP": "58700020",
+          "UF": "PB",
+          "fone": 8377777777
+        }
+      },
+      "assinante": {
+        "iCodAssinante": "123456789101122",
+        "tpAssinante": 4,
+        "tpServUtil": 6,
+        "nContrato": "458798",
+        "dContratoIni": "2025-09-01",
+        "dContratoFim": "2025-09-30",
+        "NroTermPrinc": "8377077000",
+        "cUFPrinc": "25",
+        "NroTermAdic": "8377077001",
+        "cUFAdic": "25"
+      },
+      "det": [
+        {
+          "nItem": "1",
+          "nItemAnt": "1",
+          "prod": {
+            "cProd": "123",
+            "xProd": "TESTE DE EMISSÃO DE FATURA DE SERVIÇOS DE TELECOMUNICAÇÕES",
+            "cClass": "0100101",
+            "CFOP": "5301",
+            "uMed": 4,
+            "qFaturada": "1.0000",
+            "vItem": "100.00000000",
+            "vDesc": "0.00",
+            "vOutro": "0.00",
+            "vProd": "100.00000000"
+          },
+          "imposto": {
+            "ICMS": { "CST": "00", "vBC": "100.00", "pICMS": "25.00", "vICMS": "25.00", "pFCP": "0.00", "vFCP": "0.00", "indSN": 0 },
+            "ICMSUFDest": {
+              "cUFDest": "",
+              "vBCUFDest": "0.00",
+              "pFCPUFDest": "0.00",
+              "pICMSUFDest": "0.00",
+              "pICMSInter": "0.00",
+              "vFCPUFDest": "0.00",
+              "vICMSUFDest": "0.00",
+              "vICMSUFEmi": "0.00"
+            },
+            "PIS": { "CST": "01", "vBC": "100.00", "pPIS": "1.65", "vPIS": "1.65" },
+            "COFINS": { "CST": "01", "vBC": "100.00", "pCOFINS": "7.60", "vCOFINS": "7.60" },
+            "IBSCBS": {
+              "CST": "000",
+              "cClassTrib": "000001",
+              "gIBSCBS": {
+                "vBC": "100.00",
+                "gIBSUF": { "pIBSUF": "0.10", "vIBSUF": "0.10" },
+                "gIBSMun": { "pIBSMun": "0.00", "vIBSMun": "0.00" },
+                "vIBS": "0.10",
+                "gCBS": { "pCBS": "0.90", "vCBS": "0.90" }
+              }
+            }
+          }
+        }
+      ],
+      "total": {
+        "vProd": "100.00",
+        "vTotDFe": "100.00",
+        "ICMSTot": { "vBC": "100.00", "vICMS": "25.00", "vICMSDeson": "0.00", "vFCP": "0.00" },
+        "vCOFINS": "7.60",
+        "vPIS": "1.65",
+        "vDesc": "0.00",
+        "vNF": "100.00",
+        "IBSCBSTot": {
+          "vBCIBSCBS": "100.00",
+          "gIBS": {
+            "gIBSUF": { "vDif": "0.00", "vDevTrib": "0.00", "vIBSUF": "0.10" },
+            "gIBSMun": { "vDif": "0.00", "vDevTrib": "0.00", "vIBSMun": "0.00" },
+            "vIBS": "0.10",
+            "vCredPres": "0.00",
+            "vCredPresCondSus": "0.00"
+          },
+          "gCBS": { "vDif": "0.00", "vDevTrib": "0.00", "vCBS": "0.90", "vCredPres": "0.00", "vCredPresCondSus": "0.00" }
+        }
+      }
+    }
+  }
+]
+```
+
+##### NFS-e
+
+```json
+[
+  {
+    "Documento": {
+      "ModeloDocumento": "NFSE",
+      "Versao": 1.00,
+      "RPS": [
+        {
+          "RPSNumero": 2281,
+          "RPSSerie": "770",
+          "RPSTipo": 1,
+          "dEmis": "2026-01-09T09:00:23",
+          "dCompetencia": "2026-01-09T09:00:23",
+          "LocalPrestServ": 1,
+          "natOp": 1,
+          "Operacao": "A",
+          "NumProcesso": "",
+          "benefIdNac": 0,
+          "benefNumero": "",
+          "RegEspTrib": 0,
+          "OptSN": 2,
+          "regApTribSN": 0,
+          "IncCult": 2,
+          "tpImunidade": 0,
+          "tpSusp": 0,
+          "Status": 1,
+          "cVerificaRPS": "",
+          "EmpreitadaGlobal": 0,
+          "tpAmb": 2,
+          "finNFSe": 0,
+          "indDoacao": 1,
+          "indFinal": 0,
+          "cIndOp": 100102,
+          "tpEnteGov": 2,
+          "xTpEnteGov": "",
+          "indDest": 0,
+          "tpOper": 1,
+          "NFSOutrasinformacoes": "Valor aproximado dos tributos: R$ 2.00",
+          "RPSCanhoto": 0,
+          "Arquivo": "",
+          "ExtensaoArquivo": "",
+          "RPSSubs": {
+            "SubsNumero": 0,
+            "SubsSerie": "",
+            "SubsTipo": 0,
+            "SubsNFSeNumero": 0,
+            "SubsDEmisNFSe": "0000-00-00T00:00:00",
+            "SubsChave": "",
+            "SubsCodMotivo": "",
+            "SubsDescMotivo": ""
+          },
+          "Prestador": {
+            "CNPJ_prest": "99999999999999",
+            "xNome": "MIGRATE",
+            "xFant": "MIGRATE",
+            "IM": "123548",
+            "IE": "",
+            "CMC": "0",
+            "CAEPF": "",
+            "enderPrest": {
+              "TpEnd": "",
+              "xLgr": "RUA PE CACIQUE",
+              "nro": "985",
+              "xCpl": "",
+              "xBairro": "CENTRO",
+              "cMun": 1400159,
+              "UF": "RR",
+              "CEP": 98910000,
+              "fone": "5535354830",
+              "Email": ""
+            }
+          },
+          "ListaItens": {
+            "Item": [
+              {
+                "ItemSeq": 1,
+                "ItemCod": "1",
+                "ItemDesc": "Envio NFSe",
+                "ItemQtde": 1.0,
+                "ItemvUnit": 0.95,
+                "ItemuMed": "UN",
+                "ItemvlDed": 0.0,
+                "ItemTributavel": "",
+                "ItemcCnae": "",
+                "ItemTributMunicipio": "0.95",
+                "ItemnAlvara": "",
+                "ItemvIss": 0.9,
+                "ItemvDesconto": 0.0,
+                "ItemAliquota": 0.0,
+                "ItemVlrTotal": 0,
+                "ItemBaseCalculo": 0.95,
+                "ItemvlrISSRetido": 0.0,
+                "ItemIssRetido": 2,
+                "ItemRespRetencao": 0,
+                "ItemIteListServico": "",
+                "itemCodTributNacional": "",
+                "ItemExigibilidadeISS": 1,
+                "ItemcMunIncidencia": 1400159,
+                "ItemNumProcesso": "",
+                "ItemDedTipo": "",
+                "ItemDedCPFRef": "",
+                "ItemDedCNPJRef": "",
+                "ItemDedNFRef": 0,
+                "ItemDedvlTotRef": 0,
+                "ItemDedPer": 0,
+                "ItemVlrLiquido": 0,
+                "ItemValAliqINSS": 0,
+                "ItemValINSS": 0,
+                "ItemvalBCINSS": 0,
+                "ItemValAliqIR": 0,
+                "ItemValIR": 0,
+                "ItemValBCIRRF": 0,
+                "ItemValAliqCOFINS": 0,
+                "ItemValCOFINS": 0,
+                "ItemValBCCOFINS": 0,
+                "ItemValAliqCSLL": 0,
+                "ItemValCSLL": 0,
+                "ItemValBCCSLL": 0,
+                "ItemValAliqPIS": 0,
+                "ItemValPIS": 0,
+                "ItemValBCPIS": 0,
+                "ItemRedBC": 0,
+                "ItemRedBCRetido": 0,
+                "ItemBCRetido": 0,
+                "ItemValAliqISSRetido": 0,
+                "ItemPaisImpDevido": "",
+                "ItemJustDed": "",
+                "ItemvOutrasRetencoes": 0,
+                "ItemDescIncondicionado": 0,
+                "ItemDescCondicionado": 0,
+                "ItemTotalAproxTribServ": 0.00,
+                "ItemDescHospedagem": "",
+                "ItemQtdeHospedes": "0",
+                "ItemQtdeDiariasHospedagem": "0",
+                "ItemCodQuartoHospedagem": "",
+                "ItemDtaEntrHospedagem": "0000-00-00T00:00:00",
+                "ItemDtaSaiHospedagem": "0000-00-00T00:00:00",
+                "ItemValorDiariaHospedagem": "0",
+                "ItemCSTPisCofins": "",
+                "ItemTpRetPisCofins": "",
+                "ItemNBS": ""
+              }
+            ]
+          },
+          "ListaParcelas": { "Parcela": [] },
+          "Servico": {
+            "IteListServico": "",
+            "Cnae": 0,
+            "fPagamento": "",
+            "tpag": 0,
+            "codTributNacional": "170801",
+            "TributMunicipio": "0",
+            "TributMunicDesc": "",
+            "Discriminacao": "ESTACIONAMENTO DE VEICULOS",
+            "cMun": 1400159,
+            "SerQuantidade": 0.0,
+            "SerUnidade": "",
+            "SerNumAlvara": "",
+            "PaiPreServico": "",
+            "cMunIncidencia": 1400159,
+            "dVencimento": "0000-00-00T00:00:00",
+            "ObsInsPagamento": "",
+            "ObrigoMunic": 0,
+            "TributacaoISS": 0,
+            "CodigoAtividadeEconomica": "",
+            "ServicoViasPublicas": 0,
+            "NumeroParcelas": 0,
+            "NroOrcamento": 0,
+            "CodigoNBS": "122051200",
+            "docRef": "",
+            "idDocTec": "",
+            "CST": "",
+            "Valores": {
+              "ValServicos": 0.95,
+              "ValPercDeducoes": 0,
+              "ValDeducoes": 0,
+              "ValPIS": 0,
+              "ValBCPIS": 0,
+              "ValCOFINS": 0,
+              "ValBCCOFINS": 0,
+              "ValINSS": 0,
+              "ValBCINSS": 0,
+              "ValIR": 0,
+              "ValBCIRRF": 0,
+              "ValCSLL": 0,
+              "ValBCCSLL": 0,
+              "RespRetencao": 0,
+              "Tributavel": "",
+              "ValISS": 0.019,
+              "ISSRetido": 2,
+              "ValISSRetido": 0,
+              "ValTotal": 0,
+              "ValTotalRecebido": 0,
+              "ValBaseCalculo": 0.95,
+              "ValOutrasRetencoes": 0,
+              "ValAliqISS": 2.0,
+              "ValAliqPIS": 0,
+              "PISRetido": 2,
+              "ValAliqCOFINS": 0,
+              "COFINSRetido": 0,
+              "ValAliqIR": 0,
+              "IRRetido": 0,
+              "ValAliqCSLL": 0,
+              "CSLLRetido": 0,
+              "ValAliqINSS": 0,
+              "INSSRetido": 0,
+              "ValAliqCpp": 0,
+              "CppRetido": 0,
+              "ValCpp": 0,
+              "OutrasRetencoesRetido": 0,
+              "ValBCOutrasRetencoes": 0,
+              "ValAliqOutrasRetencoes": 0,
+              "ValAliqTotTributos": 1.0,
+              "ValLiquido": 0.95,
+              "ValDescIncond": 0,
+              "ValDescCond": 0,
+              "ValAcrescimos": 0,
+              "ValAliqISSoMunic": 0,
+              "InfValPIS": "",
+              "InfValCOFINS": "",
+              "ValLiqFatura": 0,
+              "ValBCISSRetido": 0,
+              "NroFatura": 0,
+              "CargaTribValor": 0,
+              "CargaTribPercentual": 0,
+              "CargaTribFonte": "",
+              "JustDed": "",
+              "ValCredito": 0,
+              "OutrosImp": 0,
+              "ValRedBC": "0",
+              "ValRetFederais": 0,
+              "ValAproxTrib": "0",
+              "NroDeducao": 0,
+              "mdPrestacao": "0",
+              "vincPrest": "0",
+              "tpMoeda": "",
+              "ValServEst": 0,
+              "mecAFComexP": "",
+              "mecAFComexT": "",
+              "movTempBens": "0",
+              "nDI": "",
+              "nRE": "",
+              "mdic": "0",
+              "vRecebInterm": 0,
+              "ValRedBenef": 0,
+              "PercRedBenef": 0,
+              "ValRetEstaduais": 0,
+              "ValRetMunicipais": 0,
+              "ValAliqRetFederais": 0,
+              "ValAliqRetEstaduais": 0,
+              "ValAliqRetMunicipais": 0,
+              "IBSCBS": {
+                "TribRegular": {
+                  "ValpAliqEfeRegIBSUF": 0,
+                  "ValTribRegIBSUF": 0,
+                  "ValpAliqEfeRegIBSMun": 0,
+                  "ValTribRegIBSMun": 0,
+                  "ValpAliqEfeRegCBS": 0,
+                  "ValTribRegCBS": 0
+                },
+                "TribCompraGov": {
+                  "ValpIBSUF": 0,
+                  "ValIBSUF": 0,
+                  "ValpIBSMun": 0,
+                  "ValIBSMun": 0,
+                  "ValpCBS": 0,
+                  "ValCBS": 0
+                },
+                "IBS": {
+                  "ValIBSTot": 1.0,
+                  "ValCredPresIBS": 1.0,
+                  "ValpCredPresIBS": 1.0,
+                  "ValIBSUF": 1.0,
+                  "ValpIBSUF": 1.0,
+                  "ValDifUF": 0,
+                  "ValpDifUF": 0,
+                  "ValpRedAliqUF": 1.0,
+                  "ValpAliqEfetUF": 1.0,
+                  "ValIBSMun": 1.0,
+                  "ValDifMun": 0,
+                  "ValpDifMun": 0,
+                  "ValpAliqEfetMun": 1.0,
+                  "ValpRedAliqMun": 1.0,
+                  "ValIBSEstCred": 1.0
+                },
+                "CBS": {
+                  "ValCBS": 1.0,
+                  "ValpCBS": 1.0,
+                  "ValCredPresCBS": 1.0,
+                  "ValpCredPresCBS": 1.0,
+                  "ValDifCBS": 0,
+                  "ValpDifCBS": 0,
+                  "ValpAliqEfetCBS": 1.0,
+                  "ValpRedAliqCBS": 1.0,
+                  "ValCBSEstCred": 1.0
+                },
+                "ValTotNF": 0.95,
+                "ValBCIBSCBS": 2.0,
+                "ValCalcReeRepRes": 0.0,
+                "ValpRedutor": 0.0,
+                "ValMulta": 0.0,
+                "ValJuros": 0.0,
+                "ValInicialCobrado": 0.0,
+                "ValFinalCobrado": 0.0,
+                "ValIPI": 0.0
+              }
+            },
+            "LocalPrestacao": {
+              "SerEndTpLgr": "",
+              "SerEndLgr": "",
+              "SerEndNumero": "",
+              "SerEndComplemento": "",
+              "SerEndBairro": "",
+              "SerEndxMun": "",
+              "SerEndcMun": 1400159,
+              "SerEndCep": 0,
+              "SerEndSiglaUF": ""
+            },
+            "IBSCBS": {
+              "TribRegular": { "CSTReg": 0, "cClassTribReg": 0 },
+              "cLocalidadeIncid": 1,
+              "xLocalidadeIncid": "TESTE",
+              "CSTIBSCBS": "011",
+              "cClassTrib": "011003",
+              "cCredPres": 0,
+              "PagParceladoAntecipado": "1",
+              "NCM": "121",
+              "indCompGov": ""
+            }
+          },
+          "Tomador": {
+            "TomaCNPJ": "99999999999999",
+            "TomaCPF": "",
+            "TomaIM": "999999999",
+            "TomaRazaoSocial": "NFS-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+            "TomatpLgr": "RUA GUARANI",
+            "TomaEndereco": "DO COMERCIO",
+            "TomaNumero": "3000",
+            "TomaComplemento": "TERCEIRA QUADRA",
+            "TomaBairro": "ASA SUL",
+            "TomacMun": 1400159,
+            "TomaxMun": "BONFIM",
+            "TomaUF": "RR",
+            "TomaPais": "BR",
+            "TomaCEP": 69380000,
+            "TomaTelefone": "5535354800",
+            "TomaTipoTelefone": "",
+            "TomaEmail": "teste@migrate.info",
+            "TomaSite": "",
+            "TomaIE": "",
+            "TomaIME": "",
+            "TomaSituacaoEspecial": "",
+            "DocTomadorEstrangeiro": "",
+            "TomaRegEspTrib": 0,
+            "TomaCadastroMunicipio": 0,
+            "TomaOrgaoPublico": 0,
+            "TomaEnderecoInformado": "",
+            "TomaCAEPF": "",
+            "TomaExSemNIF": "0"
+          },
+          "IntermServico": {
+            "IntermRazaoSocial": "",
+            "IntermCNPJ": "",
+            "IntermCPF": "",
+            "IntermNIF": "",
+            "IntermExSemNIF": "0",
+            "IntermIM": "",
+            "IntermEmail": "",
+            "IntermEndereco": "",
+            "IntermNumero": "",
+            "IntermComplemento": "",
+            "IntermBairro": "",
+            "IntermCep": "0",
+            "IntermCmun": 0,
+            "IntermXmun": "",
+            "IntermFone": "",
+            "ItermIE": "",
+            "IntermPais": "",
+            "IntermUF": "",
+            "IntermCAEPF": ""
+          },
+          "Destinatario": {
+            "DestCNPJ": "99999999999999",
+            "DestCPF": "",
+            "DestNIF": "",
+            "DestcNaoNIF": 0,
+            "DestNome": "NFS-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+            "DestEndereco": "RUA GUARANI",
+            "DestNumero": "3000",
+            "DestComplemento": "",
+            "DestBairro": "ASA SUL",
+            "DestFone": 0,
+            "DestEmail": "",
+            "DestcMun": 4317202,
+            "DestxMun": "SANTA ROSA",
+            "DestCEP": "98780001",
+            "DestPais": "BR",
+            "DestEstProvReg": ""
+          },
+          "ConstCivil": {
+            "CodObra": "",
+            "Art": "",
+            "ObraLog": "",
+            "ObraCompl": "",
+            "ObraNumero": "",
+            "ObraBairro": "",
+            "ObraCEP": 0,
+            "ObraMun": 0,
+            "ObraUF": "",
+            "ObraPais": "",
+            "ObraCEI": "",
+            "ObraMatricula": "",
+            "ObraValRedBC": 0.0,
+            "ObraTipo": 0,
+            "ObraNomeFornecedor": "",
+            "ObraNumeroNF": 0,
+            "ObraDataNF": "0000-00-00T00:00:00",
+            "ObraNumEncapsulamento": "",
+            "AbatimentoMateriais": 0,
+            "ObraXMun": "",
+            "ListaMaterial": { "Material": [] }
+          },
+          "ListaDed": { "Ded": [] },
+          "Transportadora": {
+            "TraNome": "",
+            "TraCPFCNPJ": "",
+            "TraIE": "",
+            "TraPlaca": "",
+            "TraEnd": "",
+            "TraMun": 0,
+            "TraUF": "",
+            "TraPais": "",
+            "TraTipoFrete": 0
+          },
+          "Locacao": {
+            "LocacaoItem": { "categServ": "0", "objetoLocacao": "0", "extensaoFerrovia": 0, "nPostes": "0" }
+          },
+          "AtividadeEvento": {
+            "AtivDesc": "",
+            "AtivDataInicial": "0000-00-00T00:00:00",
+            "AtivDataFinal": "0000-00-00T00:00:00",
+            "AtivIdEvento": "",
+            "AtivEndLogradouro": "",
+            "AtivEndNumero": "",
+            "AtivEndCompl": "",
+            "AtivEndBairro": "",
+            "AtivEndCEP": "",
+            "AtivEndcMun": "",
+            "AtivEndxMun": "",
+            "AtivEndUF": ""
+          },
+          "Pedagio": {
+            "PedCategVeiculo": "",
+            "PednEixos": 0,
+            "PedRodagem": 0,
+            "PedSentido": 0,
+            "PedPlaca": "",
+            "PedCodAcesso": "",
+            "PedCodContrato": ""
+          },
+          "Imovel": {
+            "ImovInscImobFisc": "",
+            "ImovCIB": "",
+            "ImovCEP": "",
+            "ImovEndereco": "",
+            "ImovNumero": "",
+            "ImovComplemento": "",
+            "ImovBairro": "",
+            "ImovxMun": "",
+            "ImovEstProvReg": ""
+          },
+          "ListaDocumentos": {},
+          "Documento": [
+            {
+              "RepositorioNacional": { "DocTipoChaveDFe": 0, "DocxTipoChaveDFe": "", "DocChaveDFe": "" },
+              "DocumentoFiscalOutro": { "DoccMun": "", "DocNumero": "", "DocDescricao": "" },
+              "Fornecedor": { "DocCNPJ": "", "DocCPF": "", "DocNIF": "", "DoccNaoNIF": 0, "DocxNome": "" },
+              "DocDataEmissao": "",
+              "DocDCompetencia": "",
+              "DoctpReeRepRes": 0,
+              "DocDescTpReeRepRes": "",
+              "DocValorReeRepRes": 0.0
+            }
+          ],
+          "ListaNFSeReferenciadas": { "DocChaveNFSe": "" },
+          "ListaBensMoveis": { "BemMovelcNCM": "8608001", "BemMovelxNCM": "ESTACIONAMENTO", "BemMovelqtdNCM": 1 },
+          "ListaDedIBSCBS": { "DedtpRedIBSCBS": 99, "DedxTpRedIBSCBS": "ESTACIONAMENTO", "DedvlrRedIBSCBS": 0.95 },
+          "ListaNFSeRefPagAntecipado": { "DocRefPgaAntNFSe": "" }
+        }
+      ]
+    }
+  }
+]
+```
+
+##### MDF-e
+
+```json
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "MDFe",
+            "Versao": 3,
+            "ide": {
+                "cMDF": 9576,
+                "cUF": 43,
+                "tpAmb": 2,
+                "tpEmit": 2,
+                "tpTransp": 0,
+                "serie": "770",
+                "nMDF": 3229,
+                "modal": 1,
+                "dhEmi": "2026-07-07T16:49:39",
+                "fusoHorario": "-03:00",
+                "tpEmis": 2,
+                "UFIni": "RS",
+                "UFFim": "RS",
+                "dhIniViagem": "2026-07-07T16:49:39",
+                "EmailArquivos": "testemigrate@gmail.com",
+                "indCanalVerde": 0,
+                "indCarregaPosterior": 0,
+                "MunicipiosCarreg": [
+                    {
+                        "cMunCarreg": 4313904,
+                        "xMunCarreg": "PANAMBI"
+                    }
+                ]
+            },
+               "emit": {
+                "CNPJ_emit": "99999999999999",
+                "IE": "18001360",
+                "xNome": "Migrate",
+                "xFant": "Migrate",
+                "enderEmit": {
+                    "xLgr": "Rua Padre Cacique",
+                    "nro": "985",
+                    "xCpl": "ANDAR 02",
+                    "xBairro": "CENTRO",
+                    "cMun": "4321808",
+                    "xMun": "TRÊS DE MAIO",
+                    "CEP": "98910000",
+                    "UF": "RS",
+                    "cPais": "0"
+                }
+            },
+            "InfModal": {
+        "versaoModal": 3,
+        "Rodoviario": {
+            "RNTRC": "00000000",
+            "CIOT": "",
+            "codAgPorto": "",
+            "infCIOT": [],
+            "Contratante": [],
+            "InfPagamento": [],
+            "VeicTracao": {
+                "codigo_veiculo": "IFQ0890",
+                "placa": "XEB3569",
+                "tara": 1,
+                "capacidadeKG": 1,
+                "capacidadeM3": 1,
+                "tipoRodado": "01",
+                "tipoCarroceria": "00",
+                "UF_veiculo": "",
+                "RENAVAM": "",
+                "Proprietario": {
+                    "CPF_prop": "",
+                    "CNPJ_prop": "",
+                    "RNTRC_prop": "",
+                    "nome_prop": "",
+                    "IE_prop": "",
+                    "UF_prop": "",
+                    "tipo_prop": 0
+                },
+                "Condutores": [{
+                        "nome_cond": "ROBERTO LAMB",
+                        "CPF_cond": "11111111111"
+                    }
+                ]
+            },
+            "VeicReboque": [],
+            "ValePedagio": [],
+            "LacresRodo": [],
+            "AutXML": [
+                {
+                    "CNPJ_aut": "99999999999999"
+                }
+            ]
+        }
+    },
+            "Documentos": {
+                "MunicipiosDescarreg": [
+                    {
+                        "cMunDescarreg": 4313904,
+                "xMunDescarreg": "PANAMBI",
+                        "InfDoc": [
+                            {
+                                "tipoDocumento": 3,
+                                "chaveAcesso": "99999999999999999999999999999999999999999999",
+                                "segCodBarras": "",
+                                "numero_ct": "",
+                                "serie_ct": "",
+                                "subserie_ct": 0,
+                                "dEmi_ct": "0000-00-00",
+                                "valorCarga_ct": "0.00",
+                                "CNPJ_nf": "",
+                                "UF_nf": "",
+                                "numero_nf": "",
+                                "serie_nf": "",
+                                "dEmi_nf": "0000-00-00",
+                                "valor_nf": "0.00",
+                                "PINSuframa_nf": "",
+                                "indReentrega": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Seguro": [
+                {
+                    "nApol": "4321",
+                    "Averbacoes": [
+                        {
+                            "nAver": "1"
+                        },
+                        {
+                            "nAver": "2"
+                        }
+                    ],
+                    "infResp": {
+                        "respSeg": 1,
+                        "CNPJ_respSeg": "99999999999999",
+                        "CPF_respSeg": "14743208645"
+                    },
+                    "infSeg": {
+                        "XSeg": "Seguro de Moto",
+                        "CNPJ_seg": "99999999999999"
+                    }
+                }
+            ],
+            "ProdPredominante": {
+                "tpCarga": "05",
+                "xProd": "Latas de atum",
+                "cEAN": "SEM GTIN",
+                "NCM": "98765432",
+                "Lotacao": {
+                    "LocalCarrega": {
+                        "CEP_LocalCarrega": "98910000",
+                        "Latitude_LocalCarrega": "",
+                        "Longitude_LocalCarrega": ""
+                    },
+                    "LocalDescarrega": {
+                        "CEP_LocalDescarrega": "98915000",
+                        "Latitude_LocalDescarrega": "",
+                        "Longitude_LocalDescarrega": ""
+                    }
+                }
+            },
+            "Totais": {
+                "qtdCTe": 0,
+                "qtdCT": 0,
+                "qtdNFe": 1,
+                "qtdNF": 0,
+                "qtdMDFe": 0,
+                "valorCarga": "5666.66",
+                "codUnidMedida": "01",
+                "qtdCarga": "661.0000"
+            },
+             "infRespTec":{
+                "CNPJ_respTec":"99999999999999",
+                "xContato":"Teste",
+                "email_respTec":"testemigrate@gmail.com",
+                "fone_respTec":"1142406556",
+                "idCSRT":"",
+                "hashCSRT":""
+                }
+        }
+    }
+]
+```
+
+#### Response de emissão (estrutura padrão — igual para todos os módulos)
+
+```json
+[
+  {
+    "Codigo": 100,
+    "Descricao": "Documentos processados",
+    "Documentos": [
+      {
+        "DocModelo": "NFe",
+        "DocNumero": 8521,
+        "DocSerie": "770",
+        "DocChaAcesso": "<44 dígitos>",
+        "DocProtocolo": "<15 dígitos>",
+        "DocEvenSeq": 0,
+        "DocEveTp": 0,
+        "DocEveId": "",
+        "DocPDFBase64": "<base64 do DANFE>",
+        "DocPDFDownload": "https://consultahomolog.invoicy.com.br/DownloadPDF.aspx?...",
+        "DocDhAut": "2026-07-02T09:48:26-03:00",
+        "DocDigestValue": "<hash>",
+        "DocXMLBase64": "<base64 do XML autorizado>",
+        "DocXMLDownload": "https://consultahomolog.invoicy.com.br/HNUC002.aspx?...",
+        "DocImpressora": "",
+        "Situacao": {
+          "SitCodigo": 100,
+          "SitDescricao": "Autorizado o uso da NF-e"
+        }
+      }
+    ]
+  }
+]
+```
+
+**Campos-chave do retorno:**
+
+| Campo | Descrição |
+|-------|-----------|
+| `DocChaAcesso` | Chave de acesso (44 dígitos) — guardar para eventos e consultas |
+| `DocProtocolo` | Protocolo de autorização da SEFAZ |
+| `DocPDFBase64` | DANFE em base64 — decode direto para PDF |
+| `DocXMLBase64` | XML autorizado em base64 |
+| `DocPDFDownload` / `DocXMLDownload` | Links de download |
+| `SitCodigo` | Código de situação — `100` = autorizado. Tabela completa: ver seção "Códigos de Retorno" |
+
+#### Layouts de referência por módulo
+
+| Módulo     | Layout |
+|------------|--------|
+| NF-e/NFC-e | https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Layout%20Integra%C3%A7%C3%A3o%20-%20Reforma%20Tribut%C3%A1ria/Layout%204.0%20NFe_NFCe%20Reforma%20Tribut%C3%A1ria.xlsx |
+| NFCom | https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Layout%20Integra%C3%A7%C3%A3o%20-%20Reforma%20Tribut%C3%A1ria/Layout%20NFCom%20Reforma%20Tribut%C3%A1ria.xlsx |
+| NFS-e      | https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Layout%20Integra%C3%A7%C3%A3o%20-%20Reforma%20Tribut%C3%A1ria/NFSe/Layout_Recepcao_NFSe_Reforma_Tributaria%20-%20vers%C3%A3o%206.xlsx |
+| CT-e       | https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Layout%20Integra%C3%A7%C3%A3o%20-%20Reforma%20Tribut%C3%A1ria/LAYOUT%204.0%20CTe%20-%20Reforma%20tributa%CC%81ria.xlsx |
+| MDF-e      | https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Emiss%C3%A3o/Layouts/LAYOUT%203.0%20MDFe.xlsx |
+| Consulta (todos os módulos) | https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Consulta%20de%20documentos/Layouts/layout%20consultas%20para%20todos%20os%20m%C3%B3dulos.xlsx |
+
+---
+
+### Eventos de Documentos
+Requer accessToken de **JWT de Empresa**. Mesmo endpoint de emissão, com estrutura `Evento` no lugar de `Documento`.
+
+**Cancelamento (exemplo NFCe):**
+```json
+[
+  {
+    "ModeloDocumento": "NFCe",
+    "Versao": "4.00",
+    "Evento": {
+      "NtfCnpjEmissor": "06354976000149",
+      "NtfNumero": "9117",
+      "NtfSerie": "770",
+      "tpAmb": "2",
+      "EveInf": {
+        "EveDh": "2026-07-02T10:28:23",
+        "EveFusoHorario": "-03:00",
+        "EveTp": "110111",
+        "EvenSeq": "1",
+        "Evedet": {
+          "EveDesc": "Cancelamento",
+          "EvenProt": "<protocolo_de_autorizacao>",
+          "EvexJust": "Justificativa com mínimo 15 caracteres"
+        }
+      }
+    }
+  }
+]
+```
+
+> `EveTp: "110111"` = cancelamento para NF-e/NFC-e/CT-e. Demais tipos de evento (CCe, EPEC, Ciência, etc.) e eventos da Reforma Tributária: https://desenvolvedores.migrate.info/ModulosFiscais/Eventos/
+
+**Encerrar MDF-e:** evento específico do módulo MDF-e (endpoint próprio "Encerrar MDF-e" no portal), com `EveTp` diferente de `110111` — usado para encerrar a viagem/manifesto. Consultar exemplo específico no portal/GitHub antes de implementar.
+
+**Response de evento:** mesma estrutura do response de emissão. `DocEvenSeq` e `DocEveTp` preenchidos com os valores do evento processado.
+
+---
+
+### Consulta de Documentos
+**Método:** GET — requer accessToken de **JWT de Empresa**.
+
+Três modos de consulta — **usar apenas um por request** (os outros devem vir zerados ou omitidos):
+
+| Modo | Parâmetros obrigatórios |
+|------|------------------------|
+| Faixa de numeração | `NumeroInicial`, `NumeroFinal`, `Serie` |
+| Chave de acesso | `ChaveAcesso` |
+| Data de emissão | `DataEmissaoInicial`, `DataEmissaoFinal` (NumeroInicial/Final/Serie = 0) |
+| Data de inclusão | `DataInclusaoInicial`, `DataInclusaoFinal` (NumeroInicial/Final/Serie = 0) |
+
+**Query string completa (exemplo NF-e, emitidos por faixa):**
+
+```
+GET /senddocuments/nfe?type=Consulta
+  &CnpjEmissor={CNPJ}
+  &NumeroInicial=25
+  &NumeroFinal=26
+  &Serie=245
+  &Versao=4.00
+  &CnpjEmpresa={CNPJ}
+  &tpAmb=2
+  &dhUF=
+  &ChaveAcesso=
+  &DataEmissaoInicial=
+  &DataEmissaoFinal=
+  &DataInclusaoFinal=
+  &DataInclusaoInicial=
+  &StatusDocumento=2
+  &EmitidoRecebido=E
+  &ParmTipoImpressao=N
+  &DocumentosResumo=N
+  &ParmAutorizadoDownload=N
+  &ParmXMLLink=S
+  &ParmXMLCompleto=N
+  &ParmPDFBase64=N
+  &ParmPDFLink=S
+  &ParmEventos=N
+  &ParmSituacao=S
+  &ParmConsultarDFe=S
+```
+
+> Para documentos **recebidos**: `EmitidoRecebido=R` e `CnpjEmissor=` (vazio).
+> Layout completo de parâmetros: https://github.com/migrate-company/integracao-InvoiCy-BR/blob/main/Consulta%20de%20documentos/Layouts/layout%20consultas%20para%20todos%20os%20m%C3%B3dulos.xlsx
+
+**Consulta de MDF-e não encerrados:** endpoint GET dedicado (módulo MDF-e), retorna apenas manifestos ainda sem evento de encerramento.
+
+**Distribuição DFe / Manifestação do Destinatário:** `GET /senddocuments/nfe?type=distribuicaodfe&Versao=1.00&CNPJEmissor={CNPJ}&tpAmb={amb}&chaAcesso=&UsarUltimoNSU=...` — mecanismo de consulta de documentos destinados à empresa para fins de manifestação do destinatário (Ciência da Operação, EPEC etc.). Ver detalhes em: https://desenvolvedores.migrate.info/Extensoes/ManifestacaodoDestinatario/
+
+---
+
+### Certificado Digital
+
+**Endpoint (envio):** `POST /companiescertificates.aspx`
+**Endpoint (exclusão):** `DELETE /companiescertificates.aspx`
+Requer accessToken de **JWT de Parceiro**.
+
+Vincula (ou remove) um certificado A1 (PFX) de uma ou mais empresas cadastradas. No menu do portal, estes dois endpoints aparecem como "Envio Certificado Digital" e "Excluir Certificado Digital" dentro de Empresas — mesma rota, métodos diferentes.
+
+**Request (envio):**
+```json
+{
+  "Empresas": {
+    "CNPJ": ["12345678998765"]
+  },
+  "Apelido": "Certificado Digital",
+  "ArquivoPFX": "<base64 do arquivo .pfx>",
+  "Senha": "<senha do certificado>",
+  "MetodoCriptografiaSenha": "OUTROS",
+  "Tipo": "A1"
+}
+```
+
+**Request (exclusão):**
+```json
+{
+  "Empresas": {
+    "CNPJ": ["12345678998765"]
+  }
+}
+```
+
+**Resposta de sucesso (envio):**
+```json
+{
+  "Codigo": 100,
+  "Descricao": "sucesso na operação!"
+}
+```
+
+> Aceita array de CNPJs — o mesmo certificado pode ser vinculado (ou removido) de múltiplas empresas em uma única chamada.
+> Sem certificado vinculado, emissão retorna `SitCodigo: 104`.
+
+---
+
+## Webhooks
+
+Notificações automáticas (push) de eventos — documento autorizado, evento processado, etc. — para uma URL própria configurada pela empresa.
+
+| Operação | Método | Rota |
+|---|---|---|
+| Cadastro de Webhook (uma empresa) | POST | `Homologação: /aWebhooks.aspx e Produção: /webhooks.aspx` |
+| Cadastro de Webhook (múltiplas empresas) | POST* | `Homologação: /aWebhooks.aspx e Produção: /webhooks.aspx` |
+| Alterar Webhook | PUT | `Homologação: /aWebhooks.aspx e Produção: /webhooks.aspx` |
+| Consultar Webhook | GET | `Homologação: /aWebhooks.aspx?Identificador={Identificador} e Produção: /webhooks.aspx?Identificador={Identificador}` |
+
+**Request (Cadastro — uma empresa):**
+```json
+{
+  "Descricao": "WebHook para empresa",
+  "URL": "https://seusite.com.br",
+  "Status": "A",
+  "TipoAutenticacao": "",
+  "TokenAutenticacao": "",
+  "Uso": [
+    { "Modulo": "", "TipoNotificacao": [] }
+  ]
+}
+```
+
+| Campo | Descrição |
+|---|---|
+| `Descricao` | Nome/descrição do webhook |
+| `URL` | Endpoint próprio que receberá as notificações |
+| `Status` | `A` (ativo) ou `I` (inativo) |
+| `TipoAutenticacao` / `TokenAutenticacao` | Autenticação usada pelo InvoiCy ao chamar a `URL` configurada |
+| `Uso[].Modulo` | Módulo(s) monitorado(s) (`1` (NFe), `2` (NFCe), `4` (NFSe), `5` (CTe), `11` (NFCom), `12` (GNRE), `14` (Certificado Digital) |
+| `Uso[].TipoNotificacao` | Tipos de evento que disparam a notificação (`1` (Emissão do documento), `2` (Atualização de status), `3` (Evento), `4` (Documento recebido), `5` (Atualização de dados), `6` (Documento inutilizado), `7` (Documento autorizado na SEFAZ), `8` (Vencimento do certificado), `9` (Inclusão na fila para consulta), `10` (Novo documento não encontrado), `11` (Novo documento encontrado), `14` (Emissão Parada), `15` (Documento Pendente), `16` (Documento Rejeitado)) |
+
+> Documentação detalhada: https://desenvolvedores.migrate.info/Integracoes/Webhook/Configuracoes/
+> Ver relação entre módulo e tipo de notificação em: https://desenvolvedores.migrate.info/Integracoes/Webhook/CadastroviaSOAP/
+
+---
+
+## Exportações
+
+Exportação assíncrona de documentos **em lote** — recurso distinto da "Consulta de Documentos" síncrona (`GET /senddocuments/{modulo}?type=Consulta`).
+
+| Operação | Método |
+|---|---|
+| Exportar documentos | POST `/exportdocuments` |
+| Consultar exportação de documentos | GET |
+| Exportar documentos V2 | POST |
+| Consultar exportação de documentos V2 | GET |
+| Exportação Recorrente — Agendar | POST |
+| Exportação Recorrente — Alterar | PUT |
+| Exportação Recorrente — Consultar | GET |
+| Exportação Recorrente — Cancelar | DELETE |
+
+**Request (Exportar documentos):**
+```json
+[
+  {
+    "ModeloDocumento": "nfce",
+    "Versao": "4.0",
+    "tpAmb": "",
+    "CnpjEmpresa": "12345678998765",
+    "NumeroInicial": "",
+    "NumeroFinal": 270,
+    "Serie": "650",
+    "ResumoDocumento": "S",
+    "ParmSituacao": "S",
+    "ParmXMLCompleto": "S",
+    "ParmEventos": "S"
+  }
+]
+```
+
+> A variante "V2" e a "Exportação Recorrente" (agendamento periódico de exportações) existem como recursos à parte — consultar o portal para os payloads específicos de cada uma antes de implementar.
+
+---
+
+## Extensões
+
+Módulos/produtos adicionais contratáveis por empresa, referenciados pelo bloco `Extensao`/`TipoExtensao` no cadastro de empresa (ver "Cadastrar Empresa" acima). Cada sub-produto tem endpoints próprios:
+
+### Importação de Documentos
+- Importar Documentos — `POST`
+- Consultar Importação — `GET`
+- Consulta Retroativa NFS-e — `GET`
+
+### Manifestação do Destinatário
+- Distribuição DFe — `GET /senddocuments/nfe?type=distribuicaodfe&Versao=1.00&CNPJEmissor={CNPJ}&tpAmb={amb}&chaAcesso=&UsarUltimoNSU=...` (ver também em "Consulta de Documentos" acima)
+
+### InvoiCy Compliance
+- Gerar Token - Compliance — `POST`
+- Agendar Conciliação — `POST`
+- Consultar Conciliação por Protocolo — `GET`
+
+### InvoiCy Certificado Digital (produto de venda/gestão — distinto do vínculo de certificado em "Empresas")
+- Gerar link de venda — `POST`
+- Gerar Senha — `POST`
+- Consultar validade certificado — `GET`
+- Baixar Certificado — `GET`
+
+### InvoiCy GNRE (Guia Nacional de Recolhimento de Tributos Estaduais)
+- Gerar Guia Dados Documento — `POST`
+- Gerar Guia por Apuração — `POST`
+- Gerar Guia com XML Sefaz — `POST`
+- Gerar Guia com XML Sefaz e Configurações — `POST`
+- Gerar Guia Layout Completo — `POST`
+- Consultar Guia — `GET`
+- Consultar Configurações — `GET`
+- Consultar Receitas — `GET`
+- Incluir Configuração — `POST`
+- Editar Configuração — `PUT`
+- Excluir Configuração — `DELETE`
+
+### InvoiCy OCR
+- Importação de NFS-e — `POST`
+- Consulta Importação — `GET`
+- Validação de Leitura OCR — `POST`
+
+### InvoiCy ECONF
+- Emissão ECONF — `POST`
+- Cancelamento do ECONF — `POST`
+
+### InvoiCy Tax Template
+- Consultar serviços do município — `GET`
+
+> Payloads detalhados de cada endpoint de Extensões consultar o portal (`https://migrate.info/integration-br`, categoria "Extensões") antes de implementar.
+
+---
+
+## Códigos de Retorno (SitCodigo)
+
+> O portal mantém uma tabela completa e pesquisável (categorias: Cadastro de Empresa, Documento Enviado, NF-e, NFC-e, NFS-e, CT-e, MDF-e, NFCom), com colunas Categoria/Código/Mensagem/Tipo e exportação nativa em **CSV e JSON**: https://migrate.info/integration-br#codigos-retorno
+> A lista abaixo cobre apenas os códigos mais frequentes/críticos — para cobertura completa, usar o link acima (não depender apenas deste documento para tratamento de erros em produção).
+
+### Códigos principais (todos os módulos)
+
+| Código | Situação |
+|--------|----------|
+| `100`  | Autorizado / operação bem-sucedida |
+| `101`  | Cancelamento homologado |
+| `102`  | Inutilização de número homologado |
+| `104`  | Certificado Digital não informado — vincular certificado antes de emitir |
+| `135`  | Evento autorizado e vinculado ao documento |
+| `179`  | Consumo indevido do Web Service |
+
+### Códigos de erro de validação de layout (`#inv`)
+
+Prefixo `#inv` indica erro de validação de campo no layout enviado, detectado antes de enviar à SEFAZ.
+
+| Padrão | Descrição |
+|--------|-----------|
+| `#inv0003` | Erro na Estrutura do MDF-e |
+| `#inv0004` | Erro na Estrutura do Evento |
+| `#inv0005` | Erro na estrutura da consulta |
+| `#inv0006` | Erro no layout de integração |
+| `#inv00xx` | Demais erros de estrutura de MDF-e |
+| `#inv01xx`–`#inv02xx` | Erros de estrutura de CT-e |
+| `#inv03xx` | Erros de NFS-e (município, prefeitura, serviço, comunicação) |
+
+> Tabela completa (todos os `#inv` por módulo, ~380 códigos no total): https://migrate.info/integration-br#codigos-retorno
+
+### Código de retorno de empresa (Codigo no body)
+
+| Código | Descrição |
+|--------|-----------|
+| `100`  | Operação realizada com sucesso / Documentos processados |
+| `102`  | Certificado não informado (empresa criada, mas sem certificado) |
+
+---
+
+## Links Úteis
+
+- Documentação completa (portal): https://desenvolvedores.migrate.info/
+- Portal de referência de endpoints (SPA, fonte deste documento): https://migrate.info/integration-br
+- Autenticação (detalhado): https://desenvolvedores.migrate.info/Integracoes/APIREST/ProcessosdeAutenticacao/Autenticacao/
+- Geração de Tokens: https://desenvolvedores.migrate.info/Integracoes/APIREST/ProcessosdeAutenticacao/GeracaodeTokens/
+- Endpoints de Empresas: https://desenvolvedores.migrate.info/Integracoes/APIREST/EndpointsdeEmpresas/
+- Emissão de Documentos: https://desenvolvedores.migrate.info/Integracoes/APIREST/EmissaodeDocumentos/
+- Eventos de Documentos (todos os tipos, incl. Reforma Tributária): https://desenvolvedores.migrate.info/ModulosFiscais/Eventos/
+- Manifestação do Destinatário: https://desenvolvedores.migrate.info/Extensoes/ManifestacaodoDestinatario/
+- Configurações de Webhooks: https://desenvolvedores.migrate.info/Integracoes/Webhook/Configuracoes/
+- Cadastro de Série: https://desenvolvedores.migrate.info/Integracoes/SOAP/EmissaodeDocumentos/CadastrodeSerie/
+- Exportação de Documentos: https://desenvolvedores.migrate.info/Integracoes/SOAP/ExportacaodeDocumentos/
+- Códigos de Retorno (tabela completa, ~380 códigos, export CSV/JSON): https://migrate.info/integration-br#codigos-retorno
+- Coleção Postman (exemplos de payload e código por linguagem): https://documenter.getpostman.com/view/9193875/SztEanQL
+- Repositório de layouts e integração: https://github.com/migrate-company/integracao-InvoiCy-BR
+
+---
