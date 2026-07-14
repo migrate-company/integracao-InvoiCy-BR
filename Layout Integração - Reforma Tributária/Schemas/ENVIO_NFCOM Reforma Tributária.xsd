@@ -284,7 +284,10 @@
 												<xs:restriction base="xs:integer">
 													<xs:enumeration value="1"/>
 													<xs:enumeration value="2"/>
+													<xs:enumeration value="3"/>
 													<xs:enumeration value="4"/>
+													<xs:enumeration value="5"/>
+													<xs:enumeration value="6"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -296,6 +299,29 @@
 												<xs:restriction base="xs:decimal">
 													<xs:totalDigits value="8"/>
 													<xs:fractionDigits value="4"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tpOperGov">
+											<xs:annotation>
+												<xs:documentation>Tipo da operacao com ente governamental (1=Fornecimento com pagamento posterior; 2=Recebimento do pagamento com fornecimento ja realizado; 3=Fornecimento com pagamento ja realizado; 4=Recebimento do pagamento com fornecimento posterior)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:integer">
+													<xs:enumeration value="1"/>
+													<xs:enumeration value="2"/>
+													<xs:enumeration value="3"/>
+													<xs:enumeration value="4"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element maxOccurs="99" minOccurs="0" name="refDFeAnt">
+											<xs:annotation>
+												<xs:documentation>Chave de acesso (44 posicoes) de documento fiscal anterior. Informar para tpOperGov 2 e 3 (vedado para 1 e 4). tpOperGov 2 aceita 1 chave; tpOperGov 3 aceita multiplas chaves.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="44"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -1871,7 +1897,7 @@
 																					</xs:restriction>
 																				</xs:simpleType>
 																			</xs:element>
-																			<xs:element name=" gIBSCBS">
+																			<xs:element name="gIBSCBS">
 																				<xs:annotation>
 																					<xs:documentation>Grupo de Informações do IBS e CBS</xs:documentation>
 																				</xs:annotation>
@@ -2409,36 +2435,36 @@
 																								</xs:sequence>
 																							</xs:complexType>
 																						</xs:element>
-																						<xs:element minOccurs="0" name="gEstornoCred">
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0" name="gEstornoCred">
+																				<xs:annotation>
+																					<xs:documentation>Grupo de informações de estorno de crédito</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="vIBSEstCred">
 																							<xs:annotation>
-																								<xs:documentation>Grupo de informações de estorno de crédito</xs:documentation>
+																								<xs:documentation>Valor do IBS a ser estornado</xs:documentation>
 																							</xs:annotation>
-																							<xs:complexType>
-																								<xs:sequence>
-																									<xs:element name="vIBSEstCred">
-																										<xs:annotation>
-																											<xs:documentation>Valor do IBS a ser estornado</xs:documentation>
-																										</xs:annotation>
-																										<xs:simpleType>
-																											<xs:restriction base="xs:decimal">
-																												<xs:totalDigits value="16"/>
-																												<xs:fractionDigits value="2"/>
-																											</xs:restriction>
-																										</xs:simpleType>
-																									</xs:element>
-																									<xs:element name="vCBSEstCred">
-																										<xs:annotation>
-																											<xs:documentation>Valor do CBS a ser estornado</xs:documentation>
-																										</xs:annotation>
-																										<xs:simpleType>
-																											<xs:restriction base="xs:decimal">
-																												<xs:totalDigits value="16"/>
-																												<xs:fractionDigits value="2"/>
-																											</xs:restriction>
-																										</xs:simpleType>
-																									</xs:element>
-																								</xs:sequence>
-																							</xs:complexType>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="16"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vCBSEstCred">
+																							<xs:annotation>
+																								<xs:documentation>Valor do CBS a ser estornado</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="16"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
 																						</xs:element>
 																					</xs:sequence>
 																				</xs:complexType>
