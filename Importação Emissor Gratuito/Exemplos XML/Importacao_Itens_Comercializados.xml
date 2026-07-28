@@ -1,0 +1,22 @@
+<sistema>
+	<det>
+		<prod>
+			<cProd>654321</cProd>
+			<xProd>Importação de item 1</xProd>
+			<NCM>87113000</NCM>
+			<uCom>UN</uCom>
+			<uTrib>UN</uTrib>
+			<qTrib>1.0000</qTrib>
+			<vUnCom>10.0000</vUnCom>
+			<vUnTrib>10.0000</vUnTrib>
+			<CEST>1234567</CEST>
+		</prod>
+		<imposto>
+			<ICMS>
+				<orig>0</orig>
+				<CST>40</CST>
+				<motDesICMS>5</motDesICMS>
+			</ICMS>
+		</imposto>
+	</det>
+</sistema>

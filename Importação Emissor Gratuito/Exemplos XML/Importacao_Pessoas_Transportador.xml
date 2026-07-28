@@ -1,0 +1,10 @@
+<sistema>
+	<transporta>
+		<CNPJ>99999999999999</CNPJ>
+		<xNome>Transportador 1</xNome>
+		<IE>ISENTO</IE>
+		<xEnder>Avenida Brasil</xEnder>
+		<xMun>Santa Rosa</xMun>
+		<UF>RS</UF>
+	</transporta>
+</sistema>

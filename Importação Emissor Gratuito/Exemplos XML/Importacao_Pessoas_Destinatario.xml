@@ -1,0 +1,18 @@
+<sistema>
+	<dest>
+		<CNPJ>99999999999999</CNPJ>
+		<xNome>Destinatário 1</xNome>
+		<enderDest>
+			<xLgr>Avenida Brasil</xLgr>
+			<nro>123</nro>
+			<xBairro>Centro</xBairro>
+			<cMun>4316428</cMun>
+			<xMun>Sagrada Familia</xMun>
+			<UF>RS</UF>
+			<CEP>98910000</CEP>
+			<cPais>1058</cPais>
+			<xPais>BRASIL</xPais>
+		</enderDest>
+		<IE>ISENTO</IE>
+	</dest>
+</sistema>
