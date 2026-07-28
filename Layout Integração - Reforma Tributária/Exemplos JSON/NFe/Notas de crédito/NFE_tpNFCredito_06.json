@@ -1,0 +1,335 @@
+[
+    {
+        "Documento": {
+            "ModeloDocumento": "NFe",
+            "Versao": 4.00,
+            "ide": {
+                "cNF": 300,
+                "cUF": 43,
+                "natOp": "NFE CST 00",
+                "indPag": 0,
+                "mod": "55",
+                "serie": "770",
+                "nNF": "8607",
+                "dhEmi": "2026-07-28T16:12:51",
+                "fusoHorario": "-03:00",
+                "dhSaiEnt": "2026-07-28T16:12:51",
+                "hSaiEnt": "",
+                "tpNf": 0,
+                "idDest": 1,
+                "indFinal": 0,
+                "indPres": 2,
+                "cMunFg": 4308607,
+                "tpImp": 1,
+                "tpEmis": 1,
+                "cDV": 1,
+                "tpAmb": 2,
+                "finNFe": 5,
+                "procEmi": 0,
+                "verProc": "",
+                "EmailArquivos": "testemigrate@gmail.com",
+                "tpNFCredito": "06"
+            },
+            "emit": {
+                "CNPJ_emit": "99999999999999",
+                "xNome": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+                "xFant": "MIGRATE COMPANY SISTEMAS DE INFORMACAO LTDA",
+                "IM": "999999999",
+                "CNAE": "",
+                "IE": "9999999999",
+                "IEST": "",
+                "CRT": 3,
+                "enderEmit": {
+                    "xLgr": "RUA PE CACIQUE",
+                    "nro": "985",
+                    "xCpl": "2 ANDAR",
+                    "xBairro": "CENTRO",
+                    "cMun": 4321808,
+                    "xMun": "Três de Maio",
+                    "UF": "RS",
+                    "CEP": 98910000,
+                    "cPais": 1058,
+                    "xPais": "BRASIL",
+                    "fone": 800522,
+                    "fax": 0,
+                    "Email": "testemigrate@gmail.com"
+                }
+            },
+            "dest": {
+                "PesCodigo": 0,
+                "CNPJ_dest": "99999999999999",
+                "CPF_dest": "",
+                "idEstrangeiro": "",
+                "xNome_dest": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+                "IE_dest": "9999999999",
+                "ISUF": "",
+                "indIEDest": 1,
+                "IM_dest": "",
+                "enderDest": {
+                    "nro_dest": "890",
+                    "xCpl_dest": "Prédio B",
+                    "xBairro_dest": "Sossego",
+                    "xEmail_dest": "testemigrate@gmail.com",
+                    "xLgr_dest": "Rua Padre Cacique",
+                    "xPais_dest": "BRASIL",
+                    "cMun_dest": 4321808,
+                    "xMun_dest": "TRES DE MAIO",
+                    "UF_dest": "RS",
+                    "CEP_dest": 98910000,
+                    "CEP_destDigitacao": "",
+                    "cPais_dest": 1058,
+                    "fone_dest": 0
+                }
+            },
+            "retirada": {
+                "CNPJ_ret": "",
+                "CPF_ret": "",
+                "xNome_ret": "",
+                "xLgr_ret": "",
+                "nro_ret": "",
+                "xCpl_ret": "",
+                "xBairro_ret": "",
+                "xMun_ret": "",
+                "cMun_ret": 0,
+                "UF_ret": "",
+                "CEP_ret": 0,
+                "cPais_ret": 0,
+                "xPais_ret": "",
+                "fone_ret": 0,
+                "email_ret": "",
+                "IE_ret": ""
+            },
+            "entrega": {
+                "CNPJ_entr": "",
+                "CPF_entr": "",
+                "xLgr_entr": "",
+                "nro_entr": "",
+                "xCpl_entr": "",
+                "xBairro_entr": "",
+                "cMun_entr": 0,
+                "xMun_entr": "",
+                "UF_entr": "",
+                "xNome_entr": "",
+                "CEP_entr": 0,
+                "cPais_entr": 0,
+                "xPais_entr": "",
+                "fone_entr": 0,
+                "email_entr": "",
+                "IE_entr": ""
+            },
+            "autXML": [],
+            "det": [
+                {
+                    "infADProd": "Informações Adicionais",
+                    "vItem": "10.00",
+                    "prod": {
+                        "cProd": "000001",
+                        "cEAN": "SEM GTIN",
+                        "xProd": "VENDA TESTE HOMOLOGAÇÃO - SEM VALOR FISCAL",
+                        "NCM": "00000000",
+                        "CFOP": 1202,
+                        "uCOM": "UN",
+                        "qCOM": "1.0000",
+                        "vUnCom": "10.00000000",
+                        "vProd": "10.00",
+                        "cEANTrib": "SEM GTIN",
+                        "uTrib": "UN",
+                        "qTrib": "1.0000",
+                        "vUnTrib": "10.00000000",
+                        "indTot": 1
+                    },
+                    "imposto": {
+                        "IBSCBS": {
+                            "CST": "000",
+                            "cClassTrib": "000001",
+                            "gIBSCBS": {
+                                "vBC": 10.0,
+                                "gIBSUF": {
+                                    "pIBSUF": 0.1,
+                                    "vIBSUF": 0.01
+                                },
+                                "gIBSMun": {
+                                    "pIBSMun": 0.0,
+                                    "vIBSMun": 0.0
+                                },
+                                "vIBS": 0.01,
+                                "gCBS": {
+                                    "pCBS": 0.9,
+                                    "vCBS": 0.09,
+                                    "gALCZFMCBS": {
+                                        "pAliqEfetRegCBS": "12.5",
+                                        "nProcSuframa": "12345678",
+                                        "vTribRegCBS": "100"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "DFeReferenciado": {
+                        "chaveAcesso": "99999999999999999999999999999999999999999999",
+                        "nItem": "1"
+                    }
+                }
+            ],
+            "total": {
+                "vNFIBScbsIS": 10.1,
+                "ICMSTot": {
+                    "vBC_ttlnfe": "0.00",
+                    "vICMS_ttlnfe": "0.00",
+                    "vICMSDeson_ttlnfe": "0.00",
+                    "vFCP_ttlnfe": "0.00",
+                    "vBCST_ttlnfe": "0.00",
+                    "vST_ttlnfe": "0.00",
+                    "vFCPST_ttlnfe": "0.00",
+                    "vFCPSTRet_ttlnfe": "0.00",
+                    "vProd_ttlnfe": "10.00",
+                    "vFrete_ttlnfe": "0.00",
+                    "vSeg_ttlnfe": "0.00",
+                    "vDesc_ttlnfe": "0.00",
+                    "vII_ttlnfe": "0.00",
+                    "vIPI_ttlnfe": "0.00",
+                    "vPIS_ttlnfe": "0.00",
+                    "vCOFINS_ttlnfe": "0.00",
+                    "vOutro": "0.00",
+                    "vNF": "10.00"
+                },
+                "IBSCBSTot": {
+                    "vBCIBSCBS": 10.0,
+                    "gIBS": {
+                        "gIBSUF": {
+                            "vDif": 0.0,
+                            "vDevTrib": 0.0,
+                            "vIBSUF": 0.01
+                        },
+                        "gIBSMun": {
+                            "vDif": 0.0,
+                            "vDevTrib": 0.0,
+                            "vIBSMun": 0.0
+                        },
+                        "vIBS": 0.01,
+                        "vCredPres": 0.0,
+                        "vCredPresCondSus": 0.0
+                    },
+                    "gCBS": {
+                        "vDif": 0.0,
+                        "vDevTrib": 0.0,
+                        "vCBS": 0.09,
+                        "vCredPres": 0.0,
+                        "vCredPresCondSus": 0.0
+                    }
+                }
+            },
+            "transp": {
+                "modFrete": 9,
+                "balsa": "",
+                "vagao": "",
+                "SeqReboquesDigitacao": 0,
+                "SeqVolumesDigitacao": 0,
+                "transporta": {
+                    "CNPJ_transp": "",
+                    "CPF_transp": "",
+                    "xNome_transp": "",
+                    "IE_transp": "",
+                    "xEnder": "",
+                    "xMun_transp": "",
+                    "UF_transp": "",
+                    "MunCodigoTranspDigitacao": "0",
+                    "UFCodigoTranspDigitacao": 0,
+                    "PesCodigoTranspDigitacao": "0",
+                    "TransportadoraDigitacao": "",
+                    "InicializouTranspDigitacao": false
+                },
+                "retTransp": {
+                    "vServ_transp": "0.00",
+                    "vBCRet": "0.00",
+                    "pICMSRet": 0,
+                    "vICMSRet": "0.00",
+                    "CFOP_transp": 0,
+                    "cMunFG_transp": 0
+                },
+                "veicTransp": {
+                    "placa": "",
+                    "UF_veictransp": "",
+                    "RNTC": ""
+                },
+                "reboque": [],
+                "vol": [
+                    {
+                        "qVol": 0,
+                        "esp": "",
+                        "marca": "",
+                        "nVol": "",
+                        "pesoL_transp": "0.000",
+                        "pesoB_transp": "0.000",
+                        "SeqVolDigitacao": 0,
+                        "SeqLacresDigitacao": 0,
+                        "lacres": []
+                    }
+                ]
+            },
+            "cobr": {
+                "fat": {
+                    "nFat": "",
+                    "vOrig": "0.00",
+                    "vDesc_cob": "0.00",
+                    "vLiq": "0.00"
+                },
+                "dup": [],
+                "CobrParcelasDigitacao": "",
+                "CobrPrimVencimentoDigitacao": "",
+                "CobrParGerDigitacao": false
+            },
+            "pag": [
+                {
+                    "tPag": "01",
+                    "vPag": "10.00"
+                }
+            ],
+            "vTroco": "0.00",
+            "infAdic": {
+                "infAdFisco": "",
+                "infCpl": "TNF.PRODUTOR:    999999||ROMANEIOS:  999999",
+                "obsCont": [],
+                "obsFisco": [],
+                "procRef": []
+            },
+            "infSuplem": {
+                "qrCode": "",
+                "urlChave": ""
+            },
+            "exporta": {
+                "UFEmbarq": "",
+                "xLocEmbarq": "",
+                "xLocDespacho": ""
+            },
+            "compra": {
+                "xNEmp": "",
+                "xPed": "",
+                "xCont": ""
+            },
+            "cana": {
+                "safra": "",
+                "ref": "",
+                "qTotMes": "0.0000000000",
+                "qTotAnt": "0.0000000000",
+                "qTotGer": "0.0000000000",
+                "vFor": "0.00",
+                "vTotDed": "0.00",
+                "vLiqFor": "0.00",
+                "canaDiario": [],
+                "canaDeducoes": []
+            },
+            "Informacoes": {
+                "Informacoes": ""
+            },
+            "RespTecnico": {
+                "CNPJ": "99999999999999",
+                "xContato": "Teste",
+                "email": "testemigrate@gmail.com",
+                "fone": 35351285,
+                "idCSRT": "12",
+                "hashCSRT": "qAaw7oMy1QLEB70="
+            }
+        }
+    }
+]
