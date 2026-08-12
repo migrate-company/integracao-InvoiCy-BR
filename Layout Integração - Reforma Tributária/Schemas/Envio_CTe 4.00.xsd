@@ -138,8 +138,12 @@
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
-										<xs:minInclusive value="0"/>
-										<xs:maxInclusive value="3"/>
+										<xs:enumeration value="0"/>
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+										<xs:enumeration value="3"/>
+										<xs:enumeration value="5"/>
+										<xs:enumeration value="6"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -283,6 +287,32 @@
 										<xs:maxLength value="500"/>
 									</xs:restriction>
 								</xs:simpleType>
+							</xs:element>
+							<xs:element name="tpPagAnt" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="gPagAntecipado" minOccurs="0"> 
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="gPagAntecipadoItem" maxOccurs="99">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="chDFePagAnt">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="44"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
 							</xs:element>
 							<xs:element name="tomador">
 								<xs:complexType>
@@ -670,7 +700,14 @@
 										<xs:enumeration value="3"/>
 									</xs:restriction>
 								</xs:simpleType>
-							</xs:element>	
+							</xs:element>
+							<xs:element name="ISUFEmit" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="9"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 							<xs:element name="enderEmit">
 								<xs:complexType>
 									<xs:sequence>
@@ -1606,20 +1643,6 @@
 																			</xs:element>
 																		</xs:sequence>
 																	</xs:complexType>
-																</xs:element>
-																<xs:element name="gDevTrib">
-																	<xs:complexType>
-																		<xs:sequence>																			
-																			<xs:element name="vDevTrib">
-																				<xs:simpleType>
-																					<xs:restriction base="xs:decimal">
-																						<xs:totalDigits value="18"/>
-																						<xs:fractionDigits value="2"/>
-																					</xs:restriction>
-																				</xs:simpleType>
-																			</xs:element>
-																		</xs:sequence>
-																	</xs:complexType>
 																</xs:element>	
 																<xs:element name="gRed">
 																	<xs:complexType>
@@ -1686,21 +1709,7 @@
 																			</xs:element>
 																		</xs:sequence>
 																	</xs:complexType>
-																</xs:element>
-																<xs:element name="gDevTrib">
-																	<xs:complexType>
-																		<xs:sequence>																			
-																			<xs:element name="vDevTrib">
-																				<xs:simpleType>
-																					<xs:restriction base="xs:decimal">
-																						<xs:totalDigits value="18"/>
-																						<xs:fractionDigits value="2"/>
-																					</xs:restriction>
-																				</xs:simpleType>
-																			</xs:element>
-																		</xs:sequence>
-																	</xs:complexType>
-																</xs:element>	
+																</xs:element>										
 																<xs:element name="gRed">
 																	<xs:complexType>
 																		<xs:sequence>																			
@@ -1766,20 +1775,6 @@
 																			</xs:element>
 																		</xs:sequence>
 																	</xs:complexType>
-																</xs:element>
-																<xs:element name="gDevTrib">
-																	<xs:complexType>
-																		<xs:sequence>																			
-																			<xs:element name="vDevTrib">
-																				<xs:simpleType>
-																					<xs:restriction base="xs:decimal">
-																						<xs:totalDigits value="18"/>
-																						<xs:fractionDigits value="2"/>
-																					</xs:restriction>
-																				</xs:simpleType>
-																			</xs:element>
-																		</xs:sequence>
-																	</xs:complexType>
 																</xs:element>	
 																<xs:element name="gRed">
 																	<xs:complexType>
@@ -1802,7 +1797,29 @@
 																			</xs:element>
 																		</xs:sequence>
 																	</xs:complexType>
-																</xs:element>	
+																</xs:element>
+																<xs:element name="gALCZFMCBS">
+																	<xs:complexType>
+																		<xs:sequence>																			
+																			<xs:element name="pAliqEfetRegCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="8"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribRegCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
