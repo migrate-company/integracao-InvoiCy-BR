@@ -243,7 +243,9 @@
                 "ImprimeUNTribDiferenteComercial": "",
                 "ImprimirEnderecoEntregaRetirada": 0,
                 "ImprimirCamposDIFAL": "",
-                "ImprimirICMSCST51": ""
+                "ImprimirICMSCST51": "",
+                "AlinhamentoQrCode": "E",
+                "TipoDANFESimplificado": "Tipo2"
             },
             "MDFe": {
                 "OrientacaoMDFe": 1,
