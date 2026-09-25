@@ -169,6 +169,8 @@
 			<ImprimirTextosNegrito>N</ImprimirTextosNegrito>
 			<ImprimirFCI>N</ImprimirFCI>
 			<ImprimirConfirmEntregaCanhoto>N</ImprimirConfirmEntregaCanhoto>
+			<AlinhamentoQrCode>E</AlinhamentoQrCode>
+			<TipoDANFESimplificado>Tipo2</TipoDANFESimplificado>
 		</NFe>
 		<MDFe>
 			<OrientacaoMDFe>2</OrientacaoMDFe>
