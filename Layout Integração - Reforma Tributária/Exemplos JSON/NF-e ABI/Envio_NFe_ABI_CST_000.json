@@ -1,0 +1,171 @@
+[
+	{
+		"Documento": {
+			"ModeloDocumento": "NFeABI",
+			"Versao": 1.0,
+			"ide": {
+				"cUF": 41,
+				"cNF": 300,
+				"mod": "77",
+				"serie": "770",
+				"nNF": "1",
+				"dhEmi": "2026-09-29T09:47:10",
+				"fusoHorario": "-03:00",
+				"tpNf": 0,
+				"tpImp": 1,
+				"gModNat": {
+					"modOper": "01",
+					"natOper": "01"
+				},
+				"tpEmis": 1,
+				"nSiteAutoriz": 0,
+				"cDV": 0,
+				"tpAmb": 2,
+				"finNFe": 1,
+				"procEmi": 0,
+				"verProc": "MigrateInvoiCy"
+			},
+			"emit": {
+				"CNPJ": "99999999999999",
+				"xNome": "TESTE EMISSAO NF-E ABI",
+				"xFant": "TESTE EMISSAO NF-E ABI",
+				"enderEmit": {
+					"xLgr": "AVENIDA BRASIL",
+					"nro": "165",
+					"xBairro": "VILA CARLI",
+					"cMun": 4109401,
+					"xMun": "GUARAPUAVA",
+					"UF": "RS",
+					"CEP": 85040040,
+					"Email": ""
+				},
+				"tpEmit": "01"
+			},
+			"transmit": [
+				{
+					"nTransmit": 1,
+					"CNPJ": "99999999999999",
+					"xNome": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+					"enderTransmit": {
+						"xLgr": "AVENIDA BRASIL",
+						"nro": "890",
+						"xBairro": "VILA CARLI",
+						"cMun": 4109401,
+						"xMun": "GUARAPUAVA",
+						"UF": "PR",
+						"CEP": 85040040,
+						"cPais": 1058,
+						"xPais": "BRASIL",
+						"fone": 9999999999
+					}
+				}
+			],
+			"adquirente": [
+				{
+					"nAdquir": 1,
+					"CPF": "59957052020",
+					"xNome": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+					"enderAdquirente": {
+						"xLgr": "AVENIDA BRASIL",
+						"nro": "890",
+						"xBairro": "VILA CARLI",
+						"cMun": 4109401,
+						"xMun": "GUARAPUAVA",
+						"UF": "PR",
+						"CEP": 85040040,
+						"cPais": 1058,
+						"xPais": "BRASIL",
+						"fone": 9999999999
+					}
+				}
+			],
+			"imovel": {
+				"tipo": "1",
+				"cadastro": {
+					"indIPTU": "1",
+					"nIptu": "4109999990123456",
+					"indIncra": "0"
+				},
+				"espImovel": "01",
+				"enderImovel": {
+					"xLgr": "AVENIDA BRASIL",
+					"nro": "165",
+					"xBairro": "VILA CARLI",
+					"cMun": "4109401",
+					"xMun": "GUARAPUAVA",
+					"UF": "PR",
+					"CEP": "85040040",
+					"cPais": "1058",
+					"xPais": "BRASIL"
+				},
+				"areaTotal": "120.00",
+				"uAreaTotal": "m2",
+				"cartorioRegistro": "REGISTRO DE IMOVEIS DE GUARAPUAVA",
+				"matricTransc": "12345"
+			},
+			"infOper": {
+				"vTotalOperacao": "100000.00",
+				"instrumento": {
+					"tpinstrumento": "03",
+					"dtinstrumento": "2026-09-01"
+				}
+			},
+			"ginfTrib": {
+				"IBSCBS": {
+					"CST": "000",
+					"cClassTrib": "000001",
+					"gIBSCBS": {
+						"vOperacindiv": "100000.00",
+						"VBC": "100000.00",
+						"gIBSUF": {
+							"PIBSUF": "0.1000",
+							"gRed": {
+								"pRedAliq": "0.0000",
+								"pAliqEfet": "0.1000"
+							},
+							"VIBSUF": "100.00"
+						},
+						"gIBSMun": {
+							"PIBSMun": "0.0000",
+							"gRed": {
+								"pRedAliq": "0.0000",
+								"pAliqEfet": "0.0000"
+							},
+							"VIBSMun": "0.00"
+						},
+						"gCBS": {
+							"PCBS": "0.9000",
+							"gRed": {
+								"pRedAliq": "0.0000",
+								"pAliqEfet": "0.9000"
+							},
+							"VCBS": "900.00"
+						}
+					}
+				}
+			},
+			"total": {
+				"vTotalOperacao": 100000.0,
+				"vOperacindiv": 100000.0,
+				"tribTot": {
+					"vRedAjusteIndiv": "0.00",
+					"vRedSocialIndiv": "0.00",
+					"VBC": "100000.00",
+					"VIBSUF": "100.00",
+					"VIBSMun": "0.00",
+					"VCBS": "900.00"
+				},
+				"VNF": "101000.00"
+			},
+			"infAdic": {
+				"infCpl": "ALIENACAO DE BEM IMOVEL - TESTE DE HOMOLOGACAO NFe ABI"
+			},
+			"infRespTec": {
+				"CNPJ": "99999999999999",
+				"xContato": "TESTE",
+				"email": "testemigrate@gmail.com",
+				"fone": 42406556
+			}
+		}
+	}
+]
