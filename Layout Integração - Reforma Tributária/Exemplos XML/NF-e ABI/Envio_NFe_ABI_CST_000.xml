@@ -1,0 +1,171 @@
+<Envio>
+	<Versao>1.00</Versao>
+	<ModeloDocumento>NFeABI</ModeloDocumento>
+	<ide>
+		<cUF>41</cUF>
+		<cNF>300</cNF>
+		<mod>77</mod>
+		<serie>770</serie>
+		<nNF>5</nNF>
+		<dhEmi>2026-09-29T09:54:00-03:00</dhEmi>
+		<FusoHorario>-03:00</FusoHorario>
+		<tpNF>0</tpNF>
+		<tpImp>1</tpImp>
+		<gModNat>
+			<modOper>01</modOper>
+			<natOper>01</natOper>
+		</gModNat>
+		<tpEmis>1</tpEmis>
+		<nSiteAutoriz>0</nSiteAutoriz>
+		<cDV>0</cDV>
+		<tpAmb>2</tpAmb>
+		<finNFe>1</finNFe>
+		<procEmi>0</procEmi>
+		<verProc>MigrateInvoiCy</verProc>
+		<ChaveAcesso/>
+	</ide>
+	<emit>
+		<CNPJ>99999999999999</CNPJ>
+		<xNome>TESTE EMISSAO NF-E ABI</xNome>
+		<xFant>TESTE EMISSAO NF-E ABI</xFant>
+		<enderEmit>
+			<xLgr>AVENIDA BRASIL</xLgr>
+			<nro>890</nro>
+			<xBairro>VILA CARLI</xBairro>
+			<cMun>4109401</cMun>
+			<xMun>GUARAPUAVA</xMun>
+			<UF>PR</UF>
+			<CEP>85040040</CEP>
+			<cPais>1058</cPais>
+			<xPais>BRASIL</xPais>
+			<fone>9999999999</fone>
+		</enderEmit>
+		<tpEmit>01</tpEmit>
+	</emit>
+	<transmit>
+		<transmitItem>
+			<nTransmit>1</nTransmit>
+			<CNPJ>99999999999999</CNPJ>
+			<xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+			<enderTransmit>
+				<xLgr>AVENIDA BRASIL</xLgr>
+				<nro>890</nro>
+				<xBairro>VILA CARLI</xBairro>
+				<cMun>4109401</cMun>
+				<xMun>GUARAPUAVA</xMun>
+				<UF>PR</UF>
+				<CEP>85040040</CEP>
+				<cPais>1058</cPais>
+				<xPais>BRASIL</xPais>
+				<fone>9999999999</fone>
+			</enderTransmit>
+		</transmitItem>
+	</transmit>
+	<adquirente>
+		<adquirenteItem>
+			<nAdquir>1</nAdquir>
+			<CPF>99999999999</CPF>
+			<xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+			<enderAdquirente>
+				<xLgr>AVENIDA BRASIL</xLgr>
+				<nro>890</nro>
+				<xBairro>VILA CARLI</xBairro>
+				<cMun>4109401</cMun>
+				<xMun>GUARAPUAVA</xMun>
+				<UF>PR</UF>
+				<CEP>85040040</CEP>
+				<cPais>1058</cPais>
+				<xPais>BRASIL</xPais>
+				<fone>9999999999</fone>
+				<email>testemigrate@gmail.com</email>
+			</enderAdquirente>
+		</adquirenteItem>
+	</adquirente>
+	<imovel>
+		<tipo>1</tipo>
+		<cadastro>
+			<indIPTU>1</indIPTU>
+			<nIptu>4109401000123456</nIptu>
+			<indIncra>0</indIncra>
+		</cadastro>
+		<espImovel>01</espImovel>
+		<enderImovel>
+			<xLgr>AVENIDA BRASIL</xLgr>
+			<nro>890</nro>
+			<xBairro>VILA CARLI</xBairro>
+			<cMun>4109401</cMun>
+			<xMun>GUARAPUAVA</xMun>
+			<UF>PR</UF>
+			<CEP>85040040</CEP>
+			<cPais>1058</cPais>
+			<xPais>BRASIL</xPais>
+		</enderImovel>
+		<areaTotal>120.00</areaTotal>
+		<uAreaTotal>m2</uAreaTotal>
+		<cartorioRegistro>REGISTRO DE IMOVEIS DE GUARAPUAVA</cartorioRegistro>
+		<matricTransc>12345</matricTransc>
+	</imovel>
+	<infOper>
+		<vTotalOperacao>100000.00</vTotalOperacao>
+		<instrumento>
+			<tpinstrumento>03</tpinstrumento>
+			<dtinstrumento>2026-09-01</dtinstrumento>
+		</instrumento>
+	</infOper>
+	<ginfTrib>
+		<IBSCBS>
+			<CST>000</CST>
+			<cClassTrib>000001</cClassTrib>
+			<gIBSCBS>
+				<vOperacindiv>100000.00</vOperacindiv>
+				<VBC>100000.00</VBC>
+				<gIBSUF>
+					<PIBSUF>0.1000</PIBSUF>
+					<gRed>
+						<pRedAliq>0.0000</pRedAliq>
+						<pAliqEfet>0.1000</pAliqEfet>
+					</gRed>
+					<VIBSUF>100.00</VIBSUF>
+				</gIBSUF>
+				<gIBSMun>
+					<PIBSMun>0.0000</PIBSMun>
+					<gRed>
+						<pRedAliq>0.0000</pRedAliq>
+						<pAliqEfet>0.0000</pAliqEfet>
+					</gRed>
+					<VIBSMun>0.00</VIBSMun>
+				</gIBSMun>
+				<gCBS>
+					<PCBS>0.9000</PCBS>
+					<gRed>
+						<pRedAliq>0.0000</pRedAliq>
+						<pAliqEfet>0.9000</pAliqEfet>
+					</gRed>
+					<VCBS>900.00</VCBS>
+				</gCBS>
+			</gIBSCBS>
+		</IBSCBS>
+	</ginfTrib>
+	<total>
+		<vTotalOperacao>100000.00</vTotalOperacao>
+		<vOperacindiv>100000.00</vOperacindiv>
+		<tribTot>
+			<vRedAjusteIndiv>0.00</vRedAjusteIndiv>
+			<vRedSocialIndiv>0.00</vRedSocialIndiv>
+			<VBC>100000.00</VBC>
+			<VIBSUF>100.00</VIBSUF>
+			<VIBSMun>0.00</VIBSMun>
+			<VCBS>900.00</VCBS>
+		</tribTot>
+		<VNF>101000.00</VNF>
+	</total>
+	<infAdic>
+		<infCpl>ALIENACAO DE BEM IMOVEL - TESTE DE HOMOLOGACAO NFe ABI</infCpl>
+	</infAdic>
+	<infRespTec>
+		<CNPJ>99999999999999</CNPJ>
+		<xContato>TESTE</xContato>
+		<email>testemigrate@gmail.com</email>
+		<fone>42406556</fone>
+	</infRespTec>
+</Envio>
