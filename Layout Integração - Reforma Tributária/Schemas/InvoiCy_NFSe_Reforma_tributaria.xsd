@@ -365,7 +365,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="cIndOp">
+              <xs:element name="cIndOp" minOccurs="0">
                 <xs:annotation>
                   <xs:documentation>Código indicador da operação de fornecimento, conforme tabela “código indicador de operação”</xs:documentation>
                 </xs:annotation>
@@ -412,6 +412,59 @@ serviços sobre bens imóveis:
 4 – Recebimento do pagamento com fornecimento posterior;
 5 – Fornecimento e recebimento do pagamento concomitantes</xs:documentation>
                 </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:nonNegativeInteger">
+                    <xs:totalDigits value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="indZFMALC" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Indicador da operação de fornecimento favorecido com alíquota
+zero de CBS</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:nonNegativeInteger">
+                    <xs:totalDigits value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NFSOutrasinformacoes" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Outras informações</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RPSCanhoto" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Canhoto do RPS (INFISC)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:nonNegativeInteger">
+                    <xs:totalDigits value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Arquivo" minOccurs="0" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Arquivo de retorno</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ExtensaoArquivo" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Extensão do arquivo de envio</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RPSSubs" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="SubsNumero">
@@ -495,53 +548,6 @@ serviços sobre bens imóveis:
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="indZFMALC" minOccurs="0">
-                <xs:annotation>
-                  <xs:documentation>Indicador da operação de fornecimento favorecido com alíquota
-zero de CBS</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:nonNegativeInteger">
-                    <xs:totalDigits value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NFSOutrasinformacoes" minOccurs="0">
-                <xs:annotation>
-                  <xs:documentation>Outras informações</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1000" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="RPSCanhoto" minOccurs="0">
-                <xs:annotation>
-                  <xs:documentation>Canhoto do RPS (INFISC)</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:nonNegativeInteger">
-                    <xs:totalDigits value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Arquivo" minOccurs="0" type="xs:string">
-                <xs:annotation>
-                  <xs:documentation>Arquivo de retorno</xs:documentation>
-                </xs:annotation>
-              </xs:element>
-              <xs:element name="ExtensaoArquivo" minOccurs="0">
-                <xs:annotation>
-                  <xs:documentation>Extensão do arquivo de envio</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="RPSSubs" minOccurs="0" />
               <xs:element name="Prestador">
                 <xs:complexType>
                   <xs:sequence>
@@ -696,8 +702,8 @@ zero de CBS</xs:documentation>
                               <xs:documentation>Código do CEP</xs:documentation>
                             </xs:annotation>
                             <xs:simpleType>
-                              <xs:restriction base="xs:nonNegativeInteger">
-                                <xs:totalDigits value="8" />
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="8" />
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
@@ -1525,7 +1531,7 @@ zero de CBS</xs:documentation>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Servico">
+              <xs:element name="Servico" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="IteListServico">
@@ -1798,7 +1804,7 @@ zero de CBS</xs:documentation>
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
-                    <xs:element name="Valores">
+                    <xs:element name="Valores" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="ValServicos">
@@ -2447,10 +2453,16 @@ zero de CBS</xs:documentation>
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="ValRedBC" minOccurs="0" type="xs:string">
+                          <xs:element name="ValRedBC" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Valor da redução da base de cálculo</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:decimal">
+                                <xs:totalDigits value="15" />
+                                <xs:fractionDigits value="2" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                           <xs:element name="ValRetFederais" minOccurs="0">
                             <xs:annotation>
@@ -2463,10 +2475,16 @@ zero de CBS</xs:documentation>
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="ValAproxTrib" minOccurs="0" type="xs:string">
+                          <xs:element name="ValAproxTrib" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Valor aproximado dos tributos</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:decimal">
+                                <xs:totalDigits value="15" />
+                                <xs:fractionDigits value="2" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                           <xs:element name="NroDeducao" minOccurs="0">
                             <xs:annotation>
@@ -2509,17 +2527,6 @@ zero de CBS</xs:documentation>
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="ValServEst" minOccurs="0">
-                            <xs:annotation>
-                              <xs:documentation>Valor do Serviço em Moeda estrangeira</xs:documentation>
-                            </xs:annotation>
-                            <xs:simpleType>
-                              <xs:restriction base="xs:decimal">
-                                <xs:totalDigits value="15" />
-                                <xs:fractionDigits value="2" />
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
                           <xs:element name="mecAFComexP" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo prestador do serviço</xs:documentation>
@@ -2550,23 +2557,23 @@ zero de CBS</xs:documentation>
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="nDI" minOccurs="0">
+                          <xs:element name="nroDUIMP" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado</xs:documentation>
                             </xs:annotation>
                             <xs:simpleType>
                               <xs:restriction base="xs:string">
-                                <xs:maxLength value="12" />
+                                <xs:maxLength value="15" />
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="nRE" minOccurs="0">
+                          <xs:element name="nroDUE" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Número do Registro de Exportação (RE) averbado</xs:documentation>
                             </xs:annotation>
                             <xs:simpleType>
                               <xs:restriction base="xs:string">
-                                <xs:maxLength value="12" />
+                                <xs:maxLength value="14" />
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
@@ -2577,6 +2584,16 @@ zero de CBS</xs:documentation>
                             <xs:simpleType>
                               <xs:restriction base="xs:nonNegativeInteger">
                                 <xs:totalDigits value="1" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="nroContCambio" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Número da identificação do contrato de câmbio</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:nonNegativeInteger">
+                                <xs:totalDigits value="20" />
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
@@ -3341,6 +3358,17 @@ ISSQN</xs:documentation>
                                     </xs:restriction>
                                   </xs:simpleType>
                                 </xs:element>
+                                <xs:element name="ValAjusteBCIBSCBSComExt" minOccurs="0">
+                                  <xs:annotation>
+                                    <xs:documentation>Valor monetário padrão para ajuste dos valores de base de cálculo do IBS/CBS nos casos de Comércio Exterior.</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                      <xs:totalDigits value="15" />
+                                      <xs:fractionDigits value="2" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
@@ -3428,8 +3456,8 @@ ISSQN</xs:documentation>
                               <xs:documentation>CEP</xs:documentation>
                             </xs:annotation>
                             <xs:simpleType>
-                              <xs:restriction base="xs:nonNegativeInteger">
-                                <xs:totalDigits value="8" />
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="8" />
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
@@ -3446,7 +3474,7 @@ ISSQN</xs:documentation>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="IBSCBS">
+                    <xs:element name="IBSCBS" minOccurs="0">
                       <xs:annotation>
                         <xs:documentation>Grupo de informações declaradas pelo emitente referentes ao
 IBS e à CBS</xs:documentation>
@@ -3732,8 +3760,8 @@ IBS e da CBS de tributação regular</xs:documentation>
                         <xs:documentation>CEP do tomador</xs:documentation>
                       </xs:annotation>
                       <xs:simpleType>
-                        <xs:restriction base="xs:nonNegativeInteger">
-                          <xs:totalDigits value="8" />
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="8" />
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
@@ -4004,7 +4032,7 @@ IBS e da CBS de tributação regular</xs:documentation>
                       </xs:annotation>
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
-                          <xs:maxLength value="10" />
+                          <xs:maxLength value="8" />
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
@@ -4038,7 +4066,7 @@ IBS e da CBS de tributação regular</xs:documentation>
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
-                    <xs:element name="ItermIE" minOccurs="0">
+                    <xs:element name="IntermIE" minOccurs="0">
                       <xs:annotation>
                         <xs:documentation>Inscrição Estadual</xs:documentation>
                       </xs:annotation>
@@ -4129,6 +4157,26 @@ IBS e da CBS de tributação regular</xs:documentation>
                         </xs:simpleType>
                       </xs:element>
                     </xs:choice>
+                    <xs:element name="DestIE" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Inscrição Estadual do Destinatário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="40" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="DestIM" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Inscrição Municipal do Destinatário</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="40" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                     <xs:element name="DestNome">
                       <xs:annotation>
                         <xs:documentation>Nome / Nome Empresarial do destinatário</xs:documentation>
@@ -4329,8 +4377,8 @@ destinatário do serviço</xs:documentation>
                         <xs:documentation>CEP da Obra</xs:documentation>
                       </xs:annotation>
                       <xs:simpleType>
-                        <xs:restriction base="xs:nonNegativeInteger">
-                          <xs:totalDigits value="8" />
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="8" />
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
@@ -4493,7 +4541,7 @@ destinatário do serviço</xs:documentation>
                     </xs:element>
                     <xs:element name="ObraCPFNF" minOccurs="0">
                       <xs:annotation>
-                        <xs:documentation>CNPJ do fornecedor da NF da Obra</xs:documentation>
+                        <xs:documentation>CPF do fornecedor da NF da Obra</xs:documentation>
                       </xs:annotation>
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
@@ -4503,7 +4551,7 @@ destinatário do serviço</xs:documentation>
                     </xs:element>
                     <xs:element name="ObraCNPJNF" minOccurs="0">
                       <xs:annotation>
-                        <xs:documentation>CPF do fornecedor da NF da Obra</xs:documentation>
+                        <xs:documentation>CNPJ do fornecedor da NF da Obra</xs:documentation>
                       </xs:annotation>
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
@@ -5156,10 +5204,16 @@ destinatário do serviço</xs:documentation>
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>
-                          <xs:element name="nPostes" minOccurs="0" type="xs:string">
+                          <xs:element name="nPostes" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Número total de postes</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:decimal">
+                                <xs:totalDigits value="6" />
+                                <xs:fractionDigits value="0" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                         </xs:sequence>
                       </xs:complexType>
@@ -5612,21 +5666,43 @@ local do imóvel.</xs:documentation>
                             <xs:annotation>
                               <xs:documentation>Tipo de Ajuste da Base de cálculo</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:nonNegativeInteger">
+                                <xs:totalDigits value="3" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
-                          <xs:element name="DocxTpAjusteBC">
+                          <xs:element name="DocxTpAjusteBC" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Descrição do ajuste</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="150" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                           <xs:element name="DocValTotDoc">
                             <xs:annotation>
                               <xs:documentation>Valor monetário total do documento</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:decimal">
+                                <xs:totalDigits value="15" />
+                                <xs:fractionDigits value="2" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                           <xs:element name="DocValAjusteAplic">
                             <xs:annotation>
                               <xs:documentation>Valor monetário efetivamente utilizado para ajuste</xs:documentation>
                             </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:decimal">
+                                <xs:totalDigits value="15" />
+                                <xs:fractionDigits value="2" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                           <xs:element name="DocDataEmissao" type="xs:date">
                             <xs:annotation>
@@ -5638,129 +5714,89 @@ local do imóvel.</xs:documentation>
                               <xs:documentation>Data da competência do documento dedutível</xs:documentation>
                             </xs:annotation>
                           </xs:element>
-                          <xs:element name="RepositorioNacional">
-                            <xs:annotation>
-                              <xs:documentation>Grupo de informações de documentos fiscais eletrônicos que se encontram no repositório nacional.</xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                              <xs:choice>
-                                <xs:element name="DocTipoChaveDFe">
-                                  <xs:annotation>
-                                    <xs:documentation>Documento fiscal a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional</xs:documentation>
-                                  </xs:annotation>
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:nonNegativeInteger">
-                                      <xs:totalDigits value="1" />
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
-                                <xs:element name="DocxTipoChaveDFe">
-                                  <xs:annotation>
-                                    <xs:documentation>Descrição da DF-e a que se refere a DocchaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando tipoChaveDFe = 9 (Outro).</xs:documentation>
-                                  </xs:annotation>
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:maxLength value="255" />
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
-                                <xs:element name="DocChaveDFe" minOccurs="0">
-                                  <xs:annotation>
-                                    <xs:documentation>Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas.</xs:documentation>
-                                  </xs:annotation>
-                                  <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                      <xs:maxLength value="50" />
-                                    </xs:restriction>
-                                  </xs:simpleType>
-                                </xs:element>
-                              </xs:choice>
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="DocumentoFiscalOutro">
-                            <xs:annotation>
-                              <xs:documentation>Grupo de informações de documento não fiscal.</xs:documentation>
-                            </xs:annotation>
-                          </xs:element>
+                          <xs:choice>
+                            <xs:element name="RepositorioNacional">
+                              <xs:annotation>
+                                <xs:documentation>Grupo de informações de documentos fiscais eletrônicos que se encontram no repositório nacional.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="DocTipoChaveDFe">
+                                    <xs:annotation>
+                                      <xs:documentation>Documento fiscal a que se refere a chaveDfe que seja um dos documentos do Repositório Nacional</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:nonNegativeInteger">
+                                        <xs:totalDigits value="1" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                  <xs:element name="DocxTipoChaveDFe">
+                                    <xs:annotation>
+                                      <xs:documentation>Descrição da DF-e a que se refere a DocchaveDfe que seja um dos documentos do Repositório Nacional. Deve ser preenchido apenas quando tipoChaveDFe = 9 (Outro).</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                  <xs:element name="DocChaveDFe" minOccurs="0">
+                                    <xs:annotation>
+                                      <xs:documentation>Chave do Documento Fiscal eletrônico do repositório nacional referenciado para os casos de operações já tributadas.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                            <xs:element name="DocumentoFiscalOutro">
+                              <xs:annotation>
+                                <xs:documentation>Grupo de informações de documento não fiscal.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="DoccMun" minOccurs="0">
+                                    <xs:annotation>
+                                      <xs:documentation>Código do município emissor do documento fiscal que não se encontra no repositório nacional</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                  <xs:element name="DocNumero">
+                                    <xs:annotation>
+                                      <xs:documentation>Número do documento fiscal/Não fiscal</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                  <xs:element name="DocDescricao">
+                                    <xs:annotation>
+                                      <xs:documentation>Descrição do documento fiscal/Não fiscal</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                      <xs:restriction base="xs:string">
+                                        <xs:maxLength value="255" />
+                                      </xs:restriction>
+                                    </xs:simpleType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:choice>
                           <xs:element name="Fornecedor" minOccurs="0">
                             <xs:annotation>
                               <xs:documentation>Grupo de informações do fornecedor do documento referenciado</xs:documentation>
-                            </xs:annotation>
-                          </xs:element>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="ListaNFSeReferenciadas" minOccurs="0">
-                <xs:annotation>
-                  <xs:documentation>Grupo de NFS-e referenciadas.</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="NFSeReferenciada" maxOccurs="99">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="DoccMun" minOccurs="0">
-                            <xs:annotation>
-                              <xs:documentation>Código do município emissor do documento fiscal que não se encontra no repositório nacional</xs:documentation>
-                            </xs:annotation>
-                            <xs:simpleType>
-                              <xs:restriction base="xs:string">
-                                <xs:maxLength value="255" />
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="DocNumero">
-                            <xs:annotation>
-                              <xs:documentation>Número do documento fiscal/Não fiscal</xs:documentation>
-                            </xs:annotation>
-                            <xs:simpleType>
-                              <xs:restriction base="xs:string">
-                                <xs:maxLength value="255" />
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="DocDescricao">
-                            <xs:annotation>
-                              <xs:documentation>Descrição do documento fiscal/Não fiscal</xs:documentation>
-                            </xs:annotation>
-                            <xs:simpleType>
-                              <xs:restriction base="xs:string">
-                                <xs:maxLength value="255" />
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                          <xs:element name="DocChaveNFSe">
-                            <xs:annotation>
-                              <xs:documentation>Chave da NFS-e referenciada.</xs:documentation>
-                            </xs:annotation>
-                            <xs:simpleType>
-                              <xs:restriction base="xs:string">
-                                <xs:maxLength value="50" />
-                              </xs:restriction>
-                            </xs:simpleType>
-                          </xs:element>
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="ListaBensMoveis" minOccurs="0">
-                <xs:annotation>
-                  <xs:documentation>Grupo de bens móveis objetos de locação</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="BemMovel" maxOccurs="1000">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="BemMovelcNCM">
-                            <xs:annotation>
-                              <xs:documentation>Código da Nomenclatura Comum do Mercosul
-(NCM) do bem móvel objeto da locação</xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                               <xs:sequence>
@@ -5814,10 +5850,15 @@ local do imóvel.</xs:documentation>
                                     </xs:restriction>
                                   </xs:simpleType>
                                 </xs:element>
-                                <xs:element name="DocEndereco" type="xs:string">
+                                <xs:element name="DocEndereco">
                                   <xs:annotation>
                                     <xs:documentation>Endereço do Fornecedor do documento</xs:documentation>
                                   </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="255" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
                                 </xs:element>
                                 <xs:element name="DoccMun" minOccurs="0">
                                   <xs:annotation>
@@ -5871,6 +5912,88 @@ local do imóvel.</xs:documentation>
                                 </xs:element>
                               </xs:sequence>
                             </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DoctpReeRepRes" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Tipo de valor incluído neste documento, recebido por motivo de estarem relacionadas a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciados</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="2" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="DocDescTpReeRepRes" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Descrição do reembolso ou ressarcimento</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="150" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="DocValorReeRepRes" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Valor monetário (total ou parcial, conforme documento informado) utilizado para não inclusão na base de cálculo do ISS e do IBS e da CBS da NFS-e que está sendo emitida (R$).</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:decimal">
+                                <xs:totalDigits value="15" />
+                                <xs:fractionDigits value="2" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ListaNFSeReferenciadas" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Grupo de NFS-e referenciadas.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NFSeReferenciada" maxOccurs="99">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DocChaveNFSe">
+                            <xs:annotation>
+                              <xs:documentation>Chave da NFS-e referenciada.</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="50" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ListaBensMoveis" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Grupo de bens móveis objetos de locação</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="BemMovel" maxOccurs="1000">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BemMovelcNCM">
+                            <xs:annotation>
+                              <xs:documentation>Código da Nomenclatura Comum do Mercosul
+(NCM) do bem móvel objeto da locação</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="8" />
+                              </xs:restriction>
+                            </xs:simpleType>
                           </xs:element>
                           <xs:element name="BemMovelxNCM">
                             <xs:annotation>
@@ -6032,6 +6155,168 @@ local do imóvel.</xs:documentation>
                                 <xs:maxLength value="8" />
                               </xs:restriction>
                             </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Condominio" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Dados do condomínio</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CondDataVencOriginal" type="xs:date">
+                      <xs:annotation>
+                        <xs:documentation>Data de vencimento original
+Ano, Mês e Dia (AAAA-MM-DD)</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="ListaCobranca">
+                      <xs:annotation>
+                        <xs:documentation>Grupo de lista de cobrança</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Cobranca" maxOccurs="20">
+                            <xs:annotation>
+                              <xs:documentation>Dados da cobrança</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="CondTpCobranca">
+                                  <xs:annotation>
+                                    <xs:documentation>Tipo de cobrança do condomínio</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                      <xs:totalDigits value="2" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CondxTpCobranca" minOccurs="0">
+                                  <xs:annotation>
+                                    <xs:documentation>Descrição do tipo de cobrança do condomínio</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="150" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CondValCobranca">
+                                  <xs:annotation>
+                                    <xs:documentation>Valor da cobrança do condomínio</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                      <xs:totalDigits value="15" />
+                                      <xs:fractionDigits value="2" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="ListaDetCobranca" minOccurs="0">
+                                  <xs:annotation>
+                                    <xs:documentation>Grupo de lista de detalhamento de cobrança</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DetCobranca" maxOccurs="20">
+                                        <xs:annotation>
+                                          <xs:documentation>Dados do detalhamento</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="CondTpDetCobranca">
+                                              <xs:annotation>
+                                                <xs:documentation>Tipo do detalhamento de cobrança do condomínio</xs:documentation>
+                                              </xs:annotation>
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:nonNegativeInteger">
+                                                  <xs:totalDigits value="3" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="CondxTpDetCobranca" minOccurs="0">
+                                              <xs:annotation>
+                                                <xs:documentation>Descrição do tipo de detalhamento da cobrança.</xs:documentation>
+                                              </xs:annotation>
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:maxLength value="150" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="CondValDetCobranca">
+                                              <xs:annotation>
+                                                <xs:documentation>Valor detalhado da cobrança em R$ que irá compor vCobranca</xs:documentation>
+                                              </xs:annotation>
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                  <xs:totalDigits value="15" />
+                                                  <xs:fractionDigits value="2" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ListaDesconto" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Grupo de informações dos descontos concedidos nas taxas e demais valores condominiais cobrados do condômino.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Desconto" maxOccurs="10">
+                            <xs:annotation>
+                              <xs:documentation>Dados do desconto</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="CondTpDesconto">
+                                  <xs:annotation>
+                                    <xs:documentation>Tipo de desconto do condomínio</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:nonNegativeInteger">
+                                      <xs:totalDigits value="1" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CondxTpDesconto">
+                                  <xs:annotation>
+                                    <xs:documentation>Descrição do tipo de desconto do condomínio</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="150" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="CondValDesconto">
+                                  <xs:annotation>
+                                    <xs:documentation>Valor do desconto do condomínio</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                      <xs:totalDigits value="15" />
+                                      <xs:fractionDigits value="2" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
                           </xs:element>
                         </xs:sequence>
                       </xs:complexType>
