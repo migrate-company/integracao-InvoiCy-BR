@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Campo Ind_Aliquota fora do intervalo de valores aceitos (1 ou 2). Valor informado = 3."
+  ]
+}

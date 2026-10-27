@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Unidade de medida de estoque inválida. Valor informado = QQQ (Cod_Item = ITEM-ERRO-01)."
+  ]
+}

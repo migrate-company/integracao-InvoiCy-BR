@@ -1,0 +1,94 @@
+{
+  "Usuario": "integracao.erp",
+  "DocFiscal": {
+    "Est_nota_capa": {
+      "Estab": "0001",
+      "Ind_Oper": "0",
+      "Ind_Emit": "1",
+      "Cod_Part": "FORN-INEXISTENTE",
+      "Cod_Mod": "55",
+      "Cod_Sit": "00",
+      "Ser": "1",
+      "Num_Doc": "1234",
+      "Dt_Doc": "2026-03-10",
+      "Chv": "35260311222333000181550010000012341123456785",
+      "Dt_E_S": "2026-03-12",
+      "Vl_Doc": "1000,00",
+      "Ind_Pgto": "1",
+      "Vl_Merc": "1000,00",
+      "Ind_Frt": "1",
+      "Vl_Bc_Icms": "1000,00",
+      "Vl_Icms": "120,00",
+      "Vl_Pis": "16,50",
+      "Vl_Cofins": "76,00",
+      "Vl_Bc_Pis": "1000,00",
+      "Vl_Bc_Cofins": "1000,00",
+      "IdOrigemExt": "ERP-000123",
+      "CrpInProdutoId": "10",
+      "Est_nota_item": [
+        {
+          "Est_nota_item": {
+            "Num_Item": "1",
+            "Cod_Item": "PROD-001",
+            "Qtd": "1",
+            "Unid": "UN",
+            "Vl_Item": "600,00",
+            "Ind_Mov": "0",
+            "Cst_Icms": "000",
+            "CFOP": "1102",
+            "Vl_Bc_Icms": "600,00",
+            "Aliq_Icms": "12,00",
+            "Vl_Icms": "72,00",
+            "Cst_Ipi": "49",
+            "Cst_Pis": "50",
+            "Vl_Bc_Pis": "600,00",
+            "Aliq_Pis": "1,6500",
+            "Vl_Pis": "9,90",
+            "Cst_Cofins": "50",
+            "Vl_Bc_Cofins": "600,00",
+            "Aliq_Cofins": "7,6000",
+            "Vl_Cofins": "45,60",
+            "IsActive": "true"
+          }
+        },
+        {
+          "Est_nota_item": {
+            "Num_Item": "2",
+            "Cod_Item": "PROD-002",
+            "Qtd": "1",
+            "Unid": "UN",
+            "Vl_Item": "400,00",
+            "Ind_Mov": "0",
+            "Cst_Icms": "000",
+            "CFOP": "1102",
+            "Vl_Bc_Icms": "400,00",
+            "Aliq_Icms": "12,00",
+            "Vl_Icms": "48,00",
+            "Cst_Ipi": "49",
+            "Cst_Pis": "50",
+            "Vl_Bc_Pis": "400,00",
+            "Aliq_Pis": "1,6500",
+            "Vl_Pis": "6,60",
+            "Cst_Cofins": "50",
+            "Vl_Bc_Cofins": "400,00",
+            "Aliq_Cofins": "7,6000",
+            "Vl_Cofins": "30,40",
+            "IsActive": "true"
+          }
+        }
+      ],
+      "Est_nota_total": [
+        {
+          "Est_nota_total": {
+            "Cst_Icms": "000",
+            "CFOP": "1102",
+            "Aliq_Icms": "12,00",
+            "Vl_Opr": "1000,00",
+            "Vl_Bc_Icms": "1000,00",
+            "Vl_Icms": "120,00"
+          }
+        }
+      ]
+    }
+  }
+}

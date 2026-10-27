@@ -1,0 +1,28 @@
+{
+  "F500": [
+    {
+      "Estabelecimento": "0001",
+      "Dt_Referencia": "2026-03-01",
+      "CFOP": "5102",
+      "Cod_Cta": "1.01.01.001",
+      "Vl_Rec": "1000,00",
+      "Ind_Aliquota": "1",
+      "Cod_Mod": "55",
+      "Cst_Pis": "01",
+      "Vl_Desc_Pis": 0.0,
+      "Vl_Bc_Pis": 1000.0,
+      "Aliq_Pis": 0.65,
+      "Vl_Pis": 6.5,
+      "Cst_Cofins": "01",
+      "Vl_Desc_Cofins": 0.0,
+      "Vl_Bc_Cofins": 1000.0,
+      "Aliq_Cofins": 3.0,
+      "Vl_Cofins": 30.0,
+      "Inf_Compl": "Receitas recebidas em 03/2026",
+      "CrpInProdutoId": 0,
+      "IdOrigem": 0,
+      "IdOrigemExt": "ERP-000123"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

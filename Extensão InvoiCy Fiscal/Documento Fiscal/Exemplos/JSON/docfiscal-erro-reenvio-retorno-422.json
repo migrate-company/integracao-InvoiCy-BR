@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Para editar o registro realize a exclusao atraves do metodo de exclusao e envie as Informacoes novamente!"
+  ]
+}

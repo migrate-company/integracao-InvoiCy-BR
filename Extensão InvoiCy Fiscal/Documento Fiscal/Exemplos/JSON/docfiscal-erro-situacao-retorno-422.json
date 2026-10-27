@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Campo Cod_Sit invalido. Valor informado = 99."
+  ]
+}

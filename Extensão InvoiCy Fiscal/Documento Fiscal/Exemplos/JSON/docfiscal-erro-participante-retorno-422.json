@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Nao existe cadastro para o Cod_Part FORN-INEXISTENTE no grupo Est_nota_capa informado! Verifique o cadastro de Participantes!"
+  ]
+}

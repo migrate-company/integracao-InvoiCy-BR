@@ -1,0 +1,24 @@
+{
+  "Reg1900": [
+    {
+      "Empresa": "0001",
+      "PeriododeReferencia": "2026-03-01",
+      "CNPJ": "11222333000181",
+      "CodModelo": "99",
+      "CodSituacao": "00",
+      "Serie": "",
+      "SubSerie": "",
+      "TotaldaReceita": 1500.25,
+      "TotaldeDocumentosEmitidos": 3,
+      "CSTdoPIS": "01",
+      "CSTdaCOFINS": "01",
+      "CFOP": "",
+      "CodigoConta": "1.01.01.001",
+      "InformacaoCompl": "Recibos de prestação de serviço 03/2026",
+      "CrpInProdutoId": "",
+      "IdOrigem": "ERP-000123",
+      "IdOrigemExt": "ERP-000123"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

@@ -1,0 +1,51 @@
+{
+  "BlocoF": [
+    {
+      "EstF130": {
+        "Estab": "0001",
+        "Dt_Ref": "2026-03-01",
+        "Ident_Bem_Imob": "04",
+        "Ind_Orig_Cred": "0",
+        "Ind_Util_Bem_Imob": "1",
+        "Cst_Pis": "01",
+        "Cst_Cofins": "01",
+        "Cod_Cta": "1.01.01.001",
+        "Cod_Ccus": "CC-001",
+        "Mes_Oper_Aquis": "2026-03-01",
+        "Vl_Oper_Aquis": 10000.0,
+        "Parc_Oper_Nao_Bc_Cred": 0.0,
+        "Vl_Bc_Cred": 10000.0,
+        "Ind_Nr_Parc": "1",
+        "Vl_Bc_Pis": 10000.0,
+        "Aliq_Pis": 1.65,
+        "Vl_Pis": 165.0,
+        "Vl_Bc_Cofins": 10000.0,
+        "Aliq_Cofins": 7.6,
+        "Vl_Cofins": 760.0,
+        "Desc_Bem_Imob": "Máquina de envase ERP-000123"
+      },
+      "EstF120": {
+        "Estab": "0001",
+        "Dt_Ref": "2026-03-01",
+        "Ident_Bem_Imob": "04",
+        "Ind_Orig_Cred": "0",
+        "Ind_Util_Bem_Imob": "1",
+        "Cst_Pis": "01",
+        "Cst_Cofins": "01",
+        "Cod_Cta": "1.01.01.001",
+        "Cod_Ccus": "CC-001",
+        "Nat_Bc_Cred": "09",
+        "Vl_Oper_Dep": 500.0,
+        "Parc_Oper_Nao_Bc_Cred": 100.0,
+        "Vl_Bc_Pis": 400.0,
+        "Aliq_Pis": 1.65,
+        "Vl_Pis": 6.6,
+        "Vl_Bc_Cofins": 400.0,
+        "Aliq_Cofins": 7.6,
+        "Vl_Cofins": 30.4,
+        "Desc_Bem_Imob": "Depreciação máquina de envase ERP-000123"
+      }
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

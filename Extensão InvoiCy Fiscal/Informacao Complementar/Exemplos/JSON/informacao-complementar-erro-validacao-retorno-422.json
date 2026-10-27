@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Codigo maior que o permitido, sao aceitos ate 6 caracteres. Valor informado = IC00001."
+  ]
+}

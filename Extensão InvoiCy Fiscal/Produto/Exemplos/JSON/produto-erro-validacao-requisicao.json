@@ -1,0 +1,12 @@
+{
+  "Produto": {
+    "Cod_Item": "ITEM-ERRO-01",
+    "Estab": "0001",
+    "Dt_Inicial": "2026-01-01",
+    "Descr_Item": "Produto Exemplo",
+    "Tipo_Item": "04",
+    "Unid_Inv": "QQQ",
+    "NCM": "84713012"
+  },
+  "Usuario": "integracao.erp"
+}

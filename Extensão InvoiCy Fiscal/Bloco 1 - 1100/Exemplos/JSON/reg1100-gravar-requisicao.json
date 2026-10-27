@@ -1,0 +1,47 @@
+{
+  "Reg1100": [
+    {
+      "Estab": "0001",
+      "Ind_Doc": "0",
+      "Nro_De": "DE-000123",
+      "Dt_De": "2026-03-10",
+      "Nat_Exp": "0",
+      "Nro_Re": 12345,
+      "Dt_Re": "2026-03-10",
+      "Chc_Emb": "CE-000123",
+      "Dt_Chc": "2026-03-12",
+      "Dt_Avb": "2026-03-15",
+      "Tp_Chc": "01",
+      "Pais": "[A CONFIRMAR]",
+      "CrpInProdutoId": 0,
+      "IdOrigem": 0,
+      "IdOrigemExt": "ERP-000123",
+      "Est1105List": [
+        {
+          "ID1100": "1",
+          "Cod_Mod": "55",
+          "Serie": "1",
+          "Num_Doc": 5905,
+          "Chv_Nfe": "",
+          "Dt_Doc": "2026-03-10",
+          "Cod_Item": "ITEM-001",
+          "Est1110List": [
+            {
+              "ID1105": "1",
+              "Cod_Part": "FORN-001",
+              "Cod_Mod": "55",
+              "Ser": "1",
+              "Num_Doc": 5906,
+              "Dt_Doc": "2026-03-05",
+              "Chv_Nfe": "",
+              "Nr_Memo": "M1",
+              "Qtd": 10,
+              "Unid": "UN"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Usuario": "integracao.erp"
+}
