@@ -1,0 +1,40 @@
+{
+  "sdtSetBlocoI": [
+    {
+      "CodigoEstab": "0001",
+      "Periodo": "2026-03-01",
+      "VlRec": 10000.0,
+      "CstPisCofins": "77",
+      "VlTotDedGer": 0,
+      "VlTotDedEsp": 0,
+      "VlBcPis": 10000.0,
+      "AliqPis": 1.65,
+      "VlPis": 165.0,
+      "VlBcCofins": 10000.0,
+      "AliqCofins": 7.6,
+      "VlCofins": 760.0,
+      "InfoCompl": "Receitas de 03/2026",
+      "CrpInProdutoId": 1,
+      "IdOrigem": "ERP-000123",
+      "IdOrigemExt": "ERP-000123",
+      "EstI200List": [
+        {
+          "NumCampo": "02",
+          "CodDet": "R0111",
+          "DetValor": 5000.0,
+          "CodCta": "1.01.01.001",
+          "InfoCompl": "Detalhamento da receita",
+          "EstI300List": [
+            {
+              "CodComp": "R0301010",
+              "DetValor": 2500.0,
+              "CodCta": "1.01.01.001",
+              "InfoCompl": "Complemento do detalhamento"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

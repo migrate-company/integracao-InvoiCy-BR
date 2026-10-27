@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Registro: Nenhum registro encontrado para exclusao. Periodo = 01/03/26, IdCrpInProduto = 1, IdOrigem = , IdOrigemExt = ERP-999999."
+  ]
+}
