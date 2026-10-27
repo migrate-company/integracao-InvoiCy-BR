@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Nenhum registro encontrado para ser excluido. Empresa = 1, IdOrigemExt = ERP-000123."
+  ]
+}

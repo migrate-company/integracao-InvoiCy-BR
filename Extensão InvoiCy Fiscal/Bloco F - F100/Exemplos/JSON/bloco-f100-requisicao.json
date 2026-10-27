@@ -1,0 +1,29 @@
+{
+  "BlocoF100": [
+    {
+      "Estab": "0001",
+      "Dt_Oper": "2026-03-10",
+      "Cod_Part": "FORN-001",
+      "Cod_Item": "ITEM-001",
+      "Cod_Cta": "1.01.01.001",
+      "Cod_Ccus": "CC-001",
+      "Cod_Categ_Lanc": "CAT-001",
+      "Cst_Pis": "01",
+      "Cst_Cofins": "01",
+      "Nat_Bc_Cred": "01",
+      "Ind_Orig_Cred": "0",
+      "Vl_Oper": 1000.0,
+      "Desc_Doc_Oper": "Prestação de serviço - contrato 45",
+      "Vl_Bc_Pis": 1000.0,
+      "Aliq_Pis": 1.65,
+      "Vl_Pis": 16.5,
+      "Vl_Bc_Cofins": 1000.0,
+      "Aliq_Cofins": 7.6,
+      "Vl_Cofins": 76.0,
+      "CrpInProdutoId": 0,
+      "IdOrigem": "ERP-000123",
+      "IdOrigemExt": "ERP-000123"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

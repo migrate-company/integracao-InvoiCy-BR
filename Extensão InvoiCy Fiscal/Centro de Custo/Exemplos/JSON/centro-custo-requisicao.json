@@ -1,0 +1,11 @@
+{
+  "Reg0600": [
+    {
+      "Estab": "0001",
+      "Dt_Inicial": "2026-01-01",
+      "Cod_Ccus": "CC-000123",
+      "Ccus": "Centro de Custo Exemplo"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

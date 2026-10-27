@@ -1,0 +1,29 @@
+{
+  "BlocoKNew": {
+    "EstK100_New": [
+      {
+        "OrigemExterna": "ERP-000123",
+        "Periodo": "03/2026",
+        "CodigoEstab": "0001",
+        "EstK200List": [
+          {
+            "OrigemExterna": "ERP-000123",
+            "IdOrigem": "ERP-000123",
+            "CodItem": "ITEM-001",
+            "Qtd": "1,5",
+            "IndEst": "0"
+          },
+          {
+            "OrigemExterna": "ERP-000123",
+            "IdOrigem": "ERP-000123",
+            "CodItem": "ITEM-002",
+            "Qtd": "10,000",
+            "IndEst": "1",
+            "CodPart": "FORN-001"
+          }
+        ]
+      }
+    ]
+  },
+  "Usuario": "integracao.erp"
+}

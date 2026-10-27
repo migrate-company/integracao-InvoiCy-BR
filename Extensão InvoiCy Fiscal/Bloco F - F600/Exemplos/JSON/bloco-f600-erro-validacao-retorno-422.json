@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Campo Ind_Dec fora intervalo de valores aceitos! Valores aceitos: 0 e 1."
+  ]
+}

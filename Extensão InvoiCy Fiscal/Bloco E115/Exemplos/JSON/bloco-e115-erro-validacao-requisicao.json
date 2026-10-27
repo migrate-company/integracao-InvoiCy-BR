@@ -1,0 +1,13 @@
+{
+  "BlocoE115": [
+    {
+      "Estab": "9999",
+      "Periodo": "2026-01-01",
+      "Cod_Inf_Adic": "SP000001",
+      "Vl_Inf_Adic": 1234.56,
+      "Descr_Compl_Aj": "Informação adicional de exemplo",
+      "IdOrigemExt": "ERP-E115-ERRO"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

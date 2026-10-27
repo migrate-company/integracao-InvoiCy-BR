@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Estabelecimento nao encontrado (posicao 1). Valor informado = 9999."
+  ]
+}

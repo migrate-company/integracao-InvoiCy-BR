@@ -1,0 +1,37 @@
+{
+  "BlocoE111": [
+    {
+      "Estab": "0001",
+      "Periodo": "2026-01-01",
+      "COD_AJ_APUR": "SP020001",
+      "DESCR_COMPL_AJ": "Ajuste de exemplo",
+      "SUBS_TRIB": "N",
+      "DIF_ALIQUOTA": "N",
+      "VL_AJ_APUR": 100.0,
+      "IDORIGEMEXT": "ERP-000123",
+      "EstE112LIST": [
+        {
+          "NUM_DA": "DA-2026-0001",
+          "NUM_PROC": "PROC-2026-0001",
+          "IND_PROC": 0,
+          "PROC": "Processo administrativo de exemplo",
+          "TXT_COMPL": "Texto complementar de exemplo"
+        }
+      ],
+      "EstE113LIST": [
+        {
+          "COD_PART": "FORN-0001",
+          "COD_MOD": "55",
+          "SERIE": "1",
+          "SUBSERIE": "",
+          "NUM_DOC": 12345,
+          "DT_DOC": "2026-01-15",
+          "COD_ITEM": "ITEM-0001",
+          "VL_AJ_ITEM": 50.0,
+          "CHV_DOCe": "35260111222333000181550010000123451000123451"
+        }
+      ]
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

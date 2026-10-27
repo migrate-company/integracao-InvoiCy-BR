@@ -1,0 +1,17 @@
+{
+  "Bloco1601": [
+    {
+      "Estabelecimento": "0001",
+      "Data": "2026-03-10",
+      "Cod_Part_Ip": "FORN-001",
+      "Cod_Part_It": "FORN-002",
+      "Tot_Vs": 1510.25,
+      "Tot_Iss": 20.1,
+      "Tot_Outros": 5.0,
+      "CrpInProdutoId": "",
+      "IdOrigem": "ERP-000123",
+      "IdOrigemExt": "ERP-000123"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

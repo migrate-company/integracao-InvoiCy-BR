@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Registro: Nenhum registro encontrado para exclusão. Estab = 0001, CrpInProdutoId = 0, IdOrigem = 0, IdOrigemExt = ERP-000123."
+  ]
+}

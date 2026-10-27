@@ -1,0 +1,21 @@
+{
+  "BlocoF600": [
+    {
+      "Estab": "0001",
+      "Dt_Ret": "2026-03-10",
+      "Ind_Nat_Ret": "01",
+      "Vl_Bc_Ret": 1000.0,
+      "Vl_Ret": 36.5,
+      "Cod_Rec": "5952",
+      "Ind_Nat_Rec": "0",
+      "CNPJ": "11222333000181",
+      "Vl_Ret_Pis": 6.5,
+      "Vl_Ret_Cofins": 30.0,
+      "Ind_Dec": "2",
+      "CrpInProdutoId": 0,
+      "IdOrigem": 0,
+      "IdOrigemExt": "ERP-000123"
+    }
+  ],
+  "Usuario": "integracao.erp"
+}

@@ -1,0 +1,16 @@
+{
+  "Participante": {
+    "Cod_Part": "FORN-000123",
+    "Estab": "0001",
+    "Nome": "Fornecedor Exemplo Ltda",
+    "Dt_Inicial": "2026-01-01",
+    "Municipio": "9999998",
+    "End": "Rua das Flores",
+    "Num": "100",
+    "Bairro": "Centro",
+    "Cep": "01001000",
+    "CPF": "52998224725",
+    "CNPJ": "11222333000181"
+  },
+  "Usuario": "integracao.erp"
+}

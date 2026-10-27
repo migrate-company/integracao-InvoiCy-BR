@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "erros": [
+    "Periodo do ajuste deve iniciar no primeiro dia do mes (posicao 1)."
+  ]
+}

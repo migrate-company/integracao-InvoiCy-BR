@@ -1,0 +1,15 @@
+{
+  "Participante": {
+    "Cod_Part": "FORN-000123",
+    "Estab": "0001",
+    "Nome": "Pessoa Exemplo da Silva",
+    "Dt_Inicial": "2026-01-01",
+    "Municipio": "3550308",
+    "End": "Rua das Flores",
+    "Num": "100",
+    "Bairro": "Centro",
+    "Cep": "01001000",
+    "CPF": "52998224725"
+  },
+  "Usuario": "integracao.erp"
+}

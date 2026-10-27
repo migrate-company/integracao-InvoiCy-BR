@@ -1,0 +1,8 @@
+{
+  "sucesso": false,
+  "mensagem": "Carga rejeitada por erros de validação.",
+  "erros": [
+    "Informar apenas CPF ou CNPJ! CPF informado = 52998224725, CNPJ informado = 11222333000181.",
+    "Municipio 9999998 informado invalido!"
+  ]
+}
