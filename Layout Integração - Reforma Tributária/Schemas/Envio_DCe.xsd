@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="NewDataSet">
 	<xs:element name="Envio">
+		<xs:annotation>
+			<xs:documentation>Elemento raiz da estrutura de envio da DC-e</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="ModeloDocumento">
+					<xs:annotation>
+						<xs:documentation>Modelo de documento a ser enviado</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="10"/>
@@ -11,24 +16,37 @@
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="Versao">
+					<xs:annotation>
+						<xs:documentation>Versão do leiaute</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:decimal">
 							<xs:totalDigits value="7"/>
 							<xs:fractionDigits value="2"/>
+							<xs:minInclusive value="0"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="ide">
+					<xs:annotation>
+						<xs:documentation>Informações de identificação da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="cUF">
+								<xs:annotation>
+									<xs:documentation>Código da UF do emitente da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
-										<xs:totalDigits value="2"/>
+										<xs:pattern value="[0-9]{2}"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="cDC">
+								<xs:annotation>
+									<xs:documentation>Código numérico que compõe a Chave de Acesso</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="6"/>
@@ -36,13 +54,19 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="mod">
+								<xs:annotation>
+									<xs:documentation>Código do modelo do documento fiscal</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
-										<xs:totalDigits value="2"/>
+										<xs:pattern value="[0-9]{2}"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="serie">
+								<xs:annotation>
+									<xs:documentation>Série da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -51,21 +75,35 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="nDC">
+								<xs:annotation>
+									<xs:documentation>Número da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="9"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="dhEmi" type="xs:dateTime"/>
+							<xs:element name="dhEmi" type="xs:dateTime">
+								<xs:annotation>
+									<xs:documentation>Data e hora de emissão da DC-e</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:element name="fusoHorario">
+								<xs:annotation>
+									<xs:documentation>Fuso horário da emissão</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
+										<xs:pattern value="([-]|[+])[0-9]{2}:(0|3)0"/>
 										<xs:maxLength value="6"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="tpEmis">
+								<xs:annotation>
+									<xs:documentation>Tipo de emissão da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
@@ -73,6 +111,9 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="tpEmit">
+								<xs:annotation>
+									<xs:documentation>Tipo do emitente da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
@@ -80,6 +121,9 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="nSiteAutoriz">
+								<xs:annotation>
+									<xs:documentation>Número do site do autorizador de recepção da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
@@ -87,13 +131,20 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="tpAmb">
+								<xs:annotation>
+									<xs:documentation>Identificação do ambiente</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
-									<xs:restriction base="xs:nonNegativeInteger">
-										<xs:totalDigits value="1"/>
+									<xs:restriction base="xs:integer">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="verProc">
+								<xs:annotation>
+									<xs:documentation>Versão do processo de emissão</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -105,24 +156,38 @@
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="emit">
+					<xs:annotation>
+						<xs:documentation>Grupo de identificação do emitente da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:choice>
 								<xs:element name="CNPJ">
+									<xs:annotation>
+										<xs:documentation>CNPJ do emitente</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 											<xs:maxLength value="14"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="CPF">
+									<xs:annotation>
+										<xs:documentation>CPF do emitente</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[0-9]{11}"/>
 											<xs:maxLength value="11"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="idOutros">
+									<xs:annotation>
+										<xs:documentation>Identificação do emitente estrangeiro / outros</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="2"/>
@@ -132,6 +197,9 @@
 								</xs:element>
 							</xs:choice>
 							<xs:element name="xNome">
+								<xs:annotation>
+									<xs:documentation>Razão social ou nome do emitente</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="2"/>
@@ -140,9 +208,15 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="enderEmit">
+								<xs:annotation>
+									<xs:documentation>Grupo do endereço do emitente</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="xLgr">
+											<xs:annotation>
+												<xs:documentation>Logradouro</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -151,6 +225,9 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="nro">
+											<xs:annotation>
+												<xs:documentation>Número</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="1"/>
@@ -158,7 +235,10 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="xCpl" minOccurs="0">
+										<xs:element minOccurs="0" name="xCpl">
+											<xs:annotation>
+												<xs:documentation>Complemento</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="1"/>
@@ -167,6 +247,9 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="xBairro">
+											<xs:annotation>
+												<xs:documentation>Bairro</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -175,13 +258,19 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="cMun">
+											<xs:annotation>
+												<xs:documentation>Código do município</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="7"/>
+													<xs:pattern value="[0-9]{7}"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="xMun">
+											<xs:annotation>
+												<xs:documentation>Nome do município</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -190,27 +279,41 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="UF">
+											<xs:annotation>
+												<xs:documentation>Sigla da UF</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
+													<xs:pattern value="[A-Z]{2}"/>
 													<xs:maxLength value="2"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="CEP" minOccurs="0">
+										<xs:element minOccurs="0" name="CEP">
+											<xs:annotation>
+												<xs:documentation>Código do CEP</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
+													<xs:pattern value="[0-9]{8}"/>
 													<xs:maxLength value="8"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="cPais" minOccurs="0">
+										<xs:element minOccurs="0" name="cPais">
+											<xs:annotation>
+												<xs:documentation>Código do país</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="4"/>
+													<xs:pattern value="[0-9]{4}"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="xPais" minOccurs="0">
+										<xs:element minOccurs="0" name="xPais">
+											<xs:annotation>
+												<xs:documentation>Nome do país</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="1"/>
@@ -218,7 +321,10 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="fone" minOccurs="0">
+										<xs:element minOccurs="0" name="fone">
+											<xs:annotation>
+												<xs:documentation>Telefone</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
 													<xs:totalDigits value="14"/>
@@ -233,16 +339,26 @@
 				</xs:element>
 				<xs:choice minOccurs="0">
 					<xs:element name="Fisco">
+						<xs:annotation>
+							<xs:documentation>Grupo de identificação do Fisco emitente</xs:documentation>
+						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="CNPJ">
+									<xs:annotation>
+										<xs:documentation>CNPJ do órgão do Fisco</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 											<xs:maxLength value="14"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="xOrgao">
+									<xs:annotation>
+										<xs:documentation>Nome do órgão do Fisco</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="1"/>
@@ -251,8 +367,12 @@
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="UF">
+									<xs:annotation>
+										<xs:documentation>Sigla da UF do Fisco</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z]{2}"/>
 											<xs:maxLength value="2"/>
 										</xs:restriction>
 									</xs:simpleType>
@@ -261,16 +381,26 @@
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="Marketplace">
+						<xs:annotation>
+							<xs:documentation>Grupo de identificação do Marketplace</xs:documentation>
+						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="CNPJ">
+									<xs:annotation>
+										<xs:documentation>CNPJ do Marketplace</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 											<xs:maxLength value="14"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="xNome">
+									<xs:annotation>
+										<xs:documentation>Razão social do Marketplace</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="1"/>
@@ -279,6 +409,9 @@
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="Site">
+									<xs:annotation>
+										<xs:documentation>Endereço do site do Marketplace</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="1"/>
@@ -290,16 +423,26 @@
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="Transportadora">
+						<xs:annotation>
+							<xs:documentation>Grupo de identificação da Transportadora emitente</xs:documentation>
+						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="CNPJ">
+									<xs:annotation>
+										<xs:documentation>CNPJ da Transportadora</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 											<xs:maxLength value="14"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="xNome">
+									<xs:annotation>
+										<xs:documentation>Razão social da Transportadora</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="1"/>
@@ -311,16 +454,26 @@
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="ECT">
+						<xs:annotation>
+							<xs:documentation>Grupo de identificação da ECT (Correios)</xs:documentation>
+						</xs:annotation>
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="CNPJ">
+									<xs:annotation>
+										<xs:documentation>CNPJ da ECT</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 											<xs:maxLength value="14"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="xNome">
+									<xs:annotation>
+										<xs:documentation>Razão social da ECT</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="1"/>
@@ -333,24 +486,38 @@
 					</xs:element>
 				</xs:choice>
 				<xs:element name="dest">
+					<xs:annotation>
+						<xs:documentation>Grupo de identificação do destinatário da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:choice>
 								<xs:element name="CNPJ">
+									<xs:annotation>
+										<xs:documentation>CNPJ do destinatário</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 											<xs:maxLength value="14"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="CPF">
+									<xs:annotation>
+										<xs:documentation>CPF do destinatário</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
+											<xs:pattern value="[0-9]{11}"/>
 											<xs:maxLength value="11"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
 								<xs:element name="idOutros">
+									<xs:annotation>
+										<xs:documentation>Identificação do destinatário estrangeiro / outros</xs:documentation>
+									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:string">
 											<xs:minLength value="2"/>
@@ -360,6 +527,9 @@
 								</xs:element>
 							</xs:choice>
 							<xs:element name="xNome">
+								<xs:annotation>
+									<xs:documentation>Razão social ou nome do destinatário</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="2"/>
@@ -368,9 +538,15 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="enderDest">
+								<xs:annotation>
+									<xs:documentation>Grupo do endereço do destinatário</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="xLgr">
+											<xs:annotation>
+												<xs:documentation>Logradouro</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -379,6 +555,9 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="nro">
+											<xs:annotation>
+												<xs:documentation>Número</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="1"/>
@@ -386,7 +565,10 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="xCpl">
+										<xs:element minOccurs="0" name="xCpl">
+											<xs:annotation>
+												<xs:documentation>Complemento</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="1"/>
@@ -395,6 +577,9 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="xBairro">
+											<xs:annotation>
+												<xs:documentation>Bairro</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -403,13 +588,19 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="cMun">
+											<xs:annotation>
+												<xs:documentation>Código do município</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="7"/>
+													<xs:pattern value="[0-9]{7}"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="xMun">
+											<xs:annotation>
+												<xs:documentation>Nome do município</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -418,27 +609,41 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="UF">
+											<xs:annotation>
+												<xs:documentation>Sigla da UF</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
+													<xs:pattern value="[A-Z]{2}"/>
 													<xs:maxLength value="2"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="CEP" minOccurs="0">
+										<xs:element minOccurs="0" name="CEP">
+											<xs:annotation>
+												<xs:documentation>Código do CEP</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
+													<xs:pattern value="[0-9]{8}"/>
 													<xs:maxLength value="8"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="cPais">
+											<xs:annotation>
+												<xs:documentation>Código do país</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="4"/>
+													<xs:pattern value="[0-9]{4}"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="xPais">
+											<xs:annotation>
+												<xs:documentation>Nome do país</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="2"/>
@@ -446,14 +651,20 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="fone" minOccurs="0">
+										<xs:element minOccurs="0" name="fone">
+											<xs:annotation>
+												<xs:documentation>Telefone</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
 													<xs:totalDigits value="14"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="email" minOccurs="0">
+										<xs:element minOccurs="0" name="email">
+											<xs:annotation>
+												<xs:documentation>E-mail do destinatário</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:minLength value="1"/>
@@ -467,42 +678,74 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="autXML" minOccurs="0" maxOccurs="10">
+				<xs:element minOccurs="0" name="autXML">
+					<xs:annotation>
+						<xs:documentation>Grupo de pessoas autorizadas a acessar o XML da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:choice>
-								<xs:element name="CNPJ">
-									<xs:simpleType>
-										<xs:restriction base="xs:string">
-											<xs:maxLength value="14"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="CPF">
-									<xs:simpleType>
-										<xs:restriction base="xs:string">
-											<xs:maxLength value="11"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-							</xs:choice>
+							<xs:element maxOccurs="10" name="autXMLItem">
+								<xs:annotation>
+									<xs:documentation>Elemento do grupo de pessoas autorizadas</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice>
+											<xs:element name="CNPJ">
+												<xs:annotation>
+													<xs:documentation>CNPJ autorizado</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
+														<xs:maxLength value="14"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="CPF">
+												<xs:annotation>
+													<xs:documentation>CPF autorizado</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:pattern value="[0-9]{11}"/>
+														<xs:maxLength value="11"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:choice>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="det">
+					<xs:annotation>
+						<xs:documentation>Grupo de detalhamento dos itens da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="detItem" maxOccurs="999">
+							<xs:element maxOccurs="999" name="detItem">
+								<xs:annotation>
+									<xs:documentation>Elemento do grupo de itens</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
-									<xs:all>
+									<xs:sequence>
 										<xs:element name="nItem">
+											<xs:annotation>
+												<xs:documentation>Número do item</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:pattern value="[1-9]{1}[0-9]{0,3}"/>
+												<xs:restriction base="xs:positiveInteger">
+													<xs:totalDigits value="3"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="infADProd" minOccurs="0">
+										<xs:element minOccurs="0" name="InfAdProd">
+											<xs:annotation>
+												<xs:documentation>Informações adicionais do item</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="500"/>
@@ -510,9 +753,15 @@
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="prod">
+											<xs:annotation>
+												<xs:documentation>Grupo de detalhamento do produto do item</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="xProd">
+														<xs:annotation>
+															<xs:documentation>Descrição do produto</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
 																<xs:minLength value="1"/>
@@ -521,53 +770,76 @@
 														</xs:simpleType>
 													</xs:element>
 													<xs:element name="NCM">
+														<xs:annotation>
+															<xs:documentation>Código NCM</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
+																<xs:pattern value="[0-9]{8}"/>
 																<xs:maxLength value="8"/>
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
 													<xs:element name="qCom">
+														<xs:annotation>
+															<xs:documentation>Quantidade</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:decimal">
-																<xs:totalDigits value="11"/>
+																<xs:totalDigits value="15"/>
 																<xs:fractionDigits value="4"/>
+																<xs:minInclusive value="0"/>
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
 													<xs:element name="vUnCom">
+														<xs:annotation>
+															<xs:documentation>Valor unitário</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:decimal">
-																<xs:totalDigits value="11"/>
+																<xs:totalDigits value="21"/>
 																<xs:fractionDigits value="10"/>
+																<xs:minInclusive value="0"/>
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
 													<xs:element name="vProd">
+														<xs:annotation>
+															<xs:documentation>Valor total do item</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:decimal">
-																<xs:totalDigits value="13"/>
+																<xs:totalDigits value="15"/>
 																<xs:fractionDigits value="2"/>
+																<xs:minInclusive value="0"/>
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-									</xs:all>
+									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="total">
+					<xs:annotation>
+						<xs:documentation>Grupo de valores totais da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="vDC">
+								<xs:annotation>
+									<xs:documentation>Valor total da DC-e</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:decimal">
-										<xs:totalDigits value="13"/>
+										<xs:totalDigits value="15"/>
 										<xs:fractionDigits value="2"/>
+										<xs:minInclusive value="0"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -575,18 +847,28 @@
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="transp">
+					<xs:annotation>
+						<xs:documentation>Grupo de informações do transporte</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="modTrans">
+								<xs:annotation>
+									<xs:documentation>Modalidade de transporte</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="CNPJTransp" minOccurs="0">
+							<xs:element minOccurs="0" name="CNPJTransp">
+								<xs:annotation>
+									<xs:documentation>CNPJ da transportadora</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
+										<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
 										<xs:maxLength value="14"/>
 									</xs:restriction>
 								</xs:simpleType>
@@ -594,10 +876,16 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="infAdic" minOccurs="0">
+				<xs:element minOccurs="0" name="infAdic">
+					<xs:annotation>
+						<xs:documentation>Grupo de informações adicionais da DC-e</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="infAdFisco" minOccurs="0">
+							<xs:element minOccurs="0" name="infAdFisco">
+								<xs:annotation>
+									<xs:documentation>Informações adicionais de interesse do Fisco</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -605,7 +893,10 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="infCpl" minOccurs="0">
+							<xs:element minOccurs="0" name="infCpl">
+								<xs:annotation>
+									<xs:documentation>Informações complementares de interesse do emitente</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -613,7 +904,10 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="infAdMarketplace" minOccurs="0">
+							<xs:element minOccurs="0" name="infAdMarketplace">
+								<xs:annotation>
+									<xs:documentation>Informações adicionais de interesse do Marketplace</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -621,7 +915,10 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="infAdTransp" minOccurs="0">
+							<xs:element minOccurs="0" name="infAdTransp">
+								<xs:annotation>
+									<xs:documentation>Informações adicionais de interesse da Transportadora</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -629,7 +926,10 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="infAdECT" minOccurs="0">
+							<xs:element minOccurs="0" name="infAdECT">
+								<xs:annotation>
+									<xs:documentation>Informações adicionais de interesse da ECT</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -637,109 +937,190 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="obsFisco" minOccurs="0" maxOccurs="10">
+							<xs:element minOccurs="0" name="obsFisco">
+								<xs:annotation>
+									<xs:documentation>Grupo de campos de uso livre do Fisco</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="xTexto">
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:minLength value="1"/>
-													<xs:maxLength value="60"/>
-												</xs:restriction>
-											</xs:simpleType>
+										<xs:element maxOccurs="10" name="obsFiscoItem">
+											<xs:annotation>
+												<xs:documentation>Elemento do grupo de observações do Fisco</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="xCampo">
+														<xs:annotation>
+															<xs:documentation>Identificação do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="20"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="xTexto">
+														<xs:annotation>
+															<xs:documentation>Conteúdo do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="xCampo">
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="20"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="obsMarketplace" minOccurs="0" maxOccurs="10">
+							<xs:element minOccurs="0" name="obsMarketplace">
+								<xs:annotation>
+									<xs:documentation>Grupo de campos de uso livre do Marketplace</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="xTexto">
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:minLength value="1"/>
-													<xs:maxLength value="60"/>
-												</xs:restriction>
-											</xs:simpleType>
+										<xs:element maxOccurs="10" name="obsMarketplaceItem">
+											<xs:annotation>
+												<xs:documentation>Elemento do grupo de observações do Marketplace</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="xCampo">
+														<xs:annotation>
+															<xs:documentation>Identificação do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="20"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="xTexto">
+														<xs:annotation>
+															<xs:documentation>Conteúdo do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="xCampo">
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="20"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="obsEmit" minOccurs="0" maxOccurs="10">
+							<xs:element minOccurs="0" name="obsEmit">
+								<xs:annotation>
+									<xs:documentation>Grupo de campos de uso livre do emitente</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="xTexto">
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:minLength value="1"/>
-													<xs:maxLength value="60"/>
-												</xs:restriction>
-											</xs:simpleType>
+										<xs:element maxOccurs="10" name="obsEmitItem">
+											<xs:annotation>
+												<xs:documentation>Elemento do grupo de observações do emitente</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="xCampo">
+														<xs:annotation>
+															<xs:documentation>Identificação do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="20"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="xTexto">
+														<xs:annotation>
+															<xs:documentation>Conteúdo do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="xCampo">
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="20"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="obsECT" minOccurs="0" maxOccurs="10">
+							<xs:element minOccurs="0" name="obsECT">
+								<xs:annotation>
+									<xs:documentation>Grupo de campos de uso livre da ECT</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="xTexto">
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:minLength value="1"/>
-													<xs:maxLength value="60"/>
-												</xs:restriction>
-											</xs:simpleType>
+										<xs:element maxOccurs="10" name="obsECTItem">
+											<xs:annotation>
+												<xs:documentation>Elemento do grupo de observações da ECT</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="xCampo">
+														<xs:annotation>
+															<xs:documentation>Identificação do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="20"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="xTexto">
+														<xs:annotation>
+															<xs:documentation>Conteúdo do campo</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="60"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="xCampo">
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="20"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="infDec" minOccurs="0">
+				<xs:element minOccurs="0" name="infDec">
+					<xs:annotation>
+						<xs:documentation>Grupo de declarações</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="xObs1" minOccurs="0">
+							<xs:element minOccurs="0" name="xObs1">
+								<xs:annotation>
+									<xs:documentation>Observação 1 da declaração</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
-										<xs:maxLength value="2000"/>	
+										<xs:maxLength value="2000"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="xObs2" minOccurs="0">
+							<xs:element minOccurs="0" name="xObs2">
+								<xs:annotation>
+									<xs:documentation>Observação 2 da declaração</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="1"/>
@@ -749,42 +1130,6 @@
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="infSolicDCe">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="xSolic">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="0"/>
-							<xs:maxLength value="2000"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="infDCeSupl">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="qrCodDCe">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="100"/>
-							<xs:maxLength value="600"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="urlChave">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="21"/>
-							<xs:maxLength value="85"/>
-						</xs:restriction>
-					</xs:simpleType>
 				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
