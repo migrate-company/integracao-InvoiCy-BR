@@ -325,6 +325,7 @@
 										<xs:enumeration value="3"/>
 										<xs:enumeration value="4"/>
 										<xs:enumeration value="5"/>
+										<xs:enumeration value="6"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -381,6 +382,8 @@
 										<xs:enumeration value="2"/>
 										<xs:enumeration value="3"/>
 										<xs:enumeration value="4"/>
+										<xs:enumeration value="5"/>
+										<xs:enumeration value="6"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -409,7 +412,7 @@
 									<xs:documentation>Tipo de Nota de Débito</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
-									<xs:restriction base="xs:integer">
+									<xs:restriction base="xs:string">
 										<xs:enumeration value="01"/>
 										<xs:enumeration value="02"/>
 										<xs:enumeration value="03"/>
@@ -426,7 +429,7 @@
 									<xs:documentation>Tipo de Nota de Crédito</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
-									<xs:restriction base="xs:integer">
+									<xs:restriction base="xs:string">
 										<xs:enumeration value="01"/>
 										<xs:enumeration value="02"/>
 										<xs:enumeration value="03"/>
@@ -665,6 +668,8 @@
 												<xs:restriction base="xs:integer">
 													<xs:enumeration value="1"/>
 													<xs:enumeration value="2"/>
+													<xs:enumeration value="3"/>
+													<xs:enumeration value="4"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -793,9 +798,9 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="IE">
+							<xs:element minOccurs="0" name="IE">
 								<xs:annotation>
-									<xs:documentation>Inscrição Estadual</xs:documentation>
+									<xs:documentation>Inscrição Estadual do emitente. NT 2026.007: opcional somente na NF-e (modelo 55) emitida por contribuinte exclusivo do IBS/CBS, com CNPJ ativo na RFB e sem IE de ICMS habilitada na UF do estabelecimento. Nos demais casos, e sempre na NFC-e (modelo 65), é obrigatória.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
@@ -2158,6 +2163,26 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
+													<xs:element minOccurs="0" name="vUnComLiq">
+														<xs:annotation>
+															<xs:documentation>Valor líquido unitário do produto ou serviço, sem a inclusão de tributos (NT 2026.008). Informar junto com vProdLiq.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,11}(\.[0-9]{1,10})?"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element minOccurs="0" name="vProdLiq">
+														<xs:annotation>
+															<xs:documentation>Valor líquido do produto ou serviço, sem a inclusão de tributos (NT 2026.008). Informar junto com vUnComLiq.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
 													<xs:element minOccurs="0" name="NVEs">
 														<xs:annotation>
 															<xs:documentation>Tag da Nomenclatura de Valor aduaneiro e Estatística</xs:documentation>
@@ -3280,9 +3305,9 @@
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence>
-																<xs:element name="orig">
+																<xs:element minOccurs="0" name="orig">
 																	<xs:annotation>
-																		<xs:documentation>Origem da mercadoria</xs:documentation>
+																		<xs:documentation>Origem da mercadoria. Não informar quando o grupo ICMSPrevistoPagtoAntecip for informado.</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:nonNegativeInteger">
@@ -3290,9 +3315,9 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element name="CST">
+																<xs:element minOccurs="0" name="CST">
 																	<xs:annotation>
-																		<xs:documentation>Tributação do ICMS</xs:documentation>
+																		<xs:documentation>Tributação do ICMS. Não informar quando o grupo ICMSPrevistoPagtoAntecip for informado.</xs:documentation>
 																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
@@ -3991,6 +4016,25 @@
 																			<xs:maxLength value="10"/>
 																		</xs:restriction>
 																	</xs:simpleType>
+																</xs:element>
+																<xs:element minOccurs="0" name="ICMSPrevistoPagtoAntecip">
+																	<xs:annotation>
+																		<xs:documentation>Grupo do ICMS previsto no pagamento antecipado (NT 2026.008). Somente NF-e (modelo 55), quando tpNFDebito=06 (pagamento antecipado) ou tpOperGov=4 (recebimento do pagamento com fornecimento posterior). Substitui o ICMS normal: quando informado, não enviar orig e CST. Na NF-e de débito com tpNFDebito=06, não informar o ICMS normal.</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="vICMSPrevisto">
+																				<xs:annotation>
+																					<xs:documentation>Valor do ICMS que incidirá no momento do fornecimento futuro. Informar 0 quando não houver ICMS devido no fornecimento.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
 																</xs:element>
 															</xs:sequence>
 														</xs:complexType>
@@ -4942,7 +4986,7 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element name="gCredPresOper">
+																<xs:element minOccurs="0" name="gCredPresOper">
 																	<xs:annotation>
 																		<xs:documentation>Crédito Presumido da Operação</xs:documentation>
 																	</xs:annotation>
@@ -5042,50 +5086,6 @@
 																						<xs:element name="vCredPresCondSus">
 																							<xs:annotation>
 																								<xs:documentation>Valor do Crédito Presumido em condição suspensiva.</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																					</xs:sequence>
-																				</xs:complexType>
-																			</xs:element>
-																			<xs:element minOccurs="0" name="gCredPresIBSZFM">
-																				<xs:annotation>
-																					<xs:documentation>Informações do crédito presumido de IBS para fornecimentos a partir da ZFM</xs:documentation>
-																				</xs:annotation>
-																				<xs:complexType>
-																					<xs:sequence>
-																						<xs:element name="competApur">
-																							<xs:annotation>
-																								<xs:documentation>Ano e mês referência do período de apuração (AAAA-MM)</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:string">
-																									<xs:length value="7"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="tpCredPresIBSZFM">
-																							<xs:annotation>
-																								<xs:documentation>Tipo de classificação de acordo com o art. 450, § 1º, da LC 214/25 para o cálculo do crédito presumido na ZFM</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:nonNegativeInteger">
-																									<xs:enumeration value="0"/>
-																									<xs:enumeration value="1"/>
-																									<xs:enumeration value="2"/>
-																									<xs:enumeration value="3"/>
-																									<xs:enumeration value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCredPresIBSZFM">
-																							<xs:annotation>
-																								<xs:documentation>Valor do crédito presumido calculado sobre o saldo devedor apurado</xs:documentation>
 																							</xs:annotation>
 																							<xs:simpleType>
 																								<xs:restriction base="xs:decimal">
@@ -5738,253 +5738,617 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>
-																<xs:element name="gIBSCBSMono">
+																<xs:element minOccurs="0" name="gIBSCBSMono">
 																	<xs:annotation>
 																		<xs:documentation>Grupo de Informações do IBS e CBS em operações com imposto monofásico</xs:documentation>
 																	</xs:annotation>
 																	<xs:complexType>
 																		<xs:sequence>
-																			<xs:element name="gMonoPadrao">
+																			<xs:element minOccurs="0" name="gIBSMonoAdRem">
 																				<xs:annotation>
-																					<xs:documentation>Grupo de Informações do IBS e CBS em operações com imposto monofásico</xs:documentation>
+																					<xs:documentation>Grupo de Informações do IBS em operações com imposto monofásico - tributação por alíquota ad rem</xs:documentation>
 																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="qBCMono">
+																						<xs:element minOccurs="0" name="gMonoPadrao">
 																							<xs:annotation>
-																								<xs:documentation>Quantidade tributada na monofasia</xs:documentation>
+																								<xs:documentation>Grupo de informações do IBS monofásico padrão</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCMono">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada na monofasia</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="adRemIBS">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad rem do IBS</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSMono">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS monofásico</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="adRemIBS">
+																						<xs:element minOccurs="0" name="gMonoReten">
 																							<xs:annotation>
-																								<xs:documentation>Alíquota ad rem do IBS </xs:documentation>
+																								<xs:documentation>Grupo de informações do IBS monofásico sujeito a retenção</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada sujeita à retenção na monofasia</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="adRemIBSReten">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad rem do IBS sujeito a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS monofásico sujeito a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="adRemCBS">
+																						<xs:element minOccurs="0" name="gMonoRet">
 																							<xs:annotation>
-																								<xs:documentation>Alíquota ad rem da CBS </xs:documentation>
+																								<xs:documentation>Grupo de informações do IBS monofásico retido anteriormente</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vIBSMonoRet">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS retido anteriormente</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="vIBSMono">
+																						<xs:element minOccurs="0" name="gpBioDiferenca">
 																							<xs:annotation>
-																								<xs:documentation>Valor do IBS monofásico</xs:documentation>
+																								<xs:documentation>Grupo de informações da diferença de tributação pela mistura de biocombustível</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCBSMono">
-																							<xs:annotation>
-																								<xs:documentation>Valor do CBS monofásico</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCBioComb">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada de biocombustível (mistura)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSDiferenca">
+																										<xs:annotation>
+																											<xs:documentation>Valor da diferença da IBS decorrente da mistura de biocombustível</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
 																					</xs:sequence>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="gMonoReten">
+																			<xs:element minOccurs="0" name="gIBSMonoAdValorem">
 																				<xs:annotation>
-																					<xs:documentation>Grupo de Informações do IBS e CBS em operações com imposto monofásico</xs:documentation>
+																					<xs:documentation>Grupo de Informações do IBS em operações com imposto monofásico - tributação por alíquota ad valorem</xs:documentation>
 																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="qBCMonoReten">
+																						<xs:element minOccurs="0" name="gMonoPadrao">
 																							<xs:annotation>
-																								<xs:documentation>Quantidade tributada sujeita à retenção na monofasia</xs:documentation>
+																								<xs:documentation>Grupo de informações do IBS monofásico padrão (ad valorem)</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vBCMono">
+																										<xs:annotation>
+																											<xs:documentation>Base de cálculo do IBS monofásico (ad valorem)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="pAliqMonoUF">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad valorem do IBS de competência da UF</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSMonoUF">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS monofásico de competência da UF</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="pAliqMonoMun">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad valorem do IBS de competência do Município</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSMonoMun">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS monofásico de competência do Município</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSMono">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS monofásico</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="adRemIBSReten">
+																						<xs:element minOccurs="0" name="gMonoReten">
 																							<xs:annotation>
-																								<xs:documentation>Alíquota ad rem da CBS sujeito a retenção</xs:documentation>
+																								<xs:documentation>Grupo de informações do IBS monofásico sujeito a retenção (ad valorem)</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vBCMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Base de cálculo do IBS monofásico sujeito a retenção (ad valorem)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="pAliqMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad valorem do IBS sujeito a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS monofásico sujeito a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="vIBSMonoReten">
+																						<xs:element minOccurs="0" name="gMonoRet">
 																							<xs:annotation>
-																								<xs:documentation>Valor do IBS monofásico sujeito a retenção</xs:documentation>
+																								<xs:documentation>Grupo de informações do IBS monofásico retido anteriormente</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vIBSMonoRet">
+																										<xs:annotation>
+																											<xs:documentation>Valor do IBS retido anteriormente</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="adRemCBSReten">
+																						<xs:element minOccurs="0" name="gpBioDiferenca">
 																							<xs:annotation>
-																								<xs:documentation>Alíquota ad rem da CBS sujeito a retenção</xs:documentation>
+																								<xs:documentation>Grupo de informações da diferença de tributação pela mistura de biocombustível</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCBSMonoReten">
-																							<xs:annotation>
-																								<xs:documentation>Valor da CBS monofásica sujeita a retenção</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCBioComb">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada de biocombustível (mistura)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vIBSDiferenca">
+																										<xs:annotation>
+																											<xs:documentation>Valor da diferença da IBS decorrente da mistura de biocombustível</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
 																					</xs:sequence>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="gMonoRet">
+																			<xs:element minOccurs="0" name="gCBSMonoAdRem">
 																				<xs:annotation>
-																					<xs:documentation>Grupo de Informações do IBS e CBS em operações com imposto monofásico</xs:documentation>
+																					<xs:documentation>Grupo de Informações da CBS em operações com imposto monofásico - tributação por alíquota ad rem</xs:documentation>
 																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="qBCMonoRet">
+																						<xs:element minOccurs="0" name="gMonoPadrao">
 																							<xs:annotation>
-																								<xs:documentation>Quantidade tributada retida anteriormente</xs:documentation>
+																								<xs:documentation>Grupo de informações da CBS monofásica padrão</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCMono">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada na monofasia</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="adRemCBS">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad rem da CBS</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vCBSMono">
+																										<xs:annotation>
+																											<xs:documentation>Valor da CBS monofásica</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="adRemIBSRet">
+																						<xs:element minOccurs="0" name="gMonoReten">
 																							<xs:annotation>
-																								<xs:documentation>Alíquota ad rem do IBS retido anteriormente</xs:documentation>
+																								<xs:documentation>Grupo de informações da CBS monofásica sujeita a retenção</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada sujeita à retenção na monofasia</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="adRemCBSReten">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad rem da CBS sujeito a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vCBSMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Valor da CBS monofásica sujeita a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="vIBSMonoRet">
+																						<xs:element minOccurs="0" name="gMonoRet">
 																							<xs:annotation>
-																								<xs:documentation>Valor do IBS retido anteriormente</xs:documentation>
+																								<xs:documentation>Grupo de informações da CBS monofásica retida anteriormente</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vCBSMonoRet">
+																										<xs:annotation>
+																											<xs:documentation>Valor da CBS retida anteriormente</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="adRemCBSRet">
+																						<xs:element minOccurs="0" name="gpBioDiferenca">
 																							<xs:annotation>
-																								<xs:documentation>Alíquota ad rem da CBS retida anteriormente</xs:documentation>
+																								<xs:documentation>Grupo de informações da diferença de tributação pela mistura de biocombustível</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
-																						</xs:element>
-																						<xs:element name="vCBSMonoRet">
-																							<xs:annotation>
-																								<xs:documentation>Valor da CBS retida anteriormente</xs:documentation>
-																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCBioComb">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada de biocombustível (mistura)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vCBSDiferenca">
+																										<xs:annotation>
+																											<xs:documentation>Valor da diferença da CBS decorrente da mistura de biocombustível</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
 																					</xs:sequence>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="gMonoDif">
+																			<xs:element minOccurs="0" name="gCBSMonoAdValorem">
 																				<xs:annotation>
-																					<xs:documentation>Grupo de Informações do IBS e CBS em operações com imposto monofásico</xs:documentation>
+																					<xs:documentation>Grupo de Informações da CBS em operações com imposto monofásico - tributação por alíquota ad valorem</xs:documentation>
 																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="pDifIBS">
+																						<xs:element minOccurs="0" name="gMonoPadrao">
 																							<xs:annotation>
-																								<xs:documentation>Percentual do diferimento do imposto monofásico.</xs:documentation>
+																								<xs:documentation>Grupo de informações da CBS monofásica padrão (ad valorem)</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vBCMono">
+																										<xs:annotation>
+																											<xs:documentation>Base de cálculo da CBS monofásica (ad valorem)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="pAliqMonoCBS">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad valorem da CBS</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vCBSMono">
+																										<xs:annotation>
+																											<xs:documentation>Valor da CBS monofásica</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="vIBSMonoDif">
+																						<xs:element minOccurs="0" name="gMonoReten">
 																							<xs:annotation>
-																								<xs:documentation>Valor do IBS mono diferido.</xs:documentation>
+																								<xs:documentation>Grupo de informações da CBS monofásica sujeita a retenção (ad valorem)</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vBCMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Base de cálculo da CBS monofásica sujeita a retenção (ad valorem)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="pAliqMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Alíquota ad valorem da CBS sujeito a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="8"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vCBSMonoReten">
+																										<xs:annotation>
+																											<xs:documentation>Valor da CBS monofásica sujeita a retenção</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="pDifCBS">
+																						<xs:element minOccurs="0" name="gMonoRet">
 																							<xs:annotation>
-																								<xs:documentation>Percentual do diferimento do imposto monofásico</xs:documentation>
+																								<xs:documentation>Grupo de informações da CBS monofásica retida anteriormente</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="8"/>
-																									<xs:fractionDigits value="4"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="vCBSMonoRet">
+																										<xs:annotation>
+																											<xs:documentation>Valor da CBS retida anteriormente</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
-																						<xs:element name="vCBSMonoDif">
+																						<xs:element minOccurs="0" name="gpBioDiferenca">
 																							<xs:annotation>
-																								<xs:documentation>Valor da CBS Mono diferido.</xs:documentation>
+																								<xs:documentation>Grupo de informações da diferença de tributação pela mistura de biocombustível</xs:documentation>
 																							</xs:annotation>
-																							<xs:simpleType>
-																								<xs:restriction base="xs:decimal">
-																									<xs:totalDigits value="16"/>
-																									<xs:fractionDigits value="2"/>
-																								</xs:restriction>
-																							</xs:simpleType>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="qBCBioComb">
+																										<xs:annotation>
+																											<xs:documentation>Quantidade tributada de biocombustível (mistura)</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="4"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																									<xs:element name="vCBSDiferenca">
+																										<xs:annotation>
+																											<xs:documentation>Valor da diferença da CBS decorrente da mistura de biocombustível</xs:documentation>
+																										</xs:annotation>
+																										<xs:simpleType>
+																											<xs:restriction base="xs:decimal">
+																												<xs:totalDigits value="16"/>
+																												<xs:fractionDigits value="2"/>
+																											</xs:restriction>
+																										</xs:simpleType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
 																						</xs:element>
 																					</xs:sequence>
 																				</xs:complexType>
@@ -6106,6 +6470,50 @@
 																			<xs:element name="vCBSEstCred">
 																				<xs:annotation>
 																					<xs:documentation>Valor da CBS a ser estornada</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="16"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element minOccurs="0" name="gCredPresIBSZFM">
+																	<xs:annotation>
+																		<xs:documentation>Informações do crédito presumido de IBS para fornecimentos a partir da ZFM</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="competApur">
+																				<xs:annotation>
+																					<xs:documentation>Ano e mês referência do período de apuração (AAAA-MM)</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:length value="7"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="tpCredPresIBSZFM">
+																				<xs:annotation>
+																					<xs:documentation>Tipo de classificação de acordo com o art. 450, § 1º, da LC 214/25 para o cálculo do crédito presumido na ZFM</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:nonNegativeInteger">
+																						<xs:enumeration value="0"/>
+																						<xs:enumeration value="1"/>
+																						<xs:enumeration value="2"/>
+																						<xs:enumeration value="3"/>
+																						<xs:enumeration value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCredPresIBSZFM">
+																				<xs:annotation>
+																					<xs:documentation>Valor do crédito presumido calculado sobre o saldo devedor apurado</xs:documentation>
 																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:decimal">
@@ -6283,6 +6691,16 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element minOccurs="0" name="vProdLiqTot">
+								<xs:annotation>
+									<xs:documentation>Valor total líquido dos produtos ou serviços, sem a inclusão de tributos (NT 2026.008). Obrigatório quando algum item informar vProdLiq.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:pattern value="[0-9]{1,13}\.[0-9]{2}"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 							<xs:element name="vNFIBScbsIS">
 								<xs:annotation>
 									<xs:documentation>Valor total da NF-e com IBS / CBS / IS</xs:documentation>
@@ -7982,6 +8400,92 @@
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="gPgtoVinc">
+					<xs:annotation>
+						<xs:documentation>Grupo de informações da Vinculação com a Transação de Pagamento do DF-e (Split Payment) - NT 2026.006. Informar sempre que a transação de pagamento for iniciada antes da emissão do DF-e (ex.: boleto ou QR Code Pix dinâmico gerado antes da emissão)</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="99" name="pgtoItem">
+								<xs:annotation>
+									<xs:documentation>Dados de cada pagamento previsto para o DF-e (tag gPgto no XML da SEFAZ)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nPag">
+											<xs:annotation>
+												<xs:documentation>Numerador único de cada ocorrência de pagamento (atributo de gPgto no XML da SEFAZ)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:pattern value="[0-9]{1,3}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="idTransacao">
+											<xs:annotation>
+												<xs:documentation>Identificador da transação financeira, de acordo com a transação de pagamento (atributo de gPgto no XML da SEFAZ)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="35"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tpMeioPgto">
+											<xs:annotation>
+												<xs:documentation>Código do meio de pagamento (Tabela Nacional de Códigos de Meios de Pagamento - Informe Técnico 2026.001 dos DF-e): 15=Boleto; 17=PIX QR Code Dinâmico; 18=TED; 20=PIX Chave ou QR Code Estático; 23=PIX Automático; 24=TEF / Book Transfer</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="15"/>
+													<xs:enumeration value="17"/>
+													<xs:enumeration value="18"/>
+													<xs:enumeration value="20"/>
+													<xs:enumeration value="23"/>
+													<xs:enumeration value="24"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CNPJReceb">
+											<xs:annotation>
+												<xs:documentation>CNPJ completo do recebedor do pagamento (fornecedor, plataforma ou outra entidade que receba o pagamento do adquirente)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="[A-Z0-9]{12}[0-9]{2}"/>
+													<xs:maxLength value="14"/>
+													<xs:minLength value="14"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CNPJBasePSP">
+											<xs:annotation>
+												<xs:documentation>CNPJ base da instituição financeira ou de pagamento (PSP) utilizada pelo recebedor do pagamento</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="[A-Z0-9]{8}"/>
+													<xs:maxLength value="8"/>
+													<xs:minLength value="8"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="gPgtoVinc_nPag_unico">
+						<xs:selector xpath="pgtoItem"/>
+						<xs:field xpath="nPag"/>
+					</xs:unique>
+					<xs:unique name="gPgtoVinc_idTransacao_unico">
+						<xs:selector xpath="pgtoItem"/>
+						<xs:field xpath="idTransacao"/>
+					</xs:unique>
 				</xs:element>
 				<xs:element minOccurs="0" name="infAdic">
 					<xs:annotation>
