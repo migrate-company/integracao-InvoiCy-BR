@@ -1,4 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Layout de integracao InvoiCy - Envio de CT-e 4.00 (CT-e e CT-e Simplificado).
+	     Atualizado conforme a NT CT-e 2026.004 v1.00 (PL_CTe_400 RTC 1.01) em 16/11/2026. -->
 	<xs:element name="Envio">
 		<xs:complexType>
 			<xs:sequence>
@@ -20,14 +22,14 @@
 				<xs:element name="ChaveParceiro" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:maxLength value="44"/>
+							<xs:maxLength value="30"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="ChaveAcesso" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:maxLength value="44"/>
+							<xs:maxLength value="50"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
@@ -117,11 +119,17 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="tpEmis">
+								<xs:annotation>
+								<xs:documentation>Forma de emissão: 1-Normal; 2-Contingência Offline; 3-Regime Especial NFF; 7-SVC-RS; 8-SVC-SP. A partir da NT 2026.004, os valores 4 (EPEC) e 5 (FS-DA) não são mais aceitos.</xs:documentation>
+							</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
-										<xs:minInclusive value="1"/>
-										<xs:maxInclusive value="8"/>
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+										<xs:enumeration value="3"/>
+										<xs:enumeration value="7"/>
+										<xs:enumeration value="8"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -265,15 +273,22 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="indIEToma" minOccurs="0">
+							<xs:element name="indIEToma">
 								<xs:simpleType>
 									<xs:restriction base="xs:nonNegativeInteger">
 										<xs:totalDigits value="1"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="dhCont" type="xs:dateTime" minOccurs="0"/>
+							<xs:element name="dhCont" type="xs:dateTime" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Data e hora de entrada em contingência. Obrigatório quando tpEmis = 2 (rejeição 587). Não informar nos demais tipos de emissão (rejeição 586).</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:element name="xJust" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Justificativa da entrada em contingência (15 a 256 caracteres). Mesma regra do dhCont.</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:maxLength value="256"/>
@@ -318,13 +333,16 @@
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="toma">
+											<xs:annotation>
+												<xs:documentation>0-Remetente; 1-Expedidor; 2-Recebedor; 3-Destinatário; 4-Outros. CNPJ_toma/CPF_toma, xNome_toma e enderTomador: informar somente quando toma = 4.</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="1"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:choice>
+										<xs:choice minOccurs="0">
 											<xs:element name="CNPJ_toma">
 												<xs:simpleType>
 													<xs:restriction base="xs:string">
@@ -347,7 +365,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="xNome_toma">
+										<xs:element name="xNome_toma" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="60"/>
@@ -376,7 +394,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="enderTomador">
+										<xs:element name="enderTomador" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="xLgr_toma">
@@ -455,21 +473,49 @@
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="gCompraGov">
+							<xs:element name="gCompraGov" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Compras governamentais. Quando o grupo for informado, tpEnteGov, pRedutor e tpOperGov são obrigatórios.</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="tpEnteGov" minOccurs="0">
+										<xs:element name="tpEnteGov">
+											<xs:annotation>
+												<xs:documentation>1-União; 2-Estados; 3-Distrito Federal; 4-Municípios; 5-Consórcio Público; 6-Comitê Gestor do IBS</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
-													<xs:totalDigits value="4"/>
+													<xs:enumeration value="1"/>
+													<xs:enumeration value="2"/>
+													<xs:enumeration value="3"/>
+													<xs:enumeration value="4"/>
+													<xs:enumeration value="5"/>
+													<xs:enumeration value="6"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="pRedutor" minOccurs="0">
+										<xs:element name="pRedutor">
+											<xs:annotation>
+												<xs:documentation>Percentual de redução de alíquota em compra governamental (3 inteiros e até 4 decimais). Aceita 0.</xs:documentation>
+											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:decimal">
 													<xs:totalDigits value="12"/>
 													<xs:fractionDigits value="4"/>
+													<xs:minInclusive value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tpOperGov">
+											<xs:annotation>
+												<xs:documentation>Tipo da operação com ente governamental: 1-Fornecimento com pagamento posterior; 2-Recebimento do pagamento com fornecimento já realizado; 3-Fornecimento com pagamento já realizado; 4-Recebimento do pagamento com fornecimento posterior (exige o grupo gICMSPrevistoPagtoAntecip).</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:enumeration value="1"/>
+													<xs:enumeration value="2"/>
+													<xs:enumeration value="3"/>
+													<xs:enumeration value="4"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -691,13 +737,14 @@
 							</xs:element>
 							<xs:element name="CRT">
 								<xs:annotation>
-									<xs:documentation>Código de Regime Tributário</xs:documentation>
+									<xs:documentation>Código de Regime Tributário: 1-Simples Nacional; 2-Simples Nacional, excesso de sublimite de receita bruta; 3-Regime Normal; 4-Simples Nacional - Microempreendedor Individual (MEI)</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:integer">
 										<xs:enumeration value="1"/>
 										<xs:enumeration value="2"/>
 										<xs:enumeration value="3"/>
+										<xs:enumeration value="4"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -1317,6 +1364,18 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
+							<xs:element name="vTPrestLiq" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Valor líquido total da prestação, sem IBS e CBS (NT 2026.004). No CT-e Simplificado, deve ser igual à soma de det/detItem/vPrestLiq (rejeição 1054).</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:totalDigits value="18"/>
+										<xs:fractionDigits value="2"/>
+										<xs:minInclusive value="0"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 							<xs:element name="Comp" minOccurs="0" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
@@ -1365,7 +1424,10 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="vTotDFe">
+							<xs:element name="vTotDFe" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Valor total do documento fiscal. Em 2026, informar o mesmo valor de vTPrest, sem somar IBS e CBS (rejeição 365). No CT-e Simplificado, informar em total/vTotDFe.</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:decimal">
 										<xs:totalDigits value="18"/>
@@ -1556,38 +1618,73 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="cBenef">
+										<xs:element name="cBenef" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="20"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
+										<xs:element name="gICMSPrevistoPagtoAntecip" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>ICMS previsto em pagamento antecipado (NT 2026.004). Informar somente quando tpPagAnt = 1 ou gCompraGov/tpOperGov = 4 (rejeições 1051, 1052 e 1053, válidas a partir de 01/02/2027 em homologação). Quando informado com CST de ICMS, prevalece o CST.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="vICMSPrevisto">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+																<xs:minInclusive value="0"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="IBSCBS">
+							<xs:element name="IBSCBS" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Tributação do IBS e da CBS do CT-e. No CT-e Simplificado (tpCTe 5 e 6), não informar aqui: o grupo vai em cada viagem (det/detItem/IBSCBS).</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="CST">
-											<xs:restriction base="xs:string">
-												<xs:maxLength value="3"/>
-											</xs:restriction>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="3"/>
+													<xs:pattern value="[0-9]{3}"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
 										<xs:element name="cClassTrib">
-											<xs:restriction base="xs:string">
-												<xs:maxLength value="6"/>
-											</xs:restriction>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="6"/>
+													<xs:pattern value="[0-9]{6}"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
-										<xs:element name="indDoacao">
-											<xs:restriction base="xs:string">
-												<xs:maxLength value="1"/>
-											</xs:restriction>
+										<xs:element name="indDoacao" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Indicador de doação. Informar 1 quando a operação for doação; nos demais casos, não informar a tag. Emitente e tomador devem ter CNPJ base/CPF diferentes (rejeição 1055). Obrigatório ou vedado conforme o cClassTrib (rejeições 1056 e 1057).</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+												</xs:restriction>
+											</xs:simpleType>
 										</xs:element>
-										<xs:element name="gIBSCBS">
+										<xs:element name="gIBSCBS" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Grupo de tributação do IBS e da CBS. vBC, vIBS, gIBSUF, gIBSMun e gCBS são obrigatórios quando o CST tiver tributação. Nos CST sem tributação (por exemplo, 410), informar só os subgrupos aplicáveis, como gEstornoCred.</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="vBC">
+													<xs:element name="vBC" minOccurs="0">
 														<xs:simpleType>
 															<xs:restriction base="xs:decimal">
 																<xs:totalDigits value="18"/>
@@ -1595,7 +1692,7 @@
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
-													<xs:element name="vIBS">
+													<xs:element name="vIBS" minOccurs="0">
 														<xs:simpleType>
 															<xs:restriction base="xs:decimal">
 																<xs:totalDigits value="18"/>
@@ -1603,7 +1700,7 @@
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
-													<xs:element name="gIBSUF">
+													<xs:element name="gIBSUF" minOccurs="0">
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="pIBSUF">
@@ -1622,7 +1719,7 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element name="gDif">
+																<xs:element name="gDif" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>
 																			<xs:element name="pDif">
@@ -1644,7 +1741,32 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>	
-																<xs:element name="gRed">
+																<xs:element name="gDevTrib" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Devolução de tributos (fornecimento de energia elétrica, água, esgoto e gás natural e demais hipóteses do regulamento).</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pDevTrib" minOccurs="0">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vDevTrib">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gRed" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>																			
 																			<xs:element name="pRedAliq">
@@ -1669,7 +1791,7 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>	
-													<xs:element name="gIBSMun">
+													<xs:element name="gIBSMun" minOccurs="0">
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="pIBSMun">
@@ -1688,7 +1810,7 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element name="gDif">
+																<xs:element name="gDif" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>
 																			<xs:element name="pDif">
@@ -1710,7 +1832,32 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>										
-																<xs:element name="gRed">
+																<xs:element name="gDevTrib" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Devolução de tributos (fornecimento de energia elétrica, água, esgoto e gás natural e demais hipóteses do regulamento).</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pDevTrib" minOccurs="0">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vDevTrib">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gRed" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>																			
 																			<xs:element name="pRedAliq">
@@ -1735,7 +1882,7 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="gCBS">
+													<xs:element name="gCBS" minOccurs="0">
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="pCBS">
@@ -1754,7 +1901,7 @@
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
-																<xs:element name="gDif">
+																<xs:element name="gDif" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>
 																			<xs:element name="pDif">
@@ -1776,7 +1923,32 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>	
-																<xs:element name="gRed">
+																<xs:element name="gDevTrib" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Devolução de tributos (fornecimento de energia elétrica, água, esgoto e gás natural e demais hipóteses do regulamento).</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pDevTrib" minOccurs="0">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vDevTrib">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gRed" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>																			
 																			<xs:element name="pRedAliq">
@@ -1798,21 +1970,21 @@
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>
-																<xs:element name="gALCZFMCBS">
+																<xs:element name="gALCZFMCBS" minOccurs="0">
 																	<xs:complexType>
 																		<xs:sequence>																			
 																			<xs:element name="pAliqEfetRegCBS">
 																				<xs:simpleType>
 																					<xs:restriction base="xs:decimal">
-																						<xs:totalDigits value="8"/>
-																						<xs:fractionDigits value="2"/>
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
 																					</xs:restriction>
 																				</xs:simpleType>
 																			</xs:element>
 																			<xs:element name="vTribRegCBS">
 																				<xs:simpleType>
 																					<xs:restriction base="xs:decimal">
-																						<xs:totalDigits value="16"/>
+																						<xs:totalDigits value="18"/>
 																						<xs:fractionDigits value="2"/>
 																					</xs:restriction>
 																				</xs:simpleType>
@@ -1823,13 +1995,14 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="gTribRegular">
+													<xs:element name="gTribRegular" minOccurs="0">
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="CSTReg">
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
 																			<xs:maxLength value="3"/>
+																			<xs:pattern value="[0-9]{3}"/>
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
@@ -1837,6 +2010,7 @@
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
 																			<xs:maxLength value="6"/>
+																			<xs:pattern value="[0-9]{6}"/>
 																		</xs:restriction>
 																	</xs:simpleType>
 																</xs:element>
@@ -1891,7 +2065,10 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="gTribCompraGov">
+													<xs:element name="gTribCompraGov" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Composição do IBS e da CBS em compras governamentais (informar com gCompraGov).</xs:documentation>
+														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence>																
 																<xs:element name="pAliqIBSUF">
@@ -1945,7 +2122,10 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="gEstornoCred">
+													<xs:element name="gEstornoCred" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Estorno de crédito, conforme indicador do cClassTrib. Na integração InvoiCy, o grupo é informado dentro de gIBSCBS, inclusive com CST 410; o InvoiCy o posiciona no XML da SEFAZ.</xs:documentation>
+														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence>																
 																<xs:element name="vIBSEstCred">
@@ -2244,7 +2424,7 @@
 																					<xs:element name="qtdRateada" minOccurs="0">
 																						<xs:simpleType>
 																							<xs:restriction base="xs:decimal">
-																								<xs:totalDigits value="3"/>
+																								<xs:totalDigits value="5"/>
 																								<xs:fractionDigits value="2"/>
 																							</xs:restriction>
 																						</xs:simpleType>
@@ -2290,10 +2470,10 @@
 																													</xs:restriction>
 																												</xs:simpleType>
 																											</xs:element>
-																											<xs:element name="qtdRateadaCargaTran">
+																											<xs:element name="qtdRateadaCargaTran" minOccurs="0">
 																												<xs:simpleType>
 																													<xs:restriction base="xs:decimal">
-																														<xs:totalDigits value="3"/>
+																														<xs:totalDigits value="5"/>
 																														<xs:fractionDigits value="2"/>
 																													</xs:restriction>
 																												</xs:simpleType>
@@ -2354,7 +2534,7 @@
 																					<xs:element name="qtdRateadaCarga" minOccurs="0">
 																						<xs:simpleType>
 																							<xs:restriction base="xs:decimal">
-																								<xs:totalDigits value="3"/>
+																								<xs:totalDigits value="5"/>
 																								<xs:fractionDigits value="2"/>
 																							</xs:restriction>
 																						</xs:simpleType>
@@ -2518,7 +2698,10 @@
 										</xs:sequence>
 									</xs:complexType>
 								</xs:element>
-								<xs:element name="seg">
+								<xs:element name="seg" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Opcional. O grupo de seguro da carga não faz parte do leiaute 4.00 do CT-e (existe só no modal multimodal).</xs:documentation>
+									</xs:annotation>
 									<xs:complexType>
 										<xs:sequence>
 											<xs:element name="segItem" maxOccurs="10">
@@ -2527,7 +2710,7 @@
 														<xs:element name="respSeg" minOccurs="0">
 															<xs:simpleType>
 																<xs:restriction base="xs:string">
-																	<xs:maxLength value="2"/>
+																	<xs:maxLength value="1"/>
 																</xs:restriction>
 															</xs:simpleType>
 														</xs:element>
@@ -2554,7 +2737,7 @@
 														</xs:element>
 														<xs:element name="vCarga_seg" minOccurs="0">
 															<xs:simpleType>
-																<xs:restriction base="xs:string">
+																<xs:restriction base="xs:decimal">
 																	<xs:totalDigits value="18"/>
 																	<xs:fractionDigits value="2"/>
 																</xs:restriction>
@@ -2972,6 +3155,7 @@
 																<xs:simpleType>
 																	<xs:restriction base="xs:string">
 																		<xs:maxLength value="1"/>
+																		<xs:pattern value="[0-2]"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
@@ -3135,35 +3319,35 @@
 															<xs:element name="dFim_duto" type="xs:date"/>
 															<xs:element name="classDuto" minOccurs="0">
 																<xs:simpleType>
-																	<xs:restriction base="xs:decimal">
-																		<xs:maxLength value="1"/>
+																	<xs:restriction base="xs:nonNegativeInteger">
+																		<xs:totalDigits value="1"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
 															<xs:element name="tpContratacao" minOccurs="0">
 																<xs:simpleType>
-																	<xs:restriction base="xs:decimal">
-																		<xs:maxLength value="1"/>
+																	<xs:restriction base="xs:nonNegativeInteger">
+																		<xs:totalDigits value="1"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
 															<xs:element name="codPontoEntrada" minOccurs="0">
 																<xs:simpleType>
-																	<xs:restriction base="xs:decimal">
+																	<xs:restriction base="xs:string">
 																		<xs:maxLength value="20"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
 															<xs:element name="codPontoSaida" minOccurs="0">
 																<xs:simpleType>
-																	<xs:restriction base="xs:decimal">
+																	<xs:restriction base="xs:string">
 																		<xs:maxLength value="20"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
 															<xs:element name="nContrato" minOccurs="0">
 																<xs:simpleType>
-																	<xs:restriction base="xs:decimal">
+																	<xs:restriction base="xs:string">
 																		<xs:maxLength value="20"/>
 																	</xs:restriction>
 																</xs:simpleType>
@@ -3185,6 +3369,7 @@
 																<xs:simpleType>
 																	<xs:restriction base="xs:string">
 																		<xs:maxLength value="1"/>
+																		<xs:pattern value="[01]"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
@@ -3533,6 +3718,857 @@
 						</xs:complexType>
 					</xs:element>
 				</xs:choice>
+				<xs:element name="det" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Detalhamento das viagens do CT-e Simplificado (tpCTe 5 e 6). Obrigatório no CT-e Simplificado; não informar nos demais tipos de CT-e.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="detItem" maxOccurs="999">
+								<xs:annotation>
+									<xs:documentation>Uma ocorrência por viagem (máximo de 999). Não informar este grupo quando a integração for API REST.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nItem" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Número da viagem (1 a 999), sem zeros à esquerda. Se não for informado, o InvoiCy numera as viagens na ordem de envio.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="3"/>
+													<xs:minInclusive value="1"/>
+													<xs:maxInclusive value="999"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="cMunIni">
+											<xs:annotation>
+												<xs:documentation>Código IBGE do município de início da prestação.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="7"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xMunIni">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="cMunFim">
+											<xs:annotation>
+												<xs:documentation>Código IBGE do município de término da prestação. Cada viagem pode ter um destino diferente (regra G101a revogada pela NT 2026.004).</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:totalDigits value="7"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="xMunFim">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="vPrest">
+											<xs:annotation>
+												<xs:documentation>Valor da prestação da viagem.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:totalDigits value="18"/>
+													<xs:fractionDigits value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="vPrestLiq" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Valor líquido da prestação da viagem, sem IBS e CBS (NT 2026.004).</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:totalDigits value="18"/>
+													<xs:fractionDigits value="2"/>
+													<xs:minInclusive value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="vRec">
+											<xs:annotation>
+												<xs:documentation>Valor a receber da viagem.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:totalDigits value="18"/>
+													<xs:fractionDigits value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Comp" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Componentes do valor da prestação da viagem. No item, o nome do componente é informado em xNome.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="compItem" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Não informar este grupo quando a integração for API REST.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="xNome">
+																	<xs:annotation>
+																		<xs:documentation>Nome do componente. Exemplos: FRETE PESO, FRETE VALOR, PEDÁGIO.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="1"/>
+																			<xs:maxLength value="15"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="vComp">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="IBSCBS" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Tributação do IBS e da CBS da viagem (NT 2026.004). Mesma estrutura de imp/IBSCBS.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CST">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"/>
+																<xs:pattern value="[0-9]{3}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="cClassTrib">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="6"/>
+																<xs:pattern value="[0-9]{6}"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="indDoacao" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Indicador de doação. Informar 1 quando a operação for doação; nos demais casos, não informar a tag. Emitente e tomador devem ter CNPJ base/CPF diferentes (rejeição 1055). Obrigatório ou vedado conforme o cClassTrib (rejeições 1056 e 1057).</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="1"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="gIBSCBS" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Grupo de tributação do IBS e da CBS. vBC, vIBS, gIBSUF, gIBSMun e gCBS são obrigatórios quando o CST tiver tributação. Nos CST sem tributação (por exemplo, 410), informar só os subgrupos aplicáveis, como gEstornoCred.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="vBC" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="vIBS" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="gIBSUF" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pIBSUF">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vIBSUF">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="gDif" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="pDif">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vDif">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>	
+																			<xs:element name="gDevTrib" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Devolução de tributos (fornecimento de energia elétrica, água, esgoto e gás natural e demais hipóteses do regulamento).</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="pDevTrib" minOccurs="0">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vDevTrib">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="gRed" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>																			
+																						<xs:element name="pRedAliq">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="pAliqEfet">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>	
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>	
+																<xs:element name="gIBSMun" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pIBSMun">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vIBSMun">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="gDif" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="pDif">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vDif">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>										
+																			<xs:element name="gDevTrib" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Devolução de tributos (fornecimento de energia elétrica, água, esgoto e gás natural e demais hipóteses do regulamento).</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="pDevTrib" minOccurs="0">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vDevTrib">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="gRed" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>																			
+																						<xs:element name="pRedAliq">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="pAliqEfet">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>	
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gCBS" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="pCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="gDif" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="pDif">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vDif">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>	
+																			<xs:element name="gDevTrib" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Devolução de tributos (fornecimento de energia elétrica, água, esgoto e gás natural e demais hipóteses do regulamento).</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="pDevTrib" minOccurs="0">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vDevTrib">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="gRed" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>																			
+																						<xs:element name="pRedAliq">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="pAliqEfet">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="gALCZFMCBS" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>																			
+																						<xs:element name="pAliqEfetRegCBS">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="12"/>
+																									<xs:fractionDigits value="4"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																						<xs:element name="vTribRegCBS">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:decimal">
+																									<xs:totalDigits value="18"/>
+																									<xs:fractionDigits value="2"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gTribRegular" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CSTReg">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="3"/>
+																						<xs:pattern value="[0-9]{3}"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="cClassTribReg">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="6"/>
+																						<xs:pattern value="[0-9]{6}"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="pAliqEfetRegIBSUF">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribRegIBSUF">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="pAliqEfetRegIBSMun">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribRegIBSMun">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="pAliqEfetRegCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribRegCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gTribCompraGov" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Composição do IBS e da CBS em compras governamentais (informar com gCompraGov).</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>																
+																			<xs:element name="pAliqIBSUF">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribIBSUF">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="pAliqIBSMun">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribIBSMun">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="pAliqCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="12"/>
+																						<xs:fractionDigits value="4"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vTribCBS">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="gEstornoCred" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Estorno de crédito, conforme indicador do cClassTrib. Na integração InvoiCy, o grupo é informado dentro de gIBSCBS, inclusive com CST 410; o InvoiCy o posiciona no XML da SEFAZ.</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>																
+																			<xs:element name="vIBSEstCred">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="vCBSEstCred">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:decimal">
+																						<xs:totalDigits value="18"/>
+																						<xs:fractionDigits value="2"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>													
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="infNFe" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>NF-e transportadas na viagem.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="infNFeItem" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Não informar este grupo quando a integração for API REST.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="chNFe">
+																	<xs:annotation>
+																		<xs:documentation>Chave de acesso da NF-e transportada.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="44"/>
+																			<xs:maxLength value="44"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="PIN" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>PIN SUFRAMA, quando houver.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="9"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="dPrev" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Data prevista de entrega, no formato AAAA-MM-DD.</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="total" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Totais do CT-e Simplificado (tpCTe 5 e 6). vTPrest, vRec e vTPrestLiq continuam sendo informados no grupo vPrest.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="vTotDFe" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Valor total do documento fiscal. Em 2026, informar o mesmo valor de vTPrest, sem somar IBS e CBS (rejeição 365).</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:totalDigits value="18"/>
+										<xs:fractionDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="IBSCBSTot" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Totais de IBS e CBS do CT-e Simplificado: soma dos valores das viagens (rejeições 348 a 359, 305 e 306). Se o grupo não for informado, o InvoiCy calcula os totais a partir das viagens. Se for informado, o InvoiCy envia os valores recebidos.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="vBCIBSCBS">
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:totalDigits value="18"/>
+													<xs:fractionDigits value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="gIBS">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="gIBSUF">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="vDif">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="vDevTrib">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="vIBSUF">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="gIBSMun">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="vDif">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="vDevTrib">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="vIBSMun">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:decimal">
+																			<xs:totalDigits value="18"/>
+																			<xs:fractionDigits value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="vIBS">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="gCBS">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="vDif">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="vDevTrib">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="vCBS">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="gEstornoCred" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="vIBSEstCred">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="vCBSEstCred">
+														<xs:simpleType>
+															<xs:restriction base="xs:decimal">
+																<xs:totalDigits value="18"/>
+																<xs:fractionDigits value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
 				<xs:element name="AutXml" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
@@ -3592,14 +4628,17 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="idCSRT">
+							<xs:element name="idCSRT" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Informar idCSRT e hashCSRT somente quando a UF exigir o CSRT. Não enviar as tags vazias.</xs:documentation>
+								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:maxLength value="3"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="hashCSRT">
+							<xs:element name="hashCSRT" minOccurs="0">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:maxLength value="40"/>
