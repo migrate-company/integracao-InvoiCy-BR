@@ -1,0 +1,8 @@
+<Consulta>
+	<ModeloDocumento>NFCe</ModeloDocumento><!-- NFCe ou NFe -->
+	<Versao>4.00</Versao>
+	<tpAmb>2</tpAmb>
+	<CnpjEmissor>99999999999999</CnpjEmissor>
+	<Serie>1</Serie><!-- Informe apenas a serie, sem numeracao, chave de acesso ou datas.
+Retorna o ultimo documento emitido na serie, em qualquer situacao.-->
+</Consulta>
