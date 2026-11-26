@@ -171,6 +171,13 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
+				<xs:element name="EmpTpRegimeIBSCBS" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[0-4]?"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
 				<xs:element name="EmpIdentificacao">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
@@ -1754,6 +1761,13 @@
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
 													<xs:maxLength value="7"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ImprimirCodBarrasCanhoto" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
